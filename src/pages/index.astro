@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
+import CopyButton from '../components/CopyButton';
+import { useState } from 'react';
 
 const pageTitle = "Trevor Tyler Lee"
 ---
@@ -24,6 +26,14 @@ const pageTitle = "Trevor Tyler Lee"
 	<hr />
 	<div class="contact">
 		<h2>Contact Me</h2>
+		<CopyButton
+			client:idle
+			label="trevortylerlee@gmail.com"
+		/>
+		<CopyButton
+			client:idle
+			label="778-235-3815"
+		/>
 	</div>
 </BaseLayout>
 
@@ -34,6 +44,7 @@ const pageTitle = "Trevor Tyler Lee"
 
 	h2 {
 		font-size: 1.75rem;
+		text-align: center;
 	}
 
 	.contact {
