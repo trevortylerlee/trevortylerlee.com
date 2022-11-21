@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+
+const pageTitle = "Trevor Tyler Lee"
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<h1>Hi, I'm Trevor :)</h1>
+	<p>I'm a student at BCIT studying web development and digital design.</p>
+	<p>I've used things like TypeScript, Next.js, and NodeJS to make accessible, cross-platform web applications.</p>
+	<!-- <h2>Projects</h2> -->
+	<Card
+	desc="Led a team of seven to develop a production-ready cross-platform app"
+	title="Phished – Phish Friends & Family"
+	href="/posts/phished"
+	src="/phished-screenshot.webp"
+	/>
+</BaseLayout>
+
+<style>
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h2 {
+		font-size: 1.75rem;
+	}
+
+	@media (min-width: 40rem) {
+		h1 {
+			font-size: 4.25rem;
+		}
+		
+		h2 {
+			font-size: 3rem;
+		}
+	}
+</style>

@@ -1,0 +1,75 @@
+---
+const { title, desc, href, alt, src } = Astro.props
+---
+<style>
+  @keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+  }
+
+  .card {
+    cursor: pointer;
+    padding: 1rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+
+  .card:hover img {
+    color: #e4e4e4;
+    box-shadow: 0 0 1rem #e3e3e3;
+    text-shadow: 0 0 1rem #e3e3e3;
+    scale: 1.02;
+  }
+  
+  img {
+    border-radius: 8px;
+    transition: 0.2s;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  a:focus-visible img {
+    color: #e4e4e4;
+    box-shadow: 0 0 1rem #e3e3e3;
+    text-shadow: 0 0 1rem #e3e3e3;
+    scale: 1.02;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+  }
+
+  @media (min-width: 40rem) {
+    .card {
+      margin: 4rem 0;
+    }
+
+    .title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-top: 1.75rem;
+    }
+  }
+</style>
+
+<a href={href}>
+<div class='card'>
+  <img src={src} alt={alt} />
+  <p class='title'>{title}</p>
+  <p>{desc}</p>
+</div>
+</a>
