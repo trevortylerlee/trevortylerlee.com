@@ -2,12 +2,6 @@
 const { title, desc, href, alt, src } = Astro.props
 ---
 <style>
-  @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-  }
-
   .card {
     cursor: pointer;
     padding: 1rem;
@@ -28,8 +22,11 @@ const { title, desc, href, alt, src } = Astro.props
   }
   
   img {
-    border-radius: 8px;
     transition: 0.2s;
+  }
+
+  p {
+    margin: 0;
   }
 
   a {

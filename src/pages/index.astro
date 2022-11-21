@@ -8,14 +8,23 @@ const pageTitle = "Trevor Tyler Lee"
 <BaseLayout pageTitle={pageTitle}>
 	<h1>Hi, I'm Trevor :)</h1>
 	<p>I'm a student at BCIT studying web development and digital design.</p>
-	<p>I've used things like TypeScript, Next.js, and NodeJS to make accessible, cross-platform web applications.</p>
-	<!-- <h2>Projects</h2> -->
+	<p>I use things like TypeScript, Next.js, and NodeJS to create accessible, cross-platform web applications.</p>
 	<Card
-	desc="Led a team of seven to develop a production-ready cross-platform app"
 	title="Phished – Phish Friends & Family"
+	desc="Led a team of seven to develop a production-ready cross-platform app"
 	href="/posts/phished"
 	src="/phished-screenshot.webp"
 	/>
+	<Card
+	title="HTML Color Code Game"
+	desc="An HTML color code matching game scored by calculating the difference between two RGB colors"
+	href="/posts/color"
+	src="/noisy-gradient.webp"
+	/>
+	<hr />
+	<div class="contact">
+		<h2>Contact Me</h2>
+	</div>
 </BaseLayout>
 
 <style>
@@ -25,6 +34,12 @@ const pageTitle = "Trevor Tyler Lee"
 
 	h2 {
 		font-size: 1.75rem;
+	}
+
+	.contact {
+		display: grid;
+		justify-content: center;
+		align-items: center;
 	}
 
 	@media (min-width: 40rem) {

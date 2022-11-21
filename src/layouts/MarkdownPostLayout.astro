@@ -5,11 +5,14 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <div class="post">
+  <div>
+    <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
     <h1>{frontmatter.title}</h1>
     <p class="pub-date">{frontmatter.pubDate}</p>
     <hr />
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
   </div>
 </BaseLayout>
 
@@ -17,5 +20,16 @@ const { frontmatter } = Astro.props;
   .pub-date {
     color: rgb(200, 200, 200);
     font-style: italic;
+    margin: 0;
+  }
+
+  h1 {
+    margin-top: 1rem;
+  }
+
+  .content {
+    p {
+      margin-bottom: 2rem;
+    }
   }
 </style>
