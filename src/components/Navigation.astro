@@ -1,3 +1,7 @@
+---
+import ThemeIcon from "../components/ThemeIcon.astro";
+---
+
 <nav>
   <a href='/'>
     <svg class='logo' xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="48" height="48" viewBox="0 0 24 20" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -7,11 +11,14 @@
       <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
     </svg>
   </a>
+  <ThemeIcon />
 </nav>
 
 <style>
   nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   a:focus {
