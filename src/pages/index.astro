@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
 import CopyButton from '../components/CopyButton';
-import { useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 
 const pageTitle = "Trevor Tyler Lee"
 ---
@@ -34,6 +34,7 @@ const pageTitle = "Trevor Tyler Lee"
 			client:idle
 			label="778-235-3815"
 		/>
+		<Toaster />
 	</div>
 </BaseLayout>
 
