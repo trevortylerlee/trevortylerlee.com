@@ -1,15 +1,26 @@
 <nav>
   <a href='/'>
-    <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+  <svg class='logo' xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 20" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+  </svg>
   </a>
 </nav>
 
 <style>
+  nav {
+    display: flex;
+    justify-content: center;
+  }
+
   a:focus {
     color: white;
   }
 
   .logo:hover {
-    opacity: 0.8;
+    transform: scale(1.02);
+    opacity: 0.9;
   }
 </style>
