@@ -3,7 +3,7 @@ import ThemeIcon from "../components/ThemeIcon.astro";
 ---
 
 <nav>
-  <a href='/'>
+  <a href='/' aria-label="home">
     <svg class='logo' xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="48" height="48" viewBox="0 0 24 20" stroke-width="2" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
@@ -22,17 +22,19 @@ import ThemeIcon from "../components/ThemeIcon.astro";
   }
 
   a:focus {
-    color: white;
+    color: dodgerblue;
   }
 
   .logo:hover {
     transform: scale(1.02);
-    opacity: 0.9;
+    stroke: dodgerblue;
   }
 
   .logo {
     stroke: black;
+    transition: 0.2s;
   }
 
   :global(.dark) .logo { stroke: white; }
+  :global(.dark) .logo:hover { stroke: dodgerblue }
 </style>
