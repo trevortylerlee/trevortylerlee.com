@@ -1,18 +1,13 @@
 button {
-  background: rgb(230, 230, 230);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
   margin-top: 1rem;
-  padding: 0.5rem;
   transition: 0.2s;
 }
 
 button:hover {
-  background: rgb(190 190 190);
   transform: scale(1.02);
 }
 
 button:focus {
-  outline: 2px solid white;
+  outline: 2px solid white !important;
+  outline-offset: 4px;
 }
