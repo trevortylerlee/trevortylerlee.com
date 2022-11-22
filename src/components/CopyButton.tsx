@@ -1,3 +1,5 @@
+import style from '../styles/CopyButton.module.css'
+
 export default function CopyButton({ label }) {
   async function handleClick() {
     let text = label
@@ -8,10 +10,5 @@ export default function CopyButton({ label }) {
     }
   }
 
-
-  return <button style={{
-    cursor: 'pointer',
-    marginTop: '1rem',
-    padding: '0.25rem 0.5rem'
-  }} onClick={handleClick}>{label}</button>
+  return <button style={style} onClick={handleClick}>{label}</button>
 }
