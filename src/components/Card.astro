@@ -1,7 +1,7 @@
 ---
 const { title, desc, href, alt, src } = Astro.props
 const lightGlow = 'rgb(227, 227, 227)'
-const darkGlow = 'rgb(40, 40, 40)'
+const darkGlow = 'rgb(0, 84, 255)'
 ---
 
 <!-- TODO refactor this... passing in alt prop not working for card image -->
@@ -32,10 +32,16 @@ const darkGlow = 'rgb(40, 40, 40)'
   }
 
   .card:hover img {
-    color: #e4e4e4;
-    box-shadow: 0 0 1rem #e3e3e3;
-    text-shadow: 0 0 1rem #e3e3e3;
+    color: var(--darkGlow);
+    box-shadow: 0 0 1rem var(--darkGlow);
+    text-shadow: 0 0 1rem var(--darkGlow);
     scale: 1.02;
+  }
+
+  :global(.dark) .card:hover img {
+    color: var(--lightGlow);
+    box-shadow: 0 0 1rem var(--lightGlow);
+    text-shadow: 0 0 1rem var(--lightGlow);
   }
   
   img {
@@ -55,10 +61,16 @@ const darkGlow = 'rgb(40, 40, 40)'
   }
 
   a:focus-visible img {
-    color: #e4e4e4;
-    box-shadow: 0 0 1rem #e3e3e3;
-    text-shadow: 0 0 1rem #e3e3e3;
+    color: var(--darkGlow);
+    box-shadow: 0 0 1rem var(--darkGlow);
+    text-shadow: 0 0 1rem var(--darkGlow);
     scale: 1.02;
+  }
+
+  :global(.dark) a:focus-visible img {
+    color: var(--lightGlow);
+    box-shadow: 0 0 1rem var(--lightGlow);
+    text-shadow: 0 0 1rem var(--lightGlow);
   }
 
   .title {

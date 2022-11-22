@@ -1,5 +1,5 @@
 ---
-
+const darkLink = 'rgb(26, 30, 43)';
 ---
 
 <hr class='hr'/>
@@ -13,7 +13,7 @@
   </span>
 </footer>
 
-<style>
+<style define:vars={{ darkLink }}>
   footer {
     display: flex;
     justify-content: space-between;
@@ -22,11 +22,19 @@
   a {
     font-size: 1rem;
     font-weight: 400;
-    color: white;
+    color: var(--darkLink)
   }
 
   a:hover {
-    color: yellow;
+    color: dodgerblue;
+  }
+
+  :global(.dark) a {
+    color: white;
+  }
+
+  :global(.dark) a:hover {
+    color: dodgerblue;
   }
 
   .push-left {

@@ -10,7 +10,7 @@ export function CopyButton({value, label}) {
       offset={10}
       position="top"
       radius="md"
-      color="green"
+      color="blue"
       transition="pop"
       transitionDuration={100}
       withArrow

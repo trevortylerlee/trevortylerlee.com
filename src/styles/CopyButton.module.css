@@ -9,6 +9,6 @@ button:hover {
 
 button:focus {
   transform: scale(1.02);
-  outline: 2px solid white !important;
+  outline: 2px solid dodgerblue !important;
   outline-offset: 4px;
 }
