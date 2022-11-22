@@ -31,8 +31,10 @@
     outline: 2px solid white;
   }
 
-  .moon { display: none; }
-  .sun { fill: transparent; display: block; stroke: black; }
+  .moon { display: none; transition: 0.2s; }
+  .moon:hover { stroke: violet; transform: scale(1.02); }
+  .sun { fill: transparent; display: block; stroke: black; transition: 0.2s;}
+  .sun:hover { stroke: orangered; transform: scale(1.02); }
   
 
   :global(.dark) .moon { fill: transparent; display: block; }
