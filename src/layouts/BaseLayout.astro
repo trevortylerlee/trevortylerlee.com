@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
 const { pageTitle } = Astro.props
 ---
@@ -17,6 +18,7 @@ const { pageTitle } = Astro.props
     <div class="wrapper flow">
       <Navigation />
       <slot />
+			<Footer />
     </div>
 	</body>
 </html>

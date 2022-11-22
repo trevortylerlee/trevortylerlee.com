@@ -7,11 +7,13 @@ export function CopyButton({value, label}) {
   return (
     <Tooltip
       label={label === 'trevortylerlee@gmail.com' ? 'Email copied!' : 'Phone number copied!'}
-      offset={5}
+      offset={10}
       position="top"
       radius="md"
+      color="green"
       transition="pop"
       transitionDuration={100}
+      withArrow
       opened={clipboard.copied}
     >
       <Button

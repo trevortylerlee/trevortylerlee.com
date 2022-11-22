@@ -16,7 +16,7 @@
 
 body {
   background: var(--bg-color);
-  color: #E3E2E9;
+  color: var(--text-color);
   padding: 2rem 1rem;
 }
 
@@ -99,6 +99,7 @@ blockquote {
 hr {
   margin-top: var(--size-400);
   margin-bottom: var(--size-400);
+  opacity: 0.25;
 }
 
 /* Larger viewports */
