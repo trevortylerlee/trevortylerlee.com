@@ -63,9 +63,16 @@ const { title, desc, href, alt, src } = Astro.props
   }
 </style>
 
+<!-- TODO refactor this... passing in alt prop not working for card image -->
+
 <a href={href}>
 <div class='card'>
-  <img src={src} alt={alt} />
+  <img src={src} alt={href === '/posts/phished'
+    ?
+    'A tablet and smartphone are next to each other, each displaying a screenshot from the Phished website. The Phished logo, a fish with an envelope for a body, is displayed on the right with the Phished wordmark.'
+    : 
+    'A grainy gradient made of purple, pink, orange, and red.' 
+  }/>
   <p class='title'>{title}</p>
   <p>{desc}</p>
 </div>
