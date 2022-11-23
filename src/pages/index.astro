@@ -41,21 +41,42 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 
 <style>
 	h1 {
+		--bg-size: 200%;
+		--color-one: hsl(220 90% 55%);
+		--color-two: hsl(210 95% 60%);
+		background: linear-gradient(
+                90deg,
+                var(--color-one),
+                var(--color-two),
+                var(--color-one)
+              ) 0 0 / var(--bg-size) 100%;
+		color: transparent;
+		background-clip: text;
+		-webkit-background-clip: text;
+
 		font-size: 2.5rem;
-		/* text-emphasis-style: "✦"; */
-		animation: animation 2s infinite ease-in-out
 	}
 
-	@keyframes animation {
+	@media (prefers-reduced-motion: no-preference) {
+		h1 {
+			animation: animation 4s infinite ease-in-out
+		}
+
+		@keyframes animation {
 		0% {
 			text-emphasis-style: '✦';
+			background-position: 20% 0;
 		}
 		50% {
 			text-emphasis-style: '✧';
+			background-position: var(--bg-size) 0;
 		}
 		100% {
 			text-emphasis-style: '✦';
+			background-position: 0 0;
+
 		}
+	}
 	}
 
 	h2 {
