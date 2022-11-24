@@ -4,6 +4,7 @@ import style from '../styles/CopyButton.module.css'
 
 export function CopyButton({value, label}) {
   const clipboard = useClipboard();
+
   return (
     <Tooltip
       label={label === 'trevortylerlee@gmail.com' ? 'Email copied!' : 'Phone number copied!'}
@@ -39,7 +40,7 @@ export function CopyButton({value, label}) {
           root: { paddingRight: 14, height: 48 },
           rightIcon: { marginLeft: 24 },
         }}
-        onClick={() => clipboard.copy({value})}
+        onClick={() => clipboard.copy(value)}
       >
         {label}
       </Button>
