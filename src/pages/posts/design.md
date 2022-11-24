@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/MarkdownPostLayout.astro'
-title: 'Creative Work & Stuff'
+title: 'Creative Work & Other Stuff'
 pubDate: 'Last updated on November 23, 2022'
 image:
     url: '/creative-work.png'
