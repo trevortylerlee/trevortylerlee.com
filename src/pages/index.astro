@@ -7,7 +7,7 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h1>Hi I'm Trevor :(</h1>
+	<h1>TREVOR LEE</h1>
 	<p>I'm a student at BCIT studying web development and digital design.</p>
 	<p>I use things like TypeScript, Next.js, and NodeJS to create accessible, cross-platform web applications.</p>
 	<Card
@@ -48,19 +48,6 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 
 <style>
 	h1 {
-		--bg-size: 200%;
-		--color-one: hsl(220 90% 55%);
-		--color-two: hsl(210 95% 60%);
-		background: linear-gradient(
-                90deg,
-                var(--color-one),
-                var(--color-two),
-                var(--color-one)
-              ) 0 0 / var(--bg-size) 100%;
-		color: transparent;
-		background-clip: text;
-		-webkit-background-clip: text;
-
 		font-size: 2.5rem;
 	}
 
@@ -72,15 +59,12 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 		@keyframes animation {
 		0% {
 			text-emphasis-style: '✦';
-			background-position: 20% 0;
 		}
 		50% {
 			text-emphasis-style: '✧';
-			background-position: var(--bg-size) 0;
 		}
 		100% {
 			text-emphasis-style: '✦';
-			background-position: 0 0;
 
 		}
 	}
@@ -100,7 +84,7 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 
 	@media (min-width: 40rem) {
 		h1 {
-			font-size: 4.25rem;
+			font-size: 5.5rem;
 		}
 		
 		h2 {
