@@ -35,10 +35,27 @@ body {
 a {
   color: var(--primary-color);
   text-decoration: none;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.1em;
+  background-position: 0 100%;
+  background-size: 2px 2px;
 }
 
 [href]:hover {
-  text-decoration: underline;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%231e90ff' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  text-decoration: none;
+  padding-bottom: 0.25em;
+  background-size: auto 4px;
+}
+
+.wavy-exempt {
+  background-image: none !important;
+  border-bottom: none;
+  padding-bottom: 0 !important;
 }
 
 :focus {
