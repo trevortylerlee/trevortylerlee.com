@@ -56,11 +56,12 @@ a {
   background-image: none !important;
   border-bottom: none;
   padding-bottom: 0 !important;
+  max-height: 48px;
 }
 
 :focus {
   border-radius: 1px;
-  outline: 2px solid;
+  outline: 2px solid var(--primary-color);
   outline-offset: 0.25rem;
 }
 
