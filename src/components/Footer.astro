@@ -4,6 +4,7 @@ const darkLink = 'rgb(26, 30, 43)';
 
 <hr class='hr'/>
 <footer>
+  <div class='links'>
   <span>
   <a href='https://github.com/tervonugget/astro'>Source code 🚀</a>
   </span>
@@ -11,10 +12,20 @@ const darkLink = 'rgb(26, 30, 43)';
   <a class='push-left' href='https://github.com/tervonugget'>Github</a>
   <a href='https://www.linkedin.com/in/trevortylerlee/'>LinkedIn</a>
   </span>
+  </div>
+  <!-- The sprites are from pokedb.net!  -->
+  <div class='pokemon'>
+    <img src='/bidoof.gif' alt='Gen 4 Pokemon Bidoof' />
+    <img src='/mudkip.gif' alt='Gen 2 Pokemon Mudkip' />
+    <img src='/ditto.gif' alt='Gen 1 Pokemon Ditto' />
+    <img src='/togepi.gif' alt='Gen 2 Pokemon Togepi' />
+    <img src='/pichu.gif' alt='Gen 2 Pokemon Pichu' />
+    <img src='/wooper.gif' alt='Gen 2 Pokemon Wooper' />
+  </div>
 </footer>
 
 <style define:vars={{ darkLink }}>
-  footer {
+  .links {
     display: flex;
     justify-content: space-between;
   }
@@ -44,6 +55,14 @@ const darkLink = 'rgb(26, 30, 43)';
 
   .hr {
     margin-top: 2rem;
+  }
+
+  .pokemon {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 2rem;
+    gap: 0.5rem;
   }
 
   @media (min-width: 40rem) {
