@@ -75,6 +75,7 @@ h2,
 h3,
 h4 {
   line-height: 1.25;
+  transition: 0.2s;
 }
 
 h1,
@@ -97,6 +98,10 @@ h3 {
 /* Posts */
 .post {
   --flow-space: var(--size-700);
+}
+
+p {
+  transition: 0.2s;
 }
 
 /* Misc */
