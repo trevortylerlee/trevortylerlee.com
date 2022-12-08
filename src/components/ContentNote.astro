@@ -1,0 +1,15 @@
+---
+const { type, content } = Astro.props
+---
+
+<div class='wrapper'>
+  <p>{ type === 'info' ? 'Info' : 'Tip' }</p>
+</div>
+
+<style>
+  .wrapper {
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+    background: green;
+  }
+</style>
