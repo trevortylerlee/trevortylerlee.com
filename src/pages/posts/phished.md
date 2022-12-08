@@ -9,4 +9,52 @@ image:
 
 In September 2022 I was selected to lead a team of seven developers and designers to create Phished, a platform where users are empowered to protect their friends & family from phishing attacks.
 
-Phished is still under development and will be officially unveiled at BCIT's Telus Theatre on December 2 – until then, feel free to check out the site as it develops at [phished.app](https://phished.app).
+Phished was an interdisplinary capstone project between two different programs at BCIT. We used Next.js, Firebase, and Nodemailer. On December 2 the team presented Phished at the Telus Theatre in front of our peers and industry professionals. [Click to check it out!](https://phished.app)
+
+<br />
+
+## The Problem
+
+Phishing is a type of online scam in which criminals send fake emails or texts that appear to come from legitimate organizations. Elderly people and other vulnerable groups are particularly at risk of falling for phishing scams because they may not be as familiar with the internet and technology as younger people, making them more likely to trust fake emails and websites.
+
+It is important for everyone, but particularly the vulnerable, to be aware of the risks of phishing and to take steps to protect themselves.
+
+<br />
+
+## The Solution
+
+With Phished, users can send (harmless) phishing emails to test their friends and family. This exposure helps elderly and other vulnerable people get better at avoiding actual phishing scams. They can gain real-life experience without any risk.
+
+![A screenshot showing the landing page of Phished.](/phished/home-screen.jpg)
+
+Users can also track progress over time on their dashboard – we track some baseline metrics, like how many of their phishing attempts are successful.
+
+<br />
+
+## The Design Process
+
+We began by creating our user personas. We used these personas to gain insight into their behaviours and pain points. After mapping out possible user journey maps, we began to ideate in Figma. 
+
+![The user personas created for Phished. They are both adult children who have family members or acquaintances that are vulnerable to phishing attacks.](/phished/personas.jpg)
+
+We created prototypes and iterated on them quickly to address pain points and other complaints we received during user testing.
+
+<br />
+
+## The Development Process
+
+Development was split into frontend and backend tasks. For the frontend we used Mantine UI to do most of the heavy lifting. 
+
+Backend development was significantly more challenging because we had to develop our own phishing technique. We experimented with several tools, including AWS SES. 
+
+We eventually settled on using Nodemailer, Firebase, Sendinblue, and Handlebars.js.
+
+<br />
+
+## Lessons Learned
+
+Overall, I'm proud of what we accomplished in the three months we had to develop Phished. My teammates were incredible to work with and are the reason this project turned out so well.
+
+This was my first time leading a team. I wanted to create a safe working environment, encourage communication, and empower my teammates to be independant. 
+
+I learned how important it is to be proactive, engaged, and enthusiastic. I think this project was great for me to develop my soft skills and learn what it means to work collaboratively. 

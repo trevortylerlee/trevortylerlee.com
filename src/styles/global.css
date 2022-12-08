@@ -95,11 +95,6 @@ h3 {
   font-size: var(--size-600);
 }
 
-/* Posts */
-.post {
-  --flow-space: var(--size-700);
-}
-
 p {
   transition: 0.2s;
 }
