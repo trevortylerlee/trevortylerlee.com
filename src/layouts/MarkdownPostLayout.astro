@@ -6,8 +6,8 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout pageTitle={frontmatter.title}>
   <div>
-    <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
-    <h1>{frontmatter.title}</h1>
+    {frontmatter.image ? <img src={frontmatter.image.url} alt={frontmatter.image.alt} /> : <></> }
+    <h1 class={frontmatter.image ? '' : 'title'}>{frontmatter.title}</h1>
     <p class="pub-date">{frontmatter.pubDate}</p>
     <hr />
     <div class="content">
@@ -38,12 +38,14 @@ const { frontmatter } = Astro.props;
     }
   }
 
-  img {
+  img,
+  .title {
     margin-top: 3rem;
   }
 
   @media (min-width: 40rem) {
-    img {
+    img,
+    .title {
       margin-top: 6rem;
     }
   }
