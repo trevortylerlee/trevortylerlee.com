@@ -92,7 +92,7 @@ h2 {
 }
 
 h3 {
-  font-size: var(--size-600);
+  font-size: var(--size-500);
 }
 
 p {
@@ -133,7 +133,7 @@ hr {
   }
 
   h2 {
-    font-size: var(--size-700);
+    font-size: var(--size-800);
   }
 
   p,
