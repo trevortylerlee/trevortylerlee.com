@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
   <div>
     {frontmatter.image ? <img src={frontmatter.image.url} alt={frontmatter.image.alt} /> : <></> }
     <h1 class={frontmatter.image ? '' : 'title'}>{frontmatter.title}</h1>
-    <p class="pub-date">{frontmatter.pubDate}</p>
+    {frontmatter.pubDate ? <p class="pub-date">{frontmatter.pubDate}</p> : <></>}
     <hr />
     <div class="content">
       <slot />
