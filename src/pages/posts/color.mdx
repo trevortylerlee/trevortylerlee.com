@@ -9,14 +9,13 @@ image:
 
 In this game users are prompted to guess the color when given an HTML color name. The most challenging part of this project was developing the scoring system – I decided to base it around the difference between the user's color and the actual value of the HTML color name using their RGB values.
 
-In modern browsers there are 140 HTML color names supported – some of the trickier ones to guess are gainsboro, rebeccapurple, and the infamous goldenrod.
-
 Calculating the color difference to create a reliable scoring system was much harder than I anticipated. Due to the way the human eyeball works, RGB values don't always correlate to how we perceive color.
 
 *Mathematically* the scoring system works, but to the human eye it's *perceptually* wrong. Obviously, this has led to many complaints.
 
 Anyways, check it out on [codesandbox](https://codesandbox.io/s/colormatch-bi3jrb).
 
+<br />
 <iframe src="https://codesandbox.io/embed/colormatch-bi3jrb?fontsize=14&hidenavigation=1&theme=dark&view=preview"
     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
     title="colormatch"
@@ -24,4 +23,6 @@ Anyways, check it out on [codesandbox](https://codesandbox.io/s/colormatch-bi3jr
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-The LCH color space is a perceptually-uniform color space that browsers are thinking about supporting. When and if that happens, I'll revisit this idea and make a V2. 
+<br />
+<br />
+<br />

@@ -126,6 +126,10 @@ hr {
   opacity: 0.25;
 }
 
+figcaption {
+  opacity: 0.5;
+}
+
 /* Larger viewports */
 @media (min-width: 40rem) {
   h1 {
