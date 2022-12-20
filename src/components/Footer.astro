@@ -11,10 +11,18 @@ const darkLink = 'rgb(26, 30, 43)';
   </span>
     <!-- The sprites are from pokedb.net!  -->
   <span class='pokemon'>
-    <img src='/ditto.gif' alt='Gen 1 Pokemon Ditto' />
-    <img src='/togepi.gif' alt='Gen 2 Pokemon Togepi' />
-    <img class='delete' src='/pichu.gif' alt='Gen 2 Pokemon Pichu' />
-    <img class='delete' src='/wooper.gif' alt='Gen 2 Pokemon Wooper' />
+    <span class='ditto name'>
+        <img src='/ditto.gif' alt='Ditto'/>
+    </span>
+    <span class='togepi name'>
+      <img src='/togepi.gif' alt='Togepi' />
+    </span>
+    <span class='pichu name'>
+      <img class='delete' src='/pichu.gif' alt='Pichu' />
+    </span>
+    <span class='wooper name'>
+      <img class='delete' src='/wooper.gif' alt='Wooper' />
+    </span>
   </span>
   </div>
 </footer>
@@ -61,6 +69,33 @@ const darkLink = 'rgb(26, 30, 43)';
     justify-content: space-evenly;
     align-items: baseline;
     text-align: center;
+  }
+
+  .name::after {
+    font-family: monospace;
+    position: absolute;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    transform: scale(0.9);
+  }
+
+  .name:hover::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .ditto::after {
+    content: 'ditto!';
+  }
+
+  .togepi::after {
+    content: 'togepi!';
+  }
+  .pichu::after {
+    content: 'pichu!';
+  }
+  .wooper::after {
+    content: 'wooper!';
   }
 
   @media (min-width: 40rem) {
