@@ -6,9 +6,11 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h1 class='name'>TREVOR LEE</h1>
-	<p>I'm a student at BCIT studying web development and digital design.</p>
-	<p>I use JavaScript, React, and NodeJS to create web applications.</p>
+	<div class='intro'>
+		<h1 class='name'>TREVOR LEE</h1>
+		<p>I'm a student at BCIT studying web development and digital design.</p>
+		<p>I use JavaScript, React, and NodeJS to create web applications.</p>
+	</div>
 	<Card
 	title="Phished – Phish Friends & Family"
 	desc="Protect people you care about from phishing attacks by phishing them yourself"
@@ -36,7 +38,16 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 <style>
 	h1 {
 		font-size: 3rem;
-		cursor: default;	}
+		cursor: default;
+	}
+
+	.name {
+		margin-top: 4rem;
+	}
+
+	.intro {
+		margin-bottom: 4rem;
+	}
 
 	@media (prefers-reduced-motion: no-preference) {
 		h1:hover {
@@ -87,25 +98,6 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 			}
 		}
 	}
-
-	/* @media (prefers-reduced-motion: no-preference) {
-		h1 {
-			animation: animation 4s infinite;
-		}
-
-		@keyframes animation {
-		0% {
-			text-emphasis-style: '✦';
-		}
-		50% {
-			text-emphasis-style: '✧';
-		}
-		100% {
-			text-emphasis-style: '✦';
-
-		}
-	}
-	} */
 
 	h2 {
 		font-size: 1.75rem;
