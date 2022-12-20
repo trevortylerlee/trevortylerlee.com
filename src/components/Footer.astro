@@ -31,6 +31,7 @@ const darkLink = 'rgb(26, 30, 43)';
     font-weight: 400;
     color: var(--darkLink);
     border-bottom: 2px solid transparent;
+    padding-top: 1em;
   }
 
   a:hover {
@@ -58,13 +59,9 @@ const darkLink = 'rgb(26, 30, 43)';
   .links {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 1rem;
+    align-items: baseline;
     text-align: center;
   }
-
-  /* img {
-    display: none;
-  } */
 
   @media (min-width: 40rem) {
     img {
@@ -78,9 +75,9 @@ const darkLink = 'rgb(26, 30, 43)';
     }
 
     .footer-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
     }
   }
 </style>
