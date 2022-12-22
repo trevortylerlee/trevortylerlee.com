@@ -6,7 +6,7 @@ import Button from '../components/TestButton';
 <hr />
 <div class="contact">
 		<h2 class='color'>Contact Me</h2>
-		<CopyButton
+		<!-- <CopyButton
 			client:idle
 			label="trevortylerlee@gmail.com"
 			value="trevortylerlee@gmail.com"
@@ -15,15 +15,17 @@ import Button from '../components/TestButton';
 			client:idle
 			label="778-235-3815"
 			value="7782353815"
-		/>
-		<Button
-			client:only="react"
-			message='trevortylerlee@gmail.com'
-		/>
-		<Button
-			client:only="react"
-			message='778-235-3815'
-		/>
+		/> -->
+		<div class='btn-wrapper'>
+			<Button
+				client:only="react"
+				message='trevortylerlee@gmail.com'
+			/>
+			<Button
+				client:only="react"
+				message='778-235-3815'
+			/>
+		</div>
 </div>
 
 <style>
@@ -42,6 +44,13 @@ import Button from '../components/TestButton';
 
 	hr {
 		margin-top: 2rem;
+	}
+
+	.btn-wrapper {
+		margin-top: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
   @media (prefers-reduced-motion: no-preference) {

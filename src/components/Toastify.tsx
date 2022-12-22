@@ -22,7 +22,9 @@ export default (Component) => {
           success: {
             duration: 3000,
             style: {
-              // background: 'green',
+              color: 'black',
+              background: 'white',
+              border: '3px solid black',
             },
           },
         }}
