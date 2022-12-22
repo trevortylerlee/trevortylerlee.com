@@ -1,27 +1,15 @@
 ---
 import CopyButton from '../components/CopyButton';
-import Button from '../components/TestButton';
-// import {Toaster} from './toast'
 ---
 <hr />
 <div class="contact">
 		<h2 class='color'>Contact Me</h2>
-		<!-- <CopyButton
-			client:idle
-			label="trevortylerlee@gmail.com"
-			value="trevortylerlee@gmail.com"
-		/>
-		<CopyButton
-			client:idle
-			label="778-235-3815"
-			value="7782353815"
-		/> -->
 		<div class='btn-wrapper'>
-			<Button
+			<CopyButton
 				client:only="react"
 				message='trevortylerlee@gmail.com'
 			/>
-			<Button
+			<CopyButton
 				client:only="react"
 				message='778-235-3815'
 			/>

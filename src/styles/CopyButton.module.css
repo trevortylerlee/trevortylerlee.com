@@ -1,14 +1,24 @@
 button {
-  margin-top: 1rem;
-  transition: 0.2s;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-weight: bold;
+  background: #ffffff;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  cursor: pointer;
+  transition: 0.2s
 }
 
 button:hover {
   transform: scale(1.02);
+  background: #f0f0f0
+}
+
+button:active {
+  transform: scale(0.97);
+  background: dodgerblue;
 }
 
 button:focus {
-  transform: scale(1.02);
-  outline: 2px solid dodgerblue !important;
-  outline-offset: 4px;
+  background: #ffffff;
 }
