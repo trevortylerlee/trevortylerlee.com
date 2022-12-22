@@ -36,16 +36,18 @@ export default Toastify(function Button({message}) {
       aria-label={message === 'trevortylerlee@gmail.com'
         ? 'Copy email' : 'Copy phone number'}
       onClick={notify}
-      style={{
-          borderRadius: '8px',
-          padding: '0.75rem',
-          fontWeight: 'bold',
-          background: '#ffffff',
-          border: 'none',
-          boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
-          cursor: 'pointer',
-          transition: '0.2s'
-      }}
+      style={style
+        // {
+        //   borderRadius: '8px',
+        //   padding: '0.75rem',
+        //   fontWeight: 'bold',
+        //   background: '#ffffff',
+        //   border: 'none',
+        //   boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
+        //   cursor: 'pointer',
+        //   transition: '0.2s'
+        // }
+      }
       >{message}</button>
   </>
 })
