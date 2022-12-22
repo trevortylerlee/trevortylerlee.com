@@ -8,6 +8,7 @@ button {
   cursor: pointer;
   transition: 0.2s;
   color: black;
+  transform: scale(1)
 }
 
 button:hover {
