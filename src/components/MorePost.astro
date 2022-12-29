@@ -3,24 +3,19 @@ const lightGlow = 'rgb(227, 227, 227)'
 const darkGlow = 'rgb(0, 84, 255)'
 const darkBg = 'rgb(41, 44, 57)'
 const lightBg = 'rgb(250, 250, 250)'
+const {date, href, title} = Astro.props
 ---
 
 <div class='wrapper'>
-  <hr />
-  <h2>More Posts</h2>
-  <a href='https://text2array.vercel.app/'>
+  <a href={href}>
   <div class='post'>
-    <p>Text 2 Array Tool</p>
-    <p class='date'>DEC 2022</p>
+    <p>{title}</p>
+    <p class='date'>{date}</p>
   </div>
   </a>
 </div>
 
 <style define:vars={{ lightGlow, darkGlow, lightBg, darkBg }}>
-  h2 {
-    margin-bottom: 1rem;
-  }
-
   p {
     margin: 0;
     padding: 0;
@@ -81,14 +76,6 @@ const lightBg = 'rgb(250, 250, 250)'
   .date {
     font-size: 0.75rem;
     opacity: 0.5;
-  }
-
-  .wrapper {
-    margin-bottom: 3rem;
-  }
-
-  hr {
-    margin-bottom: 2rem;
   }
 
 </style>

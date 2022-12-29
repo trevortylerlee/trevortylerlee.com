@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
-import Posts from '../components/Posts.astro';
+import MorePost from '../components/MorePost.astro';
 const pageTitle = "Trevor Tyler Lee | Homepage"
 ---
 
@@ -32,7 +32,18 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 	src="/creative-work.png"
 	alt='The words "Creative Work", with a scribbled arrow aimed at the words "& Other Stuff".'
 	/>
-	<Posts />
+	<hr />
+  <h2 class='more'>More Posts</h2>
+	<MorePost
+		date='DEC 2022'
+		href='https://text2array.vercel.app/'
+		title='Text 2 Array Tool'
+	/>
+	<MorePost 
+		date='DEC 2022'
+		href='https://swankyipsum.vercel.app/'
+		title='Swanky Ipsum'
+	/>
 </BaseLayout>
 
 <style>
@@ -102,6 +113,10 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 	h2 {
 		font-size: 1.75rem;
 		text-align: center;
+	}
+
+	.more {
+		text-align: left;
 	}
 
 	@media (min-width: 40rem) {
