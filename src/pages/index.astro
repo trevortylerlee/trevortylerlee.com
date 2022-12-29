@@ -18,13 +18,13 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 	src="/phished-screenshot.webp"
 	alt="A tablet and smartphone are next to each other, each displaying a screenshot from the Phished website. The Phished logo, a fish with an envelope for a body, is displayed on the right with the Phished wordmark."
 	/>
-	<Card
+	<!-- <Card
 	title="HTML Color Name Game"
 	desc="An HTML color name matching challenge scored by calculating the difference between two colors"
 	href="/posts/color"
 	src="/noisy-gradient.webp"
 	alt='A grainy gradient made of purple, pink, orange, and red.'
-	/>
+	/> -->
 	<Card
 	title="Creative Work & Other Stuff"
 	desc=""
@@ -34,15 +34,21 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 	/>
 	<hr />
   <h2 class='more'>More Posts</h2>
+	<MorePost 
+		date='DEC 2022'
+		href='https://swankyipsum.vercel.app/'
+		title='Swanky Ipsum'
+	/>
 	<MorePost
 		date='DEC 2022'
 		href='https://text2array.vercel.app/'
 		title='Text 2 Array Tool'
 	/>
-	<MorePost 
-		date='DEC 2022'
-		href='https://swankyipsum.vercel.app/'
-		title='Swanky Ipsum'
+	<MorePost
+		date='NOV 2022'
+		href='/posts/color'
+		title='HTML Color Name Game'
+		last
 	/>
 </BaseLayout>
 
