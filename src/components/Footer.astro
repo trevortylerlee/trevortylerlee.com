@@ -17,13 +17,13 @@ let pokeball = true;
         <img class='ditto-img' src='/ditto.gif' alt='Ditto'/>
     </span>
     <span class='togepi name'>
-      <img src='/togepi.gif' alt='Togepi' />
+      <img class='togepi-img' src='/togepi.gif' alt='Togepi' />
     </span>
     <span class='pichu name'>
-      <img class='delete' src='/pichu.gif' alt='Pichu' />
+      <img class='pichu-img' src='/pichu.gif' alt='Pichu' />
     </span>
     <span class='wooper name'>
-      <img class='delete' src='/wooper.gif' alt='Wooper' />
+      <img class='wooper-img' src='/wooper.gif' alt='Wooper' />
     </span>
   </span>
   </div>
@@ -180,6 +180,39 @@ let pokeball = true;
       target.src = '/pokeball.png'
     } else {
       target.src = '/ditto.gif'
+    }
+  })
+  
+  const togepi = document.querySelector('.togepi-img')
+  togepi.addEventListener('click', (e) => {
+    let target = e.target as HTMLImageElement;
+    console.log(target.src)
+    if (target.src === 'https://www.trevortylerlee.com/togepi.gif') {
+      target.src = '/pokeball.png'
+    } else {
+      target.src = '/togepi.gif'
+    }
+  })
+
+  const pichu = document.querySelector('.pichu-img')
+  pichu.addEventListener('click', (e) => {
+    let target = e.target as HTMLImageElement;
+    console.log(target.src)
+    if (target.src === 'https://www.trevortylerlee.com/pichu.gif') {
+      target.src = '/pokeball.png'
+    } else {
+      target.src = '/pichu.gif'
+    }
+  })
+  
+  const wooper = document.querySelector('.wooper-img')
+  wooper.addEventListener('click', (e) => {
+    let target = e.target as HTMLImageElement;
+    console.log(target.src)
+    if (target.src === 'https://www.trevortylerlee.com/wooper.gif') {
+      target.src = '/pokeball.png'
+    } else {
+      target.src = '/wooper.gif'
     }
   })
 </script>
