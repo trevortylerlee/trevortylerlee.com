@@ -1,5 +1,6 @@
 ---
 const darkLink = 'rgb(26, 30, 43)';
+let pokeball = true;
 ---
 
 <hr class='hr'/>
@@ -13,7 +14,7 @@ const darkLink = 'rgb(26, 30, 43)';
     <!-- The sprites are from pokedb.net!  -->
   <span class='pokemon'>
     <span class='ditto name'>
-        <img src='/ditto.gif' alt='Ditto'/>
+        <img class='ditto-img' src='/ditto.gif' alt='Ditto'/>
     </span>
     <span class='togepi name'>
       <img src='/togepi.gif' alt='Togepi' />
@@ -169,3 +170,16 @@ const darkLink = 'rgb(26, 30, 43)';
     }
   }
 </style>
+
+<script>
+  const ditto = document.querySelector('.ditto-img')
+  ditto.addEventListener('click', (e) => {
+    let target = e.target as HTMLImageElement;
+    console.log(target.src)
+    if (target.src === 'https://www.trevortylerlee.com/ditto.gif') {
+      target.src = '/pokeball.png'
+    } else {
+      target.src = '/ditto.gif'
+    }
+  })
+</script>
