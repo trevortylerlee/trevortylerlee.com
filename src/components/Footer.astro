@@ -1,6 +1,5 @@
 ---
 const darkLink = 'rgb(26, 30, 43)';
-let pokeball = true;
 ---
 
 <hr class='hr'/>
@@ -14,16 +13,16 @@ let pokeball = true;
     <!-- The sprites are from pokedb.net!  -->
   <span class='pokemon'>
     <span class='ditto name'>
-        <img class='ditto-img' src='/ditto.gif' alt='Ditto'/>
+        <img src='/ditto.gif' alt='Ditto'/>
     </span>
     <span class='togepi name'>
-      <img class='togepi-img' src='/togepi.gif' alt='Togepi' />
+      <img src='/togepi.gif' alt='Togepi' />
     </span>
     <span class='pichu name'>
-      <img class='pichu-img' src='/pichu.gif' alt='Pichu' />
+      <img class='delete' src='/pichu.gif' alt='Pichu' />
     </span>
     <span class='wooper name'>
-      <img class='wooper-img' src='/wooper.gif' alt='Wooper' />
+      <img class='delete' src='/wooper.gif' alt='Wooper' />
     </span>
   </span>
   </div>
@@ -170,49 +169,3 @@ let pokeball = true;
     }
   }
 </style>
-
-<script>
-  const ditto = document.querySelector('.ditto-img')
-  ditto.addEventListener('click', (e) => {
-    let target = e.target as HTMLImageElement;
-    console.log(target.src)
-    if (target.src === 'https://www.trevortylerlee.com/ditto.gif') {
-      target.src = '/pokeball.png'
-    } else {
-      target.src = '/ditto.gif'
-    }
-  })
-  
-  const togepi = document.querySelector('.togepi-img')
-  togepi.addEventListener('click', (e) => {
-    let target = e.target as HTMLImageElement;
-    console.log(target.src)
-    if (target.src === 'https://www.trevortylerlee.com/togepi.gif') {
-      target.src = '/pokeball.png'
-    } else {
-      target.src = '/togepi.gif'
-    }
-  })
-
-  const pichu = document.querySelector('.pichu-img')
-  pichu.addEventListener('click', (e) => {
-    let target = e.target as HTMLImageElement;
-    console.log(target.src)
-    if (target.src === 'https://www.trevortylerlee.com/pichu.gif') {
-      target.src = '/pokeball.png'
-    } else {
-      target.src = '/pichu.gif'
-    }
-  })
-  
-  const wooper = document.querySelector('.wooper-img')
-  wooper.addEventListener('click', (e) => {
-    let target = e.target as HTMLImageElement;
-    console.log(target.src)
-    if (target.src === 'https://www.trevortylerlee.com/wooper.gif') {
-      target.src = '/pokeball.png'
-    } else {
-      target.src = '/wooper.gif'
-    }
-  })
-</script>
