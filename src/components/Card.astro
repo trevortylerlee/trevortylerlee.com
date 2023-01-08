@@ -7,10 +7,10 @@ const darkGlow = 'rgb(0, 84, 255)'
 <a href={href}>
 <div class='card'>
   <img src={src} alt={alt}/>
-  <span class='title-wrapper'>
-    <p class='title'>{title}</p>
-    <svg class='arrow' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-  </span>
+    <p class='title'>
+      {title}
+      <svg class='arrow' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+    </p>
   <p>{desc}</p>
 </div>
 </a>
@@ -78,6 +78,7 @@ const darkGlow = 'rgb(0, 84, 255)'
     font-size: 1.25rem;
     font-weight: 600;
     margin-top: 1.25rem;
+    position: relative;
   }
 
   .title-wrapper {
@@ -89,6 +90,7 @@ const darkGlow = 'rgb(0, 84, 255)'
     margin-left: 0.5rem;
     opacity: 0;
     transition: 0.2s ease-in-out;
+    position: relative;
   }
 
   .card:hover .arrow {
