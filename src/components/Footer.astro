@@ -63,6 +63,31 @@ const darkLink = 'rgb(26, 30, 43)';
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .pokemon img {
+    transition: 0.2s;
+  }
+
+  .pokemon:hover img {
+    opacity: 0.5;
+  }
+
+  .ditto:hover img {
+    opacity: 1;
+  }
+  
+  .togepi:hover img {
+    opacity: 1;
+  }
+
+  .pichu:hover img {
+    opacity: 1;
+  }
+
+  .wooper:hover img {
+    opacity: 1;
   }
 
   .links {
@@ -88,16 +113,38 @@ const darkLink = 'rgb(26, 30, 43)';
 
   .ditto::after {
     content: 'ditto!';
+    margin-left: -1rem;
+    margin-top: -3rem;
+  }
+
+  .ditto:hover::after {
+    transform: rotate(-20deg);
   }
 
   .togepi::after {
     content: 'togepi!';
+    margin-top: -3.25rem;
   }
+
+  .togepi:hover::after {
+    transform: rotate(10deg);
+  }
+
   .pichu::after {
     content: 'pichu!';
   }
+
+  .pichu:hover::after {
+    transform: rotate(-5deg);
+  }
+
   .wooper::after {
     content: 'wooper!';
+    margin-top: -3.5rem;
+  }
+
+  .wooper:hover::after {
+    transform: rotate(5deg);
   }
 
   @media (min-width: 40rem) {
@@ -115,6 +162,10 @@ const darkLink = 'rgb(26, 30, 43)';
       display: flex;
       justify-content: space-between;
       margin-bottom: 1rem;
+    }
+
+    .pokemon {
+      margin-top: 0;
     }
   }
 </style>
