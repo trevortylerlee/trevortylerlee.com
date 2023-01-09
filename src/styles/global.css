@@ -9,14 +9,14 @@
   --size-700: 2.36rem;
   --size-800: 3.15rem;
   --size-900: 4.2rem;
-  --bg-color: rgb(230, 230, 230);
+  --bg-color: rgb(240, 240, 240);
   --text-color: rgb(26, 30, 43);
   --primary-color: dodgerblue;
 }
 
 .dark body {
   --bg-color: rgb(26, 30, 43);
-  --text-color: rgb(230, 230, 230);
+  --text-color: rgb(240, 240, 240);
   --primary-color: dodgerblue;
 }
 
