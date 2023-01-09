@@ -5,7 +5,6 @@ button {
   background: #ffffff;
   border: none;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  cursor: pointer;
   transition: 0.2s;
   color: black;
   transform: scale(1)
@@ -13,7 +12,7 @@ button {
 
 button:hover {
   transform: scale(1.02);
-  background: #f0f0f0
+  background: #fafafa;
 }
 
 button:active {

@@ -11,12 +11,12 @@
   --size-900: 4.2rem;
   --bg-color: rgb(240, 240, 240);
   --text-color: rgb(26, 30, 43);
-  --primary-color: dodgerblue;
+  --primary-color: rgb(21, 113, 205);
 }
 
 .dark body {
   --bg-color: rgb(26, 30, 43);
-  --text-color: rgb(240, 240, 240);
+  --text-color: rgb(245, 245, 240);
   --primary-color: dodgerblue;
 }
 
@@ -24,7 +24,6 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   padding: 2rem 1rem;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .wrapper {

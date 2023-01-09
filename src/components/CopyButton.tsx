@@ -21,7 +21,7 @@ export default Toastify(function Button({message}) {
     }
   }
 
-  const copy = async (message) => {
+  const copy = async (message: string) => {
     try {
       navigator.clipboard.writeText(message)
       return true
