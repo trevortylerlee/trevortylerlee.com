@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 /* Based on modularscale.com */
 :root {
   --size-300: 0.75rem;
@@ -22,6 +24,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   padding: 2rem 1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .wrapper {
@@ -162,7 +165,7 @@ figcaption {
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: 'Graphik', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Remove default margin */
