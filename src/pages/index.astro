@@ -8,6 +8,9 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 <BaseLayout pageTitle={pageTitle}>
 	<div class='intro'>
 		<h1 class='name'>Trevor Lee</h1>
+		<marquee aria-hidden="true" scrolldelay='120' scrollamount='4'>
+			<img class='magikarp' src="https://img.pokemondb.net/sprites/black-white/anim/normal/magikarp.gif" alt="Magikarp">
+		</marquee>
 	</div>
 	<Card
 	title="Phished – Phish Friends & Family"
@@ -119,6 +122,15 @@ const pageTitle = "Trevor Tyler Lee | Homepage"
 	.more {
 		text-align: left;
 		margin-top: 4rem;
+	}
+
+	marquee {
+		display: flex;
+	}
+
+	.magikarp {
+		display: inline;
+		touch-action: none;
 	}
 
 	@media (min-width: 40rem) {
