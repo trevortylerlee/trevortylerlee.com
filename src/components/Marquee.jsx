@@ -2,34 +2,34 @@
 
 export default function Marquee() {
   const possiblePokemon = {
-    0: 'darkrai',
-    1: 'gyarados',
-    2: 'aerodactyl',
-    3: 'lugia',
-    4: 'tympole',
-    5: 'hoppip',
-    6: 'combee',
-    7: 'geodude',
-    8: 'jigglypuff',
-    9: 'stunfisk',
-    10: 'swablu',
-    11: 'porygon-z',
-    12: 'magikarp',
-    13: 'drifloon',
-    14: 'mantine',
-    15: 'beedrill',
-    16: 'weezing',
-    17: 'yanma',
-    18: 'magnezone',
-    19: 'flygon',
-    20: 'haunter',
-    21: 'celebi',
-    22: 'jirachi',
-    23: 'mew',
+    0: 'weezing',
+    1: 'yanma',
+    2: 'magnezone',
+    3: 'flygon',
+    4: 'haunter',
+    5: 'celebi',
+    6: 'jirachi',
+    7: 'mew',
+    8: 'darkrai',
+    9: 'gyarados',
+    10: 'aerodactyl',
+    11: 'lugia',
+    12: 'tympole',
+    13: 'hoppip',
+    14: 'combee',
+    15: 'geodude',
+    16: 'jigglypuff',
+    17: 'stunfisk',
+    18: 'swablu',
+    19: 'porygon-z',
+    20: 'magikarp',
+    21: 'drifloon',
+    22: 'mantine',
+    23: 'beedrill',
   }
 
   const d = new Date()
-  let hour = d.getHours()
+  let hour = d.getUTCHours()
   let pokemon = possiblePokemon[hour]
 
   return <>
