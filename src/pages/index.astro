@@ -1,15 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
+import Marquee from '../components/Marquee';
 import MorePost from '../components/MorePost.astro';
 const pageTitle = "Trevor Lee | Homepage"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<div class='intro'>
-		<marquee aria-hidden="true" scrolldelay='120' scrollamount='4'>
+		<!-- <marquee aria-hidden="true" scrolldelay='120' scrollamount='4'>
 			<img class='magikarp' src="/magikarp.gif" alt="Magikarp">
-		</marquee>
+		</marquee> -->
+		<Marquee client:load/>
 		<h1 class='name'>Trevor Lee</h1>
 		<p class='desc'>Digital designer and web developer</p>
 	</div>
@@ -133,10 +135,10 @@ const pageTitle = "Trevor Lee | Homepage"
 		margin: 0;
 	}
 
-	.magikarp {
+	/* .magikarp {
 		display: inline;
 		touch-action: none;
-	}
+	} */
 
 	@media (min-width: 40rem) {
 		h1 {
