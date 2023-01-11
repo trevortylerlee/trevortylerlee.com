@@ -1,7 +1,14 @@
-// import style from '../styles/Marquee.module.css'
+---
 
-export default function Marquee() {
-  const possiblePokemon = {
+---
+<div>
+  <marquee id='marq' aria-hidden="true" scrolldelay='120' scrollamount='4' >
+    <img src='/pokemon/magikarp.gif' alt='magikarp' />
+  </marquee>
+</div>
+
+<script>
+    const possiblePokemon = {
     0: 'weezing',
     1: 'yanma',
     2: 'magnezone',
@@ -32,9 +39,7 @@ export default function Marquee() {
   let hour = d.getUTCHours()
   let pokemon = possiblePokemon[hour]
 
-  return <>
-    <marquee aria-hidden="true" scrolldelay='120' scrollamount='4'>
-      <img src={`/pokemon/${pokemon}.gif`} alt={`${pokemon}`} />
-    </marquee>
-  </>
-}
+  let marq = document.getElementById('marq')
+  console.log(marq.innerHTML)
+  marq.innerHTML = `<img src=${`/pokemon/${pokemon}.gif`} alt=${`${pokemon}`} />`
+</script>
