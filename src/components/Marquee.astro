@@ -1,45 +1,45 @@
 ---
-
 ---
+
 <div>
-  <marquee id='marq' aria-hidden="true" scrolldelay='120' scrollamount='4' >
-    <img src='/pokemon/magikarp.gif' alt='magikarp' />
+  <marquee id="marq" aria-hidden="true" scrolldelay="120" scrollamount="4">
+    <img src="/pokemon/magikarp.gif" alt="magikarp" />
   </marquee>
 </div>
 
 <script>
-    const possiblePokemon = {
-    0: 'weezing',
-    1: 'yanma',
-    2: 'magnezone',
-    3: 'flygon',
-    4: 'haunter',
-    5: 'celebi',
-    6: 'jirachi',
-    7: 'mew',
-    8: 'darkrai',
-    9: 'gyarados',
-    10: 'aerodactyl',
-    11: 'lugia',
-    12: 'tympole',
-    13: 'hoppip',
-    14: 'combee',
-    15: 'geodude',
-    16: 'jigglypuff',
-    17: 'stunfisk',
-    18: 'swablu',
-    19: 'porygon-z',
-    20: 'magikarp',
-    21: 'drifloon',
-    22: 'mantine',
-    23: 'beedrill',
-  }
+  const possiblePokemon = {
+    0: "weezing",
+    1: "yanma",
+    2: "magnezone",
+    3: "flygon",
+    4: "haunter",
+    5: "celebi",
+    6: "shuppet",
+    7: "mew",
+    8: "darkrai",
+    9: "gyarados",
+    10: "aerodactyl",
+    11: "lugia",
+    12: "tympole",
+    13: "hoppip",
+    14: "combee",
+    15: "geodude",
+    16: "ghastly",
+    17: "stunfisk",
+    18: "swablu",
+    19: "porygon-z",
+    20: "magikarp",
+    21: "drifloon",
+    22: "mantine",
+    23: "beedrill",
+  };
 
-  const d = new Date()
-  let hour = d.getUTCHours()
-  let pokemon = possiblePokemon[hour]
+  const d = new Date();
+  let hour = d.getUTCHours();
+  let pokemon = possiblePokemon[hour];
 
-  let marq = document.getElementById('marq')
-  console.log(marq.innerHTML)
-  marq.innerHTML = `<img src=${`/pokemon/${pokemon}.gif`} alt=${`${pokemon}`} />`
+  let marq = document.getElementById("marq");
+  console.log(marq.innerHTML);
+  marq.innerHTML = `<img src=${`/pokemon/${pokemon}.gif`} alt=${`${pokemon}`} />`;
 </script>
