@@ -11,7 +11,7 @@
   --size-900: 4.2rem;
   --bg-color: rgb(240, 240, 240);
   --text-color: rgb(26, 30, 43);
-  --primary-color: rgb(21, 113, 205);
+  --primary-color: dodgerblue;
 }
 
 .dark body {
@@ -24,11 +24,12 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   padding: 2rem 1rem;
+  font-family: 'Inter', sans-serif;
 }
 
 .wrapper {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 640px;
 }
 
 /* Link styling */
@@ -78,13 +79,9 @@ h4 {
   transition: 0.2s;
 }
 
-h1,
-h2 {
-  font-weight: 900;
-}
-
 h1 {
   font-size: var(--size-700);
+  font-weight: 900;
 }
 
 h2 {
@@ -97,6 +94,11 @@ h3 {
 
 p {
   transition: 0.2s;
+  font-size: var(--size-400);
+}
+
+a {
+  font-size: var(--size-400);
 }
 
 /* Misc */
@@ -127,26 +129,27 @@ hr {
 }
 
 figcaption {
-  opacity: 0.5;
+  opacity: 0.7;
+  text-align: center;
 }
 
 /* Larger viewports */
 @media (min-width: 40rem) {
   h1 {
-    font-size: var(--size-900);
+    font-size: var(--size-800);
   }
 
   h2 {
-    font-size: var(--size-800);
+    font-size: var(--size-700);
   }
 
   p,
   a {
-    font-size: var(--size-500);
+    font-size: var(--size-400);
   }
 
   blockquote p {
-    font-size: var(--size-600);
+    font-size: var(--size-500);
     max-width: 40ch;
   }
 
@@ -164,7 +167,6 @@ figcaption {
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
 
 /* Remove default margin */
