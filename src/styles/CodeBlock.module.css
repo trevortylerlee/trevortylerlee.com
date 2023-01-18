@@ -24,10 +24,6 @@ code {
 }
 
 @media (min-width: 40rem) {
-  code {
-    font-size: var(--size-400)
-  }
-
   pre {
     padding: 2rem;
   }
