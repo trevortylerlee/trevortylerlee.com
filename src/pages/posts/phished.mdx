@@ -77,7 +77,9 @@ export default function App({
 
 Firebase allowed us to easily integrate a real-time database that stores data as JSON and can be accessed directly from the client-side. Along with Firebase's security and data validation tools, we're utilizing their serverless function triggers to send our phishing emails.
 
-Our emails are sent with [Nodemailer](https://nodemailer.com/about/), a module for Node.js applications. We use [sendinblue](https://www.sendinblue.com/) as our email service provider and [Handlebars.js](https://handlebarsjs.com/), a templating language for generating HTML content.
+To make this project work, we had to figure out how to send (harmless) phishing emails without getting blacklisted or sent to spam. Initially we thought about using AWS SES (Simple Email Service) but that fizzled out when Amazon rejected our application.
+
+After plenty of trial and effort, we ended up using [Nodemailer](https://nodemailer.com/about/), a module for Node.js applications. We use [sendinblue](https://www.sendinblue.com/) as our email service provider and [Handlebars.js](https://handlebarsjs.com/) to create emails. Handlebars is a templating language that allows us to render styled HTML content in an email.
 
 ```js
 // A phishing email example using Handlebars.js

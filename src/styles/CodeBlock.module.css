@@ -20,7 +20,7 @@ code {
   border-radius: 0.5rem;
   font-family: 'JetBrains Mono', monospace;
   direction: ltr;
-  font-size: var(--size-400);
+  font-size: var(--size-300);
 }
 
 @media (min-width: 40rem) {
