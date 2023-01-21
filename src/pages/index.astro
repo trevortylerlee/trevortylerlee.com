@@ -1,144 +1,165 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Card from '../components/Card.astro';
-import Marquee from '../components/Marquee.astro'
-import MorePost from '../components/MorePost.astro';
-const pageTitle = "Trevor Lee | Homepage"
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
+import Marquee from "../components/Marquee.astro";
+import MorePost from "../components/MorePost.astro";
+
+const pageTitle = "Trevor Lee | Homepage";
+const allPosts = await Astro.glob("../pages/posts/*.mdx");
+
+const latestThreePosts = allPosts.slice(Math.max(allPosts.length - 3, 0));
+const postsSorted = latestThreePosts.reverse();
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<div class='intro'>
-		<Marquee />
-		<h1 class='name'>Trevor Lee</h1>
-		<p class='desc'>Digital designer and web developer</p>
-	</div>
-	<hr />
-	<Card
-	title="Phished – Phish Friends & Family"
-	desc="Protect people you care about from phishing attacks by phishing them yourself"
-	href="/posts/phished"
-	src="/phished-screenshot.webp"
-	alt="A tablet and smartphone are next to each other, each displaying a screenshot from the Phished website. The Phished logo, a fish with an envelope for a body, is displayed on the right with the Phished wordmark."
-	/>
-	<Card
-	title="Text 2 Array Tool"
-	desc="Make typing arrays less painful"
-	href="/posts/text2array"
-	src="/t2a.jpg"
-	alt='The acronym t2a being spread into an array that contains the elements t, 2, and a.'
-	/>
-	<Card
-	title="Creative Work & Other Stuff"
-	desc=""
-	href="/posts/design"
-	src="/creative-work.png"
-	alt='The words "Creative Work", with a scribbled arrow aimed at the words "& Other Stuff".'
-	/>
-	<hr />
-  <h2 class='more'>More Posts</h2>
-	<MorePost 
-		date='DEC 2022'
-		href='https://swankyipsum.vercel.app/'
-		title='Swanky Ipsum'
-	/>
-	<MorePost
-		date='NOV 2022'
-		href='/posts/color'
-		title='HTML Color Name Game'
-		last
-	/>
+  <div class="intro">
+    <Marquee />
+    <h1 class="name">Trevor Lee</h1>
+    <p class="desc">Digital designer and web developer</p>
+  </div>
+  <hr />
+  <Card
+    title="Phished – Phish Friends & Family"
+    desc="Protect people you care about from phishing attacks by phishing them yourself"
+    href="/posts/phished"
+    src="/phished-screenshot.webp"
+    alt="A tablet and smartphone are next to each other, each displaying a screenshot from the Phished website. The Phished logo, a fish with an envelope for a body, is displayed on the right with the Phished wordmark."
+  />
+  <Card
+    title="Text 2 Array Tool"
+    desc="Make typing arrays less painful"
+    href="/posts/text2array"
+    src="/t2a.jpg"
+    alt="The acronym t2a being spread into an array that contains the elements t, 2, and a."
+  />
+  <Card
+    title="Creative Work & Other Stuff"
+    desc=""
+    href="/posts/design"
+    src="/creative-work.png"
+    alt='The words "Creative Work", with a scribbled arrow aimed at the words "& Other Stuff".'
+  />
+  <hr />
+  <h2 class="more">More Posts</h2>
+  <!-- <MorePost
+    date="DEC 2022"
+    href="https://swankyipsum.vercel.app/"
+    title="Swanky Ipsum"
+  />
+  <MorePost
+    date="NOV 2022"
+    href="/posts/color"
+    title="HTML Color Name Game"
+    last
+  /> -->
+  {
+    postsSorted.map((post) => (
+      <MorePost
+        date={post.frontmatter.date}
+        href={post.frontmatter.url}
+        title={post.frontmatter.title}
+      />
+    ))
+  }
 </BaseLayout>
 
 <style>
-	h1 {
-		font-size: 3rem;
-		cursor: default;
-		display: inline;
-	}
+  h1 {
+    font-size: 3rem;
+    cursor: default;
+    display: inline;
+  }
 
-	.name,
-	.desc {
-		margin: 0;
-		position: relative;
-		top: -1rem;
-	}
+  .name,
+  .desc {
+    margin: 0;
+    position: relative;
+    top: -1rem;
+  }
 
-	.desc {
-		margin-bottom: 4rem;
-	}
+  .desc {
+    margin-bottom: 4rem;
+  }
 
-	@media (prefers-reduced-motion: no-preference) {
-		h1:hover {
-		background-image: linear-gradient(140deg, rgba(252,50,254,1) 15%, rgba(255,59,0,1) 30%, rgba(241,255,33,1) 45%, rgba(73,227,253,1) 60%, rgba(51,254,4,1) 75%, rgba(43,47,255,1) 90%
-);
-		-webkit-background-clip: text;
-  	-webkit-text-fill-color: transparent; 
-  	-moz-background-clip: text;
-  	-moz-text-fill-color: transparent;
-		background-size: 400%;
-		animation: animation 1s ease-in-out infinite;
-		transform: scale(1.02);
-		}
+  @media (prefers-reduced-motion: no-preference) {
+    h1:hover {
+      background-image: linear-gradient(
+        140deg,
+        rgba(252, 50, 254, 1) 15%,
+        rgba(255, 59, 0, 1) 30%,
+        rgba(241, 255, 33, 1) 45%,
+        rgba(73, 227, 253, 1) 60%,
+        rgba(51, 254, 4, 1) 75%,
+        rgba(43, 47, 255, 1) 90%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
+      background-size: 400%;
+      animation: animation 1s ease-in-out infinite;
+      transform: scale(1.02);
+    }
 
-		@keyframes animation {
-			0% {
-				background-position: 0% 100%;
-			}
-			10% {
-				background-position: 40% 80%
-			}
-			20% {
-				background-position: 80% 60%
-			}
-			30% {
-				background-position: 120% 40%
-			}
-			40% {
-				background-position: 160% 20%
-			}
-			50% {
-				background-position: 200% 0%
-			}
-			60% {
-				background-position: 160% 20%
-			}
-			70% {
-				background-position: 120% 40%
-			}
-			80% {
-				background-position: 80% 60%
-			}
-			90% {
-				background-position: 40% 80%
-			}
-			100% {
-				background-position: 0% 100%
-			}
-		}
-	}
+    @keyframes animation {
+      0% {
+        background-position: 0% 100%;
+      }
+      10% {
+        background-position: 40% 80%;
+      }
+      20% {
+        background-position: 80% 60%;
+      }
+      30% {
+        background-position: 120% 40%;
+      }
+      40% {
+        background-position: 160% 20%;
+      }
+      50% {
+        background-position: 200% 0%;
+      }
+      60% {
+        background-position: 160% 20%;
+      }
+      70% {
+        background-position: 120% 40%;
+      }
+      80% {
+        background-position: 80% 60%;
+      }
+      90% {
+        background-position: 40% 80%;
+      }
+      100% {
+        background-position: 0% 100%;
+      }
+    }
+  }
 
-	h2 {
-		font-size: 1.75rem;
-		text-align: center;
-	}
+  h2 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
 
-	.more {
-		text-align: left;
-		margin-top: 4rem;
-	}
+  .more {
+    text-align: left;
+    margin-top: 4rem;
+  }
 
-	marquee {
-		display: flex;
-		margin: 0;
-	}
+  marquee {
+    display: flex;
+    margin: 0;
+  }
 
-	@media (min-width: 40rem) {
-		h1 {
-			font-size: 5.5rem;
-		}
-		
-		h2 {
-			font-size: 3rem;
-		}
-	}
+  @media (min-width: 40rem) {
+    h1 {
+      font-size: 5.5rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+  }
 </style>
