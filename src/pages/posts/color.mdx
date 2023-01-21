@@ -1,26 +1,29 @@
 ---
-layout: '../../layouts/MarkdownPostLayout.astro'
-title: 'HTML Color Name Game'
-pubDate: 'Published on November 21, 2022'
+layout: "../../layouts/MarkdownPostLayout.astro"
+title: "HTML Color Name Game"
+pubDate: "Published on November 21, 2022"
+date: "NOV 2022"
 image:
-    url: '/noisy-gradient.webp'
-    alt: 'A grainy gradient made of purple, pink, orange, and red.'
+  url: "/noisy-gradient.webp"
+  alt: "A grainy gradient made of purple, pink, orange, and red."
+url: "/posts/color"
 ---
 
 In this game users are prompted to guess the color when given an HTML color name. The most challenging part of this project was developing the scoring system – I decided to base it around the difference between the user's color and the actual value of the HTML color name using their RGB values.
 
 Calculating the color difference to create a reliable scoring system was much harder than I anticipated. Due to the way the human eyeball works, RGB values don't always correlate to how we perceive color.
 
-*Mathematically* the scoring system works, but to the human eye it's *perceptually* wrong. Obviously, this has led to many complaints.
+_Mathematically_ the scoring system works, but to the human eye it's _perceptually_ wrong. Obviously, this has led to many complaints.
 
 Anyways, check it out on [codesandbox](https://codesandbox.io/s/colormatch-bi3jrb).
 
 <br />
-<iframe src="https://codesandbox.io/embed/colormatch-bi3jrb?fontsize=14&hidenavigation=1&theme=dark&view=preview"
-    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-    title="colormatch"
-    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+<iframe
+  src="https://codesandbox.io/embed/colormatch-bi3jrb?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="colormatch"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
 <br />
