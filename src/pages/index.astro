@@ -3,12 +3,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import Marquee from "../components/Marquee.astro";
 import MorePost from "../components/MorePost.astro";
+import { getDate } from "../../public/getDate";
 
 const pageTitle = "Trevor Lee | Homepage";
 const allPosts = await Astro.glob("../pages/posts/*.mdx");
 
 const latestThreePosts = allPosts.slice(Math.max(allPosts.length - 3, 0));
-const postsSorted = latestThreePosts.reverse();
+const sortedPosts = latestThreePosts.reverse();
+
+let dates = [];
+for (let i = 0; i < sortedPosts.length; i++) {
+  const date = getDate(sortedPosts[i].frontmatter.date);
+  dates.push(date);
+}
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -53,9 +60,9 @@ const postsSorted = latestThreePosts.reverse();
     last
   /> -->
   {
-    postsSorted.map((post) => (
+    sortedPosts.map((post, i) => (
       <MorePost
-        date={post.frontmatter.date}
+        date={dates[i].abbreviation}
         href={post.frontmatter.url}
         title={post.frontmatter.title}
       />
