@@ -93,63 +93,6 @@ for (let i = 0; i < sortedPosts.length; i++) {
     margin-bottom: 4rem;
   }
 
-  @media (prefers-reduced-motion: no-preference) {
-    h1:hover {
-      background-image: linear-gradient(
-        140deg,
-        rgba(252, 50, 254, 1) 15%,
-        rgba(255, 59, 0, 1) 30%,
-        rgba(241, 255, 33, 1) 45%,
-        rgba(73, 227, 253, 1) 60%,
-        rgba(51, 254, 4, 1) 75%,
-        rgba(43, 47, 255, 1) 90%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -moz-background-clip: text;
-      -moz-text-fill-color: transparent;
-      background-size: 400%;
-      animation: animation 1s ease-in-out infinite;
-      transform: scale(1.02);
-    }
-
-    @keyframes animation {
-      0% {
-        background-position: 0% 100%;
-      }
-      10% {
-        background-position: 40% 80%;
-      }
-      20% {
-        background-position: 80% 60%;
-      }
-      30% {
-        background-position: 120% 40%;
-      }
-      40% {
-        background-position: 160% 20%;
-      }
-      50% {
-        background-position: 200% 0%;
-      }
-      60% {
-        background-position: 160% 20%;
-      }
-      70% {
-        background-position: 120% 40%;
-      }
-      80% {
-        background-position: 80% 60%;
-      }
-      90% {
-        background-position: 40% 80%;
-      }
-      100% {
-        background-position: 0% 100%;
-      }
-    }
-  }
-
   h2 {
     font-size: 1.75rem;
     text-align: center;
