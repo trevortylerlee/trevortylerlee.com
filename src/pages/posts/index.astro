@@ -15,15 +15,6 @@ for (let i = 0; i < sortedPosts.length; i++) {
 
 <BaseLayout>
   <h1>All Posts</h1>
-  <!-- {
-    allPosts.map((post) => (
-      <div>
-        <a class="post" href={post.url}>
-          {post.frontmatter.title}
-        </a>
-      </div>
-    ))
-  } -->
   {
     sortedPosts.map((post, i) => (
       <MorePost
