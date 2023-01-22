@@ -23,6 +23,10 @@ code {
   font-size: var(--size-300);
 }
 
+p code {
+  font-size: inherit;
+}
+
 @media (min-width: 40rem) {
   pre {
     padding: 2rem;
