@@ -47,7 +47,10 @@ for (let i = 0; i < sortedPosts.length; i++) {
     alt='The words "Creative Work", with a scribbled arrow aimed at the words "& Other Stuff".'
   />
   <hr />
-  <h2 class="more">More Posts</h2>
+  <div class="latest-posts">
+    <h2 class="more">Latest Posts</h2>
+    <a class="view-all" href="/posts">View all</a>
+  </div>
   <!-- <MorePost
     date="DEC 2022"
     href="https://swankyipsum.vercel.app/"
@@ -158,6 +161,25 @@ for (let i = 0; i < sortedPosts.length; i++) {
   marquee {
     display: flex;
     margin: 0;
+  }
+
+  .view-all {
+    color: inherit;
+    border-color: rgba(0, 0, 0, 0);
+    opacity: 0.75;
+  }
+
+  .view-all:hover,
+  .view-all:focus-visible {
+    border-color: dodgerblue;
+    color: dodgerblue;
+    opacity: 1;
+  }
+
+  .latest-posts {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   @media (min-width: 40rem) {

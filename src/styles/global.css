@@ -125,6 +125,7 @@ blockquote {
 hr {
   margin-top: var(--size-400);
   margin-bottom: var(--size-400);
+  border-bottom: 1px solid gray;
   opacity: 0.25;
 }
 
@@ -156,7 +157,6 @@ figcaption {
   hr {
     margin-top: var(--size-600);
     margin-bottom: var(--size-600);
-    opacity: 0.25;
   }
 }
 

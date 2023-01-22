@@ -1,8 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MorePost from "../../components/MorePost.astro";
+import { getDate } from "../../../public/getDate";
 
 const allPosts = await Astro.glob("../posts/*.mdx");
+const sortedPosts = allPosts.reverse();
+
+let dates = [];
+for (let i = 0; i < sortedPosts.length; i++) {
+  const date = getDate(sortedPosts[i].frontmatter.date);
+  dates.push(date);
+}
 ---
 
 <BaseLayout>
@@ -17,9 +25,9 @@ const allPosts = await Astro.glob("../posts/*.mdx");
     ))
   } -->
   {
-    allPosts.map((post) => (
+    sortedPosts.map((post, i) => (
       <MorePost
-        date={post.frontmatter.date}
+        date={dates[i].abbreviation}
         href={post.frontmatter.url}
         title={post.frontmatter.title}
       />
