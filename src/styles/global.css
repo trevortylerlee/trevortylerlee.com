@@ -12,12 +12,14 @@
   --bg-color: rgb(240, 240, 240);
   --text-color: rgb(26, 30, 43);
   --primary-color: dodgerblue;
+  --code-bg-color: #0c1117;
 }
 
 .dark body {
   --bg-color: rgb(26, 30, 43);
   --text-color: rgb(245, 245, 240);
   --primary-color: dodgerblue;
+  --code-bg-color: white;
 }
 
 body {
