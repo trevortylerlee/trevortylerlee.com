@@ -9,18 +9,27 @@ image:
 url: "/posts/phished"
 ---
 
-In September 2022 I was selected to lead a team of seven developers and designers to create Phished, a platform where users are empowered to protect their friends & family from phishing attacks.
+import Technologies from "../../components/Technologies.astro";
 
-Phished was an interdisplinary capstone project between two different programs at BCIT. We used Next.js, Firebase, and Nodemailer. [Click to check it out!](https://phished.up.railway.app/)
+<Technologies
+  emoji="📟"
+  type="tech"
+  string="Next.js, Firebase, Nodemailer, NextAuth, Mantine,
+  Handlebars.js, Chart.js"
+/>
+
+<br />
+
+I led a team of seven to create Phished, a web application to send (harmless!) phishing emails and track the results. [Click to check it out!](https://phished.up.railway.app/)
 
 <br />
 <br />
 
-## Frontend and Authentication
+## Why build Phished?
 
-We used the [Mantine component library](https://mantine.dev/) to build out our front-end. Mantine made it easy to integrate theming and custom styling into our web app. To authenticate users we used NextAuth.js (now known as [Auth.js](https://authjs.dev/)) which made it straightforward to setup and connect Phished to OAuth2 and OpenID Connect providers. We chose these tools because they're open-source, TypeScript based, and have great documentation.
+Our goal for this project was to encourage users to take a proactive role in the fight against phishing emails. We found that elderly individuals are disproportionally targeted and impacted by online scams, many of which originate from fraudulent emails.
 
-Our <code>\_app.jsx</code> document imports providers from Mantine and Auth.js to handle our theming and user sessions.
+We also realized that those same elderly users were unlikely to be the ones using Phished, so our focus was on giving Internet-savvy a tool to educate their loved ones in an interactive and positive manner. The best way to learn is to do, which means that in order to get better at avoiding phishing emails we need to expose them to real-world examples.
 
 ```js
 import { useState } from "react";

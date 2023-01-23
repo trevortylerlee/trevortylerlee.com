@@ -1,0 +1,37 @@
+---
+const { emoji, string, type } = Astro.props;
+---
+
+<div class={`callout ${type}`}>
+  <div>
+    <p class="emoji">{emoji}</p>
+  </div>
+  <div>
+    <p class="string">{string}</p>
+  </div>
+</div>
+
+<style>
+  .callout {
+    padding: 0.1em 0.5em;
+    border-radius: 8px;
+    display: flex;
+  }
+
+  .tech {
+    background: #151e36;
+    color: #bedbfe;
+    outline: 0.5px solid #bedbfe;
+  }
+
+  .emoji {
+    position: relative;
+    vertical-align: text-top;
+    left: 0.25em;
+  }
+
+  .string {
+    position: relative;
+    left: 1rem;
+  }
+</style>
