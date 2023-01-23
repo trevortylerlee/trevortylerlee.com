@@ -1,0 +1,88 @@
+---
+layout: "../../layouts/MarkdownPostLayout.astro"
+title: "How to use react-hot-toast with Astro"
+pubDate: "Published on January 23, 2023"
+date: "230123"
+url: "/posts/hotToast"
+---
+
+import { Code } from "astro/components";
+
+Struggling to get [react-hot-toast](https://react-hot-toast.com/) working on your Astro site? I did, too – thankfully, @happydev on the Astro discord was able to figure it out.
+
+To get react-hot-toast working, **it needs to be in the same Astro island as the component that is triggering the toast.** An Astro island is an interactive UI component on an otherwise static HTML page. Astro islands exist because Astro, by default, generates websites with zero client-side JavaScript. Sometimes we need a little JavaScript for some interactivity on our site – that's what Astro islands are for.
+
+<br />
+
+### 1. Install react-hot-toast
+
+```
+npm install react-hot-toast
+```
+
+<br />
+
+### 2. Create a React component to trigger the toast
+
+We'll use a button to trigger our toast notification.
+
+```jsx
+export default function Button() {
+  return <button>Toast!</button>;
+}
+```
+
+<br />
+
+### 3. Create a toast component
+
+We're going to make a Toast component that we can then import into our React component. In a new file (I called mine `Toastify.tsx`), import `Toaster` from react-hot-toast and customize it however you want.
+
+```jsx
+import { Toaster } from "react-hot-toast";
+
+export default (Component) => {
+  return (props) => (
+    <>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#363636",
+            color: "#fff",
+          },
+
+          // Default options for specific types
+          success: {
+            duration: 3000,
+            style: {
+              color: "black",
+              background: "white",
+              border: "3px solid black",
+            },
+          },
+        }}
+      />
+      <Component {...props} />
+    </>
+  );
+};
+```
+
+<br />
+
+### 4. Import the toast component into the React component
+
+We're going to wrap the button component that we made in our new `<Toastify />` component. Let's also setup a function called `notify` that will trigger a toast when our button is clicked.
+
+```jsx
+import Toastify from "./Toastify";
+import toast from "react-hot-toast";
+```
