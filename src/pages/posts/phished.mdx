@@ -14,7 +14,7 @@ import Technologies from "../../components/Technologies.astro";
 <Technologies
   emoji="📟"
   type="tech"
-  string="Next.js, Firebase, Nodemailer, NextAuth, Mantine,
+  string="Technologies used: Next.js, Firebase, Nodemailer, NextAuth, Mantine,
   Handlebars.js, Chart.js"
 />
 
@@ -30,88 +30,3 @@ I led a team of seven to create Phished, a web application to send (harmless!) p
 Our goal for this project was to encourage users to take a proactive role in the fight against phishing emails. We found that elderly individuals are disproportionally targeted and impacted by online scams, many of which originate from fraudulent emails.
 
 We also realized that those same elderly users were unlikely to be the ones using Phished, so our focus was on giving Internet-savvy a tool to educate their loved ones in an interactive and positive manner. The best way to learn is to do, which means that in order to get better at avoiding phishing emails we need to expose them to real-world examples.
-
-```js
-import { useState } from "react";
-import { ColorSchemeProvider, MantineProvider } from "@mantine/core";
-import { authOptions } from "./api/auth/[...nextauth]";
-import { unstable_getServerSession } from "next-auth";
-import { SessionProvider } from "next-auth/react";
-
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
-  const [colorScheme, setColorScheme] = useState("light");
-
-  function toggleColorScheme(value) {
-    const nextColorScheme =
-      value || (colorScheme === "dark" ? "light" : "dark");
-    setColorScheme(nextColorScheme);
-  }
-
-  return (
-    <>
-      <SessionProvider session={session}>
-        <ColorSchemeProvider
-          colorScheme={colorScheme}
-          toggleColorScheme={toggleColorScheme}
-        >
-          <MantineProvider
-            withGlobalStyles
-            withNormalizeCSS
-            theme={{ colorScheme }}
-          >
-            <Component {...pageProps} />
-          </MantineProvider>
-        </ColorSchemeProvider>
-      </SessionProvider>
-    </>
-  );
-}
-```
-
-<br />
-
-<figure>
-  ![A screenshot showing Phished in light and dark
-  mode.](/phished/dark-light.jpg)
-  <figcaption>
-    Mantine makes it easy to implement a light and dark theme.
-  </figcaption>
-</figure>
-
-<br />
-<br />
-
-## Backend and Phishing Emails
-
-Firebase allowed us to easily integrate a real-time database that stores data as JSON and can be accessed directly from the client-side. Along with Firebase's security and data validation tools, we're utilizing their serverless function triggers to send our phishing emails.
-
-To make this project work, we had to figure out how to send (harmless) phishing emails without getting blacklisted or sent to spam. Initially we thought about using AWS SES (Simple Email Service) but that fizzled out when Amazon rejected our application.
-
-After plenty of trial and effort, we ended up using [Nodemailer](https://nodemailer.com/about/), a module for Node.js applications. We use [sendinblue](https://www.sendinblue.com/) as our email service provider and [Handlebars.js](https://handlebarsjs.com/) to create emails. Handlebars is a templating language that allows us to render styled HTML content in an email.
-
-```js
-// A phishing email example using Handlebars.js
-
-<body>
-  <div id="data"></div>
-  <h2>FACEBOOK</h2>
-  <hr />
-  <p>Hello {{ bodyName }},</p>
-  <p>Your Facebook password was changed on {{ datetime }}</p>
-  <p>
-    <strong>If you did this, </strong>you can safely disregard this email.
-  </p>
-  <p>
-    <strong>If you didn't do this, </strong>please{" "}
-    <a href={{ phishedLink }}>secure your account</a>.
-  </p>
-  <p>Thank you, </p>
-  <p>The Facebook Security Team</p>
-  <br />
-  <br />
-  <a href={{ unsubscribeLink }}>Unsubscribe</a>
-</body>
-```
