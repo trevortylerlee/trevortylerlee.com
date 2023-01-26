@@ -25,16 +25,6 @@ code {
 
 p code {
   font-size: inherit;
-  background-color: var(--code-bg-color);
-  border-radius: 0;
-  padding-left: 0.25em;
-  padding-right: 0.25em;
-  color: var(--bg-color)
-}
-
-p code::selection {
-  background: var(--bg-color);
-  color: var(--primary-color);
 }
 
 h3 code {
