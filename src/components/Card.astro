@@ -1,18 +1,31 @@
 ---
-const { title, desc, href, alt, src } = Astro.props
-const lightGlow = 'rgb(227, 227, 227)'
-const darkGlow = 'rgb(0, 84, 255)'
+const { title, desc, href, alt, src } = Astro.props;
+const lightGlow = "rgb(227, 227, 227)";
+const darkGlow = "rgb(0, 84, 255)";
 ---
 
-<a href={href}>
-<div class='card'>
-  <img src={src} alt={alt}/>
-    <p class='title'>
+<a href={`/posts/${href}/`}>
+  <div class="card">
+    <img src={src} alt={alt} />
+    <p class="title">
       {title}
-      <svg class='arrow' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      <svg
+        class="arrow"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><line x1="5" y1="12" x2="19" y2="12"></line><polyline
+          points="12 5 19 12 12 19"></polyline>
+      </svg>
     </p>
-  <p>{desc}</p>
-</div>
+    <p>{desc}</p>
+  </div>
 </a>
 
 <style define:vars={{ lightGlow, darkGlow }}>
@@ -22,7 +35,7 @@ const darkGlow = 'rgb(0, 84, 255)'
     margin: 2rem 0;
     border-radius: 8px;
 
-    -webkit-user-select: none; /* Safari */        
+    -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
@@ -40,7 +53,7 @@ const darkGlow = 'rgb(0, 84, 255)'
     box-shadow: 0 0 1rem var(--lightGlow);
     text-shadow: 0 0 1rem var(--lightGlow);
   }
-  
+
   img {
     transition: 0.2s ease-in-out;
   }
