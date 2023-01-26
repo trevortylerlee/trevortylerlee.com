@@ -7,7 +7,7 @@ const { date, href, title, last } = Astro.props;
 ---
 
 <div class={last ? "last" : ""}>
-  <a href={href}>
+  <a href={`/posts/${href}`}>
     <div class="post">
       <p>{title}</p>
       <p class="date">{date}</p>

@@ -1,26 +1,32 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MorePost from "../../components/MorePost.astro";
-import { getDate } from "../../../public/getDate";
 
-const allPosts = await Astro.glob("../posts/*.mdx");
-const sortedPosts = allPosts.reverse();
+export async function getStaticPaths() {
+  const allPosts = await getCollection("posts");
 
-let dates = [];
-for (let i = 0; i < sortedPosts.length; i++) {
-  const date = getDate(sortedPosts[i].frontmatter.date);
-  dates.push(date);
+  return allPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+    },
+  }));
 }
+
+const allPosts = await getCollection("posts");
+const { page } = Astro.props;
 ---
 
 <BaseLayout>
   <h1>All Posts</h1>
   {
-    sortedPosts.map((post, i) => (
+    allPosts.map((page) => (
       <MorePost
-        date={dates[i].abbreviation}
-        href={post.frontmatter.url}
-        title={post.frontmatter.title}
+        date={page.data.date}
+        href={page.slug}
+        title={page.data.title}
       />
     ))
   }

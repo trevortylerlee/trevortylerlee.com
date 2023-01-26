@@ -1,21 +1,16 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import Marquee from "../components/Marquee.astro";
 import MorePost from "../components/MorePost.astro";
-import { getDate } from "../../public/getDate";
 
 const pageTitle = "Trevor Lee | Homepage";
-const allPosts = await Astro.glob("../pages/posts/*.mdx");
+const allPosts = await getCollection("posts");
 
 const latestThreePosts = allPosts.slice(Math.max(allPosts.length - 3, 0));
 const sortedPosts = latestThreePosts.reverse();
-
-let dates = [];
-for (let i = 0; i < sortedPosts.length; i++) {
-  const date = getDate(sortedPosts[i].frontmatter.date);
-  dates.push(date);
-}
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -25,10 +20,10 @@ for (let i = 0; i < sortedPosts.length; i++) {
     <p class="desc">Digital designer and web developer</p>
   </div>
   <hr />
-  <Card
+  <!-- <Card
     title="Phished – Send Phishing Emails"
     desc="Building an application to send customizable phishing emails"
-    href="/posts/phished"
+    href="/blog/phished"
     src="/phished-screenshot.webp"
     alt="A tablet and smartphone are next to each other, each displaying a screenshot from the Phished website. The Phished logo, a fish with an envelope for a body, is displayed on the right with the Phished wordmark."
   />
@@ -45,18 +40,29 @@ for (let i = 0; i < sortedPosts.length; i++) {
     href="/posts/design"
     src="/creative-work.png"
     alt='The words "Creative Work", with a scribbled arrow aimed at the words "& Other Stuff".'
-  />
+  /> -->
+  {
+    allPosts.map((post) => (
+      <Card
+        title={post.data.title}
+        desc={post.data.description}
+        href={post.slug}
+        src={post.data.image.src}
+        alt={post.data.image.alt}
+      />
+    ))
+  }
   <hr />
   <div class="latest-posts">
     <h2 class="more">Latest Posts</h2>
-    <a class="view-all" href="/posts">View all posts</a>
+    <a class="view-all" href="/posts/">View all posts</a>
   </div>
   {
     sortedPosts.map((post, i) => (
       <MorePost
-        date={dates[i].abbreviation}
-        href={post.frontmatter.url}
-        title={post.frontmatter.title}
+        date={post.data.date}
+        href={post.slug}
+        title={post.data.title}
       />
     ))
   }
