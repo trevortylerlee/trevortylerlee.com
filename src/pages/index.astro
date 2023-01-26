@@ -1,16 +1,22 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, getEntryBySlug } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import Marquee from "../components/Marquee.astro";
 import MorePost from "../components/MorePost.astro";
 
+import { formatBlogPost } from "../js/utils";
+
 const pageTitle = "Trevor Lee | Homepage";
 const allPosts = await getCollection("posts");
-
-const latestThreePosts = allPosts.slice(Math.max(allPosts.length - 3, 0));
-const sortedPosts = latestThreePosts.reverse();
+const formattedPosts = formatBlogPost(allPosts, {
+  limit: 3,
+});
+const feature1 = await getEntryBySlug("posts", "phished");
+const feature2 = await getEntryBySlug("posts", "text2array");
+const feature3 = await getEntryBySlug("posts", "design");
+const featuredPosts = [feature1, feature2, feature3];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -42,7 +48,7 @@ const sortedPosts = latestThreePosts.reverse();
     alt='The words "Creative Work", with a scribbled arrow aimed at the words "& Other Stuff".'
   /> -->
   {
-    allPosts.map((post) => (
+    featuredPosts.map((post) => (
       <Card
         title={post.data.title}
         desc={post.data.description}
@@ -58,7 +64,7 @@ const sortedPosts = latestThreePosts.reverse();
     <a class="view-all" href="/posts/">View all posts</a>
   </div>
   {
-    sortedPosts.map((post, i) => (
+    formattedPosts.map((post, i) => (
       <MorePost
         date={post.data.date}
         href={post.slug}

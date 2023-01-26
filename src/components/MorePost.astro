@@ -1,4 +1,6 @@
 ---
+import { formatDate } from "../js/utils";
+
 const lightGlow = "rgb(227, 227, 227)";
 const darkGlow = "rgb(0, 84, 255)";
 const darkBg = "rgb(41, 44, 57)";
@@ -10,7 +12,7 @@ const { date, href, title, last } = Astro.props;
   <a href={`/posts/${href}`}>
     <div class="post">
       <p>{title}</p>
-      <p class="date">{date}</p>
+      <p class="date">{formatDate(date)}</p>
     </div>
   </a>
 </div>
