@@ -9,12 +9,15 @@ const blog = defineCollection({
       .max(
         160,
         "For best SEO results, keep the description under 160 characters."
-      ),
+      )
+      .optional(),
     draft: z.boolean().default(false),
-    image: z.object({
-      src: z.string(),
-      alt: z.string(),
-    }),
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+      })
+      .optional(),
   }),
 });
 
