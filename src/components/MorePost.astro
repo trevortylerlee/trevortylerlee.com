@@ -8,11 +8,15 @@ const lightBg = "rgb(250, 250, 250)";
 const { date, href, title, last } = Astro.props;
 ---
 
-<div class={last ? "last" : ""}>
+<div class={`${last ? "last" : ""} container`}>
   <a href={`/posts/${href}`}>
     <div class="post">
-      <p>{title}</p>
-      <p class="date">{formatDate(date)}</p>
+      <div class="title">
+        <p>{title}</p>
+      </div>
+      <div class="date">
+        <p class="date">{formatDate(date)}</p>
+      </div>
     </div>
   </a>
 </div>
@@ -82,5 +86,25 @@ const { date, href, title, last } = Astro.props;
 
   .last {
     margin-bottom: 4rem;
+  }
+
+  .container {
+    /* outline: 2px solid red; */
+  }
+
+  .title {
+    width: 70%;
+  }
+
+  .title p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .date {
+    min-width: 25%;
+    text-align: right;
+    white-space: nowrap;
   }
 </style>
