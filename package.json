@@ -13,9 +13,10 @@
   "dependencies": {
     "@astrojs/mdx": "^0.12.1",
     "@astrojs/react": "^1.2.2",
+    "@astrojs/vercel": "^3.0.0",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.6",
-    "astro": "^2.0.1",
+    "astro": "^2.0.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-hot-toast": "^2.4.0"
