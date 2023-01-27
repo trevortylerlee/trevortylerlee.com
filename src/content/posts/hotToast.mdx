@@ -1,19 +1,18 @@
 ---
-title: "How to use react-hot-toast with Astro"
+title: "Using react-hot-toast with Astro"
 date: 2023-01-23
-description: "Using react-hot-toast for notifcations in Astro."
+description: "How to use react-hot-toast for notifcations in Astro."
 draft: false
 ---
 
 import { Code } from "astro/components";
+import ToastExample from "../../components/ToastExample.tsx";
 
-Struggling to get [react-hot-toast](https://react-hot-toast.com/) working on your Astro site? I did, too – thankfully, @happydev on the Astro discord was able to figure it out.
-
-To get react-hot-toast working, **it needs to be in the same Astro island as the component that is triggering the toast.** An Astro island is an interactive UI component on an otherwise static HTML page. Astro islands exist because Astro, by default, generates websites with zero client-side JavaScript. Sometimes we need a little JavaScript for some interactivity on our site – that's what Astro islands are for.
+Thank you to @happydev on the Astro discord who was able to figure this out.
 
 <br />
 
-### 1. Install react-hot-toast
+### 1. Install `react-hot-toast`
 
 ```
 npm install react-hot-toast
@@ -21,54 +20,17 @@ npm install react-hot-toast
 
 <br />
 
-### 2. Create a React component to trigger the toast
+### 2. Create a component called `Toastify.tsx`
 
-We'll use a button to trigger our toast notification.
+The `Toastify` component takes another component as its argument and returns it with a `Toaster` component imported from `react-hot-toast`.
 
-```jsx
-export default function Button() {
-  return <button>Toast!</button>;
-}
-```
-
-<br />
-
-### 3. Create a toast component
-
-We're going to make a Toast component that we can then import into our React component. In a new file (I called mine `Toastify.tsx`), import `Toaster` from react-hot-toast and customize it however you want.
-
-```jsx
+```tsx
 import { Toaster } from "react-hot-toast";
 
 export default (Component) => {
   return (props) => (
-    <>
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-        gutter={8}
-        containerClassName=""
-        containerStyle={{}}
-        toastOptions={{
-          // Define default options
-          className: "",
-          duration: 5000,
-          style: {
-            background: "#363636",
-            color: "#fff",
-          },
-
-          // Default options for specific types
-          success: {
-            duration: 3000,
-            style: {
-              color: "black",
-              background: "white",
-              border: "3px solid black",
-            },
-          },
-        }}
-      />
+    <br>
+      <Toaster position="top-center" reverseOrder={false} />
       <Component {...props} />
     </>
   );
@@ -77,11 +39,67 @@ export default (Component) => {
 
 <br />
 
-### 4. Import the toast component into the React component
+### 3. Create a component called `Button.tsx`
 
-We're going to wrap the button component that we made in our new `<Toastify />` component. Let's also setup a function called `notify` that will trigger a toast when our button is clicked.
+```tsx
+export default function Button(message) {
+  return <button>{message}</button>;
+}
+```
 
-```jsx
+<br />
+
+### 4. Import `Toastify.tsx` into `Button.tsx`
+
+Export the `Toastify` component with the `Button` as its argument.
+
+```tsx
 import Toastify from "./Toastify";
 import toast from "react-hot-toast";
+
+export default function Toastify(function Button({message})) {
+  return <button>{message}</button>
+}
 ```
+
+<br />
+
+### 5. Create a function to trigger the toast
+
+```tsx
+const notify = () => toast("Toast!");
+```
+
+<br />
+
+### 6. Set the client directive to client:load
+
+If there is no client directive the HTML will be rendered without JavaScript. [Reference](https://docs.astro.build/en/reference/directives-reference/)
+
+```tsx
+<ToastExample client:visible message="Click me!" />
+```
+
+<br />
+<br />
+
+### Final Result
+
+```tsx
+import Toastify from "./Toastify";
+import toast from "react-hot-toast";
+
+export default Toastify(function Button({ message }) {
+  const notify = () => toast("Toast!");
+
+  return (
+    <>
+      <button onClick={notify}>{message}</button>
+    </>
+  );
+});
+```
+
+<br />
+
+<ToastExample client:visible message="Click me!" />
