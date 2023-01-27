@@ -1,29 +1,31 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-import Footer from '../components/Footer.astro';
-import Contact from '../components/Contact.astro';
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Contact from "../components/Contact.astro";
 
-const { pageTitle } = Astro.props
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favi.svg" />
-		<!-- apple get your shit together -->
-		<link rel="apple-touch-icon" type="image/svg+xml" href="/favi.svg?" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Trevor Lee's Portfolio Showcase | Web Developer from Vancouver, Canada | TypeScript, React, Next.js, Node.js" />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favi.png" />
+    <link rel="apple-touch-icon" type="image/png" href="/favi.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Trevor Lee | Web Developer from Vancouver, Canada | TypeScript, React, Next.js, Node.js"
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
     <div class="wrapper flow">
       <Navigation />
       <slot />
-			<Contact />
-			<Footer />
+      <Contact />
+      <Footer />
     </div>
-	</body>
+  </body>
 </html>
