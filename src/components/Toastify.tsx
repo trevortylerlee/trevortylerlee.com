@@ -1,4 +1,4 @@
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 
 export default (Component) => {
   return (props) => (
@@ -11,20 +11,20 @@ export default (Component) => {
         containerStyle={{}}
         toastOptions={{
           // Define default options
-          className: '',
-          duration: 5000,
+          className: "",
+          duration: 2000,
           style: {
-            background: '#363636',
-            color: '#fff',
+            background: "#363636",
+            color: "#fff",
           },
 
           // Default options for specific types
           success: {
-            duration: 3000,
+            duration: 2000,
             style: {
-              color: 'black',
-              background: 'white',
-              border: '3px solid black',
+              color: "black",
+              background: "white",
+              border: "3px solid black",
             },
           },
         }}
