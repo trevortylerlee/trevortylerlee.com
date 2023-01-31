@@ -1,21 +1,21 @@
 ---
-import { getCollection, getEntryBySlug } from "astro:content";
+import { getCollection, getEntryBySlug } from 'astro:content';
 
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/Card.astro";
-import Marquee from "../components/Marquee.astro";
-import MorePost from "../components/MorePost.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+import Marquee from '../components/Marquee.astro';
+import MorePost from '../components/MorePost.astro';
 
-import { formatBlogPost } from "../js/utils";
+import { formatBlogPost } from '../js/utils';
 
-const pageTitle = "Trevor Lee | Homepage";
-const allPosts = await getCollection("posts");
+const pageTitle = 'Trevor Lee | Homepage';
+const allPosts = await getCollection('posts');
 const formattedPosts = formatBlogPost(allPosts, {
   limit: 3,
 });
-const feature1 = await getEntryBySlug("posts", "phished");
-const feature2 = await getEntryBySlug("posts", "text2array");
-const feature3 = await getEntryBySlug("posts", "design");
+const feature1 = await getEntryBySlug('posts', 'phished');
+const feature2 = await getEntryBySlug('posts', 'text2array');
+const feature3 = await getEntryBySlug('posts', 'design');
 const featuredPosts = [feature1, feature2, feature3];
 ---
 
@@ -113,8 +113,8 @@ const featuredPosts = [feature1, feature2, feature3];
 
   .view-all:hover,
   .view-all:focus-visible {
-    border-color: dodgerblue;
-    color: dodgerblue;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
     opacity: 1;
   }
 

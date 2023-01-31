@@ -1,5 +1,8 @@
 ---
-import ThemeIcon from "../components/ThemeIcon.astro";
+import ThemeIcon from '../components/ThemeIcon.astro';
+
+const greenLink = '#33D74C';
+const blueLink = '#027AFF';
 ---
 
 <nav>
@@ -26,16 +29,16 @@ import ThemeIcon from "../components/ThemeIcon.astro";
   <ThemeIcon />
 </nav>
 
-<style>
+<style define:vars={{ blueLink, greenLink }}>
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  a:focus {
+  /* a:focus {
     color: dodgerblue;
-  }
+  } */
 
   .logo:hover {
     transform: scale(1.02);
@@ -47,10 +50,14 @@ import ThemeIcon from "../components/ThemeIcon.astro";
     transition: 0.2s;
   }
 
+  .logo:hover {
+    stroke: var(--blueLink);
+  }
+
   :global(.dark) .logo {
     stroke: white;
   }
   :global(.dark) .logo:hover {
-    opacity: 0.7;
+    stroke: var(--greenLink);
   }
 </style>

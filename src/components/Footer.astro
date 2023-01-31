@@ -1,5 +1,6 @@
 ---
-const darkLink = "rgb(26, 30, 43)";
+const greenLink = '#33D74C';
+const blueLink = '#027AFF';
 ---
 
 <hr class="hr" />
@@ -7,7 +8,9 @@ const darkLink = "rgb(26, 30, 43)";
   <div class="footer-wrapper">
     <span class="links">
       <a href="https://github.com/boogerbuttcheeks">Github</a>
-      <a href="https://www.linkedin.com/in/trevortylerlee/">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/trevortylerlee/"
+        >LinkedIn</a
+      >
       <a href="https://read.cv/booger">Resume</a>
     </span>
     <!-- The sprites are from pokedb.net!  -->
@@ -28,7 +31,7 @@ const darkLink = "rgb(26, 30, 43)";
   </div>
 </footer>
 
-<style define:vars={{ darkLink }}>
+<style define:vars={{ blueLink, greenLink }}>
   .footer-wrapper {
     display: grid;
     justify-content: center;
@@ -37,13 +40,13 @@ const darkLink = "rgb(26, 30, 43)";
   a {
     font-size: 1rem;
     font-weight: 400;
-    color: var(--darkLink);
+    color: black;
     border-bottom: 2px solid transparent;
     margin-top: 1em;
   }
 
   a:hover {
-    color: rgb(21, 113, 205);
+    color: var(--blueLink);
   }
 
   :global(.dark) a {
@@ -51,7 +54,7 @@ const darkLink = "rgb(26, 30, 43)";
   }
 
   :global(.dark) a:hover {
-    color: dodgerblue;
+    color: var(--greenLink);
   }
 
   .hr {
