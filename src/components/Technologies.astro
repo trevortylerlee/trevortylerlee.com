@@ -7,7 +7,8 @@ const { emoji, string, type } = Astro.props;
     <p class="emoji">{emoji}</p>
   </div>
   <div>
-    <p class="string">{string}</p>
+    <!-- <p class="string">{string}</p> -->
+    <slot />
   </div>
 </div>
 
@@ -28,6 +29,7 @@ const { emoji, string, type } = Astro.props;
     position: relative;
     vertical-align: text-top;
     left: 0.25em;
+    margin-right: 1em;
   }
 
   .string {
