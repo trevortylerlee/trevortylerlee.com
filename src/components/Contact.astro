@@ -1,5 +1,5 @@
 ---
-import CopyButton from "../components/CopyButton";
+import CopyButton from '../components/CopyButton';
 ---
 
 <hr class="hr-override" />
@@ -23,7 +23,7 @@ import CopyButton from "../components/CopyButton";
   .color {
     cursor: default;
     margin-top: 2rem;
-    font-size: var(--size-700);
+    font-size: 1.625rem;
   }
 
   .btn-wrapper {
@@ -38,6 +38,12 @@ import CopyButton from "../components/CopyButton";
     border: none;
     border-bottom: 2px solid gray;
     opacity: 0.25;
+  }
+
+  @media (min-width: 40rem) {
+    .color {
+      font-size: 2.5rem;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {
