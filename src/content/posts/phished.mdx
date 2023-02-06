@@ -20,15 +20,15 @@ import Technologies from '../../components/Technologies.astro';
 
 <br />
 
-Teamed up with six other developers and designers to create Phished, a
-web application to send (harmless!) phishing emails and track the
-results. [Click to check it out!](https://phished.up.railway.app/)
+I led a team of seven developers and designers to build Phished, a fun
+and interactive way to educate users about phishing.
+[Click to check it out!](https://phished.up.railway.app/)
 
 <br />
 
 ## Why build Phished?
 
-Our goal for this project was to encourage users to take a proactive
+Our goal for this project was to encourage users to take an active
 role in the fight against phishing emails. We found that elderly
 individuals are disproportionally targeted and impacted by online
 scams, many of which originate from fraudulent emails.
@@ -36,3 +36,50 @@ scams, many of which originate from fraudulent emails.
 We also realized that those same elderly users were unlikely to be the
 ones using Phished, so our focus was on giving Internet-savvy a tool
 to educate their loved ones in an interactive and positive manner.
+
+<br />
+
+## How does it work?
+
+Users create campaigns, where personalized phishing emails are sent to
+a target. If the target clicks on the link in the email, we record the
+event and display the results in a dashboard. Over a period of time,
+users can see which of their targets clicked on the link and how many
+of them fell for a scam.
+
+When targets fall for a phishing email sent by us, we redirect them to
+our page where they can learn about the scam and how to avoid it in
+the future. Our goal is for users to evaluate the results from their
+campaigns and see improvement from their targets over time. We hope
+that users will share their results with their loved ones to encourage
+them to be more vigilant.
+
+<br />
+
+## What did I do?
+
+I was the lead developer on this project, and I was responsible for
+implementing our design system, building the dashboard, and
+integrating with the backend. I worked closely with our designers to
+ensure that our design system was consistent and easy to use. We used
+Mantine, a React UI library, to build out our front-end.
+
+I also worked closely with our backend developers to build out the
+site's infrastructure. We used Firebase's Firestore database to store
+user data and NextAuth to handle user authentication and
+authorization. I designed our phishing emails using Handlebars.js, an
+HTML templating language. We used Nodemailer to send the emails with a
+hash, so when targets click the link, we can track which user sent the
+email. Finally, we displayed the results on the user dashboard using
+Chart.js.
+
+<br />
+
+## What did I learn?
+
+I learned a lot about building a full-stack application from scratch.
+I developed my technical skills by working with unfamiliar tools like
+Nodemailer and NextAuth, and I'm confident that I can learn new
+technologies quickly. I also learned a lot about the importance of
+collaboration and how to work with others in a team setting. I'm
+really proud of the work that we did on this project. 🎣
