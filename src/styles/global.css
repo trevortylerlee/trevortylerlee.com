@@ -147,6 +147,7 @@ p code {
   background-color: var(--code-bg-color);
   border-radius: 4px;
   padding: 0 0.2em;
+  white-space: pre;
 }
 
 .dark p code {
