@@ -20,3 +20,6 @@ pnpm-debug.log*
 
 #astro
 .astro
+
+# Draft post for testing
+src/content/draft.mdx
