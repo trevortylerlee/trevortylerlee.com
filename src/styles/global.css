@@ -142,6 +142,17 @@ figcaption {
   text-align: center;
 }
 
+p code {
+  color: white;
+  background-color: var(--code-bg-color);
+  border-radius: 4px;
+  padding: 0 0.2em;
+}
+
+.dark p code {
+  color: black;
+}
+
 /* Larger viewports */
 @media (min-width: 40rem) {
   h1 {

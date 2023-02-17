@@ -12,7 +12,7 @@ Thank you to @happydev on the Astro discord who was able to figure this out.
 
 <br />
 
-### 1. Install `react-hot-toast`
+### 1. Install react-hot-toast
 
 ```
 npm install react-hot-toast
@@ -20,7 +20,7 @@ npm install react-hot-toast
 
 <br />
 
-### 2. Create a component called `Toastify.tsx`
+### 2. Create a component called Toastify.tsx
 
 The `Toastify` component takes another component as its argument and returns it with a `Toaster` component imported from `react-hot-toast`.
 
@@ -39,7 +39,7 @@ export default (Component) => {
 
 <br />
 
-### 3. Create a component called `Button.tsx`
+### 3. Create a component called Button.tsx
 
 ```tsx
 export default function Button(message) {
@@ -49,7 +49,7 @@ export default function Button(message) {
 
 <br />
 
-### 4. Import `Toastify.tsx` into `Button.tsx`
+### 4. Import Toastify.tsx into Button.tsx
 
 Export the `Toastify` component with the `Button` as its argument.
 
