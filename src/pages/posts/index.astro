@@ -1,13 +1,13 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
 
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import MorePost from "../../components/MorePost.astro";
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MorePost from '../../components/MorePost.astro';
 
-import { formatBlogPost } from "../../js/utils";
+import { formatBlogPost } from '../../js/utils';
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection("posts");
+  const allPosts = await getCollection('posts');
 
   return allPosts.map((post) => ({
     params: { slug: post.slug },
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const allPosts = await getCollection("posts");
+const allPosts = await getCollection('posts');
 const formattedPosts = formatBlogPost(allPosts);
 
 const { page } = Astro.props;
@@ -43,5 +43,9 @@ const { page } = Astro.props;
 
   div {
     padding-top: 1rem;
+  }
+
+  .test {
+    display: none;
   }
 </style>
