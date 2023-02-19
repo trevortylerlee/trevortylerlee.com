@@ -1,14 +1,14 @@
 ---
-title: "Using react-hot-toast with Astro"
+title: 'Using react-hot-toast with Astro'
 date: 2023-01-23
-description: "How to use react-hot-toast for notifcations in Astro."
+description: 'How to use react-hot-toast for notifcations in Astro.'
 draft: false
 ---
 
-import { Code } from "astro/components";
-import ToastExample from "../../components/ToastExample.tsx";
+import ToastExample from '../../components/ToastExample.tsx';
 
-Thank you to @happydev on the Astro discord who was able to figure this out.
+Thank you to @happydev on the Astro discord who was able to figure
+this out.
 
 <br />
 
@@ -22,7 +22,8 @@ npm install react-hot-toast
 
 ### 2. Create a component called Toastify.tsx
 
-The `Toastify` component takes another component as its argument and returns it with a `Toaster` component imported from `react-hot-toast`.
+The `Toastify` component takes another component as its argument and
+returns it with a `Toaster` component imported from `react-hot-toast`.
 
 ```tsx
 import { Toaster } from "react-hot-toast";
@@ -67,14 +68,16 @@ export default function Toastify(function Button({message})) {
 ### 5. Create a function to trigger the toast
 
 ```tsx
-const notify = () => toast("Toast!");
+const notify = () => toast('Toast!');
 ```
 
 <br />
 
 ### 6. Set the client directive to client:load
 
-If there is no client directive the HTML will be rendered without JavaScript. [Reference](https://docs.astro.build/en/reference/directives-reference/)
+If there is no client directive the HTML will be rendered without
+JavaScript.
+[Reference](https://docs.astro.build/en/reference/directives-reference/)
 
 ```tsx
 <ToastExample client:load message="Click me!" />
@@ -86,11 +89,11 @@ If there is no client directive the HTML will be rendered without JavaScript. [R
 ### Final Result
 
 ```tsx
-import Toastify from "./Toastify";
-import toast from "react-hot-toast";
+import Toastify from './Toastify';
+import toast from 'react-hot-toast';
 
 export default Toastify(function Button({ message }) {
-  const notify = () => toast("Toast!");
+  const notify = () => toast('Toast!');
 
   return (
     <>
