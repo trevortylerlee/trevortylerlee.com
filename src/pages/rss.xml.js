@@ -14,7 +14,7 @@ export const get = () =>
     description: "Web developer from Vancouver, Canada 🇨🇦",
     site: import.meta.env.SITE,
     items: posts.map((post) => ({
-      link: `/blog/${post.slug}`,
+      link: `/posts/${post.slug}`,
       title: post.data.title,
       pubDate: post.data.date,
       description: post.data.description,
