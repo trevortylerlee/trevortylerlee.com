@@ -144,10 +144,6 @@ This file is in BETA. Please test and contribute to the discussion:
                 </a>
               </h3>
               <p>
-                by
-                <xsl:value-of select="author" />
-              </p>
-              <p>
                 <xsl:value-of select="description" />
               </p>
               <small class="text-gray">
