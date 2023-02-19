@@ -1,92 +1,70 @@
 ---
+import { Icon } from 'astro-icon'
+
 const greenLink = '#33D74C';
 const blueLink = '#0000FF';
 ---
 
-<div
+<button
   id="themeToggle"
-  tabindex="0"
-  aria-label="Toggle light and dark mode"
+  aria-label="Switch between light and dark mode"
 >
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="icon icon-tabler icon-tabler-sun sun"
-    width="48"
-    height="48"
-    viewBox="0 0 24 24"
-    stroke-width="2"
-    stroke="currentColor"
-    fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-    <circle cx="12" cy="12" r="4"></circle>
-    <path
-      d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"
-    ></path>
-  </svg>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="icon icon-tabler icon-tabler-moon moon"
-    width="48"
-    height="48"
-    viewBox="0 0 24 24"
-    stroke-width="2"
-    stroke="currentColor"
-    fill="none"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-    <path
-      d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"
-    ></path>
-  </svg>
-</div>
+  <Icon name="lucide:sun" size="48" />
+  <Icon name="lucide:moon" size="48" />
+</button>
 
 <style define:vars={{ blueLink, greenLink }}>
   #themeToggle {
     cursor: pointer;
   }
 
-  /* a {
-    color: white;
-  }
-
-  a:hover {
-    text-decoration: none;
-  }
-
-  a:active {
-    text-decoration: none;
-  } */
-
-  .moon {
+  [astro-icon="lucide:moon"] {
     display: none;
     transition: 0.2s;
   }
-  .moon:hover {
-    stroke: var(--greenLink);
+  [astro-icon="lucide:moon"]:hover {
+    color: var(--greenLink);
     transform: scale(1.02);
   }
-  .sun {
-    fill: transparent;
+  [astro-icon="lucide:sun"] {
     display: block;
     stroke: black;
     transition: 0.2s;
   }
-  .sun:hover {
-    stroke: var(--blueLink);
+  [astro-icon="lucide:sun"]:hover {
+    color: var(--blueLink);
     transform: scale(1.02);
   }
 
-  :global(.dark) .moon {
+  :global(.dark) [astro-icon="lucide:moon"] {
     fill: transparent;
     display: block;
   }
-  :global(.dark) .sun {
+  :global(.dark) [astro-icon="lucide:sun"] {
     display: none;
+  }
+
+  [astro-icon] {
+        color: black;
+    }
+
+  [astro-icon="lucide:moon"] {
+        color: white;
+  }
+
+  button:hover [astro-icon="lucide:sun"] {
+    color: var(--blueLink);
+    transform: scale(1.02);
+  }
+
+  :global(.dark) button:hover [astro-icon="lucide:moon"] {
+    color: var(--greenLink);
+    transform: scale(1.02);
+  }
+
+  button {
+    background: none !important;
+    box-shadow: none !important;
   }
 </style>
 
@@ -127,6 +105,7 @@ const blueLink = '#0000FF';
     .getElementById('themeToggle')
     .addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
+        e.preventDefault();
         handleToggleClick();
       }
     });
