@@ -5,18 +5,21 @@ const lightGlow = 'rgb(227, 227, 227)';
 const darkGlow = '#0000FF';
 const darkBg = '#2f2f33';
 const lightBg = 'rgb(250, 250, 250)';
-const { date, href, title, last } = Astro.props;
+const { date, href, title, description, last } = Astro.props;
 ---
 
 <div class={`${last ? 'last' : ''} container`}>
   <a href={`/posts/${href}`}>
-    <div class="post">
-      <div class="title">
-        <p>{title}</p>
+    <div class="wrapper">
+      <div class="post">
+        <div class="title">
+          <p>{title}</p>
+        </div>
+        <div class="date">
+          <p class="date">{formatDate(date)}</p>
+        </div>
       </div>
-      <div class="date">
-        <p class="date">{formatDate(date)}</p>
-      </div>
+      { description && <p class="desc">{description}</p>}
     </div>
   </a>
 </div>
@@ -31,13 +34,13 @@ const { date, href, title, last } = Astro.props;
     color: inherit;
   }
 
-  a:hover .post {
+  a:hover .wrapper {
     transform: scale(1.02);
     box-shadow: 0 0 1rem var(--darkGlow);
     text-shadow: 0 0 1rem var(--darkGlow);
   }
 
-  a:focus .post {
+  a:focus .wrapper {
     transform: scale(1.02);
     box-shadow: 0 0 1rem var(--darkGlow);
     text-shadow: 0 0 1rem var(--darkGlow);
@@ -53,29 +56,32 @@ const { date, href, title, last } = Astro.props;
     text-shadow: none;
   }
 
-  :global(.dark) a:hover .post {
+  :global(.dark) a:hover .wrapper {
     transform: scale(1.02);
     box-shadow: 0 0 1rem var(--lightGlow);
     text-shadow: 0 0 1rem var(--lightGlow);
   }
 
-  :global(.dark) a:focus .post {
+  :global(.dark) a:focus .wrapper {
     transform: scale(1.02);
     box-shadow: 0 0 1rem var(--lightGlow);
     text-shadow: 0 0 1rem var(--lightGlow);
   }
 
-  .post {
+  .wrapper {
     background: var(--lightBg);
     border-radius: 8px;
     padding: 0.75rem;
     transition: 0.2s;
+  }
+
+  .post {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  :global(.dark) .post {
+  :global(.dark) .wrapper {
     background: var(--darkBg);
   }
 
@@ -100,11 +106,18 @@ const { date, href, title, last } = Astro.props;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-size: 1.125rem;
+    font-weight: 600;
   }
 
   .date {
     min-width: 25%;
     text-align: right;
     white-space: nowrap;
+  }
+
+  .desc {
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
   }
 </style>
