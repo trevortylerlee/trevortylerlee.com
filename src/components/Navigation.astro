@@ -1,30 +1,14 @@
 ---
 import ThemeIcon from '../components/ThemeIcon.astro';
+import { Icon } from 'astro-icon'
 
 const greenLink = '#33D74C';
 const blueLink = '#0000FF';
 ---
 
 <nav>
-  <a class="wavy-exempt" href="/" aria-label="home">
-    <svg
-      class="logo"
-      xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-home"
-      width="48"
-      height="48"
-      viewBox="0 0 24 24"
-      stroke-width="2"
-      stroke="white"
-      fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-      <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
-      <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
-      <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
-    </svg>
+  <a class="wavy-exempt" href="/" aria-label="Go to homepage">
+    <Icon name="lucide:home" size="48" class="logo"/>
   </a>
   <ThemeIcon />
 </nav>
@@ -36,27 +20,21 @@ const blueLink = '#0000FF';
     align-items: center;
   }
 
-  /* a:focus {
-    color: dodgerblue;
-  } */
-
-  .logo:hover {
-    transform: scale(1.02);
+  a {
+    color: black;
+    transition: 0.2s ease-in-out;
   }
 
-  .logo {
-    stroke: black;
-    transition: 0.2s;
+  a:hover {
+    color: var(--blueLink);
+    transform: scale(1.02)
   }
 
-  .logo:hover {
-    stroke: var(--blueLink);
+  :global(.dark) a {
+    color: white;
   }
 
-  :global(.dark) .logo {
-    stroke: white;
-  }
-  :global(.dark) .logo:hover {
-    stroke: var(--greenLink);
+  :global(.dark) a:hover {
+    color: var(--greenLink);
   }
 </style>
