@@ -7,7 +7,8 @@ button {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transition: 0.2s;
   color: black;
-  transform: scale(1)
+  transform: scale(1);
+  cursor: pointer;
 }
 
 button:hover {
