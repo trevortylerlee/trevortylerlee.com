@@ -22,16 +22,28 @@ const {Content} = await post.render()
 <BaseLayout style={styles} pageTitle={post.data.title}>
   <div>
     {post.data.image ? <img src={post.data.image.src} alt={post.data.image.alt} /> : <></> }
+    <div class="textWrapper">
     <h1 class={post.image ? '' : 'title'}>{post.data.title}</h1>
     {post.data.date ? <p class="pub-date">{formatDate(post.data.date)}</p> : <></>}
     <hr />
     <div class="content">
       <Content />
     </div>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
+  .textWrapper {
+    /* outline: 2px solid blue; */
+    max-width: 64ch;
+    margin: 0 auto;
+  }
+
+  .content {
+    /* outline: 2px solid red; */
+  }
+
   .pub-date {
     color: rgb(26, 30, 43);
     font-style: italic;

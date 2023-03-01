@@ -17,7 +17,7 @@
 }
 
 .dark body {
-  --bg-color: #1C1C1E;
+  --bg-color: #000000;
   --text-color: rgb(245, 245, 240);
   --primary-color: #33D74C;
   --code-bg-color: white;
@@ -32,7 +32,7 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 640px;
+  max-width: 800px;
 }
 
 /* Link styling */
