@@ -32,8 +32,7 @@ const darkGlow = '#0000FF';
   .card {
     cursor: pointer;
     padding: 1rem;
-    margin: 2rem 0;
-    border-radius: 8px;
+    height: 100%;
 
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
@@ -64,10 +63,15 @@ const darkGlow = '#0000FF';
 
   a {
     color: inherit;
+    border-bottom: none;
+    background-image: none !important;
+    background-size: auto 4px;
+    padding-bottom: 4px;
   }
 
   a:hover {
-    text-decoration: none !important;
+    /* text-decoration: none !important; */
+    background-image: none !important;
   }
 
   a:focus-visible img {
@@ -112,7 +116,7 @@ const darkGlow = '#0000FF';
 
   @media (min-width: 40rem) {
     .card {
-      margin: 4rem 0;
+      margin: 1rem 0;
     }
 
     .title {

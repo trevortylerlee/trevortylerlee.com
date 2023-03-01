@@ -16,7 +16,8 @@ const formattedPosts = formatBlogPost(allPosts, {
 const feature1 = await getEntryBySlug('posts', 'phished');
 const feature2 = await getEntryBySlug('posts', 'text2array');
 const feature3 = await getEntryBySlug('posts', 'design');
-const featuredPosts = [feature1, feature2, feature3];
+const featuredPost = [feature1];
+const secondaryPosts = [feature2, feature3];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -96,7 +97,7 @@ const featuredPosts = [feature1, feature2, feature3];
   </div>
   <hr />
   {
-    featuredPosts.map((post) => (
+    featuredPost.map((post) => (
       <Card
         title={post.data.title}
         desc={post.data.description}
@@ -106,6 +107,19 @@ const featuredPosts = [feature1, feature2, feature3];
       />
     ))
   }
+  <div class="secondary-posts">
+  {
+    secondaryPosts.map((post) => (
+      <Card
+        title={post.data.title}
+        desc={post.data.description}
+        href={post.slug}
+        src={post.data.image.src}
+        alt={post.data.image.alt}
+      />
+    ))
+  }
+  </div>
   <hr />
   <div class="latest-posts">
     <h2 class="more">Latest Posts</h2>
@@ -193,6 +207,14 @@ const featuredPosts = [feature1, feature2, feature3];
   svg:active {
     stroke: var(--primary-color);
     transform: scale(1.02);
+  }
+
+  @media (min-width: 760px) {
+    .secondary-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    height: 100%;
+  }
   }
 
   @media (min-width: 40rem) {
