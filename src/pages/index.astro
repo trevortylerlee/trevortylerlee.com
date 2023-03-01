@@ -18,6 +18,9 @@ const feature2 = await getEntryBySlug('posts', 'text2array');
 const feature3 = await getEntryBySlug('posts', 'design');
 const featuredPost = [feature1];
 const secondaryPosts = [feature2, feature3];
+
+const lightModeGradient = 'linear-gradient(90deg, #007CF0, #00DFD8)'
+const darkModeGradient = 'linear-gradient(90deg, #7928CA, #FF0080)'
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -136,16 +139,19 @@ const secondaryPosts = [feature2, feature3];
   }
 </BaseLayout>
 
-<style>
+<style define:vars={{lightModeGradient, darkModeGradient}}>
   h1 {
     font-size: 3.125rem;
     cursor: default;
   }
 
+  .name {
+      transition: 0.2s;
+  }
+
   .name,
   .desc {
     margin: 0;
-    top: -1rem;
     text-align: center;
   }
 

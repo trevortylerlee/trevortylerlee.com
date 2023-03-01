@@ -1,8 +1,8 @@
 ---
 import { Icon } from 'astro-icon'
 
-const greenLink = '#33D74C';
-const blueLink = '#0000FF';
+const darkModeColor = '#ff0080';
+const lightModeColor = '#0000FF';
 ---
 
 <button
@@ -13,7 +13,7 @@ const blueLink = '#0000FF';
   <Icon name="lucide:moon" size="48" />
 </button>
 
-<style define:vars={{ blueLink, greenLink }}>
+<style define:vars={{ lightModeColor, darkModeColor }}>
   #themeToggle {
     cursor: pointer;
   }
@@ -27,7 +27,7 @@ const blueLink = '#0000FF';
     transition: 0.2s;
   }
   [astro-icon="lucide:moon"]:hover {
-    color: var(--greenLink);
+    color: var(--darkModeColor);
     transform: scale(1.02);
   }
   [astro-icon="lucide:sun"] {
@@ -36,7 +36,7 @@ const blueLink = '#0000FF';
     transition: 0.2s;
   }
   [astro-icon="lucide:sun"]:hover {
-    color: var(--blueLink);
+    color: var(--lightModeColor);
     transform: scale(1.02);
   }
 
@@ -57,12 +57,12 @@ const blueLink = '#0000FF';
   }
 
   button:hover [astro-icon="lucide:sun"] {
-    color: var(--blueLink);
+    color: var(--lightModeColor);
     transform: scale(1.02);
   }
 
   :global(.dark) button:hover [astro-icon="lucide:moon"] {
-    color: var(--greenLink);
+    color: var(--darkModeColor);
     transform: scale(1.02);
   }
 

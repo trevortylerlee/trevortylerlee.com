@@ -1,6 +1,6 @@
 ---
 const { title, desc, href, alt, src } = Astro.props;
-const lightGlow = '#33D74C';
+const lightGlow = '#ff0080';
 const darkGlow = '#0000FF';
 ---
 
@@ -47,9 +47,17 @@ const darkGlow = '#0000FF';
     scale: 1.02;
   }
 
+  .a:focus-within {
+    outline: 2px solid var(--lightGlow);
+  }
+
+  :global(.dark) .a:focus-within {
+    outline: 2px solid var(--darkGlow);
+  }
+
   :global(.dark) .card:hover img {
     color: var(--lightGlow);
-    box-shadow: 0 0 1rem var(--lightGlow);
+    box-shadow: 0 0 2rem var(--lightGlow);
     text-shadow: 0 0 1rem var(--lightGlow);
   }
 
@@ -81,10 +89,18 @@ const darkGlow = '#0000FF';
     scale: 1.02;
   }
 
+  a:focus {
+    outline: 2px solid var(--darkGlow);
+  }
+
   :global(.dark) a:focus-visible img {
     color: var(--lightGlow);
     box-shadow: 0 0 1rem var(--lightGlow);
     text-shadow: 0 0 1rem var(--lightGlow);
+  }
+
+  :global(.dark) a:focus {
+    outline: 2px solid var(--lightGlow);
   }
 
   a:focus .arrow {

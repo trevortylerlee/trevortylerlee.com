@@ -2,8 +2,8 @@
 import ThemeIcon from '../components/ThemeIcon.astro';
 import { Icon } from 'astro-icon'
 
-const greenLink = '#33D74C';
-const blueLink = '#0000FF';
+const darkModeColor = '#ff0080';
+const lightModeColor = '#0000FF';
 ---
 
 <nav>
@@ -13,7 +13,7 @@ const blueLink = '#0000FF';
   <ThemeIcon />
 </nav>
 
-<style define:vars={{ blueLink, greenLink }}>
+<style define:vars={{ lightModeColor, darkModeColor }}>
   nav {
     display: flex;
     justify-content: space-between;
@@ -26,7 +26,7 @@ const blueLink = '#0000FF';
   }
 
   a:hover {
-    color: var(--blueLink);
+    color: var(--lightModeColor);
     transform: scale(1.02)
   }
 
@@ -35,6 +35,6 @@ const blueLink = '#0000FF';
   }
 
   :global(.dark) a:hover {
-    color: var(--greenLink);
+    color: var(--darkModeColor);
   }
 </style>
