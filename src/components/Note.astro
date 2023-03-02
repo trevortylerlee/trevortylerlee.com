@@ -1,8 +1,8 @@
 ---
-const { emoji, string, type } = Astro.props;
+const { emoji, type } = Astro.props;
 ---
 
-<div class={`callout ${type}`}>
+<div class={`note ${type}`}>
   <div>
     <p class="emoji">{emoji}</p>
   </div>
@@ -13,16 +13,26 @@ const { emoji, string, type } = Astro.props;
 </div>
 
 <style>
-  .callout {
+  .note {
     padding: 0.1em 0.5em;
     border-radius: 8px;
     display: flex;
   }
 
-  .tech {
+  .secondary {
+    color: #888888;
+    border: 1px solid #888888;
+  }
+
+  .technology {
     /* background: #151e36; */
     color: #0070f3;
     border: 1px solid #0070f3;
+  }
+
+  .warning {
+    color: #EAAA45;
+    border: 1px solid #EAAA45;
   }
 
   .emoji {
