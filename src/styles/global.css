@@ -147,15 +147,14 @@ figcaption {
 }
 
 p code {
-  color: white;
-  background-color: var(--code-bg-color);
+  background-color: #ddd;
   border-radius: 4px;
   padding: 0 0.2em;
   white-space: pre;
 }
 
 .dark p code {
-  color: black;
+  background-color: #333;
 }
 
 /* Larger viewports */
