@@ -3,6 +3,7 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import robotsTxt from "astro-robots-txt";
 import prefetch from "@astrojs/prefetch";
+import vercel from '@astrojs/vercel/static';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +14,10 @@ export default defineConfig({
   integrations: [react(), mdx({
     drafts: true
   }), robotsTxt(), prefetch({
-    selector: "a[href^='/posts/phished']",
-  })]
+    selector: "a[href^='/posts/phished']"
+  })],
+  output: "static",
+  adapter: vercel({
+    analytics: true
+  })
 });
