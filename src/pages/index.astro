@@ -146,8 +146,19 @@ const darkModeGradient = 'linear-gradient(90deg, #7928CA, #FF0080)'
   }
 
   .name {
-      transition: 0.2s;
+    transition: 0.2s;
   }
+
+  .name:hover {
+    text-shadow: 1px 1px 1px #000, 
+                2px 2px 2px var(--primary-color); 
+  }
+
+  :global(.dark) .name:hover {
+    text-shadow: 1px 1px 1px #000, 
+                4px 4px 4px var(--primary-color); 
+  }
+
 
   .name,
   .desc {
