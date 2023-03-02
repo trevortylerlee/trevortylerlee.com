@@ -26,7 +26,7 @@
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   font-family: 'Inter', sans-serif;
 }
 

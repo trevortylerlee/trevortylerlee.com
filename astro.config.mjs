@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import robotsTxt from "astro-robots-txt";
+import prefetch from "@astrojs/prefetch";
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,5 +12,7 @@ export default defineConfig({
   },
   integrations: [react(), mdx({
     drafts: true
-  }), robotsTxt()]
+  }), robotsTxt(), prefetch({
+    selector: "a[href^='/posts/phished']",
+  })]
 });
