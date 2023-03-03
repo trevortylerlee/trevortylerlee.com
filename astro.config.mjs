@@ -6,6 +6,9 @@ import prefetch from "@astrojs/prefetch";
 import vercel from '@astrojs/vercel/static';
 
 // https://astro.build/config
+import sitemap from "@astrojs/sitemap";
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://www.trevortylerlee.com',
   markdown: {
@@ -15,7 +18,7 @@ export default defineConfig({
     drafts: true
   }), robotsTxt(), prefetch({
     selector: "a[href^='/posts/phished']"
-  })],
+  }), sitemap()],
   output: "static",
   adapter: vercel({
     analytics: true
