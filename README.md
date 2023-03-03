@@ -1,6 +1,6 @@
 # trevortylerlee.com
 
-Hi and welcome to my diary! Built with Astro (and a sprinkle of React). For this website I wanted to a. stick to vanilla CSS and b. minimize its dependencies. It uses some new features in Astro 2.0 like content collections, schema validation, and type-safe Markdown.
+Hi and welcome to my diary. Built with Astro (and a sprinkle of React). For this website I wanted to a. stick to vanilla CSS and b. minimize its dependencies. It uses some new features in Astro 2.0 like content collections, schema validation, and type-safe Markdown.
 
 ## Technologies Used
 
