@@ -3,29 +3,25 @@ import { getCollection } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import MorePost from '../../components/MorePost.astro';
+import Pagination from '../../components/Pagination.astro';
 
 import { formatBlogPost } from '../../js/utils';
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection('posts');
+  const formattedPosts = formatBlogPost(allPosts);
 
-  return allPosts.map((post) => ({
-    params: { slug: post.slug },
-    props: {
-      post,
-    },
-  }));
+  return paginate(formattedPosts, {
+    pageSize: 5,
+  })
 }
-
-const allPosts = await getCollection('posts');
-const formattedPosts = formatBlogPost(allPosts);
 
 const { page } = Astro.props;
 ---
 
 <BaseLayout>
   <h1>All Posts</h1>
-  {
+  <!-- {
     formattedPosts.map((page) => (
       <MorePost
         date={page.data.date}
@@ -34,7 +30,18 @@ const { page } = Astro.props;
         description={page.data.description}
       />
     ))
+  } -->
+  {
+    page.data.map((post) => (
+      <MorePost
+        date={post.data.date}
+        href={post.slug}
+        title={post.data.title}
+        description={post.data.description}
+      />
+    ))
   }
+  <Pagination prevUrl={page.url.prev} nextUrl={page.url.next}/>
 </BaseLayout>
 
 <style>
