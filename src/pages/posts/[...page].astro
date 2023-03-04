@@ -20,7 +20,7 @@ const { page } = Astro.props;
 ---
 
 <BaseLayout>
-  <h1>All Posts</h1>
+  <h1 style={{marginTop: "4rem"}}>All Posts</h1>
   <!-- {
     formattedPosts.map((page) => (
       <MorePost
@@ -31,6 +31,7 @@ const { page } = Astro.props;
       />
     ))
   } -->
+  <div class='wrapper'>
   {
     page.data.map((post) => (
       <MorePost
@@ -41,6 +42,7 @@ const { page } = Astro.props;
       />
     ))
   }
+  </div>
   <Pagination prevUrl={page.url.prev} nextUrl={page.url.next}/>
 </BaseLayout>
 
@@ -55,5 +57,12 @@ const { page } = Astro.props;
 
   .test {
     display: none;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 4rem;
   }
 </style>

@@ -39,7 +39,7 @@ body {
 
 /* Link styling */
 a {
-  color: var(--primary-color);
+  color: var(--text-color);
   text-decoration: none;
   border-bottom: 2px solid var(--primary-color);
   padding-bottom: 0.1em;
@@ -132,13 +132,13 @@ blockquote {
   background: var(--primary-color);
 }
 
-.flow>*+* {
+/* .flow>*+* {
   margin-top: var(--flow-space, 1em);
-}
+} */
 
 hr {
-  margin-top: var(--size-400);
-  margin-bottom: var(--size-400);
+  /* margin-top: var(--size-400);
+  margin-bottom: var(--size-400); */
   border-bottom: 1px solid gray;
   opacity: 0.25;
 }

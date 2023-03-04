@@ -1,0 +1,74 @@
+---
+import { Icon } from 'astro-icon';
+
+import { getCollection, getEntryBySlug } from 'astro:content';
+import MorePost from '../components/MorePost.astro';
+
+import { formatBlogPost } from '../js/utils';
+
+const allPosts = await getCollection('posts');
+const formattedPosts = formatBlogPost(allPosts, {
+  limit: 3,
+});
+---
+
+<div class='wrapper'>
+  <div class="header-section">
+    <h2 class="more">Latest Posts</h2>
+    <a class="view-all" href="/posts/">
+      View all posts
+      <Icon name="lucide:arrow-right" width="16" height="16" />
+    </a>
+  </div>
+  <div class='latest-posts'>
+  {
+    formattedPosts.map((post, i) => (
+      <MorePost
+        date={post.data.date}
+        href={post.slug}
+        title={post.data.title}
+      />
+    ))
+  }
+  </div>
+  </div>
+
+  <style>
+    .wrapper {
+      padding: 2rem 0;
+      margin: 0;
+    }
+
+    .more {
+      text-align: left;
+      /* margin-top: 4rem; */
+      contain: style;
+      margin-bottom: 1rem;
+    }
+
+    .view-all {
+      color: inherit;
+      border-color: rgba(0, 0, 0, 0);
+    }
+
+    svg {
+      position: relative;
+      top: 2px;
+    }
+
+    .view-all:hover {
+      color: var(--primary-color);
+    }
+
+   .header-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .latest-posts {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  </style>
