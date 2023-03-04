@@ -2,7 +2,13 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/404"
+      "destination": "/404.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/404.html",
+      "dest": "/404"
     }
   ]
 }
