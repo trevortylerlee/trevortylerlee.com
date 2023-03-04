@@ -9,11 +9,11 @@ const darkGlow = '#0000FF';
     <img src={src} alt={alt} />
     <h3 class="title">
       {title}
-      <svg
+      <!-- <svg
           class="arrow"
           xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
+          width="16"
+          height="16"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -22,7 +22,7 @@ const darkGlow = '#0000FF';
           stroke-linejoin="round"
           ><line x1="5" y1="12" x2="19" y2="12"></line><polyline
             points="12 5 19 12 12 19"></polyline>
-        </svg>
+        </svg> -->
     </h3>
     <p>{desc}</p>
   </div>
@@ -46,6 +46,14 @@ const darkGlow = '#0000FF';
     box-shadow: 0 0 1rem var(--darkGlow);
     text-shadow: 0 0 1rem var(--darkGlow);
     scale: 1.02;
+  }
+
+  a:focus .title {
+    color: var(--primary-color);
+  }
+
+  .card:hover .title {
+    color: var(--primary-color);
   }
 
   .a:focus-within {
@@ -110,7 +118,6 @@ const darkGlow = '#0000FF';
 
   .title {
     font-size: 1.5rem;
-    font-weight: 600;
     margin-top: 1.25rem;
     position: relative;
   }
@@ -134,14 +141,12 @@ const darkGlow = '#0000FF';
     opacity: 1;
   }
 
-
   @media (min-width: 40rem) {
     .card {
       margin: 1rem 0;
     }
 
     .title {
-      font-size: 1.625rem;
       font-weight: 600;
       margin-top: 1.75rem;
     }

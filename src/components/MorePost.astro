@@ -13,7 +13,7 @@ const { date, href, title, description, last } = Astro.props;
     <div class="wrapper">
       <div class="post">
         <div class="title">
-          <p>{title}</p>
+          <h4>{title}</h4>
         </div>
         <div class="date">
           <p class="date">{formatDate(date)}</p>
@@ -37,13 +37,11 @@ const { date, href, title, description, last } = Astro.props;
   a:hover .wrapper {
     transform: scale(1.02);
     box-shadow: 0 0 1rem var(--darkGlow);
-    text-shadow: 0 0 1rem var(--darkGlow);
   }
 
   a:focus .wrapper {
     transform: scale(1.02);
     box-shadow: 0 0 1rem var(--darkGlow);
-    text-shadow: 0 0 1rem var(--darkGlow);
   }
 
   a:hover p {
@@ -59,13 +57,16 @@ const { date, href, title, description, last } = Astro.props;
   :global(.dark) a:hover .wrapper {
     transform: scale(1.02);
     box-shadow: 0 0 1rem var(--lightGlow);
-    text-shadow: 0 0 1rem var(--lightGlow);
   }
 
   :global(.dark) a:focus .wrapper {
     transform: scale(1.02);
     box-shadow: 0 0 1rem var(--lightGlow);
-    text-shadow: 0 0 1rem var(--lightGlow);
+  }
+
+  a:hover h4,
+  a:focus h4 {
+    color: var(--primary-color);
   }
 
   .wrapper {

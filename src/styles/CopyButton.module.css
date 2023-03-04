@@ -17,6 +17,8 @@ button {
   color: black;
   transform: scale(1);
   cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
 }
 
 button:hover {
