@@ -2,10 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/404.astro",
-      "headers": {
-        "statusCode": 404
-      }
+      "destination": "/404"
     }
   ]
 }
