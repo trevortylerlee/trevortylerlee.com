@@ -26,7 +26,8 @@ const lightModeColor = '#0000FF';
     display: none;
     transition: 0.2s;
   }
-  [astro-icon="lucide:moon"]:hover {
+  [astro-icon="lucide:moon"]:hover,
+  [astro-icon="lucide:moon"]:focus] {
     color: var(--darkModeColor);
     transform: scale(1.02);
   }
@@ -35,8 +36,9 @@ const lightModeColor = '#0000FF';
     stroke: black;
     transition: 0.2s;
   }
-  [astro-icon="lucide:sun"]:hover {
-    color: var(--lightModeColor);
+  [astro-icon="lucide:sun"]:hover,
+  [astro-icon="lucide:sun"]:focus {
+    color: var(--primary-color);
     transform: scale(1.02);
   }
 
@@ -61,7 +63,17 @@ const lightModeColor = '#0000FF';
     transform: scale(1.02);
   }
 
+  button:focus [astro-icon="lucide:sun"] {
+    color: var(--lightModeColor);
+    transform: scale(1.02);
+  }
+
   :global(.dark) button:hover [astro-icon="lucide:moon"] {
+    color: var(--darkModeColor);
+    transform: scale(1.02);
+  }
+
+  :global(.dark) button:focus [astro-icon="lucide:moon"] {
     color: var(--darkModeColor);
     transform: scale(1.02);
   }

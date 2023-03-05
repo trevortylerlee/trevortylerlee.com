@@ -25,7 +25,8 @@ const lightModeColor = '#0000FF';
     transition: 0.2s ease-in-out;
   }
 
-  a:hover {
+  a:hover,
+  a:focus {
     color: var(--lightModeColor);
     transform: scale(1.02)
   }
@@ -34,7 +35,8 @@ const lightModeColor = '#0000FF';
     color: white;
   }
 
-  :global(.dark) a:hover {
+  :global(.dark) a:hover,
+  :global(.dark) a:focus {
     color: var(--darkModeColor);
   }
 </style>

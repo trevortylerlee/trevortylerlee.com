@@ -8,6 +8,7 @@ import MorePost from '../components/MorePost.astro';
 import LatestPosts from '../components/LatestPosts.astro';
 
 import { formatBlogPost } from '../js/utils';
+import { Icon } from 'astro-icon';
 
 const pageTitle = 'Trevor Lee | Homepage';
 const allPosts = await getCollection('posts');
@@ -27,7 +28,16 @@ const secondaryPosts = [feature2, feature3];
     <h1 class="name">Trevor Lee</h1>
     <p class="desc">Digital designer and web developer</p>
     <div class="icons">
-      <svg
+      <a class='wavy-exempt icon' href="https://github.com/boogerbuttcheeks">
+        <Icon name="lucide:github" size="40" />
+      </a>
+      <a class='wavy-exempt icon' href="https://github.com/boogerbuttcheeks">
+        <Icon name="lucide:linkedin" size="40" />
+      </a>
+      <a class='wavy-exempt icon' href="https://github.com/boogerbuttcheeks">
+        <Icon name="lucide:twitter" size="40" />
+      </a>
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
         height="40"
@@ -46,8 +56,8 @@ const secondaryPosts = [feature2, feature3];
             d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
           ></path>
         </a>
-      </svg>
-      <svg
+      </svg> -->
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
         height="40"
@@ -70,8 +80,8 @@ const secondaryPosts = [feature2, feature3];
           <path d="M12 16l0 -5"></path>
           <path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
         </a>
-      </svg>
-      <svg
+      </svg> -->
+      <!-- <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
         height="40"
@@ -87,7 +97,7 @@ const secondaryPosts = [feature2, feature3];
         <a href="https://www.twitter.com/boogerbuttcheek/">
           <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
         </a>
-      </svg>
+      </svg> -->
     </div>
   </div>
   <hr />
@@ -117,21 +127,6 @@ const secondaryPosts = [feature2, feature3];
   </div>
   <hr />
   <LatestPosts />
-  <!-- <div>
-  <div class="latest-posts">
-    <h2 class="more">Latest Posts</h2>
-    <a class="view-all" href="/posts/">View all posts</a>
-  </div>
-  {
-    formattedPosts.map((post, i) => (
-      <MorePost
-        date={post.data.date}
-        href={post.slug}
-        title={post.data.title}
-      />
-    ))
-  }
-  </div> -->
 </BaseLayout>
 
 <style>
@@ -153,47 +148,34 @@ const secondaryPosts = [feature2, feature3];
   .desc {
     margin-top: -0.5rem;
   }
+  
+  .intro {
+    /* outline: 2px solid blue; */
+    padding: 2rem 0;
+  }
 
   .icons {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
     gap: 2rem;
+  }
+
+  .icon:hover,
+  .icon:focus {;
+    transform: scale(1.02);
+    color: var(--primary-color);
   }
 
   h2 {
     text-align: center;
   }
 
-  .more {
-    text-align: left;
-    margin-top: 4rem;
-    contain: style;
-  }
-
   marquee {
     display: flex;
     margin: 0;
-  }
-
-  .view-all {
-    color: inherit;
-    border-color: rgba(0, 0, 0, 0);
-  }
-
-  .view-all:hover,
-  .view-all:focus-visible {
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    opacity: 1;
-  }
-
-  .latest-posts {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
   }
 
   path {
