@@ -9,7 +9,13 @@
 
 <style>
   .container {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+  .container {
     overflow-x: hidden;
+    display: inline;
   }
 
   .wrapper {
@@ -33,6 +39,7 @@
     100% {
       transform: translateX(-25%);
     }
+  }
   }
 </style>
 

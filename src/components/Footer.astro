@@ -74,9 +74,9 @@ const blueLink = '#0000FF';
     transition: 0.2s;
   }
 
-  .pokemon:hover img {
+  /* .pokemon:hover img {
     opacity: 0;
-  }
+  } */
 
   .ditto:hover img {
     opacity: 1;
@@ -171,6 +171,12 @@ const blueLink = '#0000FF';
 
     .pokemon {
       margin-top: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pokemon {
+      display: none;
     }
   }
 </style>
