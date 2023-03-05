@@ -9,8 +9,8 @@ const lightModeColor = '#0000FF';
   id="themeToggle"
   aria-label="Switch between light and dark mode"
 >
-  <Icon name="lucide:sun" size="48" />
-  <Icon name="lucide:moon" size="48" />
+  <Icon name="ri:sun-fill" size="48" />
+  <Icon name="ri:moon-clear-fill" size="48" />
 </button>
 
 <style define:vars={{ lightModeColor, darkModeColor }}>
@@ -22,31 +22,30 @@ const lightModeColor = '#0000FF';
     padding: 0 !important;
   }
 
-  [astro-icon="lucide:moon"] {
+  [astro-icon="ri:moon-clear-fill"] {
     display: none;
     transition: 0.2s;
   }
-  [astro-icon="lucide:moon"]:hover,
-  [astro-icon="lucide:moon"]:focus] {
+  [astro-icon="ri:moon-clear-fill"]:hover,
+  [astro-icon="ri:moon-clear-fill"]:focus] {
     color: var(--darkModeColor);
     transform: scale(1.02);
   }
-  [astro-icon="lucide:sun"] {
+  [astro-icon="ri:sun-fill"] {
     display: block;
-    stroke: black;
     transition: 0.2s;
   }
-  [astro-icon="lucide:sun"]:hover,
-  [astro-icon="lucide:sun"]:focus {
+  [astro-icon="ri:sun-fill"]:hover,
+  [astro-icon="ri:sun-fill"]:focus {
     color: var(--primary-color);
     transform: scale(1.02);
   }
 
-  :global(.dark) [astro-icon="lucide:moon"] {
+  :global(.dark) [astro-icon="ri:moon-clear-fill"] {
     fill: transparent;
     display: block;
   }
-  :global(.dark) [astro-icon="lucide:sun"] {
+  :global(.dark) [astro-icon="ri:sun-fill"] {
     display: none;
   }
 
@@ -54,26 +53,26 @@ const lightModeColor = '#0000FF';
         color: black;
     }
 
-  [astro-icon="lucide:moon"] {
+  [astro-icon="ri:moon-clear-fill"] {
         color: white;
   }
 
-  button:hover [astro-icon="lucide:sun"] {
+  button:hover [astro-icon="ri:sun-fill"] {
     color: var(--lightModeColor);
     transform: scale(1.02);
   }
 
-  button:focus [astro-icon="lucide:sun"] {
+  button:focus [astro-icon="ri:sun-fill"] {
     color: var(--lightModeColor);
     transform: scale(1.02);
   }
 
-  :global(.dark) button:hover [astro-icon="lucide:moon"] {
+  :global(.dark) button:hover [astro-icon="ri:moon-clear-fill"] {
     color: var(--darkModeColor);
     transform: scale(1.02);
   }
 
-  :global(.dark) button:focus [astro-icon="lucide:moon"] {
+  :global(.dark) button:focus [astro-icon="ri:moon-clear-fill"] {
     color: var(--darkModeColor);
     transform: scale(1.02);
   }
