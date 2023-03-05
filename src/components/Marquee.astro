@@ -1,15 +1,21 @@
 ---
 ---
 
-  <div class='container' aria-hidden="true">
-  <div id="marq" class='wrapper'>
+  <!-- <div class='container' aria-hidden="true">
+    <div id="marq" class='wrapper'>
+      <img src="/pokemon/magikarp.gif" alt="magikarp" />
+    </div>
+  </div> -->
+  <div>
+  <marquee aria-hidden="true" id="marq" aria-hidden="true" scrolldelay="120" scrollamount="4">
     <img src="/pokemon/magikarp.gif" alt="magikarp" />
-  </div>
+  </marquee>
   </div>
 
 <style>
   .container {
     display: none;
+    overflow-x: hidden;
   }
 
   @media (prefers-reduced-motion: no-preference) {
