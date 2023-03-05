@@ -16,10 +16,12 @@ export async function getStaticPaths({ paginate }) {
   })
 }
 
+const pageTitle = 'Trevor Lee | All Posts';
+
 const { page } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
   <h1 style={{marginTop: "4rem"}}>All Posts</h1>
   <!-- {
     formattedPosts.map((page) => (
