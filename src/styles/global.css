@@ -7,7 +7,7 @@
 :root {
   --size-300: 0.75rem;
   --size-400: 1rem;
-  --size-500: 1.25rem;
+  --size-500: 1.35rem;
   --size-600: 1.64rem;
   --size-700: 2.4rem;
   --size-800: 3.2rem;
@@ -107,10 +107,6 @@ p {
   font-size: var(--size-400);
 }
 
-a {
-  font-size: var(--size-400);
-}
-
 /* Misc */
 img {
   max-width: min(55rem, 100%);
@@ -169,8 +165,7 @@ p code {
     font-size: var(--size-700);
   }
 
-  p,
-  a {
+  p {
     font-size: var(--size-400);
   }
 
