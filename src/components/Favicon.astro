@@ -1,0 +1,9 @@
+<link rel="icon" type="image/png" />
+
+<script>
+  const favicon = document.querySelector('link[rel="icon"]')!
+  document.addEventListener('visibilitychange', () => {
+    const hidden = document.hidden
+    favicon.setAttribute('href', hidden ? '/inactive-favicon.png' : '/favicon.png')
+  })
+</script>
