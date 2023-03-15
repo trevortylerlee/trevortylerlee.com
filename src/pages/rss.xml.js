@@ -21,7 +21,6 @@ export function get(context) {
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.date,
-      customData: `<language>en-us</language>`,
     })),
   });
 }
