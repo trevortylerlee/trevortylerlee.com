@@ -28,14 +28,39 @@
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  padding: 2rem 1rem;
   font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+
+@keyframes grain {
+
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  20% {
+    background-position: 50% 50%;
+  }
+
+  40% {
+    background-position: 25% 25%;
+  }
+
+  60% {
+    background-position: 75% 75%;
+  }
+
+  80% {
+    background-position: 0% 100%;
+  }
 }
 
 .wrapper {
   margin: 0 auto;
+  padding: 2rem 1rem;
   max-width: 800px;
 }
+
 
 /* Link styling */
 a {

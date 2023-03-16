@@ -1,0 +1,37 @@
+.wrapper {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+  background: none !important;
+  background-color: transparent;
+  border: none;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.wrapper:focus {
+  outline: none;
+  color: var(--primary-color);
+}
+
+.wrapper:active {
+  transform: scale(0.95);
+}
+
+.name {
+  font-size: 3.125rem;
+  transition: 0.2s;
+}
+
+.name:hover {
+  color: var(--primary-color);
+  transform: scale(1.02);
+}
+
+@media (min-width: 40rem) {
+  .name {
+    font-size: 5.5rem;
+  }
+}

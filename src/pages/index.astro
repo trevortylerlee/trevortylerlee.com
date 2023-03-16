@@ -6,6 +6,7 @@ import Card from '../components/Card.astro';
 import Marquee from '../components/Marquee.astro';
 import MorePost from '../components/MorePost.astro';
 import LatestPosts from '../components/LatestPosts.astro';
+import Name from '../components/Name.tsx';
 
 import { formatBlogPost } from '../js/utils';
 import { Icon } from 'astro-icon';
@@ -25,7 +26,11 @@ const secondaryPosts = [feature2, feature3];
 <BaseLayout pageTitle={pageTitle}>
   <div class="intro">
     <Marquee />
-    <h1 class="name">Trevor Lee</h1>
+
+    <!-- <h1 class="name">Trevor Lee</h1> -->
+
+    <Name client:load/>
+
     <p class="desc">Digital designer and web developer</p>
     <div class="icons">
       <a class='wavy-exempt icon' href="https://github.com/boogerbuttcheeks" aria-label="Go to Trevor's Github page">
