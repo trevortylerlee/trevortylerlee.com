@@ -91,7 +91,7 @@ function Name() {
   }
 
   return (
-    <button className={style.wrapper} onClick={notify}>
+    <button className={style.button} onClick={notify}>
       <h1 className={style.name}>Trevor Lee</h1>
     </button>
   );

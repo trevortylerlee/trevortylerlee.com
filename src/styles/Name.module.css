@@ -1,5 +1,6 @@
-.wrapper {
-  cursor: pointer;
+.button {
+  all: unset;
+  cursor: none;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -9,25 +10,16 @@
   border: none;
   box-shadow: none !important;
   -webkit-tap-highlight-color: transparent;
+  transform: scale(1);
 }
 
-.wrapper:focus {
+.button:hover {
+  transform: scale(1);
+}
+
+.button:focus {
   outline: none;
-  color: var(--primary-color);
-}
-
-.wrapper:active {
-  transform: scale(0.95);
-}
-
-.name {
-  font-size: 3.125rem;
-  transition: 0.2s;
-}
-
-.name:hover {
-  color: var(--primary-color);
-  transform: scale(1.02);
+  transform: scale(1);
 }
 
 @media (min-width: 40rem) {
