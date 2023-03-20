@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import styles from '../../styles/CodeBlock.module.css'
 import { slugify, formatDate } from "../../js/utils"
+import { Icon } from 'astro-icon';
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts")
@@ -24,7 +25,11 @@ const {Content} = await post.render()
     {post.data.image ? <img src={post.data.image.src} alt={post.data.image.alt} /> : <></> }
     <div class="textWrapper">
     <h1 class={post.image ? '' : 'title'}>{post.data.title}</h1>
-    {post.data.date ? <p class="pub-date">{formatDate(post.data.date)}</p> : <></>}
+
+    {post.data.date ? <p class="pub-date">
+      <span class="calendar-emoji">📅</span> {formatDate(post.data.date)}
+    </p> : <></>}
+    
     <hr />
     <div class="content">
       <Content />
@@ -45,13 +50,8 @@ const {Content} = await post.render()
   }
 
   .pub-date {
-    color: rgb(26, 30, 43);
     font-style: italic;
     margin-top: 0.5rem;
-  }
-
-  :global(.dark) .pub-date {
-    color: rgb(200, 200, 200);
   }
 
   h1 {
@@ -65,6 +65,10 @@ const {Content} = await post.render()
 
   .content {
     margin-top: 2rem;
+  }
+
+  .calendar-emoji {
+    font-style: normal;
   }
 
   @media (min-width: 40rem) {
