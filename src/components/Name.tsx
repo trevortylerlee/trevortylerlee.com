@@ -1,8 +1,17 @@
 import style from '../styles/Name.module.css';
 import Toastify from './Toastify';
 import toast from 'react-hot-toast';
+import { Howl, Howler } from 'howler';
 
 function Name() {
+
+  let sound = new Howl({
+    src: ['/button.mp3']
+  })
+
+  function playSound() {
+    sound.play();
+  }
 
   let emojis = [
     '¯\\_(ツ)_/¯',
@@ -91,7 +100,10 @@ function Name() {
   }
 
   return (
-    <button className={style.button} onClick={notify}>
+    <button className={style.button} onClick={() => {
+      notify();
+      playSound();
+    }}>
       <h1 className={style.name} data-text="Trevor Lee">Trevor Lee</h1>
     </button>
   );
