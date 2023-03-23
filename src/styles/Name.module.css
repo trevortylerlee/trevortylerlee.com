@@ -1,6 +1,7 @@
 .name {
   font-size: 3.5rem;
   position: relative;
+  touch-action: manipulation;
 }
 
 .name::before,
@@ -48,6 +49,7 @@
   box-shadow: none !important;
   -webkit-tap-highlight-color: transparent;
   transform: scale(1);
+  touch-action: manipulation;
 }
 
 .button:hover {
