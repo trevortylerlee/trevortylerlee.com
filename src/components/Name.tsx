@@ -92,7 +92,7 @@ function Name() {
 
   return (
     <button className={style.button} onClick={notify}>
-      <h1 className={style.name}>Trevor Lee</h1>
+      <h1 className={style.name} data-text="Trevor Lee">Trevor Lee</h1>
     </button>
   );
 }
