@@ -100,7 +100,7 @@ function Name() {
   }
 
   return (
-    <button className={style.button} onClick={() => {
+    <button className={style.button} tabIndex={-1} onClick={() => {
       notify();
       playSound();
     }}>

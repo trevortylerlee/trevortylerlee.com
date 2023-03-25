@@ -8,7 +8,8 @@ const lightModeColor = '#0000FF';
 
 <nav aria-label="Main Navigation">
   <a class="wavy-exempt" href="/" aria-label="Go to homepage">
-    <Icon name="octicon:home-fill-24" size="48" class="logo"/>
+    <!-- <Icon name="favicon" size="48" class="logo"/> -->
+    <img src='/favicon.png' alt='logo' class='logo' />
   </a>
   <ThemeIcon />
 </nav>
@@ -20,6 +21,11 @@ const lightModeColor = '#0000FF';
     align-items: center;
   }
 
+  img {
+    width: 48px;
+    height: 48px;
+  }
+
   a {
     color: black;
     transition: 0.2s ease-in-out;
@@ -28,7 +34,8 @@ const lightModeColor = '#0000FF';
   a:hover,
   a:focus {
     color: var(--lightModeColor);
-    transform: scale(1.02)
+    outline: 2px dotted var(--primary-color);
+    border-radius: 100rem;
   }
 
   :global(.dark) a {

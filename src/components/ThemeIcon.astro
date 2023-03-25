@@ -9,8 +9,8 @@ const lightModeColor = '#0000FF';
   id="themeToggle"
   aria-label="Switch between light and dark mode"
 >
-  <Icon name="light-mode" size="48" />
-  <Icon name="dark-mode" size="48" />
+  <Icon name="mdi:brightness-1" size="48" />
+  <Icon name="mdi:brightness-2" size="48" />
 </button>
 
 <style define:vars={{ lightModeColor, darkModeColor }}>
@@ -18,33 +18,56 @@ const lightModeColor = '#0000FF';
     cursor: pointer;
   }
 
+  #themeToggle:hover,
+  #themeToggle:focus {
+    outline: 2px dotted var(--primary-color);
+  }
+
+  #themeToggle:hover svg {
+    background: #e9e9e9;
+    border-radius: 0.25rem;
+  }
+
+  #themeToggle:focus svg {
+    background: #e9e9e9;
+    border-radius: 0.25rem;
+  }
+
+  :global(.dark) #themeToggle:hover svg {
+    background: #333;
+    border-radius: 0.25rem;
+  }
+
+  :global(.dark) #themeToggle:focus svg {
+    background: #333;
+    border-radius: 0.25rem;
+  }
+
   button {
     padding: 0 !important;
   }
 
-  [astro-icon="dark-mode"] {
+  [astro-icon="mdi:brightness-2"] {
     display: none;
     transition: 0.2s;
   }
-  [astro-icon="dark-mode"]:hover,
-  [astro-icon="dark-mode"]:focus] {
+  [astro-icon="mdi:brightness-2"]:hover,
+  [astro-icon="mdi:brightness-2"]:focus] {
     color: var(--darkModeColor);
-    transform: scale(1.02);
   }
-  [astro-icon="light-mode"] {
+  [astro-icon="mdi:brightness-1"] {
     display: block;
     transition: 0.2s;
   }
-  [astro-icon="light-mode"]:hover,
-  [astro-icon="light-mode"]:focus {
+  [astro-icon="mdi:brightness-1"]:hover,
+  [astro-icon="mdi:brightness-1"]:focus {
     fill: var(--primary-color);
-    transform: scale(1.02);
   }
 
-  :global(.dark) [astro-icon="dark-mode"] {
+  :global(.dark) [astro-icon="mdi:brightness-2"] {
     display: block;
   }
-  :global(.dark) [astro-icon="light-mode"] {
+  :global(.dark) [astro-icon="mdi:brightness-1"] {
     display: none;
   }
 
@@ -52,34 +75,31 @@ const lightModeColor = '#0000FF';
         color: black;
     }
 
-  [astro-icon="dark-mode"] {
+  [astro-icon="mdi:brightness-2"] {
         color: white;
         fill: white;
   }
 
-  button:hover [astro-icon="light-mode"] {
+  button:hover [astro-icon="mdi:brightness-1"] {
     fill: var(--lightModeColor);
-    transform: scale(1.02);
   }
 
-  button:focus [astro-icon="light-mode"] {
+  button:focus [astro-icon="mdi:brightness-1"] {
     fill: var(--lightModeColor);
-    transform: scale(1.02);
   }
 
-  :global(.dark) button:hover [astro-icon="dark-mode"] {
+  :global(.dark) button:hover [astro-icon="mdi:brightness-2"] {
     fill: var(--darkModeColor);
-    transform: scale(1.02);
   }
 
-  :global(.dark) button:focus [astro-icon="dark-mode"] {
+  :global(.dark) button:focus [astro-icon="mdi:brightness-2"] {
     fill: var(--darkModeColor);
-    transform: scale(1.02);
   }
 
   button {
     background: none !important;
     box-shadow: none !important;
+    transform: none !important;
   }
 </style>
 
