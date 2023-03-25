@@ -6,7 +6,7 @@ import { Howl, Howler } from 'howler';
 function Name() {
 
   let sound = new Howl({
-    src: ['/button.mp3']
+    src: ['/boop.mp3']
   })
 
   function playSound() {

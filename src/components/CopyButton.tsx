@@ -1,6 +1,7 @@
 import Toastify from './Toastify';
 import toast from 'react-hot-toast';
 import style from '../styles/CopyButton.module.css'
+import { Howl, Howler } from 'howler';
 
 export default Toastify(function Button({message}) {
   const notify = () => {
@@ -31,11 +32,22 @@ export default Toastify(function Button({message}) {
     }
   }
 
+  let sound = new Howl({
+    src: ['/copy.mp3'],
+  });
+
+  function playSound() {
+    sound.play();
+  }
+
   return <>
     <button 
       aria-label={message === 'trevortylerlee@gmail.com'
         ? 'Copy email' : 'Copy phone number'}
-      onClick={notify}
+      onClick={() => {
+        notify()
+        playSound()
+      }}
       style={style
         // {
         //   borderRadius: '8px',
