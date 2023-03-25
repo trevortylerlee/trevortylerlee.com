@@ -1,4 +1,8 @@
 ---
+import Marquee from '../components/Marquee.astro'
+import SocialLink from '../components/SocialLink.astro'
+
+
 const greenLink = '#ff0080';
 const blueLink = '#0000FF';
 ---
@@ -6,16 +10,36 @@ const blueLink = '#0000FF';
 <hr class="hr" />
 <footer>
   <div class="footer-wrapper">
-    <span class="links">
+    <div class='social-grid'>
+    <SocialLink
+      link="https://github.com/boogerbuttcheeks"
+      icon="ant-design:github-filled"
+      name="Github"
+    />
+    <SocialLink
+      link="https://www.linkedin.com/in/trevortylerlee/"
+      icon="mdi:linkedin"
+      name="LinkedIn"
+    />
+    <SocialLink
+      link="https://mstdn.social/@boogerbuttcheeks"
+      icon="mdi:mastodon"
+      name="Mastodon"
+    />
+    <SocialLink
+      link="https://twitter.com/boogerbuttcheek"
+      icon="ri:twitter-fill"
+      name="Twitter"
+    />
+    </div>
+    <!-- <span class="links">
       <a href="https://github.com/boogerbuttcheeks">Github</a>
-      <a href="https://www.linkedin.com/in/trevortylerlee/"
-        >LinkedIn</a
-      >
-      <!-- <a href="/rss.xml">RSS</a> -->
+      <a href="https://www.linkedin.com/in/trevortylerlee/">LinkedIn</a>
+      <a href="https://mstdn.social/@boogerbuttcheeks">Mastodon</a>
       <a href="https://twitter.com/boogerbuttcheek">Twitter</a>
-    </span>
+    </span> -->
     <!-- The sprites are from pokedb.net!  -->
-    <span class="pokemon">
+    <!-- <span class="pokemon">
       <span class="ditto name">
         <img src="/pokemon/ditto.gif" alt="Ditto" />
       </span>
@@ -28,14 +52,15 @@ const blueLink = '#0000FF';
       <span class="wooper name">
         <img class="delete" src="/pokemon/wooper.gif" alt="Wooper" />
       </span>
-    </span>
+    </span> -->
+    <Marquee />
   </div>
 </footer>
 
 <style define:vars={{ blueLink, greenLink }}>
   .footer-wrapper {
     display: grid;
-    justify-content: center;
+    margin-bottom: 1em;
   }
 
   a {
@@ -58,119 +83,34 @@ const blueLink = '#0000FF';
     /* color: var(--greenLink); */
   }
 
-  .hr {
-    margin-top: 2rem;
-  }
-
-  .pokemon {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    justify-content: space-evenly;
-  }
-
-  .pokemon img {
-    transition: 0.2s;
-  }
-
-  /* .pokemon:hover img {
-    opacity: 0;
-  } */
-
-  .ditto:hover img {
-    opacity: 1;
-  }
-
-  .togepi:hover img {
-    opacity: 1;
-  }
-
-  .pichu:hover img {
-    opacity: 1;
-  }
-
-  .wooper:hover img {
-    opacity: 1;
-  }
-
   .links {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: baseline;
     text-align: center;
-    gap: 1rem;
+    margin-bottom: 0.5rem;
+    gap: 1.25rem;
   }
 
-  /* .name::after {
-    font-family: monospace;
-    position: absolute;
-    opacity: 0;
-    transition: 0.2s ease-in-out;
-    transform: scale(0.9);
+    .social-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    max-width: 420px;
   }
-
-  .name:hover::after {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  .ditto::after {
-    content: 'ditto!';
-    margin-left: -1rem;
-    margin-top: -3rem;
-  }
-
-  .ditto:hover::after {
-    transform: rotate(-20deg);
-  }
-
-  .togepi::after {
-    content: 'togepi!';
-    margin-top: -3.25rem;
-    margin-left: -0.5rem;
-  }
-
-  .togepi:hover::after {
-    transform: rotate(-2deg);
-  }
-
-  .pichu::after {
-    content: 'pichu!';
-  }
-
-  .pichu:hover::after {
-    transform: rotate(-5deg);
-  }
-
-  .wooper::after {
-    content: 'wooper!';
-    margin-top: -3.5rem;
-  }
-
-  .wooper:hover::after {
-    transform: rotate(5deg);
-  } */
 
   @media (min-width: 40rem) {
-    img {
-      display: block;
-    }
-
     .links {
-      gap: 1.25rem;
+      gap: 1.5rem;
       position: relative;
-      top: 0.9em;
     }
 
-    .footer-wrapper {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-    }
-
-    .pokemon {
-      margin-top: 0;
+    .social-grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      place-content: center;
+      gap: 1rem;
     }
   }
 

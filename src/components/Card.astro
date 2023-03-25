@@ -1,11 +1,11 @@
 ---
-const { title, desc, href, alt, src } = Astro.props;
+const { title, desc, href, alt, src, featured } = Astro.props;
 const lightGlow = '#ff0080';
 const darkGlow = '#0000FF';
 ---
 
 <a href={`/posts/${href}/`} rel="prefetch">
-  <div class="card">
+  <div class={`card ${featured ? 'featured' : ''}`}>
     <img src={src} alt={alt} />
     <h3 class="title">
       {title}
@@ -33,7 +33,8 @@ const darkGlow = '#0000FF';
     cursor: pointer;
     padding: 1rem;
     height: 100%;
-
+    transition: 0s;
+    border-radius: 0.5rem;
 
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
@@ -41,37 +42,27 @@ const darkGlow = '#0000FF';
     user-select: none; /* Standard */
   }
 
-  .card:hover img {
-    color: var(--darkGlow);
-    box-shadow: 0 0 1rem var(--darkGlow);
-    text-shadow: 0 0 1rem var(--darkGlow);
-    scale: 1.02;
+  .card:hover {
+    background: #e9e9e9;
+    outline: 2px dotted var(--primary-color);
   }
 
-   a:focus .title {
-    color: var(--primary-color);
+  :global(.dark) .card:hover {
+    background: #333;
   }
 
-  .card:hover .title {
-    color: var(--primary-color);
+  a:focus {
+    outline: 2px dotted var(--primary-color);
+    background: #e9e9e9;
   }
 
-  .a:focus-within {
-    outline: 2px solid var(--lightGlow);
+  :global(.dark) a:focus {
+    background: #333;
   }
 
-  :global(.dark) .a:focus-within {
-    outline: 2px solid var(--darkGlow);
-  }
-
-  :global(.dark) .card:hover img {
-    color: var(--lightGlow);
-    box-shadow: 0 0 2rem var(--lightGlow);
-    text-shadow: 0 0 1rem var(--lightGlow);
-  }
-
-  img {
-    transition: 0.2s ease-in-out;
+  a:focus .featured {
+    background: #e9e9e9;
+    outline: 2px dotted var(--primary-color);
   }
 
   p {
@@ -87,34 +78,12 @@ const darkGlow = '#0000FF';
   }
 
   a:hover {
-    /* text-decoration: none !important; */
     background-image: none !important;
   }
 
-  a:focus-visible img {
-    color: var(--darkGlow);
-    box-shadow: 0 0 1rem var(--darkGlow);
-    text-shadow: 0 0 1rem var(--darkGlow);
-    scale: 1.02;
-  }
-
-  a:focus {
-    outline: 2px solid var(--darkGlow);
-  }
-
-  :global(.dark) a:focus-visible img {
-    color: var(--lightGlow);
-    box-shadow: 0 0 1rem var(--lightGlow);
-    text-shadow: 0 0 1rem var(--lightGlow);
-  }
-
-  :global(.dark) a:focus {
-    outline: 2px solid var(--lightGlow);
-  }
-
-  a:focus .arrow {
+  /* a:focus .arrow {
     opacity: 1;
-  }
+  } */
 
   .title {
     font-size: 1.5rem;
@@ -129,7 +98,7 @@ const darkGlow = '#0000FF';
     }
   } */
 
-  .arrow {
+  /* .arrow {
     opacity: 0;
     transition: 0.2s ease-in-out;
     position: relative;
@@ -139,7 +108,7 @@ const darkGlow = '#0000FF';
 
   .card:hover .arrow {
     opacity: 1;
-  }
+  } */
 
   @media (min-width: 40rem) {
     .card {

@@ -1,0 +1,42 @@
+---
+import Icon from 'astro-icon'
+
+const { link, icon, name } = Astro.props
+---
+
+<a class='icon wavy-exempt' href={link}>
+  <Icon name={icon} size="44" />
+  {name}
+</a>
+
+<style>
+
+  .icon {
+    all: unset;
+    padding: 0.5rem 1rem !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+
+  .icon:hover {
+    background: #dcdcdc;
+    outline: 2px dotted var(--primary-color);
+  }
+
+  :global(.dark) .icon:hover {
+    background: #333;
+  }
+
+  .icon:focus {
+    outline: 2px dotted var(--primary-color);
+    background: #dcdcdc;
+  }
+
+  :global(.dark) .icon:focus {
+    background: #333;
+    outline: 2px dotted var(--primary-color);
+  }
+</style>

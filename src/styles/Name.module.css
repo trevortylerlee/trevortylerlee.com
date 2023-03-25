@@ -2,6 +2,7 @@
   font-size: 3.5rem;
   position: relative;
   touch-action: manipulation;
+  transition: 0s;
 }
 
 .name::before,

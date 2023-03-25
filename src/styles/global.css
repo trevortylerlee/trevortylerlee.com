@@ -33,7 +33,7 @@ body {
 
 .wrapper {
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 0 1rem;
   max-width: 800px;
 }
 
@@ -87,7 +87,7 @@ h2,
 h3,
 h4 {
   line-height: 1.25;
-  transition: 0.2s;
+  /* transition: 0.2s; */
   font-family: 'Inter', sans-serif
 }
 
