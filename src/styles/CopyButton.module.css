@@ -22,16 +22,22 @@ button {
 }
 
 button:hover {
-  transform: scale(1.02);
-  background: #fafafa;
+  background: #fff;
 }
 
 button:active {
   transform: scale(0.97);
+  outline: none;
 }
 
 button:focus {
+  outline: none;
+  border-radius: 8px;
+}
+
+button:focus-visible {
   background: #ffffff;
+  outline: 2px solid var(--primary-color);
 }
 
 :global(.dark) button {
