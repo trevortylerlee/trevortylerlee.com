@@ -1,13 +1,14 @@
 # trevortylerlee.com
 
-Hi and welcome to my diary I'm building with Astro. For this website I want to a. stick to vanilla CSS and b. minimize its dependencies. It incorporates some new features in Astro 2.0 like the content collection and schema validation.
+Hi!
 
 ## Technologies Used
 
 - Astro
 - TypeScript
-- [react-hot-toast]()
 - Vercel
+- [react-hot-toast](https://react-hot-toast.com/)
+- [Howler.js](https://howlerjs.com/)
 
 ## Setup Instructions
 
