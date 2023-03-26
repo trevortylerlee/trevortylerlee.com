@@ -1,7 +1,7 @@
 ---
 const { title, desc, href, alt, src, featured } = Astro.props;
-const lightGlow = '#ff0080';
-const darkGlow = '#0000FF';
+const light = '#e9e9e9';
+const dark = '#333';
 ---
 
 <a href={`/posts/${href}/`} rel="prefetch">
@@ -9,26 +9,12 @@ const darkGlow = '#0000FF';
     <img src={src} alt={alt} />
     <h3 class="title">
       {title}
-      <!-- <svg
-          class="arrow"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><line x1="5" y1="12" x2="19" y2="12"></line><polyline
-            points="12 5 19 12 12 19"></polyline>
-        </svg> -->
     </h3>
     <p>{desc}</p>
   </div>
 </a>
 
-<style define:vars={{ lightGlow, darkGlow }}>
+<style define:vars={{ light, dark }}>
   .card {
     cursor: pointer;
     padding: 1rem;
@@ -43,30 +29,30 @@ const darkGlow = '#0000FF';
   }
 
   .card:hover {
-    background: #e9e9e9;
+    background: var(--light);
     outline: 2px dotted var(--primary-color);
   }
 
   :global(.dark) .card:hover {
-    background: #333;
+    background: var(--dark);
   }
 
   a:focus {
     outline: 2px dotted var(--primary-color);
-    background: #e9e9e9;
+    background: var(--light);
   }
 
   :global(.dark) a:focus {
-    background: #333;
+    background: var(--dark);
   }
 
   a:focus .featured {
-    background: #e9e9e9;
+    background: var(--light);
     outline: 2px dotted var(--primary-color);
   }
 
   :global(.dark) a:focus .featured {
-    background: #333;
+    background: var(--dark);
   }
 
   p {
@@ -85,34 +71,11 @@ const darkGlow = '#0000FF';
     background-image: none !important;
   }
 
-  /* a:focus .arrow {
-    opacity: 1;
-  } */
-
   .title {
     font-size: 1.5rem;
     margin-top: 1.25rem;
     position: relative;
   }
-
-  /* For when arrow breaks to next line without the last word */
-  /* @media only screen and (max-width: 500px) and (min-width: 460px) {
-    .title {
-      white-space: nowrap;
-    }
-  } */
-
-  /* .arrow {
-    opacity: 0;
-    transition: 0.2s ease-in-out;
-    position: relative;
-    top: 0.125rem;
-    left: 0.25rem;
-  }
-
-  .card:hover .arrow {
-    opacity: 1;
-  } */
 
   @media (min-width: 40rem) {
     .card {

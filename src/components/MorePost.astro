@@ -1,9 +1,7 @@
 ---
 import { formatDate } from '../js/utils';
 
-const lightGlow = '#ff0080';
-const darkGlow = '#0000FF';
-const darkBg = '#222';
+const darkBg = '#333';
 const lightBg = '#fff';
 const { date, href, title, description, last } = Astro.props;
 ---
@@ -24,7 +22,7 @@ const { date, href, title, description, last } = Astro.props;
   </a>
 </div>
 
-<style define:vars={{ lightGlow, darkGlow, lightBg, darkBg }}>
+<style define:vars={{ lightBg, darkBg }}>
   p {
     margin: 0;
     padding: 0;
@@ -35,16 +33,10 @@ const { date, href, title, description, last } = Astro.props;
   }
 
   a:hover .wrapper {
-    /* transform: scale(1.02);
-    box-shadow: 0 0 1rem var(--darkGlow); */
-    background: #fff;
     outline: 2px dotted var(--primary-color);
   }
 
   a:focus .wrapper {
-    /* transform: scale(1.02);
-    box-shadow: 0 0 1rem var(--darkGlow); */
-    background: #fff;
     outline: 2px dotted var(--primary-color);
   }
 
@@ -58,25 +50,7 @@ const { date, href, title, description, last } = Astro.props;
     text-shadow: none;
   }
 
-  :global(.dark) a:hover .wrapper {
-    /* transform: scale(1.02);
-    box-shadow: 0 0 1rem var(--lightGlow); */
-    background: #333;
-  }
-
-  :global(.dark) a:focus .wrapper {
-    /* transform: scale(1.02);
-    box-shadow: 0 0 1rem var(--lightGlow); */
-    background: #333;
-  }
-
-  a:hover h4,
-  a:focus h4 {
-    /* color: var(--primary-color); */
-  }
-
   .wrapper {
-    /* background: var(--lightBg); */
     border-radius: 8px;
     padding: 0.75rem;
   }
@@ -85,10 +59,6 @@ const { date, href, title, description, last } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  :global(.dark) .wrapper {
-    /* background: var(--darkBg); */
   }
 
   .date {
@@ -102,11 +72,11 @@ const { date, href, title, description, last } = Astro.props;
 
   .container {
     border-radius: 0.5rem;
-    background: #fff;
+    background: var(--lightBg);
   }
 
   :global(.dark) .container {
-    background: #333;
+    background: var(--darkBg);
   }
 
   .title {
