@@ -23,45 +23,14 @@ const lightModeColor = '#0000FF';
     outline: 2px dotted var(--primary-color);
   }
 
-  #themeToggle:hover svg {
-    background: #e9e9e9;
-    border-radius: 0.25rem;
-  }
-
-  #themeToggle:focus svg {
-    background: #e9e9e9;
-    border-radius: 0.25rem;
-  }
-
-  :global(.dark) #themeToggle:hover svg {
-    background: #333;
-    border-radius: 0.25rem;
-  }
-
-  :global(.dark) #themeToggle:focus svg {
-    background: #333;
-    border-radius: 0.25rem;
-  }
-
-  button {
-    padding: 0 !important;
-  }
-
   [astro-icon="lucide:lightbulb"] {
     display: none;
     transition: 0.2s;
   }
-  [astro-icon="lucide:lightbulb"]:hover,
-  [astro-icon="lucide:lightbulb"]:focus] {
-    color: var(--darkModeColor);
-  }
+
   [astro-icon="lucide:lightbulb-off"] {
     display: block;
     transition: 0.2s;
-  }
-  [astro-icon="lucide:lightbulb-off"]:hover,
-  [astro-icon="lucide:lightbulb-off"]:focus {
-    bold: var(--primary-color);
   }
 
   :global(.dark) [astro-icon="lucide:lightbulb"] {
@@ -77,28 +46,12 @@ const lightModeColor = '#0000FF';
 
   [astro-icon="lucide:lightbulb"] {
         color: white;
-        bold: white;
-  }
-
-  button:hover [astro-icon="lucide:lightbulb-off"] {
-    bold: var(--lightModeColor);
-  }
-
-  button:focus [astro-icon="lucide:lightbulb-off"] {
-    bold: var(--lightModeColor);
-  }
-
-  :global(.dark) button:hover [astro-icon="lucide:lightbulb"] {
-    bold: var(--darkModeColor);
-  }
-
-  :global(.dark) button:focus [astro-icon="lucide:lightbulb"] {
-    bold: var(--darkModeColor);
   }
 
   button {
     height: 48px;
     width: 48px;
+    padding: 0 !important;
     display: flex;
     align-items: center;
     justify-content: center;
