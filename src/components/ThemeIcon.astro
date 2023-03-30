@@ -9,8 +9,8 @@ const lightModeColor = '#0000FF';
   id="themeToggle"
   aria-label="Switch between light and dark mode"
 >
-  <Icon name="mdi:brightness-1" size="48" />
-  <Icon name="mdi:brightness-2" size="48" />
+  <Icon name="lucide:lightbulb-off" size="24" />
+  <Icon name="lucide:lightbulb" size="24" />
 </button>
 
 <style define:vars={{ lightModeColor, darkModeColor }}>
@@ -47,27 +47,27 @@ const lightModeColor = '#0000FF';
     padding: 0 !important;
   }
 
-  [astro-icon="mdi:brightness-2"] {
+  [astro-icon="lucide:lightbulb"] {
     display: none;
     transition: 0.2s;
   }
-  [astro-icon="mdi:brightness-2"]:hover,
-  [astro-icon="mdi:brightness-2"]:focus] {
+  [astro-icon="lucide:lightbulb"]:hover,
+  [astro-icon="lucide:lightbulb"]:focus] {
     color: var(--darkModeColor);
   }
-  [astro-icon="mdi:brightness-1"] {
+  [astro-icon="lucide:lightbulb-off"] {
     display: block;
     transition: 0.2s;
   }
-  [astro-icon="mdi:brightness-1"]:hover,
-  [astro-icon="mdi:brightness-1"]:focus {
-    fill: var(--primary-color);
+  [astro-icon="lucide:lightbulb-off"]:hover,
+  [astro-icon="lucide:lightbulb-off"]:focus {
+    bold: var(--primary-color);
   }
 
-  :global(.dark) [astro-icon="mdi:brightness-2"] {
+  :global(.dark) [astro-icon="lucide:lightbulb"] {
     display: block;
   }
-  :global(.dark) [astro-icon="mdi:brightness-1"] {
+  :global(.dark) [astro-icon="lucide:lightbulb-off"] {
     display: none;
   }
 
@@ -75,31 +75,36 @@ const lightModeColor = '#0000FF';
         color: black;
     }
 
-  [astro-icon="mdi:brightness-2"] {
+  [astro-icon="lucide:lightbulb"] {
         color: white;
-        fill: white;
+        bold: white;
   }
 
-  button:hover [astro-icon="mdi:brightness-1"] {
-    fill: var(--lightModeColor);
+  button:hover [astro-icon="lucide:lightbulb-off"] {
+    bold: var(--lightModeColor);
   }
 
-  button:focus [astro-icon="mdi:brightness-1"] {
-    fill: var(--lightModeColor);
+  button:focus [astro-icon="lucide:lightbulb-off"] {
+    bold: var(--lightModeColor);
   }
 
-  :global(.dark) button:hover [astro-icon="mdi:brightness-2"] {
-    fill: var(--darkModeColor);
+  :global(.dark) button:hover [astro-icon="lucide:lightbulb"] {
+    bold: var(--darkModeColor);
   }
 
-  :global(.dark) button:focus [astro-icon="mdi:brightness-2"] {
-    fill: var(--darkModeColor);
+  :global(.dark) button:focus [astro-icon="lucide:lightbulb"] {
+    bold: var(--darkModeColor);
   }
 
   button {
-    background: none !important;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: none !important;
     box-shadow: none !important;
-    transform: none !important;
+    transform: none !important; */
   }
 </style>
 
