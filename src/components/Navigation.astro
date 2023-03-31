@@ -1,17 +1,21 @@
 ---
 import ThemeIcon from '../components/ThemeIcon.astro';
-import { Icon } from 'astro-icon'
+import { Icon } from 'astro-icon';
 
 const darkModeColor = '#ff0080';
 const lightModeColor = '#0000FF';
 ---
 
 <nav aria-label="Main Navigation">
-  <a class="wavy-exempt" href="/" aria-label="Go to homepage">
-    <!-- <Icon name="favicon" size="48" class="logo"/> -->
-    <img src='/favicon.png' alt='logo' class='logo' />
-  </a>
-  <ThemeIcon />
+  <div>
+    <a class="wavy-exempt" href="/" aria-label="Go to homepage">
+      <!-- <Icon name="favicon" size="48" class="logo"/> -->
+      <img src='/favicon.png' alt='logo' class='logo' />
+    </a>
+  </div>
+  <div class='toggleWrapper'>
+    <ThemeIcon />
+  </div>
 </nav>
 
 <style define:vars={{ lightModeColor, darkModeColor }}>
@@ -32,8 +36,8 @@ const lightModeColor = '#0000FF';
     transition: 0.2s ease-in-out;
   }
 
-  a:hover,
-  a:focus {
+  a:hover > img,
+  a:focus > img {
     color: var(--lightModeColor);
     outline: 2px dotted var(--primary-color);
   }
@@ -45,5 +49,11 @@ const lightModeColor = '#0000FF';
   :global(.dark) a:hover,
   :global(.dark) a:focus {
     color: var(--darkModeColor);
+  }
+
+  .toggleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 </style>

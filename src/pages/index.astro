@@ -6,7 +6,6 @@ import Card from '../components/Card.astro';
 import Marquee from '../components/Marquee.astro';
 import MorePost from '../components/MorePost.astro';
 import LatestPosts from '../components/LatestPosts.astro';
-import Name from '../components/Name.tsx';
 import SocialLink from '../components/SocialLink.astro'
 
 import { formatBlogPost } from '../js/utils';
@@ -27,8 +26,7 @@ const secondaryPosts = [feature2, feature3];
 <BaseLayout pageTitle={pageTitle}>
   <div class="intro">
 
-    <Name client:load/>
-    <p class="desc">Digital designer and web developer</p>
+    <h1 class='desc'><span class='name'>Trevor Lee –</span> I'm a software developer interested in design.</h1>
 
   </div>
   <hr />
@@ -65,24 +63,20 @@ const secondaryPosts = [feature2, feature3];
 </BaseLayout>
 
 <style>
-  h1 {
-    font-size: 3.125rem;
-    cursor: default;
+
+  .desc {
+    font-size: 2rem;
+    margin: 0;
+    transition: 0.2s;
+    color: gray;
+  }
+
+  .desc:hover {
+    color: var(--text-color);
   }
 
   .name {
-    transition: 0.2s;
-  }
-
-  .name,
-  .desc {
-    margin: 0;
-    text-align: center;
-    transition: 0s;
-  }
-
-  .desc {
-    margin-top: -0.5rem;
+    color: var(--text-color);
   }
   
   .intro {
@@ -126,12 +120,8 @@ const secondaryPosts = [feature2, feature3];
   }
 
   @media (min-width: 40rem) {
-    h1 {
-      font-size: 5.5rem;
-    }
-
     .desc {
-      font-size: 1.5rem;
+      font-size: 3rem;
     }
   }
 </style>
