@@ -11,26 +11,26 @@ const blueLink = '#0000FF';
 <footer>
   <div class="footer-wrapper">
     <div class='social-grid'>
-    <SocialLink
-      link="https://github.com/boogerbuttcheeks"
-      icon="ant-design:github-filled"
-      name="Github"
-    />
-    <SocialLink
-      link="https://www.linkedin.com/in/trevortylerlee/"
-      icon="mdi:linkedin"
-      name="LinkedIn"
-    />
-    <SocialLink
-      link="https://mstdn.social/@boogerbuttcheeks"
-      icon="mdi:mastodon"
-      name="Mastodon"
-    />
-    <SocialLink
-      link="https://twitter.com/boogerbuttcheek"
-      icon="ri:twitter-fill"
-      name="Twitter"
-    />
+      <SocialLink
+        link="https://github.com/boogerbuttcheeks"
+        icon="ant-design:github-filled"
+        github
+      />
+      <SocialLink
+        link="https://www.linkedin.com/in/trevortylerlee/"
+        icon="mdi:linkedin"
+        color="#0a66c2"
+      />
+      <SocialLink
+        link="https://mstdn.social/@boogerbuttcheeks"
+        icon="mdi:mastodon"
+        color="#6364F6"
+      />
+      <SocialLink
+        link="https://twitter.com/boogerbuttcheek"
+        icon="ri:twitter-fill"
+        color="#1DA1F2"
+      />
     </div>
     <Marquee />
   </div>
@@ -39,7 +39,6 @@ const blueLink = '#0000FF';
 <style define:vars={{ blueLink, greenLink }}>
   .footer-wrapper {
     display: grid;
-    margin-bottom: 1em;
   }
 
   a {
@@ -54,40 +53,9 @@ const blueLink = '#0000FF';
     color: white;
   }
 
-  .links {
+  .social-grid {
     display: flex;
     justify-content: center;
-    align-items: baseline;
-    text-align: center;
-    margin-bottom: 0.5rem;
-    gap: 1.25rem;
-  }
-
-    .social-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    margin: 0 auto;
-    margin-top: 2rem;
-    max-width: 420px;
-  }
-
-  @media (min-width: 40rem) {
-    .links {
-      gap: 1.5rem;
-      position: relative;
-    }
-
-    .social-grid {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      place-content: center;
-      gap: 1rem;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .pokemon {
-      display: none;
-    }
+    gap: 1rem;
   }
 </style>

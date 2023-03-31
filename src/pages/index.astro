@@ -27,6 +27,28 @@ const secondaryPosts = [feature2, feature3];
   <div class="intro">
 
     <h1 class='desc'><span class='name'>Trevor Lee –</span> I'm a software developer interested in design.</h1>
+    <div class='social-grid'>
+      <SocialLink
+        link="https://github.com/boogerbuttcheeks"
+        icon="ant-design:github-filled"
+        github
+      />
+      <SocialLink
+        link="https://www.linkedin.com/in/trevortylerlee/"
+        icon="mdi:linkedin"
+        color="#0a66c2"
+      />
+      <SocialLink
+        link="https://mstdn.social/@boogerbuttcheeks"
+        icon="mdi:mastodon"
+        color="#6364F6"
+      />
+      <SocialLink
+        link="https://twitter.com/boogerbuttcheek"
+        icon="ri:twitter-fill"
+        color="#1DA1F2"
+      />
+    </div>
 
   </div>
   <hr />
@@ -81,34 +103,17 @@ const secondaryPosts = [feature2, feature3];
   
   .intro {
     /* outline: 2px solid orange; */
-    padding: 2rem 0;
-  }
-
-  .icons {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 400px;
-    margin-top: 2rem;
-    margin: 0 auto;
-    outline: 2px solid red;
+    padding: 3rem 0 2rem 0;
   }
 
   .social-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    margin: 0 auto;
-    margin-top: 2rem;
-    max-width: 420px;
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
   }
 
   h2 {
     text-align: center;
-  }
-
-  marquee {
-    display: flex;
-    margin: 0;
   }
 
   @media (min-width: 760px) {
