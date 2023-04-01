@@ -32,7 +32,7 @@ const blueLink = '#0000FF';
         color="#1DA1F2"
       />
     </div>
-    <Marquee />
+    <!-- <Marquee /> -->
   </div>
 </footer>
 
@@ -55,7 +55,15 @@ const blueLink = '#0000FF';
   .social-grid {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (min-width: 40rem) {
+    .social-grid {
+      margin-top: 0;
+    }
   }
 </style>

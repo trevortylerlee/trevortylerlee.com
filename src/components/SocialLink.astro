@@ -4,7 +4,7 @@ import Icon from 'astro-icon'
 const { link, icon, name, color, github} = Astro.props
 ---
 
-<a class='icon wavy-exempt' href={link}>
+<a class='icon wavy-exempt' href={link} target="_blank" rel="noreffer noopener">
   <Icon name={icon} size="44" color={color ? color : ''} class={github ? 'github' : ''}/>
   {name ? name : ''}
 </a>
@@ -16,7 +16,7 @@ const { link, icon, name, color, github} = Astro.props
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    cursor: pointer;
+    cursor: ne-resize;
     border-radius: 0.5rem;
   }
 

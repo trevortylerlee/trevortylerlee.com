@@ -27,7 +27,10 @@ const secondaryPosts = [feature2, feature3];
   <div class="intro">
 
     <h1 class='desc'><span class='name'>Trevor Lee –</span> I'm a software developer interested in design.</h1>
-    <div class='social-grid'>
+    <div class='marquee'>
+      <Marquee />
+    </div>
+    <!-- <div class='social-grid'>
       <SocialLink
         link="https://github.com/boogerbuttcheeks"
         icon="ant-design:github-filled"
@@ -48,7 +51,7 @@ const secondaryPosts = [feature2, feature3];
         icon="ri:twitter-fill"
         color="#1DA1F2"
       />
-    </div>
+    </div> -->
 
   </div>
   <hr />
@@ -110,10 +113,20 @@ const secondaryPosts = [feature2, feature3];
     display: flex;
     gap: 1rem;
     margin-top: 3rem;
+    justify-content: center;
   }
 
   h2 {
     text-align: center;
+  }
+
+  .marquee {
+    position: relative;
+    margin-top: -6rem;
+    user-select: none;
+    z-index: -1;
+    display: none;
+    margin-bottom: 1rem;
   }
 
   @media (min-width: 760px) {
@@ -127,6 +140,12 @@ const secondaryPosts = [feature2, feature3];
   @media (min-width: 40rem) {
     .desc {
       font-size: 3rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .marquee {
+      display: block;
     }
   }
 </style>

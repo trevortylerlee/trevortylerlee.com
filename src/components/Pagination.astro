@@ -67,7 +67,6 @@ const { prevUrl, nextUrl } = Astro.props;
   a:hover,
   a:focus {
     color: var(--primary-color);
-    transform: scale(1.02);
   }
 
   [href]:hover,
@@ -76,8 +75,17 @@ const { prevUrl, nextUrl } = Astro.props;
     padding: 0.75rem;
   }
 
+  a:active {
+    transform: scale(0.97);
+  }
+
+  .left {
+    cursor: w-resize;
+  }
+
   .right {
     margin-left: auto;
+    cursor: e-resize;
   }
 
   .right svg {
