@@ -59,19 +59,19 @@ const lightModeColor = '#0000FF';
 
   .logoWrapper {
     transform: rotate(0deg);
-    transition: 1s cubic-bezier(0.19, 1, 0.22, 1)
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .animate {
-    transform: rotate(360deg);
+    animation: spin 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   }
 
   @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
     to {
-      transform: rotate(360deg);
+      transform: rotate(2turn);
     }
   }
 </style>
