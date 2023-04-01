@@ -7,7 +7,7 @@ const lightModeColor = '#0000FF';
 ---
 
 <nav aria-label="Main Navigation">
-  <div>
+  <div class='logoWrapper'>
     <a class="wavy-exempt" href="/" aria-label="Go to homepage">
       <!-- <Icon name="favicon" size="48" class="logo"/> -->
       <img src='/favicon.png' alt='logo' class='logo' />
@@ -56,4 +56,40 @@ const lightModeColor = '#0000FF';
     align-items: center;
     gap: 1rem;
   }
+
+  .logoWrapper {
+    transform: rotate(0deg);
+    transition: 1s cubic-bezier(0.19, 1, 0.22, 1)
+  }
+
+  .animate {
+    transform: rotate(360deg);
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const target = document.querySelector('.logoWrapper')
+
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        target.classList.add('animate')
+      } else {
+        target.classList.remove('animate')
+      }
+    }, {
+      threshold: 1,
+    })
+
+    observer.observe(target)
+  })
+</script>
