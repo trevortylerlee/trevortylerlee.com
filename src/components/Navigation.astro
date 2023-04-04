@@ -1,16 +1,14 @@
 ---
 import ThemeIcon from '../components/ThemeIcon.astro';
 import { Icon } from 'astro-icon';
-
-const darkModeColor = '#ff0080';
-const lightModeColor = '#0000FF';
 ---
 
 <nav aria-label="Main Navigation">
   <div class='logoWrapper'>
     <a class="wavy-exempt" href="/" aria-label="Go to homepage">
       <!-- <Icon name="favicon" size="48" class="logo"/> -->
-      <img src='/favicon.png' alt='logo' class='logo' />
+      <!-- <img src='/favicon.png' alt='logo' class='logo' /> -->
+      <Icon name='mdi:square' class='logo' size='48' />
     </a>
   </div>
   <div class='toggleWrapper'>
@@ -18,37 +16,29 @@ const lightModeColor = '#0000FF';
   </div>
 </nav>
 
-<style define:vars={{ lightModeColor, darkModeColor }}>
+<style>
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  img {
-    width: 48px;
-    height: 48px;
-    border-radius: 0;
-  }
-
   a {
     color: black;
-    transition: 0.2s ease-in-out;
   }
 
-  a:hover > img,
-  a:focus > img {
-    color: var(--lightModeColor);
+  a:hover,
+  a:focus {
+    outline: none;
+  }
+
+  a:hover svg,
+  a:focus svg {
     outline: 2px dotted var(--primary-color);
   }
 
   :global(.dark) a {
     color: white;
-  }
-
-  :global(.dark) a:hover,
-  :global(.dark) a:focus {
-    color: var(--darkModeColor);
   }
 
   .toggleWrapper {
@@ -59,14 +49,10 @@ const lightModeColor = '#0000FF';
 
   .logoWrapper {
     transform: rotate(0deg);
-    transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -moz-transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -o-transition: 1s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .animate {
-    animation: spin 0.8s cubic-bezier(0,.69,.22,1.14) forwards;
+    animation: spin 0.65s cubic-bezier(0,.69,.22,1.14) forwards;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -93,7 +79,7 @@ const lightModeColor = '#0000FF';
         target.classList.remove('animate')
       }
     }, {
-      threshold: 0.75,
+      threshold: 0.05,
     })
 
     observer.observe(target)
