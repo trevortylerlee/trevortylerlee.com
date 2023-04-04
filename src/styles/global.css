@@ -104,7 +104,6 @@ h3 {
 }
 
 p {
-  transition: 0.2s;
   font-size: var(--size-400);
 }
 

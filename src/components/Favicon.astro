@@ -4,7 +4,6 @@
   const favicon = document.querySelector('link[rel="icon"]')!
   const html = document.querySelector('html')!
   const themeToggle = document.querySelector('#themeToggle')!
-  console.log(html.classList)
   themeToggle.addEventListener('click', () => {
     const darkMode = html.classList.length
     favicon.setAttribute('href', darkMode > 0 ? '/dark-favicon.png' : '/favicon.png')
