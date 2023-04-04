@@ -26,32 +26,26 @@ const secondaryPosts = [feature2, feature3];
 <BaseLayout pageTitle={pageTitle}>
   <div class="intro">
 
-    <h1 class='desc'><span class='name'>Trevor Lee –</span> I'm a software developer interested in design.</h1>
+    <div class='descWrapper'>
+    <h1 class='desc'>
+      <span class="magic">
+        <span class="magic-star">
+          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
+        </span>
+        <span class="magic-star">
+          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
+        </span>
+        <span class="magic-star">
+          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
+        </span>
+        <span class="magic-text">Trevor Lee</span>
+      </span>
+      <span class='name'>– I'm a software developer interested in design.</span>
+    </h1>
     <div class='marquee'>
       <Marquee />
     </div>
-    <!-- <div class='social-grid'>
-      <SocialLink
-        link="https://github.com/boogerbuttcheeks"
-        icon="ant-design:github-filled"
-        github
-      />
-      <SocialLink
-        link="https://www.linkedin.com/in/trevortylerlee/"
-        icon="mdi:linkedin"
-        color="#0a66c2"
-      />
-      <SocialLink
-        link="https://mstdn.social/@boogerbuttcheeks"
-        icon="mdi:mastodon"
-        color="#6364F6"
-      />
-      <SocialLink
-        link="https://twitter.com/boogerbuttcheek"
-        icon="ri:twitter-fill"
-        color="#1DA1F2"
-      />
-    </div> -->
+  </div>
 
   </div>
   <hr />
@@ -93,23 +87,32 @@ const secondaryPosts = [feature2, feature3];
     font-size: 2rem;
     margin: 0;
     transition: 0.2s;
-    color: gray;
+    cursor: none;
   }
 
-  .desc:hover {
-    color: #ff0080;
+  .magic-text {
+    transition: 0.2s;
   }
 
-  :global(.dark) .desc:hover {
-    color: #fff500;
+  .desc:hover .magic-text {
+    color: var(--text-color);
+  }
+
+  .descWrapper:hover .marquee {
+    opacity: 0;
+    transition: 0.2s;
   }
 
   .name {
     color: var(--text-color);
   }
+
+  .desc:hover .name {
+    opacity: 0.5;
+    transition: 0.2s;
+  }
   
   .intro {
-    /* outline: 2px solid orange; */
     padding: 3rem 0 2rem 0;
   }
 
@@ -131,6 +134,53 @@ const secondaryPosts = [feature2, feature3];
     z-index: -1;
     display: none;
     margin-bottom: 1rem;
+    opacity: 1;
+    transition: 0.2s;
+  }
+
+  @keyframes scale {
+    from, to {
+      transform: scale(0);
+    }
+    
+    50% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    
+    to {
+      transform: rotate(180deg);
+    }
+  }
+
+  h1 > .magic {
+    position: relative;
+  }
+
+  h1 > .magic > .magic-star {
+    --size: clamp(20px, 1.5vw, 30px);
+    
+    animation: scale 800ms ease forwards;
+    display: block;
+    height: var(--size);
+    left: var(--star-left);
+    position: absolute;
+    top: var(--star-top);
+    width: var(--size);
+  }
+
+  h1 > .magic > .magic-star > svg {
+    animation: rotate 1200ms linear infinite;
+    display: block;
+  }
+
+  h1 > .magic > .magic-star > svg > path {
+    fill: var(--primary-color);
   }
 
   @media (min-width: 760px) {
@@ -152,4 +202,50 @@ const secondaryPosts = [feature2, feature3];
       display: block;
     }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    h1 > .magic > .magic-star {
+      display: none;
+    }
+  }
 </style>
+
+<script is:inline>
+
+  const rand = (min, max) => 
+    Math.floor(Math.random() * (max - min + 1)) + min;
+
+  const animate = star => {
+    star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
+    star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
+
+    star.style.animation = "none";
+    star.offsetHeight;
+    star.style.animation = "";
+  }
+
+  let timeouts = [],
+    intervals = [];
+
+  const intro = document.querySelector(".intro");
+
+  intro.onmouseenter = () => {
+    let index = 1;
+  
+    for(const star of document.getElementsByClassName("magic-star")) {
+      timeouts.push(setTimeout(() => {  
+        animate(star);
+      
+        intervals.push(setInterval(() => animate(star), 1000));
+      }, index++ * 300));
+    };
+  }
+
+  intro.onmouseleave = onMouseLeave = () => {
+    for(const t of timeouts) clearTimeout(t);  
+    for(const i of intervals) clearInterval(i);
+    
+    timeouts = [];
+    intervals = [];
+  }
+</script>
