@@ -1,14 +1,16 @@
 # trevortylerlee.com
 
-Hi!
+Hi
 
 ## Technologies Used
 
-- Astro
-- TypeScript
-- Vercel
+- [Astro](https://astro.build/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
+- [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)
+- [Vercel](https://vercel.com/home)
 - [react-hot-toast](https://react-hot-toast.com/)
-- [Howler.js](https://howlerjs.com/)
+- [Astro Icon](https://www.astroicon.dev/)
 
 ## Setup Instructions
 
@@ -25,6 +27,9 @@ npm install
 # Run on localhost:3000
 npm run dev
 ```
-## Contact Me
-- [LinkedIn](https://www.linkedin.com/in/trevortylerlee/)
-- [Twitter](https://www.twitter.com/boogerbuttcheek)
+## Tutorials
+
+- [Coding in Public: Astro Blog Course](https://youtube.com/playlist?list=PLoqZcxvpWzzeRwF8TEpXHtO7KYY6cNJeF)
+- [Hyperplexed: Magic Text](https://youtu.be/yu0Cm4BqQv0)
+- [Josh W. Comeau: Animated Sparkles](https://www.joshwcomeau.com/react/animated-sparkles-in-react/)
+- [Dyanmic Favicon](https://github.com/withastro/astro.build/blob/main/src/components/Favicon.astro)
