@@ -2,10 +2,11 @@
 
 <script>
   const favicon = document.querySelector('link[rel="icon"]')!
+  favicon.setAttribute('href', '/favicon.png')
   const html = document.querySelector('html')!
   const themeToggle = document.querySelector('#themeToggle')!
   themeToggle.addEventListener('click', () => {
-    const darkMode = html.classList.length
-    favicon.setAttribute('href', darkMode > 0 ? '/dark-favicon.png' : '/favicon.png')
+    const classLength = html.classList.length
+    favicon.setAttribute('href', classLength > 0 ? '/dark-favicon.png' : '/favicon.png')
   })
 </script>
