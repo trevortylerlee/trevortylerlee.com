@@ -38,6 +38,12 @@ const secondaryPosts = [feature2, feature3];
         <span class="magic-star">
           <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
         </span>
+        <span class="magic-star">
+          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
+        </span>
+        <span class="magic-star">
+          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
+        </span>
         <span class="magic-text">Trevor Lee</span>
       </span>
       <span class='name'>– I'm a software developer interested in design.</span>
@@ -216,8 +222,8 @@ const secondaryPosts = [feature2, feature3];
     Math.floor(Math.random() * (max - min + 1)) + min;
 
   const animate = star => {
-    star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
-    star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
+    star.style.setProperty("--star-left", `${rand(0, 90)}%`);
+    star.style.setProperty("--star-top", `${rand(-30, 70)}%`);
 
     star.style.animation = "none";
     star.offsetHeight;

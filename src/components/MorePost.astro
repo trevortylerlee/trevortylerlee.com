@@ -1,5 +1,6 @@
 ---
-import { formatDate } from '../js/utils';
+import { formatDate, isWithinLastFortnite } from '../js/utils';
+import { Icon } from 'astro-icon';
 
 const darkBg = '#333';
 const lightBg = '#fff';
@@ -13,7 +14,8 @@ const { date, href, title, description, last } = Astro.props;
         <div class="title">
           <h4>{title}</h4>
         </div>
-        <div class="date">
+        <div class="dateWrapper">
+          {isWithinLastFortnite(date) && <Icon name="mdi:alert-decagram-outline" size="16" color="red"/>}
           <p class="date">{formatDate(date)}</p>
         </div>
       </div>
@@ -53,6 +55,7 @@ const { date, href, title, description, last } = Astro.props;
   .wrapper {
     border-radius: 8px;
     padding: 0.75rem;
+    position: relative;
   }
 
   .post {
@@ -87,6 +90,8 @@ const { date, href, title, description, last } = Astro.props;
 
   .title {
     width: 70%;
+    display: flex;
+    align-items: center;
   }
 
   .title h4 {
@@ -97,14 +102,26 @@ const { date, href, title, description, last } = Astro.props;
     font-weight: 600;
   }
 
+  .dateWrapper {
+    display: flex;
+    align-items: center;
+  }
+
   .date {
     min-width: 25%;
     text-align: right;
     white-space: nowrap;
+    margin-left: 0.5rem;
   }
 
   .desc {
     font-size: 0.875rem;
     margin-top: 0.5rem;
+  }
+
+  @media (min-width: 40rem) {
+    .title {
+      width: 75%;
+    }
   }
 </style>

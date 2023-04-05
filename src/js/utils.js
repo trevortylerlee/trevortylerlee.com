@@ -51,3 +51,15 @@ export function formatBlogPost(posts, {
 
   return filteredPosts
 }
+
+export function isWithinLastFortnite(date) {
+  // Get date one week ago from now
+  const twoWeeksAgo = new Date()
+  twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14)
+
+  // Convert date from props to a date object
+  const postDate = new Date(date)
+
+  // Compare the post date to the date one week ago
+  return postDate >= twoWeeksAgo
+}
