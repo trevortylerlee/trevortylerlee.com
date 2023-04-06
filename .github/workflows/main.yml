@@ -1,0 +1,27 @@
+name: Deploy to Vercel
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build website
+      run: npm run build
+
+    - name: Deploy to Vercel
+      run: curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
