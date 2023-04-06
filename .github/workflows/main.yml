@@ -12,11 +12,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
     - name: Install dependencies
       run: npm ci
 
-    - name: Build Astro site
+    - name: Build website
       run: npm run build
 
     - name: Deploy to Vercel
-      run: npx vercel --token ${{ secrets.VERCEL_TOKEN }} --prod
+      run: curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
