@@ -26,9 +26,7 @@ const {Content} = await post.render()
     <div class="textWrapper">
     <h1 class={post.image ? '' : 'title'}>{post.data.title}</h1>
 
-    {post.data.date ? <p class="pub-date">
-      <span class="calendar-emoji">📅</span> {formatDate(post.data.date)}
-    </p> : <></>}
+    {post.data.date && <p class="pub-date">Posted {formatDate(post.data.date)}</p>}
     
     <hr />
     <div class="content">

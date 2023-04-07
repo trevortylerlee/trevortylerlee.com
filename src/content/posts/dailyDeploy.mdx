@@ -1,0 +1,110 @@
+---
+title: 'Deploying Automatically to Vercel with GitHub Actions'
+date: 2023-04-07
+description: 'Automating deployment using Astro, Github Actions, and Vercel'
+---
+import Note from '../../components/Note.astro';
+
+<Note emoji="📟" type="technology">
+  **Technologies used:** Astro, Github Actions, Vercel
+</Note>
+
+<br />
+
+I added an indicator to posts that are within 2 weeks old. Because my website is a static site, it’s only serves static pages. I need to build it every day so that my new indicator doesn’t become outdated. I’m using Astro, Github Actions, and Vercel but this will probably work with any static site + CI/CD service + hosting provider.
+
+<br />
+
+### Create A Deploy Hook
+
+1. Go to the Vercel Dashboard.
+2. Go to the project you want to deploy automatically.
+3. Go to Settings > Git > Deploy Hooks
+4. Name it and assign it to the branch you want deployed
+5. Copy the URL and save it for later.
+
+<br />
+
+### Create a cron job expression
+
+1. Find a cron expression generator online. [Cronhub](https://crontab.cronhub.io/)
+2. The cron expression to run every day at 12:00 AM UTC is 0 0 * * *.
+3. Copy the expression and save it for later.
+
+<br />
+
+### Add the deploy hook URL as a repository secret
+
+1. Go to the repo for your projecgt on Github.
+2. Go to Settings > Secrets and variables > Actions > New repository secret
+3. Name it something like VERCEL_DEPLOY_HOOK_URL and paste your deploy hook as the secret.
+4. Click Add secret
+
+<Note emoji="⚠️" type="warning">
+  **Warning:** Make sure you don’t accidentally share your deploy hook URL. It’s a secret!
+</Note>
+
+<br />
+<br />
+
+### Create a `main.yml`
+
+1. Go to the repo for your project on Github.
+2. Go to Actions > New Workflow > Set up a workflow yourself
+3. Paste the following code:
+
+```javascript
+name: Deploy to Vercel
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build website
+      run: npm run build
+
+    - name: Deploy to Vercel
+      run: curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+```
+
+<figcaption>Here I have it set to deploy every day at midnight — replace it with your own cron expression.</figcaption>
+
+<br />
+
+4. Commit the changes to the branch you're deploying.
+
+<br />
+
+### Done!
+
+
+Your site is now scheduled to deploy automatically according to your cron expression. Note that Github Actions do not happen at the exact time of the cron job, but it should be within ~10 minutes. If it’s been longer than that there’s probably something wrong. You can check your workflow runs on the Actions page.
+
+<br />
+
+![Github Action failure screen due to failed deployment](/posts/github-actions.webp)
+<figcaption>I put node-version: 14 originally and my deployment failed.</figcaption>
+
+<br />
+
+If you don’t want to wait until midnight UTC every day to see if deployment was successful, just go back to the cron generator and create an expression that’s scheduled to deploy 5 minutes ahead of your current time. Github’s servers run on UTC so make sure you account for your timezone. 
+
+For example, I’m in PST. It’s 8:55 PM here, so I want to schedule something at 9 PM. 00:00 AM UTC is 16:00 PM PST, which means my cron expression will be `0 4 * * *`.
+
+<br />
