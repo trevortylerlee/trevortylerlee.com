@@ -2,7 +2,8 @@ name: Deploy to Vercel
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "35 0 * * *"
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -11,6 +12,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      with:
+        node-version: 16
 
     - name: Install Node.js
       uses: actions/setup-node@v2
