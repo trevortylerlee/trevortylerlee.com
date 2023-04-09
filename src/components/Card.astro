@@ -31,16 +31,23 @@ const dark = '#333';
   a:hover,
   a:focus {
     outline: none;
+    color: inherit;
   }
 
-  a:hover .card,
+  a:hover .card {
+    background-color: var(--light);
+  }
+
   a:focus .card,
   a:focus-visible .card {
     background-color: var(--light);
     outline: 2px dotted var(--primary-color);
   }
 
-  :global(.dark) a:hover .card,
+  :global(.dark) a:hover .card {
+    background-color: var(--dark);
+  }
+
   :global(.dark) a:focus .card,
   :global(.dark) a:focus-visible .card {
     background-color: var(--dark);

@@ -50,6 +50,17 @@ const formattedPosts = formatBlogPost(allPosts, {
     .view-all {
       color: inherit;
       border-color: rgba(0, 0, 0, 0);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .view-all:hover {
+      background: var(--selection-color)
+    }
+
+    .view-all:focus {
+      outline: 2px dotted var(--text-color);
+      background: var(--selection-color)
     }
 
     svg {

@@ -34,12 +34,13 @@ const { date, href, title, description, last } = Astro.props;
     color: inherit;
   }
 
-  a:hover .wrapper {
+  /* a:hover .wrapper {
     outline: 2px dotted var(--primary-color);
-  }
+  } */
 
   a:focus .wrapper {
     outline: 2px dotted var(--primary-color);
+    background: var(--selection-color);
   }
 
   a:hover p {
