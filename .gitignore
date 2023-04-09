@@ -23,3 +23,4 @@ pnpm-debug.log*
 
 # Draft post for testing
 src/content/posts/draft.mdx
+.vercel
