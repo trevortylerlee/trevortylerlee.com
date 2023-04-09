@@ -1,7 +1,7 @@
 name: Deploy to Vercel 2
 on:
   schedule:
-  - cron: '55 5 * * *'
+  - cron: '55 0 * * *'
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
