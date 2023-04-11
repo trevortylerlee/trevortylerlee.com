@@ -27,6 +27,7 @@ npm install
 # Run on localhost:3000
 npm run dev
 ```
+
 ## Tutorials
 
 - [Coding in Public: Astro Blog Course](https://youtube.com/playlist?list=PLoqZcxvpWzzeRwF8TEpXHtO7KYY6cNJeF)

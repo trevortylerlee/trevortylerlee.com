@@ -19,13 +19,13 @@
   .name:hover::before,
   .name:focus::before,
   .name:focus-visible::before {
-      left: 2px;
-      text-shadow: -2px 0 #49FC00;
-      clip: rect(24px, 550px, 90px, 0);
-      -webkit-animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
-      animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
-    }
-  
+    left: 2px;
+    text-shadow: -2px 0 #49fc00;
+    clip: rect(24px, 550px, 90px, 0);
+    -webkit-animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+    animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+  }
+
   .name:hover::after,
   .name:focus::after,
   .name:focus-visible::after {

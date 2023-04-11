@@ -4,26 +4,30 @@ import { Icon } from "astro-icon";
 const { prevUrl, nextUrl } = Astro.props;
 ---
 
-<nav aria-label="Posts Navigation">
+<nav aria-label="Posts Navigation" class="">
   {
     prevUrl && (
-      <a class='left' href={prevUrl} aria-label="Newer Posts">
-        <Icon name="lucide:arrow-left" height="16px" width="16px"/>
-        Newer Posts
+      <span class="flex">
+      <a class="flex no-underline mb-8 mt-8 exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href={prevUrl} aria-label="Newer Posts">
+        <Icon name="lucide:arrow-left" height="16px" width="16px" class="self-center mr-1"/>
+        <span>Newer Posts</span>
       </a>
+      </span>
     )
   }
   {
     nextUrl && (
-      <a class="right" href={nextUrl} aria-label="Newer Posts">
+      <span class="flex justify-end">
+      <a class="flex no-underline mb-8 mt-8 exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href={nextUrl} aria-label="Older Posts">
         Older Posts
-        <Icon name="lucide:arrow-right" height="16px" width="16px"/>
+        <Icon name="lucide:arrow-right" height="16px" width="16px" class="self-center ml-1"/>
       </a>
+      </span>
     )
   }
 </nav>
 
-<style>
+<!-- <style>
   nav {
     display: flex;
     justify-content: space-between;
@@ -61,8 +65,8 @@ const { prevUrl, nextUrl } = Astro.props;
   .right svg {
     margin-left: 0.25rem;
   }
-  
+
   .left svg {
     margin-right: 0.25rem;
   }
-</style>
+</style> -->

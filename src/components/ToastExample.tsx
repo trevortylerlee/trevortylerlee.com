@@ -6,11 +6,7 @@ export default Toastify(function Button({ message }) {
 
   return (
     <>
-      <button
-        onClick={notify}
-        style={{
-        }}
-      >
+      <button onClick={notify} style={{}}>
         {message}
       </button>
     </>

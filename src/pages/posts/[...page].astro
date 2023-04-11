@@ -1,28 +1,27 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import MorePost from '../../components/MorePost.astro';
-import Pagination from '../../components/Pagination.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import MorePost from "../../components/MorePost.astro";
+import Pagination from "../../components/Pagination.astro";
 
-import { formatBlogPost } from '../../js/utils';
+import { formatBlogPost } from "../../js/utils";
 
 export async function getStaticPaths({ paginate }) {
-  const allPosts = await getCollection('posts');
+  const allPosts = await getCollection("posts");
   const formattedPosts = formatBlogPost(allPosts);
 
   return paginate(formattedPosts, {
-    pageSize: 7,
-  })
+    pageSize: 8,
+  });
 }
 
-const pageTitle = 'Trevor Lee | All Posts';
+const pageTitle = "Trevor Lee | All Posts";
 
 const { page } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1 style={{marginTop: "4rem"}}>All Posts</h1>
   <!-- {
     formattedPosts.map((page) => (
       <MorePost
@@ -33,22 +32,22 @@ const { page } = Astro.props;
       />
     ))
   } -->
-  <div class='wrapper'>
-  {
-    page.data.map((post) => (
-      <MorePost
-        date={post.data.date}
-        href={post.slug}
-        title={post.data.title}
-        description={post.data.description}
-      />
-    ))
-  }
+  <div class="grid gap-4 ">
+    {
+      page.data.map((post) => (
+        <MorePost
+          date={post.data.date}
+          href={post.slug}
+          title={post.data.title}
+          description={post.data.description}
+        />
+      ))
+    }
   </div>
-  <Pagination prevUrl={page.url.prev} nextUrl={page.url.next}/>
+  <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
 </BaseLayout>
 
-<style>
+<!-- <style>
   h1 {
     margin-bottom: 2rem;
   }
@@ -68,4 +67,4 @@ const { page } = Astro.props;
     margin-bottom: 4rem;
     padding: 0;
   }
-</style>
+</style> -->

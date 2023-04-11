@@ -24,38 +24,7 @@ const secondaryPosts = [feature2, feature3];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="intro">
-
-    <div class='descWrapper'>
-    <h1 class='desc'>
-      <span class="magic">
-        <span class="magic-star">
-          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
-        </span>
-        <span class="magic-star">
-          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
-        </span>
-        <span class="magic-star">
-          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
-        </span>
-        <span class="magic-star">
-          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
-        </span>
-        <span class="magic-star">
-          <Icon name="mdi:star-four-points" size="24" color="#FFC700" />
-        </span>
-        <span class="magic-text">Trevor Lee</span>
-      </span>
-      <span class='name'>– I'm a software developer interested in design.</span>
-    </h1>
-    <!-- <div class='marquee'>
-      <Marquee />
-    </div> -->
-  </div>
-
-  </div>
-  <hr />
-  <div>
+  <!-- <div>
   {
     featuredPost.map((post) => (
       <Card
@@ -82,12 +51,11 @@ const secondaryPosts = [feature2, feature3];
       />
     ))
   }
-  </div>
-  <hr />
+  </div> -->
   <LatestPosts />
 </BaseLayout>
 
-<style>
+<!-- <style>
 
   .desc {
     font-size: 2rem;
@@ -211,9 +179,9 @@ const secondaryPosts = [feature2, feature3];
       display: none;
     }
   }
-</style>
+</style> -->
 
-<script is:inline>
+<!-- <script is:inline>
 
   const rand = (min, max) => 
     Math.floor(Math.random() * (max - min + 1)) + min;
@@ -251,4 +219,4 @@ const secondaryPosts = [feature2, feature3];
     timeouts = [];
     intervals = [];
   }
-</script>
+</script> -->

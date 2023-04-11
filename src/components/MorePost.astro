@@ -1,30 +1,34 @@
 ---
-import { formatDate, isWithinLastFortnite } from '../js/utils';
-import { Icon } from 'astro-icon';
+import { formatDate, isWithinLastFortnite } from "../js/utils";
+import { Icon } from "astro-icon";
 
-const darkBg = '#333';
-const lightBg = '#fff';
+const darkBg = "#333";
+const lightBg = "#fff";
 const { date, href, title, description, last } = Astro.props;
 ---
 
-<div class={`${last ? 'last' : ''} container`}>
-  <a href={`/posts/${href}`}>
+<div class="p-4 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700">
+  <a href={`/posts/${href}`} class="exempt-link">
     <div class="wrapper">
-      <div class="post">
-        <div class="title">
-          <h4>{title}</h4>
+      <div class="flex justify-between items-baseline">
+        <div class="max-w-[80%]">
+          <h4 class="text-lg font-bold line-clamp-1 text-blue-700 dark:text-blue-300 hover:underline">{title}</h4>
         </div>
-        <div class="dateWrapper">
-          {isWithinLastFortnite(date) && <Icon name="mdi:alert-decagram-outline" size="16" color="red"/>}
-          <p class="date">{formatDate(date)}</p>
+        <div class="text-baseline flex">
+          {
+            isWithinLastFortnite(date) && (
+              <Icon name="mdi:alert-decagram-outline" size="16" color="red" />
+            )
+          }
+          <p class="text-xs opacity-75 whitespace-nowrap">{formatDate(date)}</p>
         </div>
       </div>
-      { description && <p class="desc">{description}</p>}
+      {description && <p class="line-clamp-2">{description}</p>}
     </div>
   </a>
 </div>
 
-<style define:vars={{ lightBg, darkBg }}>
+<!-- <style define:vars={{ lightBg, darkBg }}>
   p {
     margin: 0;
     padding: 0;
@@ -83,8 +87,7 @@ const { date, href, title, description, last } = Astro.props;
     background: #e9e9e9;
   }
 
-  :global(.dark)
-  .container:hover,
+  :global(.dark) .container:hover,
   .container:focus {
     background: #333333;
   }
@@ -125,4 +128,4 @@ const { date, href, title, description, last } = Astro.props;
       width: 75%;
     }
   }
-</style>
+</style> -->

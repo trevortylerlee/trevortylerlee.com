@@ -1,18 +1,18 @@
 ---
 const { title, desc, href, alt, src, featured } = Astro.props;
-const light = '#e9e9e9';
-const dark = '#333';
+const light = "#e9e9e9";
+const dark = "#333";
 ---
 
-  <a href={`/posts/${href}/`} rel="prefetch">
-    <div class={`card ${featured ? 'featured' : ''}`} tabIndex="-1">
-      <img src={src} alt={alt} />
-      <h3 class="title">
-        {title}
-      </h3>
-      <p>{desc}</p>
-    </div>
-  </a>
+<a href={`/posts/${href}/`} rel="prefetch">
+  <div class={`card ${featured ? "featured" : ""}`} tabIndex="-1">
+    <img src={src} alt={alt} />
+    <h3 class="title">
+      {title}
+    </h3>
+    <p>{desc}</p>
+  </div>
+</a>
 
 <style define:vars={{ light, dark }}>
   .card {

@@ -2,7 +2,7 @@
 const { emoji, type } = Astro.props;
 ---
 
-<div class={`note ${type}`}>
+<div class={`p-4 flex ${type}`}>
   <div>
     <p class="emoji">{emoji}</p>
   </div>
@@ -31,8 +31,8 @@ const { emoji, type } = Astro.props;
   }
 
   .warning {
-    color: #EAAA45;
-    border: 1px solid #EAAA45;
+    color: #eaaa45;
+    border: 1px solid #eaaa45;
   }
 
   .emoji {

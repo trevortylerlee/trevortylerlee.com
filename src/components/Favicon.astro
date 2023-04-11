@@ -1,12 +1,15 @@
 <link rel="icon" type="image/png" />
 
 <script>
-  const favicon = document.querySelector('link[rel="icon"]')!
-  favicon.setAttribute('href', '/favicon.png')
-  const html = document.querySelector('html')!
-  const themeToggle = document.querySelector('#themeToggle')!
-  themeToggle.addEventListener('click', () => {
-    const classLength = html.classList.length
-    favicon.setAttribute('href', classLength > 0 ? '/favicon.png' : '/dark-favicon.png')
-  })
+  const favicon = document.querySelector('link[rel="icon"]')!;
+  favicon.setAttribute("href", "/favicon.png");
+  const html = document.querySelector("html")!;
+  const themeToggle = document.querySelector("#themeToggle")!;
+  themeToggle.addEventListener("click", () => {
+    const classLength = html.classList.length;
+    favicon.setAttribute(
+      "href",
+      classLength > 0 ? "/favicon.png" : "/dark-favicon.png"
+    );
+  });
 </script>

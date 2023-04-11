@@ -1,22 +1,20 @@
 ---
-import ThemeIcon from '../components/ThemeIcon.astro';
-import { Icon } from 'astro-icon';
+import ThemeIcon from "../components/ThemeIcon.astro";
+import ThemeSelector from "../components/ThemeSelector.tsx";
+import { Icon } from "astro-icon";
 ---
 
-<nav aria-label="Main Navigation">
-  <div class='logoWrapper'>
-    <a class="wavy-exempt" href="/" aria-label="Go to homepage">
-      <!-- <Icon name="favicon" size="48" class="logo"/> -->
-      <!-- <img src='/favicon.png' alt='logo' class='logo' /> -->
-      <Icon name='mdi:square' class='logo' size='48' />
-    </a>
-  </div>
-  <div class='toggleWrapper'>
-    <ThemeIcon />
-  </div>
+<nav
+  aria-label="Main Navigation"
+  class="flex justify-between align-middle py-4 h-13"
+>
+  <a class="exempt-link text-xl font-medium hover:bg-yellow-300 p-2 dark:hover:bg-yellow-400 dark:hover:text-black inter-only" href="/" aria-label="Go to homepage">
+    trevortylerlee.com
+  </a>
+  <ThemeSelector client:load />
 </nav>
 
-<style>
+<!-- <style>
   nav {
     display: flex;
     justify-content: space-between;
@@ -66,9 +64,9 @@ import { Icon } from 'astro-icon';
       transform: rotate(2turn);
     }
   }
-</style>
+</style> -->
 
-<script>
+<!-- <script>
   document.addEventListener('DOMContentLoaded', () => {
     const target = document.querySelector('.logoWrapper')
 
@@ -84,4 +82,4 @@ import { Icon } from 'astro-icon';
 
     observer.observe(target)
   })
-</script>
+</script> -->

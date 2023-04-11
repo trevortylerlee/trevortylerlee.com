@@ -1,66 +1,76 @@
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 // Thank you Coding in Public on YouTube
 export function slugify(text) {
   return text
     .toString()
     .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-+/, '')
-    .replace(/-+$/, '');
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "")
+    .replace(/--+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
 }
 
 export function formatDate(date) {
-  return new Date(date).toLocaleDateString('en-CA', {
+  return new Date(date).toLocaleDateString("en-CA", {
     timeZone: "UTC",
-    dateStyle: 'long',
-  })
+    dateStyle: "long",
+  });
 }
 
-export function formatBlogPost(posts, {
-  filterOutDrafts = true,
-  filterOutFuturePosts = true,
-  sortByDate = true,
-  limit = null,
-} = {}) {
+export function formatBlogPost(
+  posts,
+  {
+    filterOutDrafts = true,
+    filterOutFuturePosts = true,
+    sortByDate = true,
+    limit = null,
+  } = {}
+) {
   const filteredPosts = posts.reduce((acc, post) => {
-    const { date, draft } = post.data
+    const { date, draft } = post.data;
 
     // filterOutDrafts if true
-    if (filterOutDrafts && draft) return acc
+    if (filterOutDrafts && draft) return acc;
 
     // filterOutFuturePosts if true
-    if (filterOutFuturePosts && new Date(date) > new Date()) return acc
+    if (filterOutFuturePosts && new Date(date) > new Date()) return acc;
 
     // add post to acc
-    acc.push(post)
+    acc.push(post);
 
-    return acc
-  }, [])
+    return acc;
+  }, []);
 
   // sortByDate or randomize
   if (sortByDate) {
-    filteredPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+    filteredPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   } else {
-    filteredPosts.sort(() => Math.random() - 0.5)
+    filteredPosts.sort(() => Math.random() - 0.5);
   }
 
   // limit if number is passed
-  if (typeof limit === 'number') {
-    return filteredPosts.slice(0, limit)
+  if (typeof limit === "number") {
+    return filteredPosts.slice(0, limit);
   }
 
-  return filteredPosts
+  return filteredPosts;
 }
 
 export function isWithinLastFortnite(date) {
   // Get date one week ago from now
-  const twoWeeksAgo = new Date()
-  twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14)
+  const twoWeeksAgo = new Date();
+  twoWeeksAgo.setDate(twoWeeksAgo.getDate() - 14);
 
   // Convert date from props to a date object
-  const postDate = new Date(date)
+  const postDate = new Date(date);
 
   // Compare the post date to the date one week ago
-  return postDate >= twoWeeksAgo
+  return postDate >= twoWeeksAgo;
+}
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
 }

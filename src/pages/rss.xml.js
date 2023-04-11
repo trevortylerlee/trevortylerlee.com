@@ -1,8 +1,8 @@
-import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import rss from "@astrojs/rss";
+import { getCollection } from "astro:content";
 import { formatBlogPost } from "../js/utils";
 
-const postImportResult = await getCollection('posts');
+const postImportResult = await getCollection("posts");
 const posts = formatBlogPost(postImportResult);
 
 export function get(context) {
@@ -10,7 +10,7 @@ export function get(context) {
     // `<title>` field in output xml
     title: "Trevor Lee's Website",
     // `<description>` field in output xml
-    description: 'Digital designer and web developer in Vancouver, Canada',
+    description: "Digital designer and web developer in Vancouver, Canada",
     // Pull in your project "site" from the endpoint context
     // https://docs.astro.build/en/reference/api-reference/#contextsite
     site: context.site,

@@ -1,11 +1,11 @@
 ---
-title: 'Using react-hot-toast with Astro'
+title: "Using react-hot-toast with Astro"
 date: 2023-01-23
-description: 'How to use react-hot-toast for notifcations in Astro.'
+description: "How to use react-hot-toast for notifcations in Astro."
 draft: false
 ---
 
-import ToastExample from '../../components/ToastExample.tsx';
+import ToastExample from "../../components/ToastExample.tsx";
 
 Thank you to @happydev on the Astro discord who was able to figure
 this out.
@@ -68,7 +68,7 @@ export default function Toastify(function Button({message})) {
 ### 5. Create a function to trigger the toast
 
 ```tsx
-const notify = () => toast('Toast!');
+const notify = () => toast("Toast!");
 ```
 
 <br />
@@ -89,11 +89,11 @@ JavaScript.
 ### Final Result
 
 ```tsx
-import Toastify from './Toastify';
-import toast from 'react-hot-toast';
+import Toastify from "./Toastify";
+import toast from "react-hot-toast";
 
 export default Toastify(function Button({ message }) {
-  const notify = () => toast('Toast!');
+  const notify = () => toast("Toast!");
 
   return (
     <>

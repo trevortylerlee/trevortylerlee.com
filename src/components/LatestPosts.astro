@@ -1,82 +1,83 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from "astro-icon";
 
-import { getCollection, getEntryBySlug } from 'astro:content';
-import MorePost from '../components/MorePost.astro';
+import { getCollection, getEntryBySlug } from "astro:content";
+import MorePost from "../components/MorePost.astro";
 
-import { formatBlogPost } from '../js/utils';
+import { formatBlogPost } from "../js/utils";
 
-const allPosts = await getCollection('posts');
+const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {
   limit: 5,
 });
 ---
 
-<div class='wrapper'>
-  <div class="header-section">
-    <h2 class="more">Latest Posts</h2>
-    <a class="view-all" href="/posts/">
+<div class="">
+  <div class="">
+  </div>
+  <div class="grid gap-4">
+    {
+      formattedPosts.map((post, i) => (
+        <MorePost
+          date={post.data.date}
+          href={post.slug}
+          title={post.data.title}
+          description={post.data.description}
+        />
+      ))
+    }
+  </div>
+    <div class="flex justify-end py-8">
+    <a class="flex exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href="/posts/">
       View all posts
-      <Icon name="lucide:arrow-right" width="16" height="16" />
+      <Icon class="self-center ml-1" name="lucide:arrow-right" width="16" height="16" />
     </a>
-  </div>
-  <div class='latest-posts'>
-  {
-    formattedPosts.map((post, i) => (
-      <MorePost
-        date={post.data.date}
-        href={post.slug}
-        title={post.data.title}
-        description={post.data.description}
-      />
-    ))
+    </div>
+</div>
+
+<!-- <style>
+  .wrapper {
+    padding: 2rem 0;
+    margin: 0;
   }
-  </div>
-  </div>
 
-  <style>
-    .wrapper {
-      padding: 2rem 0;
-      margin: 0;
-    }
+  .more {
+    text-align: left;
+    /* margin-top: 4rem; */
+    contain: style;
+    margin-bottom: 1rem;
+  }
 
-    .more {
-      text-align: left;
-      /* margin-top: 4rem; */
-      contain: style;
-      margin-bottom: 1rem;
-    }
+  .view-all {
+    color: inherit;
+    border-color: rgba(0, 0, 0, 0);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+  }
 
-    .view-all {
-      color: inherit;
-      border-color: rgba(0, 0, 0, 0);
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
-    }
+  .view-all:hover {
+    background: var(--selection-color);
+  }
 
-    .view-all:hover {
-      background: var(--selection-color)
-    }
+  .view-all:focus {
+    outline: 2px dotted var(--text-color);
+    background: var(--selection-color);
+  }
 
-    .view-all:focus {
-      outline: 2px dotted var(--text-color);
-      background: var(--selection-color)
-    }
+  svg {
+    position: relative;
+    top: 2px;
+  }
 
-    svg {
-      position: relative;
-      top: 2px;
-    }
+  .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 
-   .header-section {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .latest-posts {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-  </style>
+  .latest-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style> -->
