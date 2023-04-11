@@ -24,7 +24,20 @@ const { pageTitle } = Astro.props;
       content="Trevor Lee | Web Developer from Vancouver, Canada | TypeScript, React, Next.js, Node.js"
     />
     <title>{pageTitle}</title>
-    <script is:inline>
+  </head>
+  <body class="bg-neutral-50 text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
+    <div class="mx-auto max-w-screen-md px-4">
+      <Navigation />
+      <slot />
+      <!-- <Contact /> -->
+      <hr class="mb-4 stroke-cyan-500 dark:opacity-25"/>
+      <Footer />
+    </div>
+  </body>
+  
+</html>
+
+<script is:inline>
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     const html = document.documentElement;
     const systemPrefersDark = window.matchMedia(
@@ -47,15 +60,3 @@ const { pageTitle } = Astro.props;
       }
     }
   </script>
-  </head>
-  <body class="bg-neutral-50 text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
-    <div class="mx-auto max-w-screen-md px-4">
-      <Navigation />
-      <slot />
-      <!-- <Contact /> -->
-      <hr class="mb-4 stroke-cyan-500 dark:opacity-25"/>
-      <Footer />
-    </div>
-  </body>
-  
-</html>

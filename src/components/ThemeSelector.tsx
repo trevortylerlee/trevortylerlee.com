@@ -12,18 +12,12 @@ import {
 } from "./ui/dropdown-menu";
 
 export default function ThemeSelector() {
-  const [colorTheme, setColorTheme] = useState("bottom");
+  const [colorTheme, setColorTheme] = useState("system");
 
   useEffect(() => {
     const localTheme = localStorage.theme;
-    if (localTheme) {
+    if (localTheme === "dark" || localTheme === "light") {
       setColorTheme(localTheme);
-    } else {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      setColorTheme(systemTheme);
     }
   }, []);
 
@@ -41,9 +35,15 @@ export default function ThemeSelector() {
     }
 
     if (colorTheme === "system") {
-      localStorage.removeItem("theme");
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
+      localStorage.theme = "system";
+
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
+      } else {
+        document.documentElement.classList.add("light");
+        document.documentElement.classList.remove("dark");
+      }
     }
   }, [colorTheme]);
 
