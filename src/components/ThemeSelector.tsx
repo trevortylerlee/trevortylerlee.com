@@ -50,14 +50,14 @@ export default function ThemeSelector() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button aria-label="Change color theme" className="flex justify-center items-center w-10 h-10">
+        <button aria-label="Change color theme" className="flex justify-center items-center w-10 h-10 hover:bg-neutral-200 dark:hover:bg-neutral-800">
           {colorTheme === "system" && <LucideMonitor size={28} />}
           {colorTheme === "light" && <LucideSun size={28} />}
           {colorTheme === "dark" && <LucideMoon size={28} />}
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="w-36 rounded-xs dark:bg-neutral-950 dark:text-white"
+        className="w-40 rounded-xs dark:bg-neutral-950 dark:text-white"
         sideOffset={12}
         side="bottom"
         align="end"

@@ -26,7 +26,7 @@ const {Content} = await post.render()
     <div class="textWrapper">
     <h1 class={post.image ? '' : 'text-2xl font-semibold'}>{post.data.title}</h1>
 
-    {post.data.date && <p class="mb-4">Posted {formatDate(post.data.date)}</p>}
+    {post.data.date && <p class="mb-6">Posted {formatDate(post.data.date)}</p>}
     
     <hr/>
     <div class="content mb-12">

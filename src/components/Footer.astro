@@ -1,6 +1,7 @@
 ---
 import Marquee from "../components/Marquee.astro";
 import SocialLink from "../components/SocialLink.astro";
+import CopyButton from "../components/CopyButton";
 
 const greenLink = "#ff0080";
 const blueLink = "#0000FF";
@@ -10,7 +11,8 @@ const blueLink = "#0000FF";
   <div class="flex gap-2">
     <a href="https://github.com/boogerbuttcheeks">Github</a>⋅
     <a href="https://www.linkedin.com/in/trevortylerlee/">LinkedIn</a>⋅
-    <p>trevortylerlee@gmail.com</p>
+    <!-- <p>trevortylerlee@gmail.com</p> -->
+    <CopyButton client:visible message="trevortylerlee@gmail.com" />
   </div>
 </footer>
 

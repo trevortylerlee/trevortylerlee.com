@@ -7,8 +7,8 @@ const lightBg = "#fff";
 const { date, href, title, description, last } = Astro.props;
 ---
 
+<a href={`/posts/${href}`} class="exempt-link">
 <div class="p-4 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700">
-  <a href={`/posts/${href}`} class="exempt-link">
     <div class="wrapper">
       <div class="flex justify-between items-baseline">
         <div class="max-w-[80%]">
@@ -25,8 +25,8 @@ const { date, href, title, description, last } = Astro.props;
       </div>
       {description && <p class="line-clamp-2">{description}</p>}
     </div>
-  </a>
-</div>
+  </div>
+</a>
 
 <!-- <style define:vars={{ lightBg, darkBg }}>
   p {
