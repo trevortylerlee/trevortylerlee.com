@@ -1,17 +1,23 @@
 ---
 import ThemeIcon from "../components/ThemeIcon.astro";
-import ThemeSelector from "../components/ThemeSelector.tsx";
+import ThemeSelector from "../components/ThemeSelector";
+import { CommandBar } from "./CommandBar";
 import { Icon } from "astro-icon";
 ---
 
 <nav
   aria-label="Main Navigation"
-  class="flex justify-between align-middle py-4 h-13"
+  class="flex justify-between align-middle py-4 h-13 my-4"
 >
+  <span class="flex text-center">
   <a class="exempt-link text-xl font-medium hover:bg-yellow-300 p-2 dark:hover:bg-yellow-400 dark:hover:text-black inter-only" href="/" aria-label="Go to homepage">
     trevortylerlee.com
   </a>
+  </span>
+  <span class="flex gap-2">
+  <CommandBar client:load/>
   <ThemeSelector client:load />
+  </span>
 </nav>
 
 <!-- <style>
