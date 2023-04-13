@@ -41,6 +41,7 @@ export default Toastify(function Button({ copyText, label, children, copyTrigger
         aria-label="Copy email address"
         onClick={notify}
         className="flex"
+        tabIndex={label === 'trevortylerlee@gmail.com' ? 0 : -1}
       >
         {label}
         {children}
