@@ -12,6 +12,9 @@ import {
   Github,
   Linkedin,
   Twitter,
+  Monitor,
+  Sun,
+  Moon,
 } from "lucide-react";
 
 import {
@@ -35,7 +38,7 @@ export function CommandBar() {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "/" && e.metaKey) {
+      if (e.key === "k" && e.metaKey) {
         setOpen((open) => !open);
       }
     };
@@ -52,11 +55,11 @@ export function CommandBar() {
     <>
       <button
         onClick={handleClick}
-        className="text-sm text-neutral-500 dark:text-neutral-400 my-1 px-1"
+        className="text-sm text-neutral-500 dark:text-neutral-400 my-1 px-1 hover:bg-neutral-200 dark:hover:bg-neutral-800"
       >
         Press{" "}
-        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border border-neutral-100 bg-neutral-100 px-1.5 font-mono text-[10px] font-medium text-neutral-600 opacity-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400">
-          <span className="text-xs">⌘</span>/
+        <kbd className="inline-flex h-5 select-none items-center gap-1 rounded border border-neutral-100 bg-neutral-100 px-1.5 font-mono text-[10px] font-medium text-neutral-600 opacity-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400">
+          <span className="text-xs">⌘</span>K
         </kbd>
       </button>
       <CommandDialog
@@ -70,7 +73,7 @@ export function CommandBar() {
             <CommandItem
               aria-label="Go to Homepage"
               onSelect={(value) => {
-                window.location.href = "http://localhost:3000/";
+                window.location.href = "https://trevortylerlee.com/";
               }}
             >
               <Home className="mr-2 h-4 w-4" />
@@ -79,7 +82,7 @@ export function CommandBar() {
             <CommandItem
               aria-label="About me"
               onSelect={(value) => {
-                window.location.href = "http://trevortylerlee.com/about";
+                window.location.href = "https://trevortylerlee.com/about";
               }}
             >
               <Smile className="mr-2 h-4 w-4" />
@@ -88,7 +91,7 @@ export function CommandBar() {
             <CommandItem
               aria-label="Copy email address to clipboard"
               onSelect={(value) => {
-                setCopyTrigger(copyTrigger => !copyTrigger)
+                setCopyTrigger((copyTrigger) => !copyTrigger);
               }}
             >
               <CopyButton
@@ -100,18 +103,15 @@ export function CommandBar() {
                 <span>Email me</span>
               </CopyButton>
             </CommandItem>
-            <CommandItem>
-              <Settings className="mr-2 h-4 w-4" />
-              <span>Settings</span>
-            </CommandItem>
           </CommandGroup>
           <CommandSeparator />
           <CommandGroup
             heading="Social media"
             className="mt-3"
           >
+            <CommandEmpty>No results found.</CommandEmpty>
             <CommandItem
-              aria-label="Go to Homepage"
+              aria-label="Github"
               onSelect={(value) => {
                 window.location.href = "https://github.com/boogerbuttcheeks";
               }}
@@ -137,6 +137,40 @@ export function CommandBar() {
             >
               <Twitter className="mr-2 h-4 w-4" />
               <span>Twitter</span>
+            </CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Settings">
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandItem
+              aria-label="Change to light theme"
+              onSelect={(value) => {
+                localStorage.setItem("theme", "light");
+                location.reload()
+              }}
+            >
+              <Sun className="mr-2 h-4 w-4" />
+              <span>Light theme</span>
+            </CommandItem>
+            <CommandItem
+              aria-label="Use dark theme"
+              onSelect={(value) => {
+                localStorage.setItem("theme", "dark");
+                location.reload()
+              }}
+            >
+              <Moon className="mr-2 h-4 w-4" />
+              <span>Dark theme</span>
+            </CommandItem>
+            <CommandItem
+              aria-label="Use system theme"
+              onSelect={(value) => {
+                localStorage.setItem("theme", "system");
+                location.reload();
+              }}
+            >
+              <Monitor className="mr-2 h-4 w-4" />
+              <span>Use system theme</span>
             </CommandItem>
           </CommandGroup>
         </CommandList>
