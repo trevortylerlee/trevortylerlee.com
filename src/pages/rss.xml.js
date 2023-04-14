@@ -1,6 +1,6 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import { formatBlogPost } from "../js/utils";
+import { formatBlogPost } from "../lib/utils";
 
 const postImportResult = await getCollection("posts");
 const posts = formatBlogPost(postImportResult);
