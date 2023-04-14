@@ -32,4 +32,9 @@ export default defineConfig({
   adapter: vercel({
     analytics: true,
   }),
+  vite: {
+    ssr: {
+      noExternal: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu']
+    }
+  },
 });
