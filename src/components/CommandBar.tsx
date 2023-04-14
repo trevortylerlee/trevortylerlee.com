@@ -2,12 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import CopyButton from "./CopyButton";
 
 import {
-  Scroll,
   Home,
-  CreditCard,
-  Settings,
   Smile,
-  User,
   AtSign,
   Github,
   Linkedin,
@@ -30,16 +26,49 @@ import {
 } from "./ui/command";
 
 export function CommandBar() {
-  const ref = useRef<HTMLDivElement>(null);
 
   const [open, setOpen] = useState(false);
   const [copyTrigger, setCopyTrigger] = useState(false);
-  const [pages, setPages] = useState([]);
-  const page = pages[pages.length - 1]
+  const [triggerKey, setTriggerKey] = useState("⌘ K");
+
+  const [isMac, setIsMac] = useState(true)
+  const [isWin, setIsWin] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    let isMac = /Mac/i.test(navigator.userAgent);
+    let isWin = /Win/i.test(navigator.userAgent);
+    let isMobile =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+
+    if (isMac) {
+      console.log('Mac')
+      setTriggerKey("⌘ K")
+      setIsMac(true)
+      setIsWin(false)
+      setIsMobile(false)
+    } else if (isWin) {
+      console.log('Windows')
+      setTriggerKey("Ctrl")
+      setIsWin(true)
+      setIsMac(false)
+      setIsMobile(false)
+    } else if (isMobile) {
+      console.log('Mobile')
+      setTriggerKey("Menu")
+      setIsMobile(true)
+      setIsMac(false)
+      setIsWin(false)
+    } else {
+      console.log('Unknown')
+    }
+  }, [])
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && e.metaKey) {
+      if (e.key === "k" && e.metaKey || e.key === "k" && e.ctrlKey) {
         setOpen((open) => !open);
       }
     };
@@ -58,10 +87,10 @@ export function CommandBar() {
         onClick={handleClick}
         className="text-sm text-neutral-500 dark:text-neutral-400 my-1 px-1 hover:bg-neutral-200 dark:hover:bg-neutral-800"
       >
-        Press{" "}
-        <kbd className="inline-flex h-5 select-none items-center gap-1 rounded border border-neutral-100 bg-neutral-100 px-1.5 font-mono text-[10px] font-medium text-neutral-600 opacity-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400">
-          <span className="text-xs">⌘</span>K
-        </kbd>
+        {isMobile && <span>Press </span>}
+        {!isMobile && <kbd className="inline-flex h-5 select-none items-center gap-1 rounded border border-neutral-100 bg-neutral-100 px-1.5 font-mono text-[10px] font-medium text-neutral-600 opacity-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400">
+          <span className="">{triggerKey}</span>
+        </kbd>}
       </button>
       <CommandDialog
         open={open}
@@ -155,7 +184,7 @@ export function CommandBar() {
               aria-label="Change to light theme"
               onSelect={(value) => {
                 localStorage.setItem("theme", "light");
-                location.reload()
+                location.reload();
               }}
             >
               <Sun className="mr-2 h-4 w-4" />
@@ -165,7 +194,7 @@ export function CommandBar() {
               aria-label="Use dark theme"
               onSelect={(value) => {
                 localStorage.setItem("theme", "dark");
-                location.reload()
+                location.reload();
               }}
             >
               <Moon className="mr-2 h-4 w-4" />
