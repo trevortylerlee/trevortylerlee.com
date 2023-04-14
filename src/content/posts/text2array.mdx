@@ -18,9 +18,13 @@ import Note from "../../components/Note.astro";
 
 [I made a tool to type arrays quickly.](https://text2array.vercel.app/)
 
+<br />
+
 You type the elements you want inside the array and the tool formats
 them to be copy pasted. There are options for quotations, commas, or
 spaces.
+
+<br />
 
 There's a "quick fill" feature which fills the input box with some
 common lists, like the English alphabet and the months of the year.
@@ -61,10 +65,14 @@ This code is for the output preview of the placeholder text. There are
 multiple options to format the output which made it a challenge to
 cover all the cases. You can:
 
+<br />
+
 1. Choose between single or double quotes
 2. Choose between spaces or no spaces
 3. Split by line breaks
 4. Split by character
+
+<br />
 
 Some options aren't compatible with one another, so I had to make sure
 the options, placeholder text, and output preview were reflected
@@ -78,6 +86,8 @@ As the application grew and I tried to provide more formatting
 options, things grew increasingly complex. If I were to do this again,
 I would try using React's <code>useReducer</code> hook to simplify the
 state of the formatting options.
+
+<br />
 
 I actually used this tool for some of my other projects, like a
 [guessing game based on Taylor Swift's discography](https://tsguess.vercel.app).

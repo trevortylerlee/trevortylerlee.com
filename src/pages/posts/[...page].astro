@@ -5,7 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import MorePost from "../../components/MorePost.astro";
 import Pagination from "../../components/Pagination.astro";
 
-import { formatBlogPost } from "../../js/utils";
+import { formatBlogPost } from "../../lib/utils";
 
 export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection("posts");

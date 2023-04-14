@@ -15,6 +15,7 @@ import {
   Monitor,
   Sun,
   Moon,
+  Rss,
 } from "lucide-react";
 
 import {
@@ -89,7 +90,6 @@ export function CommandBar() {
               <span>About</span>
             </CommandItem>
             <CommandItem
-              aria-label="Copy email address to clipboard"
               onSelect={(value) => {
                 setCopyTrigger((copyTrigger) => !copyTrigger);
               }}
@@ -120,7 +120,7 @@ export function CommandBar() {
               <span>Github</span>
             </CommandItem>
             <CommandItem
-              aria-label="Go to Homepage"
+              aria-label="LinkedIn"
               onSelect={(value) => {
                 window.location.href =
                   "https://www.linkedin.com/in/trevortylerlee/";
@@ -130,13 +130,22 @@ export function CommandBar() {
               <span>LinkedIn</span>
             </CommandItem>
             <CommandItem
-              aria-label="Go to Homepage"
+              aria-label="Twitter"
               onSelect={(value) => {
                 window.location.href = "https://twitter.com/boogerbuttcheek";
               }}
             >
               <Twitter className="mr-2 h-4 w-4" />
               <span>Twitter</span>
+            </CommandItem>
+            <CommandItem
+              aria-label="RSS Feed"
+              onSelect={(value) => {
+                window.location.href = "https://trevortylerlee.com/rss.xml";
+              }}
+            >
+              <Rss className="mr-2 h-4 w-4" />
+              <span>RSS Feed</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />

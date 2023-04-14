@@ -1,49 +1,11 @@
 ---
-import Marquee from "../components/Marquee.astro";
-import SocialLink from "../components/SocialLink.astro";
 import CopyButton from "../components/CopyButton";
-
-const greenLink = "#ff0080";
-const blueLink = "#0000FF";
 ---
 
 <footer class="mb-4">
   <div class="flex gap-2">
     <a href="https://github.com/boogerbuttcheeks">Github</a>⋅
     <a href="https://www.linkedin.com/in/trevortylerlee/">LinkedIn</a>⋅
-    <!-- <p>trevortylerlee@gmail.com</p> -->
     <CopyButton client:visible copyText="trevortylerlee@gmail.com" label="trevortylerlee@gmail.com" />
   </div>
 </footer>
-
-<!-- <style define:vars={{ blueLink, greenLink }}>
-  .footer-wrapper {
-    display: grid;
-  }
-
-  a {
-    font-size: 1rem;
-    font-weight: 400;
-    color: black;
-    border-bottom: 2px solid transparent;
-  }
-
-  :global(.dark) a {
-    color: white;
-  }
-
-  .social-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  @media (min-width: 40rem) {
-    .social-grid {
-      margin-top: 0;
-    }
-  }
-</style> -->

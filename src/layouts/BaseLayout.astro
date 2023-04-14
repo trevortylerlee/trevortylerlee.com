@@ -2,8 +2,6 @@
 import "../styles/global.css";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
-import Contact from "../components/Contact.astro";
-import Favicon from "../components/Favicon.astro";
 
 const { pageTitle } = Astro.props;
 ---
@@ -14,13 +12,12 @@ const { pageTitle } = Astro.props;
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content="/og.jpg" />
     <meta
       name="description"
-      content="Trevor Lee | Web Developer from Vancouver, Canada | TypeScript, React, Next.js, Node.js"
+      content="Trevor Lee | Software Developer from Vancouver, Canada | TypeScript, React, Next.js, Node.js"
     />
     <title>{pageTitle}</title>
   </head>
@@ -28,7 +25,7 @@ const { pageTitle } = Astro.props;
     <div class="mx-auto max-w-screen-md px-4">
       <Navigation />
       <slot />
-      <hr class="mb-4 stroke-cyan-500 dark:opacity-25"/>
+      <hr class="mb-4 stroke-neutral-500 dark:opacity-25"/>
       <Footer />
     </div>
   </body>
@@ -36,7 +33,7 @@ const { pageTitle } = Astro.props;
 </html>
 
 <script is:inline>
-    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    // On page load or when changing themes
     const html = document.documentElement;
     const systemPrefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"

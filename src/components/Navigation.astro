@@ -1,8 +1,6 @@
 ---
-import ThemeIcon from "../components/ThemeIcon.astro";
 import ThemeSelector from "../components/ThemeSelector";
 import { CommandBar } from "./CommandBar";
-import { Icon } from "astro-icon";
 ---
 
 <nav
@@ -19,73 +17,3 @@ import { Icon } from "astro-icon";
   <ThemeSelector client:load />
   </span>
 </nav>
-
-<!-- <style>
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  a {
-    color: black;
-  }
-
-  a:hover,
-  a:focus {
-    outline: none;
-  }
-
-  a:hover svg,
-  a:focus svg {
-    outline: 2px dotted var(--primary-color);
-  }
-
-  :global(.dark) a {
-    color: white;
-  }
-
-  .toggleWrapper {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .logoWrapper {
-    transform: rotate(0deg);
-  }
-
-  .animate {
-    animation: spin 0.65s cubic-bezier(0,.69,.22,1.14) forwards;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .animate {
-      animation: none;
-    }
-  }
-
-  @keyframes spin {
-    to {
-      transform: rotate(2turn);
-    }
-  }
-</style> -->
-
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const target = document.querySelector('.logoWrapper')
-
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        target.classList.add('animate')
-      } else {
-        target.classList.remove('animate')
-      }
-    }, {
-      threshold: 0.05,
-    })
-
-    observer.observe(target)
-  })
-</script> -->

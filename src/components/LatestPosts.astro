@@ -1,10 +1,10 @@
 ---
 import { Icon } from "astro-icon";
 
-import { getCollection, getEntryBySlug } from "astro:content";
+import { getCollection } from "astro:content";
 import MorePost from "../components/MorePost.astro";
 
-import { formatBlogPost } from "../js/utils";
+import { formatBlogPost } from "../lib/utils";
 
 const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {
@@ -17,7 +17,7 @@ const formattedPosts = formatBlogPost(allPosts, {
   </div>
   <div class="grid gap-4">
     {
-      formattedPosts.map((post, i) => (
+      formattedPosts.map((post) => (
         <MorePost
           date={post.data.date}
           href={post.slug}
@@ -34,50 +34,3 @@ const formattedPosts = formatBlogPost(allPosts, {
     </a>
     </div>
 </div>
-
-<!-- <style>
-  .wrapper {
-    padding: 2rem 0;
-    margin: 0;
-  }
-
-  .more {
-    text-align: left;
-    /* margin-top: 4rem; */
-    contain: style;
-    margin-bottom: 1rem;
-  }
-
-  .view-all {
-    color: inherit;
-    border-color: rgba(0, 0, 0, 0);
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-  }
-
-  .view-all:hover {
-    background: var(--selection-color);
-  }
-
-  .view-all:focus {
-    outline: 2px dotted var(--text-color);
-    background: var(--selection-color);
-  }
-
-  svg {
-    position: relative;
-    top: 2px;
-  }
-
-  .header-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
-
-  .latest-posts {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-</style> -->
