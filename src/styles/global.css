@@ -19,7 +19,7 @@ h3 {
 }
 
 figcaption {
-  @apply text-sm text-center mb-4 mt-2 opacity-75
+  @apply mb-4 mt-2 text-center text-sm opacity-75;
 }
 
 li {
@@ -27,20 +27,20 @@ li {
 }
 
 pre {
-  @apply my-4
+  @apply my-4;
 }
 
 img {
-  @apply max-w-full py-4
+  @apply max-w-full py-4;
 }
 
 hr {
-  @apply mb-8
+  @apply mb-8;
 }
 
 @layer base {
   a {
-    @apply underline text-blue-700 dark:text-blue-300;
+    @apply text-blue-700 underline dark:text-blue-300;
   }
 
   /* html.dark a {
@@ -50,6 +50,6 @@ hr {
 
 @layer components {
   .exempt-link {
-    @apply no-underline text-neutral-950 dark:text-neutral-50;
+    @apply text-neutral-950 no-underline dark:text-neutral-50;
   }
 }

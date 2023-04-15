@@ -8,7 +8,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
   DropdownMenuLabel,
-  DropdownMenuSeparator
+  DropdownMenuSeparator,
 } from "./ui/dropdown-menu";
 
 export default function ThemeSelector() {
@@ -52,7 +52,7 @@ export default function ThemeSelector() {
       <DropdownMenuTrigger asChild>
         <button
           aria-label="Change color theme"
-          className="justify-center h-10 w-10 text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 inline-flex select-none items-center gap-1 rounded border border-neutral-100 bg-neutral-100 font-medium dark:border-neutral-700 dark:bg-neutral-900 focus-visible:text-neutral-600 dark:focus-visible:text-neutral-300"
+          className="inline-flex h-10 w-10 select-none items-center justify-center gap-1 rounded border border-neutral-100 bg-neutral-100 font-medium text-neutral-500 hover:bg-neutral-200 hover:text-neutral-600 focus-visible:text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-300 dark:focus-visible:text-neutral-300"
         >
           {colorTheme === "system" && <LucideMonitor />}
           {colorTheme === "light" && <LucideSun />}
@@ -60,7 +60,7 @@ export default function ThemeSelector() {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="w-40 rounded-xs dark:bg-neutral-950 dark:text-white"
+        className="rounded-xs w-40 dark:bg-neutral-950 dark:text-white"
         sideOffset={12}
         side="bottom"
         align="end"
@@ -72,22 +72,13 @@ export default function ThemeSelector() {
           value={colorTheme}
           onValueChange={setColorTheme}
         >
-          <DropdownMenuRadioItem
-            value="system"
-            className="py-2 pl-7"
-          >
+          <DropdownMenuRadioItem value="system" className="py-2 pl-7">
             System
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem
-            value="light"
-            className="py-2 pl-7"
-          >
+          <DropdownMenuRadioItem value="light" className="py-2 pl-7">
             Light
           </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem
-            value="dark"
-            className="py-2 pl-7"
-          >
+          <DropdownMenuRadioItem value="dark" className="py-2 pl-7">
             Dark
           </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>

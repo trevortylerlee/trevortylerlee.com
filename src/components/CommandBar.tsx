@@ -27,7 +27,6 @@ import {
 } from "./ui/command";
 
 export function CommandBar() {
-
   const [open, setOpen] = useState(false);
   const [copyTrigger, setCopyTrigger] = useState(false);
   const [footerPhrase, setFooterPhrase] = useState("Press ⌘ K to close");
@@ -39,7 +38,7 @@ export function CommandBar() {
   useEffect(() => {
     let isMac = /Mac/i.test(navigator.userAgent);
     let isWin = /Win/i.test(navigator.userAgent);
-    let isMobile = window.innerWidth
+    let isMobile = window.innerWidth;
 
     if (isMac) {
       setFooterPhrase("Press ⌘ K to close");
@@ -63,7 +62,7 @@ export function CommandBar() {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && e.metaKey || e.key === "k" && e.ctrlKey) {
+      if ((e.key === "k" && e.metaKey) || (e.key === "k" && e.ctrlKey)) {
         setOpen((open) => !open);
       }
     };
@@ -73,21 +72,18 @@ export function CommandBar() {
   }, []);
 
   function handleClick() {
-    setOpen((open) => !open)
+    setOpen((open) => !open);
   }
 
   return (
     <>
       <button
         onClick={handleClick}
-        className="h-10 w-10 self-center text-neutral-500 dark:text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 inline-flex select-none items-center gap-1 rounded border border-neutral-100 bg-neutral-100 font-medium dark:border-neutral-700 dark:bg-neutral-900 focus-visible:text-neutral-600 dark:focus-visible:text-neutral-300"
+        className="inline-flex h-10 w-10 select-none items-center gap-1 self-center rounded border border-neutral-100 bg-neutral-100 font-medium text-neutral-500 hover:bg-neutral-200 hover:text-neutral-600 focus-visible:text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-300 dark:focus-visible:text-neutral-300"
       >
-        <Menu className="h-7 w-7 mx-auto" />
+        <Menu className="mx-auto h-7 w-7" />
       </button>
-      <CommandDialog
-        open={open}
-        onOpenChange={setOpen}
-      >
+      <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandGroup heading="Suggestions">
@@ -126,10 +122,7 @@ export function CommandBar() {
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup
-            heading="Social media"
-            className="mt-3"
-          >
+          <CommandGroup heading="Social media" className="mt-3">
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandItem
               aria-label="Github"
@@ -204,8 +197,8 @@ export function CommandBar() {
             </CommandItem>
           </CommandGroup>
         </CommandList>
-        <CommandSeparator className="mt-2"/>
-        <div className="text-xs dark:bg-neutral-700 px-2 py-1 bg-neutral-100">
+        <CommandSeparator className="mt-2" />
+        <div className="bg-neutral-100 px-2 py-1 text-xs dark:bg-neutral-700">
           <p className="text-right opacity-50">{footerPhrase}</p>
         </div>
       </CommandDialog>

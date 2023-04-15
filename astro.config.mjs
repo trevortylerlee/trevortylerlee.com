@@ -34,7 +34,7 @@ export default defineConfig({
   }),
   vite: {
     ssr: {
-      noExternal: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu']
-    }
+      noExternal: ["@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu"],
+    },
   },
 });
