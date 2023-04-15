@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 body {
-  font-family: Helvetica;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto
 }
 
 h1 {
