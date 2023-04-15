@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { ArrowRight } from "lucide-react";
 
 import { getCollection } from "astro:content";
 import MorePost from "../components/MorePost.astro";
@@ -30,7 +30,7 @@ const formattedPosts = formatBlogPost(allPosts, {
     <div class="flex justify-end py-8">
     <a class="flex exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href="/posts/">
       View all posts
-      <Icon class="self-center ml-1" name="lucide:arrow-right" width="16" height="16" />
+      <ArrowRight size={16} className={"self-center ml-1"} />
     </a>
     </div>
 </div>

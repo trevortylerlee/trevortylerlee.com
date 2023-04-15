@@ -1,6 +1,7 @@
 ---
 import { formatDate, isWithinLastFortnite } from "../lib/utils";
 import { Icon } from "astro-icon";
+import { AlertCircle } from "lucide-react";
 const { date, href, title, description, last } = Astro.props;
 ---
 
@@ -14,7 +15,7 @@ const { date, href, title, description, last } = Astro.props;
         <div class="text-baseline flex">
           {
             isWithinLastFortnite(date) && (
-              <Icon name="mdi:alert-decagram-outline" size="16" color="red" />
+              <AlertCircle color={"red"} size={16} className={"self-center"}/>
             )
           }
           <p class="text-xs opacity-75 whitespace-nowrap">{formatDate(date)}</p>

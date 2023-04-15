@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
 const { prevUrl, nextUrl } = Astro.props;
 ---
@@ -9,7 +9,7 @@ const { prevUrl, nextUrl } = Astro.props;
     prevUrl && (
       <span class="flex">
       <a class="flex no-underline mb-8 mt-8 exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href={prevUrl} aria-label="Newer Posts">
-        <Icon name="lucide:arrow-left" height="16px" width="16px" class="self-center mr-1"/>
+        <ArrowLeft size={16} className={"self-center mr-1"} />
         <span>Newer Posts</span>
       </a>
       </span>
@@ -20,7 +20,7 @@ const { prevUrl, nextUrl } = Astro.props;
       <span class="flex justify-end">
       <a class="flex no-underline mb-8 mt-8 exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href={nextUrl} aria-label="Older Posts">
         Older Posts
-        <Icon name="lucide:arrow-right" height="16px" width="16px" class="self-center ml-1"/>
+        <ArrowRight size={16} className={"self-center ml-1"} />
       </a>
       </span>
     )

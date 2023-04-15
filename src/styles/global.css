@@ -23,7 +23,7 @@ h3 {
 }
 
 figcaption {
-  @apply mb-4 mt-2 text-center text-sm opacity-75;
+  @apply text-center text-sm opacity-75;
 }
 
 li {
