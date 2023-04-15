@@ -29,7 +29,7 @@ import {
 export function CommandBar() {
   const [open, setOpen] = useState(false);
   const [copyTrigger, setCopyTrigger] = useState(false);
-  const [footerPhrase, setFooterPhrase] = useState("Press ⌘ K to close");
+  const [footerPhrase, setFooterPhrase] = useState("Press ⌘ + I to close");
 
   const [isMac, setIsMac] = useState(true);
   const [isWin, setIsWin] = useState(false);
@@ -41,12 +41,12 @@ export function CommandBar() {
     let isMobile = window.innerWidth;
 
     if (isMac) {
-      setFooterPhrase("Press ⌘ K to close");
+      setFooterPhrase("Press ⌘ + I to close");
       setIsMac(true);
       setIsWin(false);
       setIsMobile(false);
     } else if (isWin) {
-      setFooterPhrase("Press Ctrl + K to close");
+      setFooterPhrase("Press Ctrl + I to close");
       setIsWin(true);
       setIsMac(false);
       setIsMobile(false);
@@ -62,7 +62,7 @@ export function CommandBar() {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if ((e.key === "k" && e.metaKey) || (e.key === "k" && e.ctrlKey)) {
+      if ((e.key === "i" && e.metaKey) || (e.key === "i" && e.ctrlKey)) {
         setOpen((open) => !open);
       }
     };
@@ -199,7 +199,7 @@ export function CommandBar() {
         </CommandList>
         <CommandSeparator className="mt-2" />
         <div className="bg-neutral-100 px-2 py-1 text-xs dark:bg-neutral-700">
-          <p className="text-right opacity-50">{footerPhrase}</p>
+          <p className="text-right font-mono opacity-50">{footerPhrase}</p>
         </div>
       </CommandDialog>
     </>

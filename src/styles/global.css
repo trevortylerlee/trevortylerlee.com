@@ -6,6 +6,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: Helvetica;
+}
+
 h1 {
   @apply text-2xl font-bold;
 }
