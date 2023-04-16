@@ -78,6 +78,7 @@ export function CommandBar() {
   return (
     <>
       <button
+        aria-label="Open command bar"
         onClick={handleClick}
         className="inline-flex h-10 w-10 select-none items-center gap-1 self-center rounded border border-neutral-100 bg-neutral-100 font-medium text-neutral-500 hover:bg-neutral-200 hover:text-neutral-600 focus-visible:text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-300 dark:focus-visible:text-neutral-300"
       >
