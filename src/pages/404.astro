@@ -5,42 +5,10 @@ const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="container">
-    <div class="text">
-      <img src="/pokemon/pikachu.gif" alt="Pikachu apologizing profusely." />
+  <div class="grid justify-center text-center h-24 mb-36">
+      <img class="mx-auto" src="/pokemon/pikachu.gif" alt="Pikachu apologizing profusely." />
       <h1 class="title">404 Error</h1>
       <p>This page isn't available. Sorry.</p>
-    </div>
-    <div>
-      <a href="/">Go Home</a>
-    </div>
+      <a class="mt-4" href="/">Go Home</a>
   </div>
 </BaseLayout>
-
-<style>
-  .container {
-    display: grid;
-    place-content: center;
-    text-align: center;
-    height: 60vh;
-  }
-
-  a {
-    display: inline-block;
-  }
-
-  .title {
-    margin-bottom: -0.5rem;
-  }
-
-  .text {
-    padding-bottom: 2rem;
-  }
-
-  img {
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    margin-bottom: 0.5rem;
-  }
-</style>

@@ -1,69 +1,13 @@
 ---
-import Marquee from '../components/Marquee.astro'
-import SocialLink from '../components/SocialLink.astro'
-
-
-const greenLink = '#ff0080';
-const blueLink = '#0000FF';
+import CopyButton from "../components/CopyButton";
+import ThemeSelector from "./ThemeSelector";
 ---
 
-<hr class="hr" />
-<footer>
-  <div class="footer-wrapper">
-    <div class='social-grid'>
-      <SocialLink
-        link="https://github.com/boogerbuttcheeks"
-        icon="ant-design:github-filled"
-        github
-      />
-      <SocialLink
-        link="https://www.linkedin.com/in/trevortylerlee/"
-        icon="mdi:linkedin"
-        color="#0a66c2"
-      />
-      <SocialLink
-        link="https://mstdn.social/@boogerbuttcheeks"
-        icon="mdi:mastodon"
-        color="#6364F6"
-      />
-      <SocialLink
-        link="https://twitter.com/boogerbuttcheek"
-        icon="ri:twitter-fill"
-        color="#1DA1F2"
-      />
-    </div>
-    <!-- <Marquee /> -->
+<footer class="mb-4 flex justify-between">
+  <div class="flex gap-4 self-center max-[420px]:flex-col max-[420px]:gap-2">
+    <a href="https://github.com/boogerbuttcheeks">Github</a>
+    <a href="https://www.linkedin.com/in/trevortylerlee/">LinkedIn</a>
+    <CopyButton client:visible copyText="trevortylerlee@gmail.com" label="trevortylerlee@gmail.com" />
   </div>
+  <ThemeSelector client:visible />
 </footer>
-
-<style define:vars={{ blueLink, greenLink }}>
-  .footer-wrapper {
-    display: grid;
-  }
-
-  a {
-    font-size: 1rem;
-    font-weight: 400;
-    color: black;
-    border-bottom: 2px solid transparent;
-  }
-
-  :global(.dark) a {
-    color: white;
-  }
-
-  .social-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  @media (min-width: 40rem) {
-    .social-grid {
-      margin-top: 0;
-    }
-  }
-</style>

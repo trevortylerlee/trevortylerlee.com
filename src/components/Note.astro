@@ -2,37 +2,33 @@
 const { emoji, type } = Astro.props;
 ---
 
-<div class={`note ${type}`}>
+<div class={`px-4 py-0 flex ${type} note`}>
   <div>
     <p class="emoji">{emoji}</p>
   </div>
   <div>
-    <!-- <p class="string">{string}</p> -->
     <slot />
   </div>
 </div>
 
 <style>
   .note {
-    padding: 0.1em 0.5em;
-    border-radius: 8px;
-    display: flex;
+    border-radius: 4px;
   }
 
   .secondary {
-    color: #888888;
+    /* color: #888888; */
     border: 1px solid #888888;
   }
 
   .technology {
-    /* background: #151e36; */
-    color: #0070f3;
+    /* color: #0070f3; */
     border: 1px solid #0070f3;
   }
 
   .warning {
-    color: #EAAA45;
-    border: 1px solid #EAAA45;
+    /* color: #eaaa45; */
+    border: 1px solid #eaaa45;
   }
 
   .emoji {
@@ -40,10 +36,5 @@ const { emoji, type } = Astro.props;
     vertical-align: text-top;
     left: 0.25em;
     margin-right: 1em;
-  }
-
-  .string {
-    position: relative;
-    left: 1rem;
   }
 </style>
