@@ -1,28 +1,68 @@
 ---
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { Icon } from "astro-icon";
 
 const { prevUrl, nextUrl } = Astro.props;
 ---
 
-<nav aria-label="Posts Navigation" class="">
+<nav aria-label="Posts Navigation">
   {
     prevUrl && (
-      <span class="flex">
-      <a class="flex no-underline mb-8 mt-8 exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href={prevUrl} aria-label="Newer Posts">
-        <ArrowLeft size={16} className={"self-center mr-1"} />
-        <span>Newer Posts</span>
+      <a class='left' href={prevUrl} aria-label="Newer Posts">
+        <Icon name="lucide:arrow-left" height="16px" width="16px"/>
+        Newer Posts
       </a>
-      </span>
     )
   }
   {
     nextUrl && (
-      <span class="flex justify-end">
-      <a class="flex no-underline mb-8 mt-8 exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href={nextUrl} aria-label="Older Posts">
+      <a class="right" href={nextUrl} aria-label="Newer Posts">
         Older Posts
-        <ArrowRight size={16} className={"self-center ml-1"} />
+        <Icon name="lucide:arrow-right" height="16px" width="16px"/>
       </a>
-      </span>
     )
   }
 </nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4rem;
+  }
+
+  a {
+    color: var(--text-color);
+    border-color: rgba(0, 0, 0, 0);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+  }
+
+  a:hover,
+  a:focus {
+    background: var(--selection-color);
+  }
+
+  a:focus {
+    outline: 2px dotted var(--text-color);
+  }
+
+  .left {
+    cursor: w-resize;
+  }
+
+  .right {
+    margin-left: auto;
+    cursor: e-resize;
+  }
+
+  .right svg {
+    margin-left: 0.25rem;
+  }
+  
+  .left svg {
+    margin-right: 0.25rem;
+  }
+</style>
