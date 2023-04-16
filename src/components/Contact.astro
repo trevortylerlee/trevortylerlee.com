@@ -1,0 +1,39 @@
+---
+import CopyButton from '../components/CopyButton';
+---
+
+<hr class="hr-override" />
+<div class="contact">
+  <h2 class="color">Contact Me</h2>
+  <div class="btn-wrapper">
+    <CopyButton client:visible message="trevortylerlee@gmail.com" />
+    <CopyButton client:visible message="778-235-3815" />
+  </div>
+</div>
+
+<style>
+  .contact {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .color {
+    margin-top: 2rem;
+  }
+
+  .btn-wrapper {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hr-override {
+    border: none;
+    border-bottom: 2px solid gray;
+    opacity: 0.25;
+  }
+</style>
