@@ -17,7 +17,7 @@
     "@astrojs/rss": "^2.3.2",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.1",
-    "@astrojs/vercel": "^3.2.3",
+    "@astrojs/vercel": "^3.2.4",
     "@radix-ui/react-dialog": "^1.0.3",
     "@radix-ui/react-dropdown-menu": "^2.0.4",
     "@types/react": "^18.0.35",
