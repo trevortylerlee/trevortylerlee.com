@@ -23,7 +23,7 @@ h3 {
 }
 
 figcaption {
-  @apply text-center text-sm opacity-75;
+  @apply text-center text-sm opacity-75 ;
 }
 
 li {
@@ -35,7 +35,7 @@ pre {
 }
 
 img {
-  @apply max-w-full py-4;
+  @apply max-w-full;
 }
 
 hr {
@@ -43,13 +43,13 @@ hr {
 }
 
 @layer base {
-  a {
+  .prose a {
     @apply text-blue-700 underline dark:text-blue-300;
   }
 
-  /* html.dark a {
-    @apply text-red-200
-  } */
+  a {
+    @apply text-blue-700 underline dark:text-blue-300;
+  }
 }
 
 @layer components {

@@ -15,7 +15,7 @@ const { date, href, title, description, last } = Astro.props;
         <div class="text-baseline flex">
           {
             isWithinLastFortnite(date) && (
-              <AlertCircle color={"red"} size={16} className={"self-center"}/>
+              <AlertCircle color={"red"} size={16} className={"self-center mr-1"}/>
             )
           }
           <p class="text-xs opacity-75 whitespace-nowrap">{formatDate(date)}</p>
