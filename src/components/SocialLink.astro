@@ -1,0 +1,41 @@
+---
+import Icon from 'astro-icon'
+
+const { link, icon, name, color, github} = Astro.props
+---
+
+<a class='icon wavy-exempt' href={link}>
+  <Icon name={icon} size="44" color={color ? color : ''} class={github ? 'github' : ''}/>
+  {name ? name : ''}
+</a>
+
+<style>
+
+  .icon {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  .icon:hover,
+  .icon:focus {
+    background: #e9e9e9;
+    outline: 2px dotted var(--primary-color);
+  }
+
+  :global(.dark) .icon:hover,
+  :global(.dark) .icon:focus {
+    background: #333;
+  }
+
+  /* For Github */
+  .github {
+    color: #333;
+  }
+
+  :global(.dark) .github {
+    color: #fafafa;
+  }
+</style>

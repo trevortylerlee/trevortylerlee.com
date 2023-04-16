@@ -1,18 +1,16 @@
 ---
 ---
 
-  <span class='container'>
-    <marquee
-      aria-hidden="true"
-      id="marq"
-      aria-hidden="true"
-      scrolldelay="120"
-      scrollamount="4"
-      class="z-20 relative pointer-events-none"
-    >
+  <!-- <div class='container' aria-hidden="true">
+    <div id="marq" class='wrapper'>
       <img src="/pokemon/magikarp.gif" alt="magikarp" />
-    </marquee>
-  </span>
+    </div>
+  </div> -->
+  <div>
+  <marquee aria-hidden="true" id="marq" aria-hidden="true" scrolldelay="120" scrollamount="4">
+    <img src="/pokemon/magikarp.gif" alt="magikarp" />
+  </marquee>
+  </div>
 
 <style>
   .container {
@@ -21,10 +19,33 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .container {
-      overflow-x: hidden;
-      display: inline;
+  .container {
+    overflow-x: hidden;
+    display: inline;
+  }
+
+  .wrapper {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    animation: scroll 24s linear infinite;
+    width: 100%;
+    /* outline: 2px solid blue; */
+  }
+  
+  .wrapper img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(110%);
     }
+    100% {
+      transform: translateX(-25%);
+    }
+  }
   }
 </style>
 
@@ -63,3 +84,4 @@
   let marq = document.getElementById("marq");
   marq.innerHTML = `<img src=${`/pokemon/${pokemon}.gif`} alt=${`${pokemon}`} />`;
 </script>
+

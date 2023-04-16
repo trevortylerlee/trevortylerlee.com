@@ -1,0 +1,84 @@
+---
+const { title, desc, href, alt, src, featured } = Astro.props;
+const light = '#e9e9e9';
+const dark = '#333';
+---
+
+  <a href={`/posts/${href}/`} rel="prefetch">
+    <div class={`card ${featured ? 'featured' : ''}`} tabIndex="-1">
+      <img src={src} alt={alt} />
+      <h3 class="title">
+        {title}
+      </h3>
+      <p>{desc}</p>
+    </div>
+  </a>
+
+<style define:vars={{ light, dark }}>
+  .card {
+    cursor: pointer;
+    padding: 1rem;
+    height: 100%;
+    border-radius: 0.5rem;
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    outline: none;
+    color: inherit;
+  }
+
+  a:hover .card {
+    background-color: var(--light);
+  }
+
+  a:focus .card,
+  a:focus-visible .card {
+    background-color: var(--light);
+    outline: 2px dotted var(--primary-color);
+  }
+
+  :global(.dark) a:hover .card {
+    background-color: var(--dark);
+  }
+
+  :global(.dark) a:focus .card,
+  :global(.dark) a:focus-visible .card {
+    background-color: var(--dark);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a,
+  a:hover {
+    border-bottom: none;
+    background-image: none !important;
+    background-size: auto 4px;
+    padding-bottom: 4px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+    position: relative;
+  }
+
+  @media (min-width: 40rem) {
+    .card {
+      /* margin: 1rem 0; */
+    }
+
+    .title {
+      font-weight: 600;
+      margin-top: 1.75rem;
+    }
+  }
+</style>
