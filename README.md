@@ -1,6 +1,6 @@
 # trevortylerlee.com
 
-Hi
+This is the source code pre-tailwind.
 
 ## Technologies Used
 
