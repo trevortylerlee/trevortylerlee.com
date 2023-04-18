@@ -1,7 +1,7 @@
 ---
 import { formatDate, isWithinLastFortnite } from "../lib/utils";
-import { Icon } from "astro-icon";
 import { AlertCircle } from "lucide-react";
+import { Badge } from "./ui/badge"
 const { date, href, title, description, last } = Astro.props;
 ---
 
@@ -9,16 +9,17 @@ const { date, href, title, description, last } = Astro.props;
 <div class="p-4 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700">
     <div class="wrapper">
       <div class="flex justify-between items-baseline">
-        <div class="max-w-[80%]">
-          <h4 class="text-lg font-bold line-clamp-1 text-blue-700 dark:text-blue-300 hover:underline">{title}</h4>
-        </div>
-        <div class="text-baseline flex">
+        <div class="max-w-[80%] flex">
+          <h4 class="text-lg font-bold line-clamp-1 mr-2 text-blue-700 dark:text-blue-300 hover:underline">{title}</h4>
           {
             isWithinLastFortnite(date) && (
-              <AlertCircle color={"red"} size={16} className={"self-center mr-1"}/>
+              // <AlertCircle color={"red"} size={16} className={"self-center mr-1"}/>
+              <Badge variant="outline">New</Badge>
             )
           }
-          <p class="text-xs opacity-75 whitespace-nowrap">{formatDate(date)}</p>
+        </div>
+        <div class="text-baseline flex">
+          <p class="text-xs opacity-75 whitespace-nowrap self-baseline">{formatDate(date)}</p>
         </div>
       </div>
       {description && <p class="line-clamp-2">{description}</p>}
