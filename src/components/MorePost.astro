@@ -9,7 +9,7 @@ const { date, href, title, description, last } = Astro.props;
 <div class="relative p-4 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700">
     {
       isWithinLastFortnite(date) && (
-        <Circle fill="#EB3323" stroke="#EB3323" size={12} className={"absolute -top-1 -right-1"}/>
+        <Circle fill="#EB3323" stroke="#EB3323" size={12} className={"absolute -top-1.5 -right-1.5"}/>
       )
     }
     <div class="wrapper">

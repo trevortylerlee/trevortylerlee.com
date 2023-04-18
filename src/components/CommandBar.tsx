@@ -199,8 +199,8 @@ export function CommandBar() {
           </CommandGroup>
         </CommandList>
         <CommandSeparator className="mt-2" />
-        <div className="bg-neutral-100 px-2 py-1 text-xs dark:bg-neutral-700">
-          <p className="text-right font-mono opacity-50">{footerPhrase}</p>
+        <div className="bg-neutral-100 px-2 py-1 text-xs dark:bg-neutral-800">
+          <p className="text-right font-mono opacity-75">{footerPhrase}</p>
         </div>
       </CommandDialog>
     </>
