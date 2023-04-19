@@ -8,7 +8,7 @@
 - [React](https://react.dev/)
 - [react-hot-toast](https://react-hot-toast.com/)
 - [shadcn/ui](https://ui.shadcn.com/) for the dropdown and command bar
-  - ^ uses [clsx](https://github.com/lukeed/clsx), [Radix](https://www.radix-ui.com/), and [cmdk](https://cmdk.paco.me/) under the hood
+  - uses [clsx](https://github.com/lukeed/clsx), [Radix](https://www.radix-ui.com/), and [cmdk](https://cmdk.paco.me/) under the hood
 - [TailwindCSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vercel](https://vercel.com/home)
