@@ -6,6 +6,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:focus-visible {
+  outline: 2px dashed #ff0080;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
 body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto
 }
