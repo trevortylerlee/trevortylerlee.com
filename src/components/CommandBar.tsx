@@ -29,7 +29,7 @@ import {
 export function CommandBar() {
   const [open, setOpen] = useState(false);
   const [copyTrigger, setCopyTrigger] = useState(false);
-  const [footerPhrase, setFooterPhrase] = useState("Press ⌘ + I to close");
+  const [footerPhrase, setFooterPhrase] = useState("Press ⌘ + K to close");
 
   const [isMac, setIsMac] = useState(true);
   const [isWin, setIsWin] = useState(false);
@@ -41,12 +41,12 @@ export function CommandBar() {
     let isMobile = window.innerWidth;
 
     if (isMac) {
-      setFooterPhrase("Press ⌘ + I to close");
+      setFooterPhrase("Press ⌘ + K to close");
       setIsMac(true);
       setIsWin(false);
       setIsMobile(false);
     } else if (isWin) {
-      setFooterPhrase("Press Ctrl + I to close");
+      setFooterPhrase("Press Ctrl + K to close");
       setIsWin(true);
       setIsMac(false);
       setIsMobile(false);
@@ -62,7 +62,8 @@ export function CommandBar() {
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if ((e.key === "i" && e.metaKey) || (e.key === "i" && e.ctrlKey)) {
+      if ((e.key === "k" && e.metaKey) || (e.key === "k" && e.ctrlKey)) {
+        e.preventDefault();
         setOpen((open) => !open);
       }
     };
