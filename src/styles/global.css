@@ -6,6 +6,50 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --gray-1: rgb(142 142 147);
+    --gray-2: rgb(174 174 178);
+    --gray-3: rgb(199 199 204);
+    --gray-4: rgb(209 209 214);
+    --gray-5: rgb(229 229 234);
+    --gray-6: rgb(242 242 247);
+
+    --dark-gray-1: rgb(142 142 147);
+    --dark-gray-2: rgb(99 99 102);
+    --dark-gray-3: rgb(72 72 74);
+    --dark-gray-4: rgb(58 58 60);
+    --dark-gray-5: rgb(44 44 46);
+    --dark-gray-6: rgb(28 28 30);
+
+    --red: rgb(255 49 48);
+    --orange: rgb(255 149 0);
+    --yellow: rgb(255 204 0);
+    --green: rgb(40 205 65);
+    --mint: rgb( 0 199 190);
+    --teal: rgb(89 173 196);
+    --cyan: rgb(85 190 240);
+    --blue: rgb(0 122 255);
+    --indigo: rgb(88 86 214);
+    --purple: rgb(175 82 222);
+    --pink: rgb(255 45 85);
+    --brown: rgb(162 132 94);
+
+    --dark-red: rgb(255 69 58);
+    --dark-orange: rgb(255 159 10);
+    --dark-yellow: rgb(255 214 10);
+    --dark-green: rgb(50 215 75);
+    --dark-mint: rgb(102 212 207);
+    --dark-teal: rgb(106 196 220);
+    --dark-cyan: rgb( 90 200 245);
+    --dark-blue: rgb(10 132 255);
+    --dark-indigo: rgb(94 92 230);
+    --dark-purple: rgb(191 90 242);
+    --dark-pink: rgb(255 55 95);
+    --dark-brown: rgb(172 142 104);
+  }
+}
+
 :focus-visible {
   outline: 2px dashed #ff0080;
 }
@@ -52,11 +96,19 @@ hr {
 
 @layer base {
   .prose a {
-    @apply text-blue-700 underline dark:text-blue-300;
+    @apply text-skin-blue underline dark:text-skin-darkCyan;
   }
 
   a {
-    @apply text-blue-700 underline dark:text-blue-300;
+    @apply text-skin-blue underline dark:text-skin-darkCyan;
+  }
+
+  ::selection {
+    @apply bg-skin-blue text-skin-gray6;
+  }
+
+  .dark ::selection {
+    @apply bg-skin-darkCyan text-skin-darkGray6;
   }
 }
 

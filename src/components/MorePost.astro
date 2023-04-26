@@ -6,16 +6,16 @@ const { date, href, title, description, last } = Astro.props;
 ---
 
 <a href={`/posts/${href}`} class="exempt-link">
-<div class="relative p-4 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700">
+<div class="relative p-4 bg-skin-gray5 hover:bg-skin-gray4 dark:bg-skin-darkGray5 hover:dark:bg-skin-darkGray4">
     {
       isWithinLastFortnite(date) && (
-        <Circle fill="#EB3323" stroke="#EB3323" size={12} className={"absolute -top-1.5 -right-1.5"}/>
+        <Circle fill="#ff3a30" stroke="#ff3a30" size={12} className={"absolute -top-1.5 -right-1.5"}/>
       )
     }
     <div class="wrapper">
       <div class="flex justify-between items-baseline">
         <div class="max-w-[80%]">
-          <h4 class="text-lg font-bold line-clamp-1 mr-1 text-blue-700 dark:text-blue-300 hover:underline">{title}</h4>
+          <h4 class="text-lg font-bold line-clamp-1 mr-1 text-skin-blue dark:text-skin-darkCyan hover:underline">{title}</h4>
         </div>
         <div class="flex">
           <p class="text-xs opacity-75 whitespace-nowrap self-baseline">{formatDate(date)}</p>
