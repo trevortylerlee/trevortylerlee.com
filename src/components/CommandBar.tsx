@@ -89,9 +89,9 @@ export function CommandBar() {
 
   return (
     <>
-      <TooltipProvider>
+      {/* <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger>
+          <TooltipTrigger> */}
             <button
               aria-label="Open command bar"
               onClick={handleClick}
@@ -99,12 +99,12 @@ export function CommandBar() {
             >
               <Menu className="mx-auto h-7 w-7" />
             </button>
-          </TooltipTrigger>
+          {/* </TooltipTrigger>
           <TooltipContent>
             <p>{tooltip}</p>
           </TooltipContent>
         </Tooltip>
-      </TooltipProvider>
+      </TooltipProvider> */}
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
