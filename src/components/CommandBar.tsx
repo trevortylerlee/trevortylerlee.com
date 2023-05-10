@@ -89,6 +89,8 @@ export function CommandBar() {
 
   return (
     <>
+
+      {/* Test commit */}
       {/* <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild> */}
