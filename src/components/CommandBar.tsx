@@ -151,7 +151,7 @@ export function CommandBar() {
             <CommandItem
               aria-label="Github"
               onSelect={(value) => {
-                window.location.href = "https://github.com/boogerbuttcheeks";
+                window.location.href = "https://github.com/trevortylerlee";
               }}
             >
               <Github className="mr-2 h-4 w-4" />
