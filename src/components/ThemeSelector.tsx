@@ -60,7 +60,7 @@ export default function ThemeSelector() {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className="rounded-xs w-40 dark:bg-neutral-950 dark:text-white"
+        className="rounded-xs w-40 dark:bg-skin-darkGray5 dark:text-white"
         sideOffset={12}
         side="bottom"
         align="end"
