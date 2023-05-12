@@ -90,10 +90,6 @@ img {
   @apply max-w-full;
 }
 
-hr {
-  @apply mb-8;
-}
-
 @layer base {
   .prose a {
     @apply text-skin-blue underline dark:text-skin-darkCyan;
