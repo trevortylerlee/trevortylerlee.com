@@ -16,8 +16,6 @@ this out.
 npm install react-hot-toast
 ```
 
-<br />
-
 ### 2. Create a component called Toastify.tsx
 
 The `Toastify` component takes another component as its argument and
@@ -36,8 +34,6 @@ export default (Component) => {
 };
 ```
 
-<br />
-
 ### 3. Create a component called Button.tsx
 
 ```tsx
@@ -45,8 +41,6 @@ export default function Button(message) {
   return <button>{message}</button>;
 }
 ```
-
-<br />
 
 ### 4. Import Toastify.tsx into Button.tsx
 
@@ -61,15 +55,11 @@ export default function Toastify(function Button({message})) {
 }
 ```
 
-<br />
-
 ### 5. Create a function to trigger the toast
 
 ```tsx
 const notify = () => toast("Toast!");
 ```
-
-<br />
 
 ### 6. Set the client directive to client:load
 
@@ -80,9 +70,6 @@ JavaScript.
 ```tsx
 <ToastExample client:load message="Click me!" />
 ```
-
-<br />
-<br />
 
 ### Final Result
 
