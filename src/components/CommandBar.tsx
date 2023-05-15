@@ -13,6 +13,7 @@ import {
   Moon,
   Rss,
   Menu,
+  Search,
 } from "lucide-react";
 
 import {
@@ -89,19 +90,25 @@ export function CommandBar() {
 
   return (
     <>
-
       {/* Test commit */}
       {/* <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild> */}
-            <button
-              aria-label="Open command bar"
-              onClick={handleClick}
-              className="inline-flex h-10 w-10 select-none items-center gap-1 self-center rounded border border-neutral-100 bg-neutral-100 font-medium text-neutral-500 hover:bg-neutral-200 hover:text-neutral-600 focus-visible:text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-300 dark:focus-visible:text-neutral-300"
-            >
-              <Menu className="mx-auto h-7 w-7" />
-            </button>
-          {/* </TooltipTrigger>
+      <button
+        aria-label="Open command bar"
+        onClick={handleClick}
+        className="relative flex h-10 w-10 select-none items-center gap-1 self-center rounded-xs border border-neutral-200 bg-neutral-100 font-medium text-neutral-500 hover:bg-neutral-200 hover:text-neutral-600 focus-visible:text-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-300 dark:focus-visible:text-neutral-300 sm:w-48 sm:justify-between opacity-85 hover:opacity-100 focus-visible:opacity-100
+        "
+      >
+        <Menu className="mx-auto h-7 w-7 sm:hidden" />
+        <div className="hidden w-full items-center justify-between self-center px-2 sm:flex">
+          <div>Search...</div>
+          <kbd className="rounded-xs border px-1 text-neutral-500 border-neutral-200 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400">
+            ⌘<span className="ml-0.5 text-sm">K</span>
+          </kbd>
+        </div>
+      </button>
+      {/* </TooltipTrigger>
           <TooltipContent>
             <p>{tooltip}</p>
           </TooltipContent>
@@ -187,37 +194,37 @@ export function CommandBar() {
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading="Settings" className="mt-3">
+          <CommandGroup heading="Theme" className="mt-3">
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandItem
-              aria-label="Use system theme"
+              aria-label="System theme"
               onSelect={(value) => {
                 localStorage.setItem("theme", "system");
                 location.reload();
               }}
             >
               <Monitor className="mr-2 h-4 w-4" />
-              <span>Use system theme</span>
+              <span>System</span>
             </CommandItem>
             <CommandItem
-              aria-label="Change to light theme"
+              aria-label="Light theme"
               onSelect={(value) => {
                 localStorage.setItem("theme", "light");
                 location.reload();
               }}
             >
               <Sun className="mr-2 h-4 w-4" />
-              <span>Light theme</span>
+              <span>Light</span>
             </CommandItem>
             <CommandItem
-              aria-label="Use dark theme"
+              aria-label="Dark theme"
               onSelect={(value) => {
                 localStorage.setItem("theme", "dark");
                 location.reload();
               }}
             >
               <Moon className="mr-2 h-4 w-4" />
-              <span>Dark theme</span>
+              <span>Dark</span>
             </CommandItem>
           </CommandGroup>
         </CommandList>

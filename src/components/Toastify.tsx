@@ -29,8 +29,8 @@ export default (Component) => {
               fontFamily: "Inter, sans-serif",
             },
             iconTheme: {
-              primary: "#22c55e",
-              secondary: "#000",
+              primary: "#000",
+              secondary: "#22c55e",
             },
           },
         }}
