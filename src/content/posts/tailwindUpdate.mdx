@@ -7,16 +7,19 @@ image:
   alt: "The design on the left is the old design, the design on the right is the new design."
 ---
 
-The site now uses TailwindCSS, and has new components from [shadcn](https://ui.shadcn.com) and [Radix](https://radix-ui.com).  There's a Command Bar component in the top right which contains quick links and actions. It can be toggled with the keyboard shortcut Command + K on Mac and Ctrl + K on Windows.
+The site now uses TailwindCSS, and has new components from [shadcn](https://ui.shadcn.com) and [Radix](https://radix-ui.com). There's a Command Bar component in the top right which contains quick links and actions. It can be toggled with the keyboard shortcut Command + K on Mac and Ctrl + K on Windows.
 
 ## CSS Modules to TailwindCSS
 
-I switched to Tailwind because I wanted to use their [just-in-time compiler](https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css), which optimizes your CSS and reduces their file size. 
+I switched to Tailwind because I wanted to use their [just-in-time compiler](https://tailwindcss.com/blog/just-in-time-the-next-generation-of-tailwind-css), which optimizes your CSS and reduces their file size.
 
 I ran some lighthouse tests and interestingly TailwindCSS loads ~80% more bytes in ~30% less time... not sure if that's right but it did bump my performance score from 98 to 100 😎
 
 ![Lighthouse Performance Score](/posts/lighthouse.webp)
-<figcaption class="-mt-4">Ignore the best practices score, I'm working on it</figcaption>
+
+<figcaption class="-mt-4">
+  Ignore the best practices score, I'm working on it
+</figcaption>
 
 ## Astro Import Bug
 

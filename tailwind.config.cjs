@@ -43,7 +43,7 @@ module.exports = {
           darkPurple: "var(--dark-purple)",
           darkPink: "var(--dark-pink)",
           darkBrown: "var(--dark-brown)",
-        }
+        },
       },
       backgroundColor: {
         skin: {
@@ -84,12 +84,9 @@ module.exports = {
           darkPurple: "var(--dark-purple)",
           darkPink: "var(--dark-pink)",
           darkBrown: "var(--dark-brown)",
-        }
+        },
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("tailwindcss-animate"),
-  ],
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
 };

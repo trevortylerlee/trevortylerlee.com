@@ -5,15 +5,19 @@ import { CommandBar } from "./CommandBar";
 
 <nav
   aria-label="Main Navigation"
-  class="flex justify-between align-middle py-4 h-13 my-4"
+  class="h-13 my-4 flex justify-between py-4 align-middle"
 >
   <span class="flex text-center">
-  <a class="exempt-link text-xl font-medium hover:bg-skin-blue hover:text-skin-gray6 dark:hover:bg-skin-darkCyan p-2 dark:hover:text-black inter-only" href="/" aria-label="Go to homepage">
-    trevortylerlee.com
-  </a>
+    <a
+      class="exempt-link inter-only p-2 text-xl font-medium hover:bg-skin-blue hover:text-skin-gray6 dark:hover:bg-skin-darkCyan dark:hover:text-black"
+      href="/"
+      aria-label="Go to homepage"
+    >
+      trevortylerlee.com
+    </a>
   </span>
   <span class="flex gap-2">
-  <CommandBar client:load/>
-  <!-- <ThemeSelector client:load /> -->
+    <CommandBar client:load />
+    <!-- <ThemeSelector client:load /> -->
   </span>
 </nav>

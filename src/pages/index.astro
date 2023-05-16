@@ -1,16 +1,19 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Marquee from '../components/Marquee.astro';
-import LatestPosts from '../components/LatestPosts.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Marquee from "../components/Marquee.astro";
+import LatestPosts from "../components/LatestPosts.astro";
 
-const pageTitle = 'Trevor Lee | Homepage';
-
+const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="relative h-24 mb-10">
+  <div class="relative mb-10 h-24">
     <Marquee />
-    <h1 class="mt-5 absolute text-3xl font-bold top-1/2 -translate-y-1/2 z-0 hover:z-30">Software developer interested in design.</h1>
+    <h1
+      class="absolute top-1/2 z-0 mt-5 -translate-y-1/2 text-3xl font-bold hover:z-30"
+    >
+      Software developer interested in design.
+    </h1>
   </div>
   <LatestPosts />
 </BaseLayout>

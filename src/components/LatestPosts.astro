@@ -13,8 +13,7 @@ const formattedPosts = formatBlogPost(allPosts, {
 ---
 
 <div class="">
-  <div class="">
-  </div>
+  <div class=""></div>
   <div class="grid gap-4">
     {
       formattedPosts.map((post) => (
@@ -27,10 +26,13 @@ const formattedPosts = formatBlogPost(allPosts, {
       ))
     }
   </div>
-    <div class="flex justify-end py-8">
-    <a class="flex exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href="/posts/">
+  <div class="flex justify-end py-8">
+    <a
+      class="exempt-link flex p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800"
+      href="/posts/"
+    >
       View all posts
       <ArrowRight size={16} className={"self-center ml-1"} />
     </a>
-    </div>
+  </div>
 </div>

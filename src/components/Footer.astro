@@ -5,9 +5,18 @@ import ThemeSelector from "./ThemeSelector";
 
 <footer class="mb-4 flex justify-between">
   <div class="flex gap-4 self-center max-[420px]:flex-col max-[420px]:gap-2">
-    <a href="https://github.com/trevortylerlee" class="underline text-skin-blue">Github</a>
-    <a href="https://www.linkedin.com/in/trevortylerlee/" class="underline text-skin-blue">LinkedIn</a>
-    <CopyButton client:visible copyText="trevortylerlee@gmail.com" label="trevortylerlee@gmail.com" />
+    <a href="https://github.com/trevortylerlee" class="text-skin-blue underline"
+      >Github</a
+    >
+    <a
+      href="https://www.linkedin.com/in/trevortylerlee/"
+      class="text-skin-blue underline">LinkedIn</a
+    >
+    <CopyButton
+      client:visible
+      copyText="trevortylerlee@gmail.com"
+      label="trevortylerlee@gmail.com"
+    />
   </div>
   <ThemeSelector client:visible />
 </footer>

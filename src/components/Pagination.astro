@@ -8,20 +8,28 @@ const { prevUrl, nextUrl } = Astro.props;
   {
     prevUrl && (
       <span class="flex">
-      <a class="flex no-underline mb-8 mt-8 exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href={prevUrl} aria-label="Newer Posts">
-        <ArrowLeft size={16} className={"self-center mr-1"} />
-        <span>Newer Posts</span>
-      </a>
+        <a
+          class="exempt-link mb-8 mt-8 flex p-2 no-underline hover:bg-neutral-200 dark:hover:bg-neutral-800"
+          href={prevUrl}
+          aria-label="Newer Posts"
+        >
+          <ArrowLeft size={16} className={"mr-1 self-center"} />
+          <span>Newer Posts</span>
+        </a>
       </span>
     )
   }
   {
     nextUrl && (
       <span class="flex justify-end">
-      <a class="flex no-underline mb-8 mt-8 exempt-link p-2 hover:bg-neutral-200 dark:hover:bg-neutral-800" href={nextUrl} aria-label="Older Posts">
-        Older Posts
-        <ArrowRight size={16} className={"self-center ml-1"} />
-      </a>
+        <a
+          class="exempt-link mb-8 mt-8 flex p-2 no-underline hover:bg-neutral-200 dark:hover:bg-neutral-800"
+          href={nextUrl}
+          aria-label="Older Posts"
+        >
+          Older Posts
+          <ArrowRight size={16} className={"ml-1 self-center"} />
+        </a>
       </span>
     )
   }
