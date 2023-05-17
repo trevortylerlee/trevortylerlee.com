@@ -97,13 +97,13 @@ export function CommandBar() {
       <button
         aria-label="Open command bar"
         onClick={handleClick}
-        className="rounded-xs opacity-85 relative flex h-10 w-10 select-none items-center gap-1 self-center border border-neutral-200 bg-neutral-100 font-medium text-neutral-500 hover:bg-neutral-200 hover:text-neutral-600 hover:opacity-100 focus-visible:text-neutral-600 focus-visible:opacity-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-300 dark:focus-visible:text-neutral-300 sm:w-48 sm:justify-between
+        className="rounded-sm opacity-85 relative flex h-10 w-10 select-none items-center gap-1 self-center border border-neutral-200 bg-neutral-100 font-medium text-neutral-500 hover:bg-neutral-200 hover:text-neutral-600 hover:opacity-100 focus-visible:text-neutral-600 focus-visible:opacity-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-neutral-300 dark:focus-visible:text-neutral-300 sm:w-48 sm:justify-between
         "
       >
         <Menu className="mx-auto h-7 w-7 sm:hidden" />
         <div className="hidden w-full items-center justify-between self-center px-2 sm:flex">
           <div>Search...</div>
-          <kbd className="rounded-xs border border-neutral-200 px-1 text-neutral-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400">
+          <kbd className="rounded-sm border border-neutral-200 px-1 text-neutral-500 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-400">
             ⌘<span className="ml-0.5 text-sm">K</span>
           </kbd>
         </div>
