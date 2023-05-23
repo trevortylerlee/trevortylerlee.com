@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 // Thank you Coding in Public on YouTube
@@ -69,8 +68,4 @@ export function isWithinLastFortnite(date) {
 
   // Compare the post date to the date one week ago
   return postDate >= twoWeeksAgo;
-}
-
-export function cn(...inputs) {
-  return twMerge(clsx(inputs));
 }

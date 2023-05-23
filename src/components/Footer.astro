@@ -1,9 +1,8 @@
 ---
 import CopyButton from "../components/CopyButton";
-import ThemeSelector from "./ThemeSelector";
 ---
 
-<footer class="mb-4 flex justify-between">
+<footer class=" mt-8 mb-8 flex justify-between font-content">
   <div class="flex gap-4 self-center max-[420px]:flex-col max-[420px]:gap-2">
     <a href="https://github.com/trevortylerlee" class="text-skin-blue underline"
       >Github</a
@@ -13,10 +12,9 @@ import ThemeSelector from "./ThemeSelector";
       class="text-skin-blue underline">LinkedIn</a
     >
     <CopyButton
-      client:visible
+      client:load
       copyText="trevortylerlee@gmail.com"
       label="trevortylerlee@gmail.com"
     />
   </div>
-  <ThemeSelector client:visible />
 </footer>
