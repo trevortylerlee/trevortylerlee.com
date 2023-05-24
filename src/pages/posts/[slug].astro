@@ -20,13 +20,13 @@ const {Content} = await post.render()
 ---
 
 <BaseLayout style={styles} pageTitle={post.data.title}>
-  <div>
+  <div style="view-transition-name: test">
     {post.data.image ? <img src={post.data.image.src} alt={post.data.image.alt} /> : <></> }
     <div class="">
     <h1 class='text-3xl font-bold mt-6'>{post.data.title}</h1>
     {post.data.date && <p class="mb-8">Posted {formatDate(post.data.date)}</p>}
-    <hr class="mb-8 stroke-neutral-500 dark:opacity-25"/>
-    <div class="prose mx-auto max-w-none dark:prose-invert mb-12">
+    <hr class="mb-8 bg-gray-10 border-none h-0.5"/>
+    <div class="prose mx-auto max-w-none mb-12 prose-invert">
       <Content />
     </div>
     </div>

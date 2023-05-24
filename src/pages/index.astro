@@ -1,8 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Post from "../components/Post.tsx"
-
-import { animate } from 'motion'
+import IndexContent from "../components/IndexContent.tsx";
 
 // Wait til react-hot-toast supports multiple instances
 // https://github.com/timolins/react-hot-toast/issues/158
@@ -12,29 +10,7 @@ const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="text-xl pt-16 pb-8 font-content">
-        Software developer and designer. Currently working at <a href="https://www.comc.com/">COMC</a> and studying Digital Design and Development at BCIT. Graduating June 2023 :)
-    </div>
-    
-    <div class="py-8">
-        <h1 class="text-2xl mb-2 font-bold">Projects</h1>
-        <ul class="flex flex-col gap-2">
-            <li>
-                <a class="text-lg" href="https://phished.up.railway.app">Phished</a>
-                <p class="text-gray-10">Send, monitor, and keep track of phishing emails. Educational purposes only.</p>
-            </li>
-            <li>
-                <a class="text-lg" href="https://text2array.vercel.app">Text 2 Array</a>
-                <p class="text-gray-10">Tired of typing out arrays? Me too...</p>
-            </li>
-        </ul>
-    </div>
-    <div class="pt-8 pb-16">
-        <h1 class="text-2xl mb-2 font-bold">Posts</h1>
-        <ul class="flex flex-col gap-2">
-            <li>
-                <a class="text-lg" href="/posts/hottoast">Use react-hot-toast with Astro</a>
-            </li>
-        </ul>
+    <div style="view-transition-name: test">
+        <IndexContent client:load/>
     </div>
 </BaseLayout>

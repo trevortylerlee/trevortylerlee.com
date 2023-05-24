@@ -16,8 +16,8 @@
     --gray-10: 44 44 46;
     --gray-11: 28 28 30;
 
-    --background: var(--gray-1);
-    --content: var(--gray-11);
+    --background: var(--gray-11);
+    --content: var(--gray-1);
     
     --red: 255 49 48;
     --orange: 255 149 0;
