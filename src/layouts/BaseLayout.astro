@@ -24,20 +24,22 @@ const { pageTitle } = Astro.props;
         <title>{pageTitle}</title>
     </head>
     <body
-        class="bg-background text-content overflow-x-hidden font-sans"
+        class="bg-background overflow-x-hidden font-sans underline-offset-2"
         id="body"
     >
-        <div class="mx-auto max-w-screen-2xl px-4">
+        <div class="mx-auto max-w-screen-md">
             <Navigation />
-            <hr class="bg-primary/10 border-none h-0.5" />
-            <slot />
-            <hr class="bg-primary/10 border-none h-0.5" />
+            <hr class="bg-gray-2 border-none h-0.5" />
+            <main class="px-2">
+              <slot />
+            </main>
+            <hr class="bg-gray-2 border-none h-0.5" />
             <Footer />
         </div>
     </body>
 </html>
 
-<script is:inline>
+<!-- <script is:inline>
   const theme = (() => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
@@ -56,4 +58,4 @@ const { pageTitle } = Astro.props;
         document.documentElement.classList.remove("light");
   }
   window.localStorage.setItem("theme", theme);
-</script>
+</script> -->

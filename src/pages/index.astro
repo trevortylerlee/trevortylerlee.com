@@ -12,44 +12,29 @@ const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="text-2xl leading-relaxed py-8 animate-in fade-in-0 duration-1000 font-content">
-        Software developer and designer. Currently working at <strong class="text-primary"><a href="#">COMC</a></strong> and studying Digital Design and Development at BCIT.
-        <br />
-        <br />
-        Graduating June 2023 :)
+    <div class="text-xl pt-16 pb-8 font-content">
+        Software developer and designer. Currently working at <a href="https://www.comc.com/">COMC</a> and studying Digital Design and Development at BCIT. Graduating June 2023 :)
     </div>
-    <div class="flex justify-center">
-        <div class="border-none bg-primary/10 w-0.5 h-0" style="height: 20vh"></div>
+    
+    <div class="py-8">
+        <h1 class="text-2xl mb-2 font-bold">Projects</h1>
+        <ul class="flex flex-col gap-2">
+            <li>
+                <a class="text-lg" href="https://phished.up.railway.app">Phished</a>
+                <p class="text-gray-10">Send, monitor, and keep track of phishing emails. Educational purposes only.</p>
+            </li>
+            <li>
+                <a class="text-lg" href="https://text2array.vercel.app">Text 2 Array</a>
+                <p class="text-gray-10">Tired of typing out arrays? Me too...</p>
+            </li>
+        </ul>
     </div>
-    <div id="posts" class="py-8 relative grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="flex flex-col">
-        <Post
-            client:load
-            date="December 2022"
-            title="Text 2 Array"
-            description="I'm tired of typing out arrays."
-            link="Check it out"
-            href="#"
-            src="/posts/t2a.jpg"
-            alt="The acronym t2a being spread into an array that contains the elements t, 2, and a."
-        />
-        </div>
-        <div class="flex flex-col">
-        <Post
-            client:load
-            date="November 2022"
-            title="Phished"
-            description="Send customizable phishing emails and track their metrics. Educational purposes only."
-            link="Go Phishing"
-            href="#"
-            src="/posts/phished-screenshot.jpg"
-            alt="A tablet and smartphone are next to each other, each displaying a screenshot from the Phished website. The Phished logo, a fish with an envelope for a body, is displayed on the right with the Phished wordmark."
-        />
-        </div>
+    <div class="pt-8 pb-16">
+        <h1 class="text-2xl mb-2 font-bold">Posts</h1>
+        <ul class="flex flex-col gap-2">
+            <li>
+                <a class="text-lg" href="/posts/hottoast">Use react-hot-toast with Astro</a>
+            </li>
+        </ul>
     </div>
-    <div class="grid justify-center relative">
-        <div class="border-none bg-primary/10 w-0.5 h-0" style="height: 10vh"></div>
-        <div class="border-none bg-primary/10 w-0.5 h-0 mb-8" style="height: 10vh"></div>
-    </div>
-
 </BaseLayout>

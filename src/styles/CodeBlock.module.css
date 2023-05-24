@@ -31,6 +31,10 @@ h3 code {
   font-size: inherit;
 }
 
+::selection {
+  background-color: #f81ce5 !important;
+}
+
 @media (min-width: 40rem) {
   pre {
     padding: 2rem;

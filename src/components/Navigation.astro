@@ -4,24 +4,19 @@ import PrimarySelector from "./PrimarySelector.tsx";
 ---
 
     <nav
-      aria-label="Main Navigation"
-      class="h-13 flex justify-between py-4 align-middle font-content"
+      class="flex justify-between py-4 align-middle"
     >
-      <span class="flex text-center">
+      <span>
         <a
-          class="p-2 text-xl font-medium hover:bg-primary/50 hover:text-content"
+          class="px-2 py-2.5 text-content no-underline hover:bg-accent-blue/20 hover:text-content"
           href="/"
           aria-label="Go to homepage"
+          title="Go to homepage"
         >
           trevortylerlee.com
         </a>
       </span>
-      <span class="flex items-center gap-2">
-        <span class="h-11 w-11">
-          <PrimarySelector client:load/>
-        </span>
-        <span class="h-11 w-11">
-          <ThemeToggle client:only/>
-        </span>
+      <span title="Website version" class="flex text-sm px-2 mr-2 items-center font-mono bg-gray-3 outline ">
+        v0.2.1
       </span>
     </nav>
