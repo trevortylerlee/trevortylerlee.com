@@ -4,13 +4,13 @@ import IndexContent from "../components/IndexContent.tsx";
 
 // Wait til react-hot-toast supports multiple instances
 // https://github.com/timolins/react-hot-toast/issues/158
-import CopyButton from "../components/CopyButton"
+import CopyButton from "../components/CopyButton";
 
 const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div style="view-transition-name: test">
-        <IndexContent client:load/>
-    </div>
+  <div style="view-transition-name: test">
+    <IndexContent client:load />
+  </div>
 </BaseLayout>

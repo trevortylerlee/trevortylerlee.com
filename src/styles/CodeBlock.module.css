@@ -31,8 +31,9 @@ h3 code {
   font-size: inherit;
 }
 
-::selection {
+pre ::selection {
   background-color: #f81ce5 !important;
+  color: #f2f2f7 !important;
 }
 
 @media (min-width: 40rem) {

@@ -6,7 +6,7 @@ export default Toastify(function Button({ message }) {
 
   return (
     <>
-      <button onClick={notify} style={{}}>
+      <button className="outline px-2 py-1 rounded" onClick={notify} style={{}}>
         {message}
       </button>
     </>

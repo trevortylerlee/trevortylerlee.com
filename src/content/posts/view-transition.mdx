@@ -1,0 +1,51 @@
+---
+title: "Animating page transitions with 3 lines of code"
+date: 2023-05-24
+description: "Use the new View Transition API to animate between pages."
+draft: false
+---
+import Note from "../../components/Note.astro";
+
+<Note type="warning" emoji="⚠️">
+  At the current time I'm writing this, the View Transition API is only available in Chrome Canary.
+</Note>
+
+### 1. Enable the following feature flags in Chrome Canary
+
+```
+chrome://flags#view-transition
+chrome://flags#view-transition-on-navigation
+```
+
+### 2. First line of code
+
+Copy and paste this meta tag into your `<head>`:
+
+```html
+<meta name="view-transition" content="same-origin" />
+```
+
+### 3. Second line of code
+
+Decide on the element you want to transition from on `page1.html`. In this example, I'm using the page container `<div>`.
+
+```html 
+<!-- page1.html -->
+
+<div style="view-transition-name: foo">
+  <!-- page content -->
+</div>
+```
+
+### 4. Third line of code
+
+Decide on the element you want to transition to on `page2.html`. In this example, I'm using the page container `<div>` for `page2.html`.
+```html
+<!-- page2.html -->
+
+<div style="view-transition-name: foo">
+  <!-- page content -->
+</div>
+```
+
+Done! Now when you navigate from `page1.html` to `page2.html` (and vice versa), the browser will animate the transition between the two pages.

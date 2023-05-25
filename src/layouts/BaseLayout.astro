@@ -1,7 +1,5 @@
 ---
 import "../styles/global.css";
-import '@fontsource/inter/variable.css'
-import "cal-sans";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 
@@ -25,7 +23,7 @@ const { pageTitle } = Astro.props;
         <title>{pageTitle}</title>
     </head>
     <body
-        class="bg-background overflow-x-hidden font-sans text-content underline-offset-2"
+        class="bg-background overflow-x-hidden font-sans text-gray-1 underline-offset-2"
         id="body"
     >
         <div class="mx-auto max-w-screen-md">

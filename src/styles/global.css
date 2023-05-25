@@ -18,7 +18,8 @@
 
     --background: var(--gray-11);
     --content: var(--gray-1);
-    
+    --primary: 61 137 208;
+
     --red: 255 49 48;
     --orange: 255 149 0;
     --yellow: 255 204 0;
@@ -32,6 +33,20 @@
     --pink: 255 45 85;
     --brown: 162 132 94;
   }
+
+  a[href] {
+    color: rgb(var(--primary));
+  }
+
+  a[href]:hover,
+  a[href]:focus {
+    text-decoration: rgb(var(--gray-8)) underline;
+  }
+
+  #logo {
+    color: rgb(var(--gray-1));
+    text-decoration: none;
+  }
 }
 
 ::selection {
@@ -39,47 +54,11 @@
   color: rgb(var(--background));
 }
 
-[href] {
-  color: rgb(var(--blue));
-  text-decoration: underline;
+#body {
+  background-image:
+      radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%),
+      radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%);
+    background-position: 0px 0px, 20px 20px;
+    background-size: 40px 40px;
+    background-color: rgb(var(--background));
 }
-
-/* figcaption {
-  @apply text-center text-sm opacity-75;
-}
-
-li {
-  @apply list-disc;
-}
-
-pre {
-  @apply my-4;
-}
-
-img {
-  @apply max-w-full;
-}
-
-@layer base {
-  .prose a {
-    @apply text-skin-blue underline dark:text-skin-darkCyan;
-  }
-
-  a {
-    @apply text-skin-blue underline dark:text-skin-darkCyan;
-  }
-
-  ::selection {
-    @apply bg-skin-blue text-skin-gray6;
-  }
-
-  .dark ::selection {
-    @apply bg-skin-darkCyan text-skin-darkGray6;
-  }
-}
-
-@layer components {
-  .exempt-link {
-    @apply text-neutral-950 no-underline dark:text-neutral-50;
-  }
-} */
