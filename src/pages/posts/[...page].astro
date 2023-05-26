@@ -32,7 +32,7 @@ const { page } = Astro.props;
       />
     ))
   } -->
-  <div class="mt-12 grid gap-4">
+  <div class="py-8 grid gap-4">
     {
       page.data.map((post) => (
         <MorePost
@@ -44,7 +44,9 @@ const { page } = Astro.props;
       ))
     }
   </div>
+  <div>
   <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+  </div>
 </BaseLayout>
 
 <!-- <style>

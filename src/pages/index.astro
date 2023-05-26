@@ -1,19 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Marquee from "../components/Marquee.astro";
-import LatestPosts from "../components/LatestPosts.astro";
+import IndexContent from "../components/IndexContent.tsx";
+
+// Wait til react-hot-toast supports multiple instances
+// https://github.com/timolins/react-hot-toast/issues/158
+import CopyButton from "../components/CopyButton";
 
 const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="relative mb-10 h-24">
-    <Marquee />
-    <h1
-      class="absolute top-1/2 z-0 mt-5 -translate-y-1/2 text-3xl font-bold hover:z-30"
-    >
-      Software developer interested in design.
-    </h1>
+  <div style="view-transition-name: test">
+    <IndexContent client:load />
   </div>
-  <LatestPosts />
 </BaseLayout>

@@ -1,15 +1,12 @@
 ---
 import { formatDate, isWithinLastFortnite } from "../lib/utils";
 import { AlertCircle, Circle } from "lucide-react";
-import { Badge } from "./ui/badge";
 const { date, href, title, description, last } = Astro.props;
 ---
 
-<a href={`/posts/${href}`} class="exempt-link">
-  <div
-    class="relative bg-skin-gray5 p-4 hover:bg-skin-gray4 dark:bg-skin-darkGray5 hover:dark:bg-skin-darkGray4"
-  >
-    {
+<div class="">
+  <div class="relative p-4">
+    <!-- {
       isWithinLastFortnite(date) && (
         <Circle
           fill="#ff3a30"
@@ -18,15 +15,15 @@ const { date, href, title, description, last } = Astro.props;
           className={"absolute -right-1.5 -top-1.5"}
         />
       )
-    }
+    } -->
     <div class="wrapper">
       <div class="flex items-baseline justify-between">
         <div class="max-w-[80%]">
-          <h4
-            class="mr-1 line-clamp-1 text-lg font-bold text-skin-blue hover:underline dark:text-skin-darkCyan"
-          >
-            {title}
-          </h4>
+          <a href={`/posts/${href}`}>
+            <h4 class="line-clamp-1 text-lg font-bold">
+              {title}
+            </h4>
+          </a>
         </div>
         <div class="flex">
           <p class="self-baseline whitespace-nowrap text-xs opacity-75">
@@ -37,4 +34,4 @@ const { date, href, title, description, last } = Astro.props;
       {description && <p class="line-clamp-2">{description}</p>}
     </div>
   </div>
-</a>
+</div>

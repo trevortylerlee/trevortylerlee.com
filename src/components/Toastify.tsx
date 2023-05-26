@@ -20,17 +20,17 @@ export default (Component) => {
 
           // Default options for specific types
           success: {
-            duration: 2500,
+            duration: 2000,
             style: {
-              color: "black",
-              background: "white",
-              border: "1px solid black",
-              borderRadius: "1px",
+              color: "#1C1C1E",
+              background: "#F2F2F7",
+              border: "2px solid black",
+              borderRadius: "4px",
               fontFamily: "Inter, sans-serif",
             },
             iconTheme: {
-              primary: "#000",
-              secondary: "#22c55e",
+              primary: "#1C1C1E",
+              secondary: "#32D74B",
             },
           },
         }}
