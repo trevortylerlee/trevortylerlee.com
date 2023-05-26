@@ -66,7 +66,7 @@ export default function IndexContent() {
         </ul>
       </div>
 
-      <motion.div className="absolute pointer-events-none aria-hidden bottom-72 right-16 hidden rotate-12 opacity-5 sm:block">
+      <motion.div className="absolute pointer-events-none aria-hidden bottom-72 right-16 hidden rotate-12 opacity-10 sm:block">
         <Ztext
           depth="2rem"
           direction="both"

@@ -6,9 +6,19 @@ draft: false
 ---
 import Note from "../../components/Note.astro";
 
+<br />
+
 <Note type="warning" emoji="⚠️">
-  At the current time I'm writing this, the View Transition API is only available in Chrome Canary.
+  Currently, the View Transition API only works in Chrome Canary.
 </Note>
+
+<br />
+
+<Note type="secondary" emoji="⚑">
+  If you are using a browser that supports view transitions, you can experience an example by visiting my homepage and returning to this article.
+</Note>
+
+<br />
 
 ### 1. Enable the following feature flags in Chrome Canary
 
@@ -19,7 +29,7 @@ chrome://flags#view-transition-on-navigation
 
 ### 2. First line of code
 
-Copy and paste this meta tag into your `<head>`:
+Copy and paste this meta tag into your `<head>`.
 
 ```html
 <meta name="view-transition" content="same-origin" />
