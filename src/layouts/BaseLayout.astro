@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import { ColorMode } from 'astro-color-mode';
 
 const { pageTitle } = Astro.props;
 ---
@@ -11,6 +12,7 @@ const { pageTitle } = Astro.props;
         <meta charset="utf-8" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <ColorMode />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
@@ -23,16 +25,16 @@ const { pageTitle } = Astro.props;
         <title>{pageTitle}</title>
     </head>
     <body
-        class="bg-background overflow-x-hidden font-sans text-gray-1 underline-offset-2"
+        class="bg-background overflow-x-hidden font-sans text-content underline-offset-2"
         id="body"
     >
         <div class="mx-auto max-w-screen-md">
             <Navigation />
-            <hr class="bg-gray-10 border-none h-0.5" />
+            <hr class="hr-bg border-none h-0.5" />
             <main class="px-2">
               <slot />
             </main>
-            <hr class="bg-gray-10 border-none h-0.5" />
+            <hr class="hr-bg border-none h-0.5" />
             <Footer />
         </div>
     </body>

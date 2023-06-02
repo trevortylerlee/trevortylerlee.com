@@ -3,61 +3,110 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --gray-1: 242 242 247;
-    --gray-2: 229 229 234;
-    --gray-3: 209 209 214;
-    --gray-4: 199 199 204;
-    --gray-5: 174 174 178;
-    --gray-6: 142 142 147;
-    --gray-7: 99 99 102;
-    --gray-8: 72 72 74;
-    --gray-9: 58 58 60;
-    --gray-10: 44 44 46;
-    --gray-11: 28 28 30;
+    :root {
+        --gray-1: 242 242 247;
+        --gray-2: 229 229 234;
+        --gray-3: 209 209 214;
+        --gray-4: 199 199 204;
+        --gray-5: 174 174 178;
+        --gray-6: 142 142 147;
+        --gray-7: 99 99 102;
+        --gray-8: 72 72 74;
+        --gray-9: 58 58 60;
+        --gray-10: 44 44 46;
+        --gray-11: 28 28 30;
 
-    --background: var(--gray-11);
-    --content: var(--gray-1);
-    --primary: 71 155 222;
+        --background: var(--gray-11);
+        --content: var(--gray-1);
+        --primary: 77 149 247;
 
-    --red: 255 49 48;
-    --orange: 255 149 0;
-    --yellow: 255 204 0;
-    --green: 40 205 65;
-    --mint: 0 199 190;
-    --teal: 89 173 196;
-    --cyan: 85 190 240;
-    --blue: 0 122 255;
-    --indigo: 88 86 214;
-    --purple: 175 82 222;
-    --pink: 255 45 85;
-    --brown: 162 132 94;
-  }
+        --red: 255 49 48;
+        --orange: 255 149 0;
+        --yellow: 255 204 0;
+        --green: 40 205 65;
+        --mint: 0 199 190;
+        --teal: 89 173 196;
+        --cyan: 85 190 240;
+        --blue: 0 122 255;
+        --indigo: 88 86 214;
+        --purple: 175 82 222;
+        --pink: 255 45 85;
+        --brown: 162 132 94;
+    }
 
-  a[href] {
-    color: rgb(var(--primary));
-  }
+    [data-color-mode='light'] :root {
+        --red: 255 49 48;
+        --orange: 255 149 0;
+        --yellow: 255 204 0;
+        --green: 40 205 65;
+        --mint: 0 199 190;
+        --teal: 89 173 196;
+        --cyan: 85 190 240;
+        --blue: 0 122 255;
+        --indigo: 88 86 214;
+        --purple: 175 82 222;
+        --pink: 255 45 85;
+        --brown: 162 132 94;
+    }
 
-  a[href]:hover,
-  a[href]:focus {
-    text-decoration: rgb(var(--gray-8)) underline;
-  }
+    [data-color-mode='light'] {
+        --background: var(--gray-1);
+        --content: var(--gray-11);
+        --primary: 10 112 250;
+    }
 
-  #logo {
-    color: rgb(var(--gray-1));
-    text-decoration: none;
-  }
+    [data-color-mode='light'] #body {
+        background-image: none;
+    }
+
+    [data-color-mode='dark'] #content {
+        @apply prose-invert
+    }
+    
+    strong {
+        color: inherit;
+    }
+
+    html {
+        color-scheme: dark;
+    }
+
+    a[href] {
+        color: rgb(var(--primary));
+    }
+
+    a[href]:hover,
+    a[href]:focus {
+        text-decoration: rgb(var(--primary)) underline;
+    }
+
+    #logo {
+        color: rgb(var(--content));
+        text-decoration: none;
+    }
+
+    #logo:hover {
+        color: rgb(var(--gray-1))
+    }
+
+    .hr-bg {
+        background-color: rgb(var(--gray-10));
+    }
+
+    [data-color-mode='light'] .hr-bg {
+        background-color: rgb(var(--gray-2));
+    }
 }
 
 ::selection {
-  background-color: rgb(var(--content));
-  color: rgb(var(--background));
+    background-color: rgb(var(--content));
+    color: rgb(var(--background));
 }
 
 #body {
-  background-image:
-      radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%),
-      radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%);
+    background-image:
+        radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%),
+        radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%);
     background-position: 0px 0px, 20px 20px;
     background-size: 40px 40px;
     background-color: rgb(var(--background));

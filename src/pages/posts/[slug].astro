@@ -25,8 +25,8 @@ const {Content} = await post.render()
     <div class="">
     <h1 class='text-3xl font-bold mt-6'>{post.data.title}</h1>
     {post.data.date && <p class="mb-8">Posted {formatDate(post.data.date)}</p>}
-    <hr class="mb-8 bg-gray-10 border-none h-0.5"/>
-    <div class="prose mx-auto max-w-none mb-12 prose-invert">
+    <hr class="mb-8 hr-bg border-none h-0.5"/>
+    <div id="content" class="prose mx-auto max-w-none mb-12 prose-strong:text-inherit">
       <Content />
     </div>
     </div>
