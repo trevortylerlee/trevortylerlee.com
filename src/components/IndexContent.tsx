@@ -20,11 +20,23 @@ export default function IndexContent() {
 
   return (
     <motion.div initial="hidden" variants={container} animate="show">
-      <motion.div variants={listItem} className="pb-8 pt-16 text-xl">
-        Software developer and designer. Currently working at{" "}
-        <a href="https://www.comc.com/">COMC</a> and studying Digital Design and
-        Development at BCIT. Graduating June 2023 :)
-      </motion.div>
+      <div className="grid items-center gap-6 pb-8 pt-16 px-2 min-[420px]:flex">
+        <motion.div
+          variants={listItem}
+          className="flex items-center justify-center"
+        >
+          <img
+            src="/me-with-roxy.webp"
+            alt="A picture of young Trevor with my dog Roxy."
+            className="max-w-[100px] rounded-full"
+          />
+        </motion.div>
+        <motion.div variants={listItem} className="text-xl">
+          Frontend developer and designer. Currently working at{" "}
+          <a href="https://www.comc.com/">COMC</a> and studying Digital Design
+          and Development at BCIT.
+        </motion.div>
+      </div>
 
       <div className="py-4">
         <motion.h1 variants={listItem} className="mb-2 text-2xl font-bold">
@@ -66,7 +78,7 @@ export default function IndexContent() {
         </ul>
       </div>
 
-      <motion.div className="absolute pointer-events-none aria-hidden bottom-72 right-16 hidden rotate-12 opacity-10 sm:block">
+      <motion.div className="aria-hidden pointer-events-none absolute bottom-72 right-16 hidden rotate-12 opacity-10 sm:block">
         <Ztext
           depth="2rem"
           direction="both"
