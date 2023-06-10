@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { getCollection } from "astro:content";
-import Ztext from "react-ztext";
 
 export default function IndexContent() {
   const container = {
@@ -77,24 +76,6 @@ export default function IndexContent() {
           </motion.li>
         </ul>
       </div>
-
-      <motion.div className="aria-hidden pointer-events-none absolute bottom-72 right-16 hidden rotate-12 opacity-10 sm:block">
-        <Ztext
-          depth="2rem"
-          direction="both"
-          event="pointer"
-          eventRotation="60deg"
-          eventDirection="default"
-          fade={true}
-          layers={20}
-          perspective="600px"
-          style={{
-            fontSize: "5rem",
-          }}
-        >
-          <span>🫣</span>
-        </Ztext>
-      </motion.div>
     </motion.div>
   );
 }
