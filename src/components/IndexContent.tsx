@@ -19,7 +19,7 @@ export default function IndexContent() {
 
   return (
     <motion.div initial="hidden" variants={container} animate="show">
-      <div className="grid items-center gap-6 pb-8 pt-16 px-2 min-[420px]:flex">
+      <div className="flex flex-col max-w-[768px] items-center gap-6 px-2 pb-8 pt-16 sm:flex-row">
         <motion.div
           variants={listItem}
           className="flex items-center justify-center"
@@ -30,10 +30,12 @@ export default function IndexContent() {
             className="max-w-[100px] rounded-full"
           />
         </motion.div>
-        <motion.div variants={listItem} className="text-xl">
-          Frontend developer and designer. Currently working at{" "}
-          <a href="https://www.comc.com/">COMC</a> and studying Digital Design
-          and Development at BCIT.
+        <motion.div variants={listItem} className="block text-xl">
+          <h1>
+            Frontend developer and designer. Currently working at{" "}
+            <a href="https://www.comc.com/">COMC</a> and studying Digital Design
+            and Development at BCIT.
+          </h1>
         </motion.div>
       </div>
 
