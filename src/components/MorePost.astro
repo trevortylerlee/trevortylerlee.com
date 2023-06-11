@@ -4,34 +4,25 @@ import { AlertCircle, Circle } from "lucide-react";
 const { date, href, title, description, last } = Astro.props;
 ---
 
-<div class="">
-  <div class="relative p-4">
-    <!-- {
-      isWithinLastFortnite(date) && (
-        <Circle
-          fill="#ff3a30"
-          stroke="#ff3a30"
-          size={12}
-          className={"absolute -right-1.5 -top-1.5"}
-        />
-      )
-    } -->
-    <div class="wrapper">
-      <div class="flex items-baseline justify-between">
-        <div class="max-w-[80%]">
-          <a href={`/posts/${href}`}>
-            <h4 class="line-clamp-1 text-lg font-bold">
+  <a class="py-4 px-2 hover:bg-accent-blue/20 group" style="text-decoration: none" href={`/posts/${href}`}>
+        <div class="flex items-baseline justify-between">
+          <div>
+          <h3 class="line-clamp-1 text-lg font-bold text-left hover:underline">
               {title}
-            </h4>
-          </a>
-        </div>
-        <div class="flex">
-          <p class="self-baseline whitespace-nowrap text-xs opacity-75">
+          </h3>
+          </div>
+          <div class="flex justify-end">
+          <p class="self-baseline whitespace-nowrap text-xs opacity-75 text-content">
             {formatDate(date)}
           </p>
+          </div>
         </div>
-      </div>
-      {description && <p class="line-clamp-2">{description}</p>}
-    </div>
-  </div>
-</div>
+      {description && <p class="line-clamp-2 text-content no-underline">{description}</p>}
+  </a>
+
+  <style>
+    .href-exempt {
+        text-decoration: transparent underline;
+
+    }
+  </style>

@@ -27,7 +27,7 @@ export default function IndexContent() {
           <img
             src="/me-with-roxy.webp"
             alt="A picture of young Trevor with my dog Roxy."
-            className="max-w-[100px] rounded-full"
+            className="max-w-[100px] rounded-full hover:invert"
           />
         </motion.div>
         <motion.div
