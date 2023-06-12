@@ -85,9 +85,9 @@
         text-decoration: none;
     }
 
-    #logo:hover {
+    /* #logo:hover {
         color: rgb(var(--gray-1))
-    }
+    } */
 
     .hr-bg {
         background-color: rgb(var(--gray-10));
