@@ -8,7 +8,6 @@
 - [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)
 - [React](https://react.dev/)
 - [react-hot-toast](https://react-hot-toast.com/)
-- [react-ztext](https://github.com/snettah/react-ztext)
 - [TailwindCSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vercel](https://vercel.com/home)
