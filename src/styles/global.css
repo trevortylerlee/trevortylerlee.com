@@ -99,8 +99,8 @@
 }
 
 ::selection {
-    background-color: rgb(var(--content));
-    color: rgb(var(--background));
+    background-color: rgb(var(--blue) / 20%);
+    color: rgb(var(--content));
 }
 
 #body {
