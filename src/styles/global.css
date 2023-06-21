@@ -55,7 +55,7 @@
         --primary: 10 112 250;
     }
 
-    [data-color-mode='light'] #body {
+    [data-color-mode='light'] .overlay {
         background-image: none;
     }
 
@@ -104,10 +104,20 @@
 }
 
 #body {
-    background-image:
+    /* background-image:
         radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%),
         radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%);
     background-position: 0px 0px, 20px 20px;
     background-size: 40px 40px;
-    background-color: rgb(var(--background));
+    background-color: rgb(var(--background)); */
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('/noise.png');
+    opacity: 0.02;
+    pointer-events: none;
 }
