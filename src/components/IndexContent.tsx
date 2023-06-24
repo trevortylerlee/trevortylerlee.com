@@ -36,9 +36,8 @@ export default function IndexContent() {
             className="block text-center text-xl sm:text-left"
           >
             <h1>
-              Frontend developer and designer. Currently working at{" "}
-              <a href="https://www.comc.com/">COMC</a> and studying Digital
-              Design and Development at BCIT.
+              Frontend developer and designer. Studied Digital Design and Development at BCIT — currently working at
+              <a href="https://www.comc.com/"> COMC</a>.
             </h1>
           </m.div>
         </div>
