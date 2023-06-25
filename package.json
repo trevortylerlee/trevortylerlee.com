@@ -1,5 +1,5 @@
 {
-  "name": "trevor-lee-portfolio",
+  "name": "trevor-lee-website",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -23,7 +23,6 @@
     "astro": "^2.6.4",
     "astro-color-mode": "^0.7.1",
     "astro-robots-txt": "^0.4.1",
-    "framer-motion": "^10.12.16",
     "lucide-react": "^0.137.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
