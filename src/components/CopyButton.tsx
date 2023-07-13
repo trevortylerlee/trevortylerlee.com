@@ -22,7 +22,7 @@ export default Toastify(function Button({ copyText, label, children }) {
       <button
         aria-label="Copy email address"
         onClick={handleClick}
-        className="flex"
+        className="flex transition-all active:scale-95 hover:opacity-90"
       >
         {label}
         {children}
