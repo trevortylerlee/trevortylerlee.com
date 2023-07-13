@@ -1,79 +1,53 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
 
-// Wait til react-hot-toast supports multiple instances
-// https://github.com/timolins/react-hot-toast/issues/158
-import CopyButton from "../components/CopyButton";
+import MorePost from "../components/MorePost.astro";
+import Pagination from "../components/Pagination.astro";
+
+import { formatBlogPost } from "../lib/utils";
+
+const allPosts = await getCollection("posts");
+const formattedPosts = formatBlogPost(allPosts, {
+  limit: 7,
+});
 
 const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <div style="view-transition-name: test">
-    <div class="flex max-w-[768px] flex-col items-center gap-6 px-2 pb-8 pt-16 sm:flex-row">
+    <div class="flex max-w-[768px] flex-col items-center gap-6 px-2 pb-8 pt-12 sm:flex-row">
           <div
             class="flex items-center justify-center"
           >
             <img
               src="/me-with-roxy.webp"
               alt="A picture of young Trevor with my dog Roxy."
-              class="max-w-[100px] rounded-full motion-safe:hover:animate-spin"
+              class="max-w-[124px] rounded-full motion-safe:hover:animate-spin"
             />
           </div>
           <div
             class="block text-center text-xl sm:text-left"
           >
-            <h1>
+            <h1 class="text-xl sm:text-3xl font-bold" id="bio">
               Frontend developer and designer. Studied Digital Design and Development at BCIT — currently working at
               <a href="https://www.comc.com/"> COMC</a>.
             </h1>
           </div>
         </div>
 
-        <div class="py-4">
-          <h1 class="mb-2 text-2xl font-bold">
-            Projects
-          </h1>
-          <ul class="flex flex-col gap-2">
-            <li>
-              <a class="text-lg" href="https://phished.up.railway.app">
-                Phished
-              </a>
-              <p>
-                Send, monitor, and track your own phishing emails. Educational
-                purposes only.
-              </p>
-            </li>
-            <li>
-              <a class="text-lg" href="https://text2array.vercel.app">
-                Text 2 Array
-              </a>
-              <p>Tired of typing out arrays? Same... </p>
-            </li>
-            <li>
-              <a class="text-lg" href="https://tsguess.vercel.app">
-                Taylor Swift Guessing Game
-              </a>
-              <p>I'm a big fan!</p>
-            </li>
-          </ul>
-        </div>
-        <div class="pb-16 pt-4">
-          <h1 class="mb-2 text-2xl font-bold">
-            Posts
-          </h1>
-          <ul class="flex flex-col gap-2">
-            <li>
-              <a class="text-lg" href="/posts/view-transition">
-                Animating page transitions with 3 lines of code
-              </a>
-            </li>
-            <li>
-              <a class="text-lg" href="/posts/hottoast">
-                Using react-hot-toast with Astro
-              </a>
-            </li>
-          </ul>
+        <div class="grid pb-8">
+          {
+            formattedPosts.map((post) => (
+              <MorePost
+                date={post.data.date}
+                href={post.slug}
+                title={post.data.title}
+                description={post.data.description}
+              />
+            ))
+          }
         </div>
   </div>
 </BaseLayout>

@@ -9,7 +9,7 @@ const { prevUrl, nextUrl } = Astro.props;
     prevUrl && (
       <span class="flex">
         <a
-          class="exempt-link mb-8 mt-8 flex p-2 no-underline hover:bg-neutral-200 dark:hover:bg-neutral-800"
+          class="mb-8 mt-8 flex p-2 no-underline hover:bg-accent-blue/20"
           href={prevUrl}
           aria-label="Newer Posts"
         >
@@ -23,7 +23,7 @@ const { prevUrl, nextUrl } = Astro.props;
     nextUrl && (
       <span class="flex justify-end">
         <a
-          class="exempt-link mb-8 mt-8 flex p-2 no-underline hover:bg-neutral-200 dark:hover:bg-neutral-800"
+          class="mb-8 mt-8 flex p-2 no-underline hover:bg-accent-blue/20"
           href={nextUrl}
           aria-label="Older Posts"
         >

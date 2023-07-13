@@ -85,10 +85,6 @@
         text-decoration: none;
     }
 
-    /* #logo:hover {
-        color: rgb(var(--gray-1))
-    } */
-
     .hr-bg {
         background-color: rgb(var(--gray-10));
     }
@@ -120,4 +116,8 @@
     background-image: url('/noise.png');
     opacity: 0.02;
     pointer-events: none;
+}
+
+#bio {
+    text-wrap: balance;
 }
