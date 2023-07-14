@@ -23,6 +23,7 @@
     "astro": "^2.6.4",
     "astro-color-mode": "^0.7.1",
     "astro-robots-txt": "^0.4.1",
+    "howler": "^2.2.3",
     "lucide-react": "^0.137.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

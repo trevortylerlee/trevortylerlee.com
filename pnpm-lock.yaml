@@ -37,6 +37,9 @@ dependencies:
   astro-robots-txt:
     specifier: ^0.4.1
     version: 0.4.1
+  howler:
+    specifier: ^2.2.3
+    version: 2.2.3
   lucide-react:
     specifier: ^0.137.0
     version: 0.137.0(react@18.2.0)
@@ -2358,6 +2361,10 @@ packages:
       hast-util-parse-selector: 3.1.1
       property-information: 6.2.0
       space-separated-tokens: 2.0.2
+    dev: false
+
+  /howler@2.2.3:
+    resolution: {integrity: sha512-QM0FFkw0LRX1PR8pNzJVAY25JhIWvbKMBFM4gqk+QdV+kPXOhleWGCB6AiAF/goGjIHK2e/nIElplvjQwhr0jg==}
     dev: false
 
   /html-escaper@3.0.3:

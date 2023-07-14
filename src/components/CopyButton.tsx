@@ -1,6 +1,7 @@
 import Toastify from "./Toastify";
 import toast from "react-hot-toast";
 import { useState } from "react";
+import { Howl, Howler } from "howler";
 
 export default Toastify(function Button({ copyText, label, children }) {
   const copyToClipboard = async (copyText) => {
@@ -13,8 +14,15 @@ export default Toastify(function Button({ copyText, label, children }) {
     }
   };
 
+  const sound = new Howl({
+    src: ["sound.mp3"],
+  });
+
+  Howler.volume(0.5);
+
   const handleClick = () => {
     copyToClipboard(copyText);
+    sound.play();
   };
 
   return (
