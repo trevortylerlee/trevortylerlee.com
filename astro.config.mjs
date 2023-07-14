@@ -13,6 +13,9 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.trevortylerlee.com",
+  experimental: {
+    assets: true,
+  },
   markdown: {
     drafts: true,
   },

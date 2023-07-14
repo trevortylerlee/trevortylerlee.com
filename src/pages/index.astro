@@ -4,6 +4,7 @@ import { getCollection } from "astro:content";
 
 import MorePost from "../components/MorePost.astro";
 import Pagination from "../components/Pagination.astro";
+import { Image } from "astro:assets";
 
 import { formatBlogPost } from "../lib/utils";
 
@@ -11,6 +12,8 @@ const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {
   limit: 7,
 });
+
+import profilePicture from "../assets/me-with-roxy.webp"
 
 const pageTitle = "Trevor Lee | Homepage";
 ---
@@ -21,9 +24,11 @@ const pageTitle = "Trevor Lee | Homepage";
           <div
             class="flex items-center justify-center"
           >
-            <img
-              src="/me-with-roxy.webp"
-              alt="A picture of young Trevor with my dog Roxy."
+            <Image
+              src={profilePicture}
+              format="avif"
+              quality={"low"}
+              alt="A picture of young me with my dog Roxy."
               class="max-w-[124px] rounded-full motion-safe:hover:animate-spin-slow"
             />
           </div>
