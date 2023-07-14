@@ -15,7 +15,7 @@ export default Toastify(function Button({ copyText, label, children }) {
   };
 
   const sound = new Howl({
-    src: ["sound.mp3"],
+    src: ["/success.mp3"],
   });
 
   Howler.volume(0.5);
