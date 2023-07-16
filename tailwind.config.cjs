@@ -6,6 +6,9 @@ module.exports = {
 			animation: {
 				'spin-slow': 'spin 6s linear infinite',
 			},
+			transitionDelay: {
+				'3000': '3000ms',
+			},
 			fontFamily: {
 				sans: [
 					'-apple-system',
