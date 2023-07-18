@@ -18,7 +18,7 @@
 
         --background: var(--gray-11);
         --content: var(--gray-1);
-        --primary: 77 149 247;
+        --primary: 41 151 255;
 
         --red: 255 49 48;
         --orange: 255 149 0;
@@ -52,7 +52,7 @@
     [data-color-mode='light'] {
         --background: var(--gray-1);
         --content: var(--gray-11);
-        --primary: 10 112 250;
+        --primary: 0 102 204;
     }
 
     [data-color-mode='light'] .overlay {
