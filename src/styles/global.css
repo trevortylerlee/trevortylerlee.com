@@ -62,6 +62,60 @@
     [data-color-mode='dark'] #content {
         @apply prose-invert
     }
+
+    [data-color-mode='dark'] .light {
+        display: none;
+    }
+
+    [data-color-mode='light'] .light {
+        display: block;
+    }
+
+    [data-color-mode='light'] .dark {
+        display: none;
+    }
+
+    [data-color-mode='dark'] .dark {
+        display: block;
+    }
+
+    .dark, .light {
+        pointer-events: none;
+    }
+
+    .themeToggle {
+        transition: 0.15s ease-in;
+    }
+
+    .themeIcon {
+        animation: themeToggle 1200ms ease-out forwards;
+    }
+
+    @keyframes themeToggle {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        40% {
+            transform: rotate(390deg);
+        }
+
+        50% {
+            transform: rotate(345deg);
+        }
+
+        65% {
+            transform: rotate(370deg);
+        }
+
+        85% {
+            transform: rotate(350deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
     
     strong {
         color: inherit;
@@ -78,6 +132,10 @@
     a[href]:hover,
     a[href]:focus {
         text-decoration: rgb(var(--primary)) underline;
+    }
+
+    a, button {
+        touch-action: manipulation;
     }
 
     #logo {
