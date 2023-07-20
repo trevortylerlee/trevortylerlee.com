@@ -10,8 +10,8 @@
       trevortylerlee.com
     </a>
   </span>
-  <button data-color-mode-switch class="themeToggle px-2 py-1" id="themeToggle">
-    <span class="themeIcon dark opacity-75">
+  <button data-color-mode-switch class="themeToggle px-2 py-2" id="themeToggle" aria-label="Toggle light and dark mode" >
+    <span class="themeIcon dark opacity-75" aria-hidden="true">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -24,7 +24,7 @@
           clip-rule="evenodd"></path>
       </svg>
     </span>
-    <span class="themeIcon light">
+    <span class="themeIcon light" aria-hidden="true">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -39,6 +39,7 @@
   </button>
 </nav>
 
+<!-- Script below fixes themeToggle flashing in dev mode... -->
 <!-- <script>
   const url = window.location.href
   console.log(url)
