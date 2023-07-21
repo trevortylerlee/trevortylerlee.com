@@ -129,6 +129,10 @@
         color: rgb(var(--primary));
     }
 
+    a[href]:visited {
+        color: rgb(var(--purple));
+    }
+
     a[href]:hover,
     a[href]:focus {
         text-decoration: rgb(var(--primary)) underline;
@@ -136,6 +140,7 @@
 
     a, button {
         touch-action: manipulation;
+        -webkit-transform: translate3d(0, 0, 0);
     }
 
     #logo {
