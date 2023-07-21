@@ -140,7 +140,7 @@
 
     a, button {
         touch-action: manipulation;
-        -webkit-transform: translate3d(0, 0, 0);
+        -webkit-tap-highlight-color: transparent;
     }
 
     #logo {
