@@ -140,6 +140,8 @@
 
     a, button {
         touch-action: manipulation;
+        -webkit-backface-visibility: hidden;
+        -webkit-tap-highlight-color: transparent;
         -webkit-tap-highlight-color: transparent;
     }
 
