@@ -152,3 +152,7 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-perspective: 1;
 }
+
+#pagination *:visited  {
+    color: rgb(var(--primary));
+}

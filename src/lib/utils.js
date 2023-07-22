@@ -1,5 +1,3 @@
-import { twMerge } from "tailwind-merge";
-
 // Thank you Coding in Public on YouTube
 export function slugify(text) {
   return text

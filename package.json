@@ -24,13 +24,10 @@
     "astro-color-mode": "^0.7.1",
     "astro-robots-txt": "^0.4.1",
     "howler": "^2.2.3",
-    "lucide-react": "^0.137.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
-    "tailwind-merge": "^1.13.1",
-    "tailwindcss": "^3.3.2",
-    "tailwindcss-animate": "^1.0.6"
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
