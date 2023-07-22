@@ -106,6 +106,19 @@
         text-decoration: rgb(var(--primary)) underline;
     }
 
+    a[href]:active,
+    a[href]:active h2 {
+        text-decoration: rgb(var(--red)) underline;
+    }
+
+    a[href]:visited:hover {
+        text-decoration: rgb(var(--visited)) underline;
+    }
+
+    a[href]:visited:active {
+        text-decoration: rgb(var(--red)) underline;
+    }
+
     a, button {
         touch-action: manipulation;
     }
