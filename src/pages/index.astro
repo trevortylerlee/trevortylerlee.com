@@ -3,7 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 import MorePost from "../components/MorePost.astro";
-import Pagination from "../components/Pagination.astro";
 import { Image } from "astro:assets";
 
 import { formatBlogPost } from "../lib/utils";
@@ -14,7 +13,7 @@ const formattedPosts = formatBlogPost(allPosts, {
 });
 
 // import profilePicture from "../assets/me-with-roxy.webp"
-import profilePicture from "@assets/me-with-roxy.webp"
+import profilePicture from "@assets/me-with-roxy.webp";
 
 const pageTitle = "Trevor Lee | Homepage";
 ---
@@ -22,38 +21,35 @@ const pageTitle = "Trevor Lee | Homepage";
 <BaseLayout pageTitle={pageTitle}>
   <div style="view-transition-name: test" class="max-w-screen-md mx-auto">
     <div class="flex flex-col items-center gap-6 px-2 pb-16 pt-24 sm:flex-row">
-          <div
-            class="flex items-center justify-center"
-          >
-            <Image
-              src={profilePicture}
-              format="avif"
-              quality={"low"}
-              alt="A picture of young me with my dog Roxy."
-              class="max-w-[124px] rounded-full motion-safe:hover:invert transition ease-out duration-500 hover:ease-in hover:delay-1000"
-            />
-          </div>
-          <div
-            class="block text-center text-xl sm:text-left"
-          >
-            <h1 class="text-xl sm:text-3xl font-bold" id="bio">
-              Frontend developer and designer. Studied Digital Design and Development at BCIT — currently working at
-              <a href="https://www.comc.com/"> COMC</a>.
-            </h1>
-          </div>
-        </div>
+      <div class="flex items-center justify-center">
+        <Image
+          src={profilePicture}
+          format="avif"
+          quality={"low"}
+          alt="A picture of young me with my dog Roxy."
+          class="max-w-[124px] rounded-full motion-safe:hover:invert transition ease-out duration-500 hover:ease-in hover:delay-1000"
+        />
+      </div>
+      <div class="block text-center text-xl sm:text-left">
+        <h1 class="text-xl sm:text-3xl font-bold" id="bio">
+          Frontend developer and designer. Studied Digital Design and
+          Development at BCIT — currently working at
+          <a href="https://www.comc.com/"> COMC</a>.
+        </h1>
+      </div>
+    </div>
 
-        <div class="grid pb-16">
-          {
-            formattedPosts.map((post) => (
-              <MorePost
-                date={post.data.date}
-                href={post.slug}
-                title={post.data.title}
-                description={post.data.description}
-              />
-            ))
-          }
-        </div>
+    <div class="grid pb-16">
+      {
+        formattedPosts.map((post) => (
+          <MorePost
+            date={post.data.date}
+            href={post.slug}
+            title={post.data.title}
+            description={post.data.description}
+          />
+        ))
+      }
+    </div>
   </div>
 </BaseLayout>

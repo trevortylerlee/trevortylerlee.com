@@ -2,41 +2,41 @@
 import "../styles/global.css";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
-import { ColorMode } from 'astro-color-mode';
+import { ColorMode } from "astro-color-mode";
 
 const { pageTitle } = Astro.props;
 ---
 
 <html lang="en" prefix="og: http://ogp.me/ns#">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.png" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <meta property="og:image" content="/og.jpg" />
-        <meta name="view-transition" content="same-origin" />
-        <ColorMode />
-        <meta
-        name="description"
-        content="Trevor Lee | Software Developer and Designer from Vancouver, Canada | TypeScript, React, Next.js, Node.js"
-        />
-        <title>{pageTitle}</title>
-    </head>
-    <body
-        class="bg-background overflow-x-hidden font-sans text-content underline-offset-2"
-        id="body"
-    >
-        <div class="overlay z-0"></div>
-        <div class="mx-auto z-10">
-            <Navigation />
-            <hr class="hr-bg border-none h-0.5 ml-4 mr-4" />
-            <main class="px-2">
-              <slot />
-            </main>
-            <hr class="hr-bg border-none h-0.5" />
-            <Footer />
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.png" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:image" content="/og.jpg" />
+    <meta name="view-transition" content="same-origin" />
+    <ColorMode />
+    <meta
+      name="description"
+      content="Trevor Lee | Software Developer and Designer from Vancouver, Canada | TypeScript, React, Next.js, Node.js"
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body
+    class="bg-background overflow-x-hidden font-sans text-content underline-offset-2"
+    id="body"
+  >
+    <div class="overlay z-0"></div>
+    <div class="mx-auto z-10">
+      <Navigation />
+      <hr class="hr-bg border-none h-0.5 ml-4 mr-4" />
+      <main class="px-2">
+        <slot />
+      </main>
+      <hr class="hr-bg border-none h-0.5" />
+      <Footer />
+    </div>
+  </body>
 </html>

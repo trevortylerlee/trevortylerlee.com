@@ -1,4 +1,6 @@
-<nav class="flex items-center justify-between py-4 px-2 align-middle max-w-screen-md mx-auto">
+<nav
+  class="flex items-center justify-between py-4 px-2 align-middle max-w-screen-md mx-auto"
+>
   <span>
     <a
       id="logo"
@@ -10,7 +12,12 @@
       trevortylerlee.com
     </a>
   </span>
-  <button data-color-mode-switch class="themeToggle px-2 py-2" id="themeToggle" aria-label="Toggle light and dark mode" >
+  <button
+    data-color-mode-switch
+    class="themeToggle px-2 py-2"
+    id="themeToggle"
+    aria-label="Toggle light and dark mode"
+  >
     <span class="themeIcon dark opacity-75" aria-hidden="true">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -40,65 +47,64 @@
 </nav>
 
 <style>
-  .dark, .light {
-        pointer-events: none;
-    }
+  .dark,
+  .light {
+    pointer-events: none;
+  }
 
-    .themeToggle {
-    }
+  .themeToggle {
+  }
 
-    /* .themeIcon {
+  /* .themeIcon {
         animation: themeToggle 1200ms ease-out forwards;
     } */
 
-    .dark.animate {
-        animation: themeToggle 1200ms ease-out forwards;
-        transition: 0.15s ease-in;
+  .dark.animate {
+    animation: themeToggle 1200ms ease-out forwards;
+    transition: 0.15s ease-in;
+  }
 
+  .light.animate {
+    animation: themeToggle 1200ms ease-out forwards;
+    transition: 0.15s ease-in;
+  }
+
+  @keyframes themeToggle {
+    0% {
+      transform: rotate(0deg);
     }
 
-    .light.animate {
-        animation: themeToggle 1200ms ease-out forwards;
-        transition: 0.15s ease-in;
-
+    40% {
+      transform: rotate(390deg);
     }
 
-    @keyframes themeToggle {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        40% {
-            transform: rotate(390deg);
-        }
-
-        50% {
-            transform: rotate(345deg);
-        }
-
-        65% {
-            transform: rotate(370deg);
-        }
-
-        85% {
-            transform: rotate(350deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
+    50% {
+      transform: rotate(345deg);
     }
+
+    65% {
+      transform: rotate(370deg);
+    }
+
+    85% {
+      transform: rotate(350deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 </style>
 
 <script>
-  const darkIcon = document.querySelector('.dark');
-  const lightIcon = document.querySelector('.light');
-  const themeToggle = document.querySelector('#themeToggle');
+  const darkIcon = document.querySelector(".dark");
+  const lightIcon = document.querySelector(".light");
+  const themeToggle = document.querySelector("#themeToggle");
 
-  themeToggle?.addEventListener(('click'), () => {
-    darkIcon?.classList.remove('animate');
-    darkIcon?.classList.add('animate');
-    lightIcon?.classList.remove('animate');
-    lightIcon?.classList.add('animate');
-  })
+  themeToggle?.addEventListener("click", () => {
+    darkIcon?.classList.remove("animate");
+    darkIcon?.classList.add("animate");
+    lightIcon?.classList.remove("animate");
+    lightIcon?.classList.add("animate");
+  });
 </script>

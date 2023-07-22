@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
-import { set } from "astro/zod";
 
 export default function Post({
   date,
@@ -11,17 +9,17 @@ export default function Post({
   src,
   alt,
 }) {
-    const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-    function handleMouseEnter() {
-        console.log('mouse entered')
-        setIsHovered(true)
-    }
+  function handleMouseEnter() {
+    console.log("mouse entered");
+    setIsHovered(true);
+  }
 
-    function handleMouseLeave() {
-        console.log('mouse left')
-        setIsHovered(false)
-    }
+  function handleMouseLeave() {
+    console.log("mouse left");
+    setIsHovered(false);
+  }
 
   return (
     <a
@@ -41,20 +39,20 @@ export default function Post({
         <div className="p-2">
           <div className="py-2 text-sm leading-loose">
             <span className="uppercase brightness-75">{date}</span>
-            <h1 className="text-4xl font-bold transition-all group-hover:text-primary group-focus:text-primary hover:underline">
+            <h1 className="text-4xl font-bold transition-all hover:underline group-hover:text-primary group-focus:text-primary">
               {title}
             </h1>
           </div>
-          <p className="max-w-md pb-16 pt-4 font-content leading-normal">
+          <p className="font-content max-w-md pb-16 pt-4 leading-normal">
             {description}
           </p>
           <a
             href="#"
-            className=" group inline-flex items-center rounded-full dark:bg-gray-1 dark:text-gray-11 bg-gray-11 text-gray-1 px-6 py-2 font-semibold transition dark:hover:bg-gray-1/80 hover:bg-gray-11/80 font-content absolute bottom-4 right-4"
+            className=" font-content group absolute bottom-4 right-4 inline-flex items-center rounded-full bg-gray-11 px-6 py-2 font-semibold text-gray-1 transition hover:bg-gray-11/80 dark:bg-gray-1 dark:text-gray-11 dark:hover:bg-gray-1/80"
           >
             {link}
             <svg
-              className="-mr-1 ml-2 mt-0.5 stroke-gray-1 dark:stroke-gray-11 stroke-2"
+              className="-mr-1 ml-2 mt-0.5 stroke-gray-1 stroke-2 dark:stroke-gray-11"
               fill="none"
               width="10"
               height="10"

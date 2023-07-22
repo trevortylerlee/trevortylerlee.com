@@ -1,21 +1,30 @@
 ---
 import { formatDate, isWithinLastFortnite } from "../lib/utils";
-import { AlertCircle, Circle } from "lucide-react";
 const { date, href, title, description, last } = Astro.props;
 ---
 
-  <a class="py-4 px-2 hover:bg-accent-blue/20 group" style="text-decoration: none" href={`/posts/${href}`}>
-        <div class="flex items-baseline justify-between">
-          <div>
-          <h2 class="line-clamp-1 text-lg font-bold text-left hover:underline">
-              {title}
-          </h3>
-          </div>
-          <div class="flex justify-end">
-          <p class="self-baseline whitespace-nowrap text-xs opacity-75 text-content">
-            {formatDate(date)}
-          </p>
-          </div>
-        </div>
-      {description && <p class="line-clamp-2 text-content no-underline">{description}</p>}
-  </a>
+<a
+  class="py-4 px-2 hover:bg-accent-blue/20 group"
+  style="text-decoration: none"
+  href={`/posts/${href}`}
+>
+  <div class="flex items-baseline justify-between">
+    <div>
+      <h2 class="line-clamp-1 text-lg font-bold text-left hover:underline">
+        {title}
+      </h2>
+    </div>
+    <div class="flex justify-end">
+      <p
+        class="self-baseline whitespace-nowrap text-xs opacity-75 text-content"
+      >
+        {formatDate(date)}
+      </p>
+    </div>
+  </div>
+  {
+    description && (
+      <p class="line-clamp-2 text-content no-underline">{description}</p>
+    )
+  }
+</a>

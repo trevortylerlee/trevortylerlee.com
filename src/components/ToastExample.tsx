@@ -7,7 +7,7 @@ export default Toastify(function Button({ message }) {
   return (
     <>
       <button
-        className="bg-[#EFEFEF] text-black rounded-sm px-1 border-[#767676] border hover:bg-[#e1e1e1] active:bg-[#d9d9d9]"
+        className="rounded-sm border border-[#767676] bg-[#EFEFEF] px-1 text-black hover:bg-[#e1e1e1] active:bg-[#d9d9d9]"
         onClick={notify}
         style={{}}
       >
