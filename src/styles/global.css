@@ -80,44 +80,6 @@
     [data-color-mode='dark'] .dark {
         display: block;
     }
-
-    .dark, .light {
-        pointer-events: none;
-    }
-
-    .themeToggle {
-        transition: 0.15s ease-in;
-    }
-
-    .themeIcon {
-        animation: themeToggle 1200ms ease-out forwards;
-    }
-
-    @keyframes themeToggle {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        40% {
-            transform: rotate(390deg);
-        }
-
-        50% {
-            transform: rotate(345deg);
-        }
-
-        65% {
-            transform: rotate(370deg);
-        }
-
-        85% {
-            transform: rotate(350deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
     
     strong {
         color: inherit;

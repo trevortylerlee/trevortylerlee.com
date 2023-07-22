@@ -39,17 +39,66 @@
   </button>
 </nav>
 
-<!-- Script below fixes themeToggle flashing in dev mode... -->
-<!-- <script>
-  const url = window.location.href
-  console.log(url)
+<style>
+  .dark, .light {
+        pointer-events: none;
+    }
 
-  if (url === 'http://localhost:3000/') {
-    const toggleButton = document.getElementById('themeToggle');
-    const themeIcons = document.querySelectorAll('.themeIcon');
+    .themeToggle {
+    }
 
-    toggleButton?.addEventListener('click', () => {
-      themeIcons.forEach(icon => icon.classList.toggle('.themeIcon'));
-    })
-  }
-</script> -->
+    /* .themeIcon {
+        animation: themeToggle 1200ms ease-out forwards;
+    } */
+
+    .dark.animate {
+        animation: themeToggle 1200ms ease-out forwards;
+        transition: 0.15s ease-in;
+
+    }
+
+    .light.animate {
+        animation: themeToggle 1200ms ease-out forwards;
+        transition: 0.15s ease-in;
+
+    }
+
+    @keyframes themeToggle {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        40% {
+            transform: rotate(390deg);
+        }
+
+        50% {
+            transform: rotate(345deg);
+        }
+
+        65% {
+            transform: rotate(370deg);
+        }
+
+        85% {
+            transform: rotate(350deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+
+<script>
+  const darkIcon = document.querySelector('.dark');
+  const lightIcon = document.querySelector('.light');
+  const themeToggle = document.querySelector('#themeToggle');
+
+  themeToggle?.addEventListener(('click'), () => {
+    darkIcon?.classList.remove('animate');
+    darkIcon?.classList.add('animate');
+    lightIcon?.classList.remove('animate');
+    lightIcon?.classList.add('animate');
+  })
+</script>
