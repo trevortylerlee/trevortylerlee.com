@@ -5,5 +5,10 @@
     "jsxImportSource": "react",
     "strictNullChecks": true,
     "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
+    }
   }
 }
