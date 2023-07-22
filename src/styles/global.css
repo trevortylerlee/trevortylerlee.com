@@ -168,12 +168,7 @@
 }
 
 #body {
-    /* background-image:
-        radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%),
-        radial-gradient(rgb(31, 31, 31) 10.4%, transparent 10.4%);
-    background-position: 0px 0px, 20px 20px;
-    background-size: 40px 40px;
-    background-color: rgb(var(--background)); */
+    height: 100dvh;
 }
 
 .overlay {
