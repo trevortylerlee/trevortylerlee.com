@@ -17,12 +17,18 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const {Content} = await post.render()
+const { Content } = await post.render()
 ---
 
 <BaseLayout style={styles} pageTitle={post.data.title}>
   <div style="view-transition-name: test" class="px-2">
-    {post.data.imageSrc ? <Image src={post.data.imageSrc} alt={post.data.imageAlt} /> : <></> }
+    {post.data.imageSrc ?
+      <Image
+        src={post.data.imageSrc}
+        alt={post.data.imageAlt}
+        quality={"low"}
+      /> : <></>
+    }
     <h1 class='text-3xl font-bold mt-6'>{post.data.title}</h1>
     {post.data.date && <p class="mb-8">Posted {formatDate(post.data.date)}</p>}
     <hr class="mb-8 hr-bg border-none h-0.5"/>
