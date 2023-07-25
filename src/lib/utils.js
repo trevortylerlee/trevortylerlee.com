@@ -10,10 +10,10 @@ export function slugify(text) {
     .replace(/-+$/, "");
 }
 
-export function formatDate(date) {
+export function formatDate(date, format) {
   return new Date(date).toLocaleDateString("en-CA", {
     timeZone: "UTC",
-    dateStyle: "medium",
+    dateStyle: format,
   });
 }
 
