@@ -53,7 +53,7 @@
     [data-color-mode='light'] {
         --background: var(--gray-1);
         --content: var(--gray-11);
-        --primary: 21 1 228;
+        --primary: 51 102 204;
         --visited: 175 82 222;
     }
 

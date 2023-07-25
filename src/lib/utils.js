@@ -13,7 +13,7 @@ export function slugify(text) {
 export function formatDate(date) {
   return new Date(date).toLocaleDateString("en-CA", {
     timeZone: "UTC",
-    dateStyle: "long",
+    dateStyle: "medium",
   });
 }
 

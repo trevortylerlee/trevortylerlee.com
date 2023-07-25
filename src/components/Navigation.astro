@@ -52,24 +52,17 @@
     pointer-events: none;
   }
 
-  .themeToggle {
-  }
-
-  /* .themeIcon {
-        animation: themeToggle 1200ms ease-out forwards;
-    } */
-
   .dark.animate {
-    animation: themeToggle 1200ms ease-out forwards;
+    animation: themeToggleBackwards 1200ms ease-out forwards;
     transition: 0.15s ease-in;
   }
 
   .light.animate {
-    animation: themeToggle 1200ms ease-out forwards;
+    animation: themeToggleForwards 1200ms ease-out forwards;
     transition: 0.15s ease-in;
   }
 
-  @keyframes themeToggle {
+  @keyframes themeToggleForwards {
     0% {
       transform: rotate(0deg);
     }
@@ -92,6 +85,32 @@
 
     100% {
       transform: rotate(360deg);
+    }
+  }
+
+  @keyframes themeToggleBackwards {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    40% {
+      transform: rotate(-390deg);
+    }
+
+    50% {
+      transform: rotate(-345deg);
+    }
+
+    65% {
+      transform: rotate(-370deg);
+    }
+
+    85% {
+      transform: rotate(-350deg);
+    }
+
+    100% {
+      transform: rotate(-360deg);
     }
   }
 </style>
