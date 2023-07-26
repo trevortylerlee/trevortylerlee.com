@@ -1,7 +1,6 @@
 <nav
   class="flex items-center justify-between py-4 px-2 align-middle max-w-screen-md mx-auto"
 >
-  <span>
     <a
       id="logo"
       class="px-2 py-2.5 text-content hover:bg-accent-blue/20 hover:text-content"
@@ -11,7 +10,6 @@
     >
       trevortylerlee.com
     </a>
-  </span>
   <button
     data-color-mode-switch
     class="themeToggle px-2 py-2"
@@ -53,64 +51,44 @@
   }
 
   .dark.animate {
-    animation: themeToggleBackwards 1200ms ease-out forwards;
+    animation: themeToggleBackwards 200ms ease-out forwards;
     transition: 0.15s ease-in;
   }
 
   .light.animate {
-    animation: themeToggleForwards 1200ms ease-out forwards;
+    animation: themeToggleForwards 200ms ease-out forwards;
     transition: 0.15s ease-in;
   }
 
   @keyframes themeToggleForwards {
     0% {
-      transform: rotate(0deg);
-    }
-
-    40% {
-      transform: rotate(390deg);
+      transform: rotate(-60deg);
+      scale: 1;
     }
 
     50% {
-      transform: rotate(345deg);
-    }
-
-    65% {
-      transform: rotate(370deg);
-    }
-
-    85% {
-      transform: rotate(350deg);
+      scale: 1.2;
     }
 
     100% {
-      transform: rotate(360deg);
+      transform: rotate(0deg);
+      scale: 1;
     }
   }
 
   @keyframes themeToggleBackwards {
     0% {
-      transform: rotate(0deg);
-    }
-
-    40% {
-      transform: rotate(-390deg);
+      transform: rotate(60deg);
+      scale: 1;
     }
 
     50% {
-      transform: rotate(-345deg);
-    }
-
-    65% {
-      transform: rotate(-370deg);
-    }
-
-    85% {
-      transform: rotate(-350deg);
+      scale: 1.2;
     }
 
     100% {
-      transform: rotate(-360deg);
+      transform: rotate(0deg);
+      scale: 1;
     }
   }
 </style>
