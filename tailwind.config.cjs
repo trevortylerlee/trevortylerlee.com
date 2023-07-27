@@ -10,7 +10,9 @@ module.exports = {
 				'3000': '3000ms',
 			},
 			fontFamily: {
-				sans: [
+				'atkinson': ['Atkinson Hyperlegible', 'sans-serif'],
+				'mono': ['JetBrains Mono', 'monospace'],
+				'sans': [
 					'-apple-system',
 					'BlinkMacSystemFont',
 					'Segoe UI',
