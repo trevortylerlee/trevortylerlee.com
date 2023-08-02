@@ -16,7 +16,7 @@
         --gray-10: 44 44 46;
         --gray-11: 28 28 30;
 
-        --background: var(--gray-1    1);
+        --background: var(--gray-11);
         --content: var(--gray-1);
         --primary: 59 143 242;
         --visited: 191 90 242;
@@ -65,6 +65,10 @@
         @apply prose-invert
     }
 
+    [data-color-mode='dark'] pre {
+        background: rgb(10 10 20) !important;
+    }
+
     [data-color-mode='dark'] .light {
         display: none;
     }
@@ -80,7 +84,7 @@
     [data-color-mode='dark'] .dark {
         display: block;
     }
-    
+
     strong {
         color: inherit;
     }
@@ -119,7 +123,8 @@
         text-decoration: rgb(var(--red)) underline;
     }
 
-    a, button {
+    a,
+    button {
         touch-action: manipulation;
     }
 
@@ -170,10 +175,16 @@
     -webkit-perspective: 1;
 }
 
-#pagination *:visited  {
+#pagination *:visited {
     color: rgb(var(--primary));
 }
 
-h1, h2, h3, h4, h5, h6, button {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
     font-family: sans-serif;
 }

@@ -18,7 +18,6 @@ pre {
 
 code {
   border-radius: 0.5rem;
-  font-family: 'JetBrains Mono';
   direction: ltr;
   font-size: var(--size-300);
 }

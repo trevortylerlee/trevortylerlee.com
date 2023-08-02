@@ -18,6 +18,9 @@ export default defineConfig({
   },
   markdown: {
     drafts: true,
+    shikiConfig: {
+      theme: "dark-plus",
+    },
   },
   integrations: [
     react(),
