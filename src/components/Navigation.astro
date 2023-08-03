@@ -94,16 +94,28 @@
     }
   </style>
 
-  <script>
+  <script is:inline>
     const darkIcon = document.querySelector(".dark");
     const lightIcon = document.querySelector(".light");
     const themeToggle = document.querySelector("#themeToggle");
+    const currentUrl = window.location.href;
 
     themeToggle?.addEventListener("click", () => {
       darkIcon?.classList.remove("animate");
       darkIcon?.classList.add("animate");
       lightIcon?.classList.remove("animate");
       lightIcon?.classList.add("animate");
+
+      if (
+        currentUrl !== "http://localhost:3000/" &&
+        currentUrl !== "http://localhost:3000/posts" &&
+        currentUrl !== "http://localhost:3000/404" &&
+        currentUrl !== "https://trevortylerlee.com/" &&
+        currentUrl !== "https://trevortylerlee.com/posts" &&
+        currentUrl !== "https://trevortylerlee.com/404"
+      ) {
+        location.reload();
+      }
     });
   </script>
 </nav>

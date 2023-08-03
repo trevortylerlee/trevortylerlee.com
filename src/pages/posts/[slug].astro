@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Comments from "@components/Comments";
 import { Image } from "astro:assets";
 import styles from '../../styles/CodeBlock.module.css'
 import { formatDate } from "../../lib/utils"
@@ -37,6 +38,9 @@ const { Content } = await post.render()
     </div>
     <div id="content" class="prose mx-auto max-w-none mb-12 prose-strong:text-inherit">
       <Content />
+    </div>
+    <div class="pb-4">
+      <Comments client:idle/>
     </div>
   </div>
 </BaseLayout>
