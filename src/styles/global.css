@@ -133,10 +133,6 @@
         text-decoration: none;
     }
 
-    #logo:hover {
-        text-decoration: underline;
-    }
-
     .hr-bg {
         background-color: rgb(var(--gray-10));
     }

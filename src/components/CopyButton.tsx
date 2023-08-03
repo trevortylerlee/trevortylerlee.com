@@ -18,7 +18,7 @@ export default Toastify(function Button({ copyText, label, children }) {
     src: ["/boop.mp3"],
   });
 
-  Howler.volume(0.5);
+  Howler.volume(0.8);
 
   const handleClick = () => {
     copyToClipboard(copyText);
