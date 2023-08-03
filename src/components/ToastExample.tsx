@@ -3,10 +3,10 @@ import toast from "react-hot-toast";
 import { Howl, Howler } from "howler";
 
 export default Toastify(function Button({ message }) {
-  Howler.volume(0.4);
+  Howler.volume(0.2);
 
   const sound = new Howl({
-    src: ["/hello-world.mp3"],
+    src: ["/minecraft.mp3"],
   });
 
   const notify = () => {
