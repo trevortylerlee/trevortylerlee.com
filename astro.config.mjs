@@ -13,6 +13,9 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.trevortylerlee.com",
+  server: {
+    port: 1999,
+  },
   experimental: {
     assets: true,
   },
