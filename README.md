@@ -3,6 +3,7 @@
 ## Technologies Used
 
 - [Astro](https://astro.build/)
+- [giscus](https://giscus.app/)
 - [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)
 - [react-hot-toast](https://react-hot-toast.com/)
 - [TailwindCSS](https://tailwindcss.com/)
@@ -11,7 +12,7 @@
 
 ```zsh
 # Clone the repository
-git clone https://github.com/boogerbuttcheeks/astro.git foo
+git clone https://github.com/trevortylerlee/trevortylerlee.com.git foo
 
 # Navigate to the directory
 cd foo
@@ -19,6 +20,6 @@ cd foo
 # Install dependencies
 pnpm install
 
-# Run on localhost:3000
+# Run on localhost:1999
 pnpm dev
 ```
