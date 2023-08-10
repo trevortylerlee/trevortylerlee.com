@@ -44,78 +44,74 @@
       </svg>
     </span>
   </button>
-
-  <style>
-    .dark,
-    .light {
-      pointer-events: none;
-    }
-
-    .dark.animate {
-      animation: themeToggleBackwards 200ms ease-out forwards;
-      transition: 0.15s ease-in;
-    }
-
-    .light.animate {
-      animation: themeToggleForwards 200ms ease-out forwards;
-      transition: 0.15s ease-in;
-    }
-
-    @keyframes themeToggleForwards {
-      0% {
-        transform: rotate(-60deg);
-        scale: 1;
-      }
-
-      50% {
-        scale: 1.2;
-      }
-
-      100% {
-        transform: rotate(0deg);
-        scale: 1;
-      }
-    }
-
-    @keyframes themeToggleBackwards {
-      0% {
-        transform: rotate(60deg);
-        scale: 1;
-      }
-
-      50% {
-        scale: 1.2;
-      }
-
-      100% {
-        transform: rotate(0deg);
-        scale: 1;
-      }
-    }
-  </style>
-
-  <script is:inline>
-    const darkIcon = document.querySelector(".dark");
-    const lightIcon = document.querySelector(".light");
-    const themeToggle = document.querySelector("#themeToggle");
-    const currentUrl = window.location.href;
-
-    themeToggle?.addEventListener("click", () => {
-      darkIcon?.classList.remove("animate");
-      darkIcon?.classList.add("animate");
-      lightIcon?.classList.remove("animate");
-      lightIcon?.classList.add("animate");
-
-      if (
-        currentUrl !== "http://localhost:1999/" &&
-        currentUrl !== "http://localhost:1999/posts" &&
-        currentUrl !== "http://localhost:1999/404" &&
-        currentUrl !== "https://www.trevortylerlee.com/" &&
-        currentUrl !== "https://www.trevortylerlee.com/posts" &&
-        currentUrl !== "https://www.trevortylerlee.com/404"
-      ) {
-        location.reload();
-      }
-    });
-  </script>
 </nav>
+
+<style>
+  .dark,
+  .light {
+    pointer-events: none;
+  }
+
+  .dark.animate {
+    animation: themeToggleBackwards 200ms ease-out forwards;
+    transition: 0.15s ease-in;
+  }
+
+  .light.animate {
+    animation: themeToggleForwards 200ms ease-out forwards;
+    transition: 0.15s ease-in;
+  }
+
+  @keyframes themeToggleForwards {
+    0% {
+      transform: rotate(-60deg);
+      scale: 1;
+    }
+
+    50% {
+      scale: 1.2;
+    }
+
+    100% {
+      transform: rotate(0deg);
+      scale: 1;
+    }
+  }
+
+  @keyframes themeToggleBackwards {
+    0% {
+      transform: rotate(60deg);
+      scale: 1;
+    }
+
+    50% {
+      scale: 1.2;
+    }
+
+    100% {
+      transform: rotate(0deg);
+      scale: 1;
+    }
+  }
+</style>
+
+<script is:inline>
+  const darkIcon = document.querySelector(".dark");
+  const lightIcon = document.querySelector(".light");
+  const themeToggle = document.querySelector("#themeToggle");
+  const currentUrl = window.location.href;
+  console.log(currentUrl);
+
+  themeToggle?.addEventListener("click", () => {
+    darkIcon?.classList.remove("animate");
+    darkIcon?.classList.add("animate");
+    lightIcon?.classList.remove("animate");
+    lightIcon?.classList.add("animate");
+
+    // Check if the current URL matches the pattern for /posts/*
+    if (currentUrl.match(/\/posts\//)) {
+      location.reload();
+      console.log("reloaded");
+    }
+  });
+</script>

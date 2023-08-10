@@ -1,30 +1,8 @@
 ---
 import "../styles/global.css";
-import { ViewTransitions } from "astro:transitions";
-import { slide } from "astro:transitions";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import { ColorMode } from "astro-color-mode";
-
-const anim = {
-  old: {
-    name: "slide-right",
-    duration: "0.4s",
-    easing: "ease-out",
-    fillMode: "forwards",
-  },
-  new: {
-    name: "slide-left",
-    duration: "0.4s",
-    easing: "ease-in",
-    fillMode: "backwards",
-  },
-};
-
-const mySlide = {
-  forwards: anim,
-  backwards: anim,
-};
 
 const { pageTitle } = Astro.props;
 ---
@@ -45,7 +23,6 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content="/og.jpg" />
     <meta name="view-transition" content="same-origin" />
-    <ViewTransitions />
     <ColorMode />
     <meta
       name="description"
@@ -61,7 +38,7 @@ const { pageTitle } = Astro.props;
     <div class="mx-auto z-10">
       <Navigation />
       <hr class="hr-bg border-none h-0.5" />
-      <main class="px-2">
+      <main class="px-2" style="view-transition-name: foo">
         <slot />
       </main>
       <hr class="hr-bg border-none h-0.5" />
