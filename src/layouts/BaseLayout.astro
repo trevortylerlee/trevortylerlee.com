@@ -1,8 +1,30 @@
 ---
 import "../styles/global.css";
+import { ViewTransitions } from "astro:transitions";
+import { slide } from "astro:transitions";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import { ColorMode } from "astro-color-mode";
+
+const anim = {
+  old: {
+    name: "slide-right",
+    duration: "0.4s",
+    easing: "ease-out",
+    fillMode: "forwards",
+  },
+  new: {
+    name: "slide-left",
+    duration: "0.4s",
+    easing: "ease-in",
+    fillMode: "backwards",
+  },
+};
+
+const mySlide = {
+  forwards: anim,
+  backwards: anim,
+};
 
 const { pageTitle } = Astro.props;
 ---
@@ -13,13 +35,17 @@ const { pageTitle } = Astro.props;
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content="/og.jpg" />
     <meta name="view-transition" content="same-origin" />
+    <ViewTransitions />
     <ColorMode />
     <meta
       name="description"

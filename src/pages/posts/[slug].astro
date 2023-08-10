@@ -22,7 +22,7 @@ const { Content } = await post.render()
 ---
 
 <BaseLayout style={styles} pageTitle={post.data.title}>
-  <div style="view-transition-name: test" class="max-w-screen-md mx-auto px-2">
+  <div class="max-w-screen-md mx-auto px-2">
     {post.data.imageSrc ?
       <Image
         src={post.data.imageSrc}
