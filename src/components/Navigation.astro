@@ -1,3 +1,7 @@
+---
+import { ViewTransitions } from "astro:transitions";
+---
+
 <nav
   class="flex items-center justify-between py-4 px-2 align-middle max-w-screen-md mx-auto"
 >
@@ -16,6 +20,7 @@
     id="themeToggle"
     aria-label="Toggle theme"
     title="Toggle theme"
+    transition:persist
   >
     <span class="themeIcon dark opacity-75" aria-hidden="true">
       <svg
@@ -94,24 +99,3 @@
     }
   }
 </style>
-
-<script is:inline>
-  const darkIcon = document.querySelector(".dark");
-  const lightIcon = document.querySelector(".light");
-  const themeToggle = document.querySelector("#themeToggle");
-  const currentUrl = window.location.href;
-  console.log(currentUrl);
-
-  themeToggle?.addEventListener("click", () => {
-    darkIcon?.classList.remove("animate");
-    darkIcon?.classList.add("animate");
-    lightIcon?.classList.remove("animate");
-    lightIcon?.classList.add("animate");
-
-    // Check if the current URL matches the pattern for /posts/*
-    if (currentUrl.match(/\/posts\//)) {
-      location.reload();
-      console.log("reloaded");
-    }
-  });
-</script>

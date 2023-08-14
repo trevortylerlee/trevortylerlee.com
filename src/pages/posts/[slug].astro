@@ -31,7 +31,7 @@ const { Content } = await post.render()
         class="mt-6"
       /> : <></>
     }
-    <div class="">
+    <div transition:name={`${post.slug}-container`}>
     <h1 class='text-3xl sm:text-5xl text-center font-bold mt-6' id="postTitle">{post.data.title}</h1>
       {post.data.date && <p class="mb-8 text-center sm:text-lg sm:mt-2 mt-1">Posted {formatDate(post.data.date, "long")}</p>}
       <hr class="mb-8 hr-bg border-none h-0.5"/>
