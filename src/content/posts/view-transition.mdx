@@ -4,18 +4,13 @@ date: 2023-05-24
 description: "Use the new View Transition API to animate between pages."
 draft: false
 ---
+
 import Note from "../../components/Note.astro";
 
 <br />
 
 <Note type="warning" emoji="⚠️">
   Currently, the View Transition API only works in Chrome Canary.
-</Note>
-
-<br />
-
-<Note type="secondary" emoji="⚑">
-  If you are using a browser that supports view transitions, you can experience an example by visiting my homepage and returning to this article.
 </Note>
 
 <br />
@@ -39,7 +34,7 @@ Copy and paste this meta tag into your `<head>`.
 
 Decide on the element you want to transition from on `page1.html`. In this example, I'm using the page container `<div>`.
 
-```html 
+```html
 <!-- page1.html -->
 
 <div style="view-transition-name: foo">
@@ -50,6 +45,7 @@ Decide on the element you want to transition from on `page1.html`. In this examp
 ### 4. Third line of code
 
 Decide on the element you want to transition to on `page2.html`. In this example, I'm using the page container `<div>` for `page2.html`.
+
 ```html
 <!-- page2.html -->
 

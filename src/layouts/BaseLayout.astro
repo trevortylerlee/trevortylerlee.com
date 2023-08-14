@@ -47,6 +47,8 @@ const { pageTitle } = Astro.props;
       <hr class="hr-bg border-none h-0.5" />
       <Footer />
     </div>
+
+    <!-- Reload page on /posts/* so Giscus can reload correct theme -->
     <script is:inline>
       function setTheme() {
         const darkIcon = document.querySelector(".dark");
@@ -64,7 +66,8 @@ const { pageTitle } = Astro.props;
         // Check if the current URL matches the pattern for /posts/*
         if (
           currentUrl.match(/\/posts\//) &&
-          currentUrl !== "http://localhost:1999/posts/"
+          currentUrl !== "http://localhost:1999/posts/" &&
+          currentUrl !== "https://trevortylerlee.com/posts/"
         ) {
           location.reload();
           console.log("reloaded");
