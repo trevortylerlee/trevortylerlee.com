@@ -97,9 +97,9 @@
         color: rgb(var(--primary));
     }
 
-    a[href]:visited {
+    /* a[href]:visited {
         color: rgb(var(--visited));
-    }
+    } */
 
     a[href]:active {
         color: rgb(var(--red));
@@ -115,13 +115,13 @@
         text-decoration: rgb(var(--red)) underline;
     }
 
-    a[href]:visited:hover {
+    /* a[href]:visited:hover {
         text-decoration: rgb(var(--visited)) underline;
-    }
+    } */
 
-    a[href]:visited:active {
+    /* a[href]:visited:active {
         text-decoration: rgb(var(--red)) underline;
-    }
+    } */
 
     a,
     button {
@@ -183,4 +183,31 @@ h5,
 h6,
 button {
     font-family: sans-serif;
+}
+
+/* astro-breadcrumbs */
+
+.c-breadcrumbs {
+    display: flex;
+}
+
+.c-breadcrumbs>* {
+    display: flex;
+}
+
+.c-breadcrumbs__crumb {
+    display: flex;
+}
+
+.c-breadcrumbs__link {
+    color: rgb(var(--content)) !important;
+    transition: color 0.1s;
+}
+
+.c-breadcrumbs__link:hover {
+    color: rgb(var(--primary)) !important;
+}
+
+.c-breadcrumbs__link:active {
+    color: rgb(var(--red)) !important;
 }

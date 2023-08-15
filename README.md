@@ -3,10 +3,11 @@
 ## Technologies Used
 
 - [Astro](https://astro.build/)
-- [giscus](https://giscus.app/)
-- [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)
-- [react-hot-toast](https://react-hot-toast.com/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)
+- [astro-breadcrumbs](https://github.com/felix-berlin/astro-breadcrumbs)
+- [giscus](https://giscus.app/)
+- [react-hot-toast](https://react-hot-toast.com/)
 
 ## Setup Instructions
 
