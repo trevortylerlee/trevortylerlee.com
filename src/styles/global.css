@@ -197,6 +197,7 @@ button {
 
 .c-breadcrumbs__crumb {
     display: flex;
+    align-items: center;
 }
 
 .c-breadcrumbs__link {
