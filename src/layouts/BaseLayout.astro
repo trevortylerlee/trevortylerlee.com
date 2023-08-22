@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import { ColorMode } from "astro-color-mode";
 import { ViewTransitions } from "astro:transitions";
 
-const { pageTitle } = Astro.props;
+const { pageTitle, pageSlug, category } = Astro.props;
 ---
 
 <html lang="en" prefix="og: http://ogp.me/ns#">
@@ -38,7 +38,11 @@ const { pageTitle } = Astro.props;
   >
     <div class="overlay z-0"></div>
     <div class="mx-auto z-10">
-      <Navigation />
+      <Navigation
+        pageTitle={pageTitle}
+        pageSlug={pageSlug}
+        category={category}
+      />
       <hr class="hr-bg border-none h-0.5" />
       <!-- <main class="px-2" style="view-transition-name: foo"> -->
       <main class="px-2">

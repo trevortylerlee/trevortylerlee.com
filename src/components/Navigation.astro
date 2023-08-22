@@ -1,102 +1,106 @@
 ---
-// let isOnHomePage = false;
-// let currentUrl = Astro.url.pathname;
-// console.log(currentUrl);
-
-// if (currentUrl === "/") {
-//   isOnHomePage = true;
-// } else {
-//   isOnHomePage = false;
-// }
+import Breadcrumbs from "./Breadcrumbs.astro";
+const { category, pageSlug, pageTitle } = Astro.props;
 ---
 
-<nav class="flex justify-between items-center p-2">
-  <div class="px-4 py-4 font-sans">
-    <!-- {isOnHomePage ? <>Home</> : <a href="/">{Astro.url.pathname}</a>} -->
-    <a href="/">Home</a>
-  </div>
-  <button
-    data-color-mode-switch
-    class="themeToggle px-2 py-2 rounded-full hover:bg-content/20"
-    id="themeToggle"
-    aria-label="Toggle theme"
-    title="Toggle theme"
-    transition:persist
+<nav>
+  <div
+    class="flex justify-between items-center px-2 py-4 mx-auto max-w-screen-md"
   >
-    <span class="themeIcon dark opacity-75" aria-hidden="true">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        class="h-5 w-5"
-        fill="currentColor"
-      >
-        <path
-          d="M18.1289 15.7031C11.7891 15.7031 7.73438 11.7305 7.73438 5.37891C7.73438 4.06641 8.05078 2.19141 8.47266 1.21875C8.57812 0.949219 8.60156 0.785156 8.60156 0.667969C8.60156 0.351562 8.36719 0 7.91016 0C7.78125 0 7.5 0.0351562 7.24219 0.128906C2.90625 1.86328 0 6.52734 0 11.4375C0 18.3281 5.25 23.25 12.1172 23.25C17.168 23.25 21.5391 20.1914 22.9922 16.3711C23.0977 16.1016 23.1211 15.8203 23.1211 15.7148C23.1211 15.2812 22.7578 14.9883 22.4297 14.9883C22.2773 14.9883 22.1484 15.0234 21.9258 15.0938C21.0234 15.3867 19.5703 15.7031 18.1289 15.7031Z"
-        ></path>
-      </svg>
-    </span>
-    <span class="themeIcon light" aria-hidden="true">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 26 26"
-        class="h-5 w-5"
-      >
-        <path
-          d="M12.6797 4.55859C13.2305 4.55859 13.6875 4.10156 13.6875 3.53906V1.01953C13.6875 0.457031 13.2305 0 12.6797 0C12.1172 0 11.6602 0.457031 11.6602 1.01953V3.53906C11.6602 4.10156 12.1172 4.55859 12.6797 4.55859ZM18.4219 6.96094C18.8203 7.34766 19.4648 7.35938 19.8633 6.96094L21.6562 5.16797C22.043 4.78125 22.043 4.125 21.6562 3.72656C21.2695 3.33984 20.625 3.33984 20.2266 3.72656L18.4219 5.53125C18.0352 5.92969 18.0352 6.57422 18.4219 6.96094ZM20.8008 12.7148C20.8008 13.2656 21.2695 13.7227 21.8203 13.7227H24.3398C24.8906 13.7227 25.3477 13.2656 25.3477 12.7148C25.3477 12.1641 24.8906 11.6953 24.3398 11.6953H21.8203C21.2695 11.6953 20.8008 12.1641 20.8008 12.7148ZM18.4219 18.4688C18.0352 18.8672 18.0352 19.5117 18.4219 19.8984L20.2266 21.7148C20.625 22.0898 21.2695 22.0781 21.6562 21.7031C22.043 21.3047 22.043 20.6602 21.6562 20.2734L19.8516 18.4688C19.4648 18.0938 18.8203 18.0938 18.4219 18.4688ZM12.6797 20.8711C12.1172 20.8711 11.6602 21.3281 11.6602 21.8789V24.4102C11.6602 24.9609 12.1172 25.418 12.6797 25.418C13.2305 25.418 13.6875 24.9609 13.6875 24.4102V21.8789C13.6875 21.3281 13.2305 20.8711 12.6797 20.8711ZM6.92578 18.4688C6.52734 18.0938 5.87109 18.0938 5.48438 18.4688L3.69141 20.2617C3.30469 20.6484 3.30469 21.293 3.67969 21.6914C4.06641 22.0664 4.72266 22.0781 5.12109 21.7031L6.91406 19.8984C7.30078 19.5117 7.30078 18.8672 6.92578 18.4688ZM4.54688 12.7148C4.54688 12.1641 4.07812 11.6953 3.52734 11.6953H1.00781C0.457031 11.6953 0 12.1641 0 12.7148C0 13.2656 0.457031 13.7227 1.00781 13.7227H3.52734C4.07812 13.7227 4.54688 13.2656 4.54688 12.7148ZM6.91406 6.96094C7.30078 6.58594 7.30078 5.91797 6.92578 5.53125L5.13281 3.72656C4.74609 3.35156 4.08984 3.33984 3.70312 3.72656C3.31641 4.125 3.31641 4.78125 3.69141 5.15625L5.48438 6.96094C5.87109 7.34766 6.51562 7.34766 6.91406 6.96094Z"
-        ></path>
-        <path
-          d="M12.668 18.6914C15.9258 18.6914 18.6328 15.9844 18.6328 12.7148C18.6328 9.43359 15.9258 6.72656 12.668 6.72656C9.41017 6.72656 6.70312 9.43359 6.70312 12.7148C6.70312 15.9844 9.41017 18.6914 12.668 18.6914Z"
-        ></path>
-      </svg>
-    </span>
-  </button>
-
-  <style>
-    .dark,
-    .light {
-      pointer-events: none;
-    }
-
-    .dark.animate {
-      animation: themeToggleBackwards 200ms ease-out forwards;
-      transition: 0.15s ease-in;
-    }
-
-    .light.animate {
-      animation: themeToggleForwards 200ms ease-out forwards;
-      transition: 0.15s ease-in;
-    }
-
-    @keyframes themeToggleForwards {
-      0% {
-        transform: rotate(-60deg);
-        scale: 1;
-      }
-
-      50% {
-        scale: 1.2;
-      }
-
-      100% {
-        transform: rotate(0deg);
-        scale: 1;
-      }
-    }
-
-    @keyframes themeToggleBackwards {
-      0% {
-        transform: rotate(60deg);
-        scale: 1;
-      }
-
-      50% {
-        scale: 1.2;
-      }
-
-      100% {
-        transform: rotate(0deg);
-        scale: 1;
-      }
-    }
-  </style>
+    <Breadcrumbs
+      category={category}
+      pageSlug={pageSlug}
+      pageTitle={pageTitle}
+    />
+    <button
+      data-color-mode-switch
+      class="themeToggle p-3 rounded-full hover:bg-content/20 group"
+      id="themeToggle"
+      aria-label="Toggle theme"
+      title="Toggle theme"
+      transition:persist
+    >
+      <span class="themeIcon dark opacity-75" aria-hidden="true">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="group-hover:scale-110 transition-transform duration-200 ease-in-out"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17.07 2.93V7.07L20 10L17.07 12.93V17.07H12.93L10 20L7.07 17.07H2.93V12.93L0 10L2.93 7.07V2.93H7.07L10 0L12.93 2.93H17.07ZM4 10C4 13.3137 6.68629 16 10 16C13.3137 16 16 13.3137 16 10C16 6.68629 13.3137 4 10 4C6.68629 4 4 6.68629 4 10ZM10 14.5C12.4853 14.5 14.5 12.4853 14.5 10C14.5 7.51472 12.4853 5.5 10 5.5C7.51472 5.5 5.5 7.51472 5.5 10C5.5 12.4853 7.51472 14.5 10 14.5Z"
+            fill="#FFCC00"></path>
+        </svg>
+      </span>
+      <span class="themeIcon light" aria-hidden="true">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="group-hover:scale-110 transition-transform duration-200 ease-in-out"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17.5587 15.711C13.4217 17.466 8.65971 15.46 6.90471 11.323C5.14971 7.18804 7.15571 2.42404 11.2907 0.669041C11.5417 0.544041 11.9177 0.419041 12.1687 0.293041C10.1627 -0.207959 8.15871 -0.082959 6.15271 0.795041C1.13871 2.92604 -1.36829 8.81604 0.762714 13.831C2.89371 18.97 8.78471 21.352 13.9237 19.221C16.0547 18.343 17.6847 16.839 18.6867 14.959C18.3107 15.335 17.9347 15.46 17.5587 15.711Z"
+            fill="#570ec4"></path>
+        </svg>
+      </span>
+    </button>
+  </div>
 </nav>
+
+<style>
+  .dark,
+  .light {
+    pointer-events: none;
+  }
+
+  .dark.animate {
+    animation: themeToggleBackwards 200ms ease-out forwards;
+    transition: 0.15s ease-in;
+  }
+
+  .light.animate {
+    animation: themeToggleForwards 200ms ease-out forwards;
+    transition: 0.15s ease-in;
+  }
+
+  @keyframes themeToggleForwards {
+    0% {
+      transform: rotate(-60deg);
+      scale: 1;
+    }
+
+    50% {
+      scale: 1.2;
+    }
+
+    100% {
+      transform: rotate(0deg);
+      scale: 1;
+    }
+  }
+
+  @keyframes themeToggleBackwards {
+    0% {
+      transform: rotate(60deg);
+      scale: 1;
+    }
+
+    50% {
+      scale: 1.2;
+    }
+
+    100% {
+      transform: rotate(0deg);
+      scale: 1;
+    }
+  }
+</style>

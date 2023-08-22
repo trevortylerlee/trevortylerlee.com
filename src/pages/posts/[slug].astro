@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import { Breadcrumbs } from "astro-breadcrumbs";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Comments from "@components/Comments";
 import { Image } from "astro:assets";
@@ -22,7 +21,12 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BaseLayout style={styles} pageTitle={post.data.title}>
+<BaseLayout
+  style={styles}
+  pageTitle={post.data.title}
+  pageSlug={post.slug}
+  category="posts"
+>
   <!-- <div class="max-w-screen-md mx-auto py-4">
     <Breadcrumbs ariaLabel="a structured list of pages" indexText="index">
       <svg
@@ -39,7 +43,7 @@ const { Content } = await post.render();
       </svg>
     </Breadcrumbs>
   </div> -->
-  <div class="max-w-screen-md mx-auto px-2">
+  <div class="max-w-screen-md mx-auto px-2 -z-10">
     {
       post.data.imageSrc ? (
         <Image

@@ -21,7 +21,7 @@ const pageTitle = "Trevor Lee | All Posts";
 const { page } = Astro.props;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} category="posts">
   <div class="py-8 grid max-w-screen-md mx-auto">
     {
       page.data.map((post) => (

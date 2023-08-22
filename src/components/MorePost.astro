@@ -4,7 +4,7 @@ const { date, href, title, description, last } = Astro.props;
 ---
 
 <a
-  class="py-4 px-2 group"
+  class="py-4 group"
   style="text-decoration: none"
   href={`/posts/${href}`}
   transition:name={`${href}-container`}
@@ -12,7 +12,7 @@ const { date, href, title, description, last } = Astro.props;
   <div class="flex items-baseline justify-between">
     <div>
       <h2
-        class="line-clamp-1 text-lg font-bold text-left hover:underline group-hover:underline"
+        class="line-clamp-1 text-lg text-left hover:underline group-hover:underline"
       >
         {title}
       </h2>

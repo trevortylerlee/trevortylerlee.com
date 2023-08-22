@@ -3,53 +3,72 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
 import MorePost from "../components/MorePost.astro";
-import { Image } from "astro:assets";
+import Projects from "@components/Projects.astro";
 
 import { formatBlogPost } from "../lib/utils";
+import profilePicture from "@assets/me-with-roxy.webp";
+import phishedLogo from "@assets/logos/phished-logo.jpg";
+import t2aLogo from "@assets/logos/t2a-logo.jpg";
+import redLogo from "@assets/logos/red.jpg";
+import { Image } from "astro:assets";
 
 const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {
   limit: 7,
 });
 
-// import profilePicture from "../assets/me-with-roxy.webp"
-import profilePicture from "@assets/me-with-roxy.webp";
-
 const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="max-w-screen-md mx-auto">
-    <div class="flex flex-col items-center gap-6 px-2 pb-16 pt-24 sm:flex-row">
-      <div class="flex items-center justify-center">
+  <div class="grid mx-auto max-w-screen-md pb-16">
+    <div class="py-16 text-center flex flex-col">
+      <a href="/about">
         <Image
           src={profilePicture}
           format="avif"
-          quality={"low"}
+          quality={"med"}
           alt="A picture of young me with my dog Roxy."
-          class="max-w-[124px] rounded-full motion-safe:hover:invert transition ease-out duration-500 hover:ease-in hover:delay-1000"
+          class="max-w-[128px] rounded-full mx-auto hover:scale-105 cursor-help transition-transform duration-200 ease-in-out"
+          transition:name="profilePicture"
         />
-      </div>
-      <div class="block text-center text-xl sm:text-left">
-        <h1 class="text-xl sm:text-3xl font-bold" id="bio">
-          Frontend developer and designer. Studied Digital Design and
-          Development at BCIT — currently working at
-          <a href="https://www.comc.com/"> COMC</a>.
-        </h1>
-      </div>
+      </a>
+      <h1 class="text-4xl mt-4 font-bold leading-normal" transition:name="name">
+        Trevor Lee
+      </h1>
+      <p class="text-xl" transition:name="bio">
+        I'm a web developer based in Vancouver.
+      </p>
     </div>
-
-    <div class="grid pb-16">
-      {
-        formattedPosts.map((post) => (
-          <MorePost
-            date={post.data.date}
-            href={post.slug}
-            title={post.data.title}
-            description={post.data.description}
-          />
-        ))
-      }
-    </div>
+    <h2 class="text-xl opacity-70 font-sans">Projects</h2>
+    <Projects
+      description="Send, monitor, and track phishing emails"
+      href="https://phished.up.railway.app/"
+      image={phishedLogo}
+      title="Phished"
+    />
+    <Projects
+      description="Tired of writing arrays? Me too..."
+      href="https://text2array.vercel.app/"
+      image={t2aLogo}
+      title="text 2 array"
+    />
+    <Projects
+      description="Swifties only!"
+      href="https://www.swiftie.red/"
+      image={redLogo}
+      title="swiftie.red"
+    />
+    <h2 class="text-xl opacity-70 mt-12 font-sans">Posts</h2>
+    {
+      formattedPosts.map((post) => (
+        <MorePost
+          date={post.data.date}
+          href={post.slug}
+          title={post.data.title}
+          description={post.data.description}
+        />
+      ))
+    }
   </div>
 </BaseLayout>
