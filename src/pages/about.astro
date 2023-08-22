@@ -7,13 +7,13 @@ import profilePicture from "@assets/me-with-roxy.webp";
 
 <BaseLayout pageTitle="About" pageSlug="/about">
   <div class="mx-auto max-w-screen-md py-16 text-center">
-    <a href="/">
+    <a href="/" class="rounded-full mx-auto">
       <Image
         src={profilePicture}
         format="avif"
         quality={"med"}
         alt="A picture of young me with my dog Roxy."
-        class="max-w-xs rounded-full mx-auto hover:scale-105 cursor-help transition-transform duration-200 ease-in-out"
+        class="rounded-full mx-auto max-w-xs hover:scale-105 cursor-help transition-transform duration-200 ease-in-out"
         transition:name="profilePicture"
       />
     </a>

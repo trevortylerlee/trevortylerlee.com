@@ -23,13 +23,13 @@ const pageTitle = "Trevor Lee | Homepage";
 <BaseLayout pageTitle={pageTitle}>
   <div class="grid mx-auto max-w-screen-md pb-16">
     <div class="py-16 text-center flex flex-col">
-      <a href="/about">
+      <a href="/about" class="max-w-[128px] mx-auto rounded-full">
         <Image
           src={profilePicture}
           format="avif"
           quality={"med"}
           alt="A picture of young me with my dog Roxy."
-          class="max-w-[128px] rounded-full mx-auto hover:scale-105 cursor-help transition-transform duration-200 ease-in-out"
+          class="rounded-full mx-auto hover:scale-105 cursor-help transition-transform duration-200 ease-in-out"
           transition:name="profilePicture"
         />
       </a>
