@@ -38,9 +38,6 @@ dependencies:
   astro:
     specifier: ^2.10.9
     version: 2.10.9
-  astro-breadcrumbs:
-    specifier: ^1.6.1
-    version: 1.6.1(astro@2.10.9)
   astro-color-mode:
     specifier: ^0.7.1
     version: 0.7.1
@@ -1501,14 +1498,6 @@ packages:
   /astring@1.8.6:
     resolution: {integrity: sha512-ISvCdHdlTDlH5IpxQJIex7BWBywFWgjJSVdwst+/iQCoEYnyOaQ95+X1JGshuBjGp6nxKUy1jMgE3zPqN7fQdg==}
     hasBin: true
-    dev: false
-
-  /astro-breadcrumbs@1.6.1(astro@2.10.9):
-    resolution: {integrity: sha512-Jtr/ikwntzm+IwQRZB2//Exf1qscoHVn+45kJ6fl2x8bGbXigmJ/rZdywDFSilOvDDDhzRbCgG6MI6iJRVVhzg==}
-    peerDependencies:
-      astro: ^2.0.0-beta.0
-    dependencies:
-      astro: 2.10.9
     dev: false
 
   /astro-color-mode@0.7.1:
