@@ -3,18 +3,19 @@ import Giscus from "@giscus/react";
 
 export default function Comments() {
   const [isMounted, setIsMounted] = useState(false);
-  const [theme, setTheme] = useState(
-    localStorage.getItem("colorMode") === "dark"
-      ? "dark_high_contrast"
-      : "light_high_contrast",
-  );
+  const [theme, setTheme] = useState("dark_high_contrast");
 
   useEffect(() => {
+    if (localStorage.getItem("colorMode") === "dark") {
+      setTheme("dark_high_contrast");
+    } else {
+      setTheme("light_high_contrast");
+    }
     setIsMounted(true);
-  });
+  }, []);
 
   return (
-    <div>
+    <div className="pb-8">
       {isMounted ? (
         <Giscus
           repo="trevortylerlee/trevortylerlee.com"

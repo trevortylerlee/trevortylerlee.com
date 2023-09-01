@@ -69,22 +69,6 @@
         background: rgb(10 10 20) !important;
     }
 
-    [data-color-mode='dark'] .light {
-        display: none;
-    }
-
-    [data-color-mode='light'] .light {
-        display: block;
-    }
-
-    [data-color-mode='light'] .dark {
-        display: none;
-    }
-
-    [data-color-mode='dark'] .dark {
-        display: block;
-    }
-
     strong {
         color: inherit;
     }
@@ -115,14 +99,6 @@
         text-decoration: rgb(var(--red)) underline;
     }
 
-    /* a[href]:visited:hover {
-        text-decoration: rgb(var(--visited)) underline;
-    } */
-
-    /* a[href]:visited:active {
-        text-decoration: rgb(var(--red)) underline;
-    } */
-
     a,
     button {
         touch-action: manipulation;
@@ -139,6 +115,22 @@
 
     [data-color-mode='light'] .hr-bg {
         background-color: rgb(var(--gray-2));
+    }
+
+    [data-color-mode="dark"] .light {
+        display: none;
+    }
+
+    [data-color-mode="light"] .light {
+        display: block;
+    }
+
+    [data-color-mode="light"] .dark {
+        display: none;
+    }
+
+    [data-color-mode="dark"] .dark {
+        display: block;
     }
 }
 
@@ -165,11 +157,7 @@
     text-wrap: balance;
 }
 
-#themeToggle {
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-perspective: 1;
-}
+
 
 #pagination *:visited {
     color: rgb(var(--primary));

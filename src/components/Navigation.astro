@@ -62,7 +62,7 @@ const { category, pageSlug, pageTitle } = Astro.props;
     pointer-events: none;
   }
 
-  .dark.animate {
+  /* .dark.animate {
     animation: themeToggleBackwards 200ms ease-out forwards;
     transition: 0.15s ease-in;
   }
@@ -70,6 +70,12 @@ const { category, pageSlug, pageTitle } = Astro.props;
   .light.animate {
     animation: themeToggleForwards 200ms ease-out forwards;
     transition: 0.15s ease-in;
+  } */
+
+  #themeToggle {
+    -webkit-backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-perspective: 1;
   }
 
   @keyframes themeToggleForwards {

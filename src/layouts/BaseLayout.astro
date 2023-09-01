@@ -55,14 +55,14 @@ const { pageTitle, pageSlug, category } = Astro.props;
     <!-- Reload page on /posts/* so Giscus can reload correct theme -->
     <script is:inline>
       function setTheme() {
-        const darkIcon = document.querySelector(".dark");
-        const lightIcon = document.querySelector(".light");
-        const themeToggle = document.querySelector("#themeToggle");
-        darkIcon?.classList.remove("animate");
-        darkIcon?.classList.add("animate");
-        lightIcon?.classList.remove("animate");
-        lightIcon?.classList.add("animate");
-        console.log("setTheme ran");
+        if (!document.documentElement.getAttribute("data-color-mode")) {
+          const colorMode = localStorage.getItem("colorMode");
+          if (colorMode) {
+            document.documentElement.setAttribute("data-color-mode", colorMode);
+          } else {
+            document.documentElement.setAttribute("data-color-mode", "dark");
+          }
+        }
 
         const currentUrl = window.location.href;
         console.log(currentUrl);
@@ -76,10 +76,19 @@ const { pageTitle, pageSlug, category } = Astro.props;
           location.reload();
           console.log("reloaded");
         }
+
+        const darkIcon = document.querySelector(".dark");
+        const lightIcon = document.querySelector(".light");
+        const themeToggle = document.querySelector("#themeToggle");
+        darkIcon?.classList.remove("animate");
+        darkIcon?.classList.add("animate");
+        lightIcon?.classList.remove("animate");
+        lightIcon?.classList.add("animate");
+        console.log("setTheme ran");
       }
 
       themeToggle?.addEventListener("click", setTheme);
-      window.addEventListener("astro:beforeload", setTheme);
+      document.addEventListener("astro:after-swap", setTheme);
     </script>
   </body>
 </html>

@@ -16,10 +16,6 @@ export default defineConfig({
   server: {
     port: 1999,
   },
-  experimental: {
-    assets: true,
-    viewTransitions: true,
-  },
   markdown: {
     drafts: true,
     shikiConfig: {
