@@ -28,19 +28,11 @@ export default defineConfig({
       drafts: true,
     }),
     robotsTxt(),
-    prefetch({
-      selector: "a[href^='/posts/phished']",
-    }),
     sitemap(),
     tailwind(),
   ],
   output: "static",
   adapter: vercel({
     analytics: true,
-  }),
-  vite: {
-    ssr: {
-      noExternal: ["@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu"],
-    },
-  },
+  })
 });

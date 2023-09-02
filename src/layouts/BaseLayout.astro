@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import "@fontsource/atkinson-hyperlegible/400.css";
+import "@fontsource/atkinson-hyperlegible/700.css";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import { ColorMode } from "astro-color-mode";
@@ -14,16 +16,9 @@ const { pageTitle, pageSlug, category } = Astro.props;
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.png" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
-      rel="stylesheet"
-    />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content="/og.jpg" />
-    <!-- <meta name="view-transition" content="same-origin" /> -->
     <ColorMode />
     <ViewTransitions />
     <meta
@@ -33,7 +28,7 @@ const { pageTitle, pageSlug, category } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body
-    class="overflow-x-hidden bg-background font-atkinson text-content underline-offset-2"
+    class="overflow-x-hidden bg-background font-sans text-content underline-offset-2"
     id="body"
   >
     <div class="overlay z-0"></div>
@@ -44,7 +39,6 @@ const { pageTitle, pageSlug, category } = Astro.props;
         category={category}
       />
       <hr class="hr-bg h-0.5 border-none" />
-      <!-- <main class="px-2" style="view-transition-name: foo"> -->
       <main class="px-2">
         <slot />
       </main>
@@ -68,7 +62,6 @@ const { pageTitle, pageSlug, category } = Astro.props;
       function setTheme() {
         function sendMessage(message) {
           const iframe = document.querySelector("iframe.giscus-frame");
-          console.log("Message sent to Giscus:", message);
           if (!iframe) return;
           iframe.contentWindow.postMessage(message, "https://giscus.app");
         }
@@ -77,7 +70,6 @@ const { pageTitle, pageSlug, category } = Astro.props;
           const colorMode = localStorage.getItem("colorMode");
           if (colorMode) {
             document.documentElement.setAttribute("data-color-mode", colorMode);
-            console.log(colorMode);
           } else {
             document.documentElement.setAttribute("data-color-mode", "dark");
           }
@@ -109,19 +101,10 @@ const { pageTitle, pageSlug, category } = Astro.props;
             location.reload();
           }
         }
-
-        const darkIcon = document.querySelector(".dark");
-        const lightIcon = document.querySelector(".light");
-        const themeToggle = document.querySelector("#themeToggle");
-        darkIcon?.classList.remove("animate");
-        darkIcon?.classList.add("animate");
-        lightIcon?.classList.remove("animate");
-        lightIcon?.classList.add("animate");
       }
 
       themeToggle?.addEventListener("click", setTheme);
       document.addEventListener("astro:after-swap", setTheme);
-
       document.addEventListener(
         "astro:page-load",
         () => {

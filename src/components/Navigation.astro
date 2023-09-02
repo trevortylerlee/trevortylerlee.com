@@ -5,7 +5,7 @@ const { category, pageSlug, pageTitle } = Astro.props;
 
 <nav>
   <div
-    class="flex justify-between items-center px-2 py-4 mx-auto max-w-screen-md"
+    class="mx-auto flex max-w-screen-md items-center justify-between px-2 py-4"
   >
     <Breadcrumbs
       category={category}
@@ -14,7 +14,7 @@ const { category, pageSlug, pageTitle } = Astro.props;
     />
     <button
       data-color-mode-switch
-      class="themeToggle p-3 rounded-full hover:bg-content/20 group"
+      class="themeToggle group rounded-full p-3 hover:bg-content/20"
       id="themeToggle"
       aria-label="Toggle theme"
       title="Toggle theme"
@@ -27,7 +27,7 @@ const { category, pageSlug, pageTitle } = Astro.props;
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="group-hover:scale-110 transition-transform duration-200 ease-in-out"
+          class="transition-transform duration-200 ease-in-out group-hover:scale-110"
         >
           <path
             fill-rule="evenodd"
@@ -43,7 +43,7 @@ const { category, pageSlug, pageTitle } = Astro.props;
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="group-hover:scale-110 transition-transform duration-200 ease-in-out"
+          class="transition-transform duration-200 ease-in-out group-hover:scale-110"
         >
           <path
             fill-rule="evenodd"
@@ -62,51 +62,9 @@ const { category, pageSlug, pageTitle } = Astro.props;
     pointer-events: none;
   }
 
-  /* .dark.animate {
-    animation: themeToggleBackwards 200ms ease-out forwards;
-    transition: 0.15s ease-in;
-  }
-
-  .light.animate {
-    animation: themeToggleForwards 200ms ease-out forwards;
-    transition: 0.15s ease-in;
-  } */
-
   #themeToggle {
     -webkit-backface-visibility: hidden;
     -webkit-tap-highlight-color: transparent;
     -webkit-perspective: 1;
-  }
-
-  @keyframes themeToggleForwards {
-    0% {
-      transform: rotate(-60deg);
-      scale: 1;
-    }
-
-    50% {
-      scale: 1.2;
-    }
-
-    100% {
-      transform: rotate(0deg);
-      scale: 1;
-    }
-  }
-
-  @keyframes themeToggleBackwards {
-    0% {
-      transform: rotate(60deg);
-      scale: 1;
-    }
-
-    50% {
-      scale: 1.2;
-    }
-
-    100% {
-      transform: rotate(0deg);
-      scale: 1;
-    }
   }
 </style>

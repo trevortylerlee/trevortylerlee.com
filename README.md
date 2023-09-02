@@ -7,6 +7,7 @@
 - [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)
 - [giscus](https://giscus.app/)
 - [react-hot-toast](https://react-hot-toast.com/)
+- [Fontsource](https://fontsource.org/)
 
 ## Setup Instructions
 
