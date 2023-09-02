@@ -30,6 +30,7 @@ export default function Comments() {
           theme={theme}
           lang="en"
           loading="lazy"
+          id="giscus"
         />
       ) : null}
     </div>

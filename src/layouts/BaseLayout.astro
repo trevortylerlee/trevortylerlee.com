@@ -8,7 +8,7 @@ import { ViewTransitions } from "astro:transitions";
 const { pageTitle, pageSlug, category } = Astro.props;
 ---
 
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html id="html" lang="en" prefix="og: http://ogp.me/ns#" transition:persist>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -33,39 +33,57 @@ const { pageTitle, pageSlug, category } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body
-    class="bg-background overflow-x-hidden font-atkinson text-content underline-offset-2"
+    class="overflow-x-hidden bg-background font-atkinson text-content underline-offset-2"
     id="body"
   >
     <div class="overlay z-0"></div>
-    <div class="mx-auto z-10">
+    <div class="z-10 mx-auto">
       <Navigation
         pageTitle={pageTitle}
         pageSlug={pageSlug}
         category={category}
       />
-      <hr class="hr-bg border-none h-0.5" />
+      <hr class="hr-bg h-0.5 border-none" />
       <!-- <main class="px-2" style="view-transition-name: foo"> -->
       <main class="px-2">
         <slot />
       </main>
-      <hr class="hr-bg border-none h-0.5" />
+      <hr class="hr-bg h-0.5 border-none" />
       <Footer />
     </div>
 
-    <!-- Reload page on /posts/* so Giscus can reload correct theme -->
     <script is:inline>
-      function setTheme() {
+      function initializeTheme() {
         if (!document.documentElement.getAttribute("data-color-mode")) {
           const colorMode = localStorage.getItem("colorMode");
           if (colorMode) {
             document.documentElement.setAttribute("data-color-mode", colorMode);
+            console.log(colorMode);
+          } else {
+            document.documentElement.setAttribute("data-color-mode", "dark");
+          }
+        }
+      }
+
+      function setTheme() {
+        function sendMessage(message) {
+          const iframe = document.querySelector("iframe.giscus-frame");
+          console.log("Message sent to Giscus:", message);
+          if (!iframe) return;
+          iframe.contentWindow.postMessage(message, "https://giscus.app");
+        }
+
+        if (!document.documentElement.getAttribute("data-color-mode")) {
+          const colorMode = localStorage.getItem("colorMode");
+          if (colorMode) {
+            document.documentElement.setAttribute("data-color-mode", colorMode);
+            console.log(colorMode);
           } else {
             document.documentElement.setAttribute("data-color-mode", "dark");
           }
         }
 
         const currentUrl = window.location.href;
-        console.log(currentUrl);
 
         // Check if the current URL matches the pattern for /posts/*
         if (
@@ -73,8 +91,23 @@ const { pageTitle, pageSlug, category } = Astro.props;
           currentUrl !== "http://localhost:1999/posts/" &&
           currentUrl !== "https://trevortylerlee.com/posts/"
         ) {
-          location.reload();
-          console.log("reloaded");
+          const giscusTheme =
+            document.documentElement.getAttribute("data-color-mode");
+          if (giscusTheme === "dark") {
+            sendMessage({
+              setConfig: {
+                theme: "dark_high_contrast",
+              },
+            });
+            location.reload();
+          } else {
+            sendMessage({
+              setConfig: {
+                theme: "light_high_contrast",
+              },
+            });
+            location.reload();
+          }
         }
 
         const darkIcon = document.querySelector(".dark");
@@ -84,11 +117,18 @@ const { pageTitle, pageSlug, category } = Astro.props;
         darkIcon?.classList.add("animate");
         lightIcon?.classList.remove("animate");
         lightIcon?.classList.add("animate");
-        console.log("setTheme ran");
       }
 
       themeToggle?.addEventListener("click", setTheme);
       document.addEventListener("astro:after-swap", setTheme);
+
+      document.addEventListener(
+        "astro:page-load",
+        () => {
+          initializeTheme();
+        },
+        { once: true },
+      );
     </script>
   </body>
 </html>
