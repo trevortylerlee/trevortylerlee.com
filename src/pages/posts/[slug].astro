@@ -27,23 +27,7 @@ const { Content } = await post.render();
   pageSlug={post.slug}
   category="posts"
 >
-  <!-- <div class="max-w-screen-md mx-auto py-4">
-    <Breadcrumbs ariaLabel="a structured list of pages" indexText="index">
-      <svg
-        slot="separator"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-        class="w-5 h-5 flex self-center"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-          clip-rule="evenodd"></path>
-      </svg>
-    </Breadcrumbs>
-  </div> -->
-  <div class="max-w-screen-md mx-auto px-2 -z-10">
+  <div class="-z-10 mx-auto max-w-screen-md px-2">
     {
       post.data.imageSrc ? (
         <Image
@@ -56,23 +40,23 @@ const { Content } = await post.render();
     }
     <div transition:name={`${post.slug}-container`}>
       <h1
-        class="text-3xl sm:text-5xl text-center font-bold mt-6"
+        class="mt-6 text-center text-3xl font-bold sm:text-5xl"
         id="postTitle"
       >
         {post.data.title}
       </h1>
       {
         post.data.date && (
-          <p class="mb-8 text-center sm:text-lg sm:mt-2 mt-1">
+          <p class="mb-8 mt-1 text-center sm:mt-2 sm:text-lg">
             Posted {formatDate(post.data.date, "long")}
           </p>
         )
       }
-      <hr class="mb-8 hr-bg border-none h-0.5" />
+      <hr class="hr-bg mb-8 h-0.5 border-none" />
     </div>
     <div
       id="content"
-      class="prose mx-auto max-w-none mb-12 prose-strong:text-inherit"
+      class="prose mx-auto mb-12 max-w-none prose-strong:text-inherit"
     >
       <Content />
     </div>

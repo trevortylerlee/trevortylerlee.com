@@ -3,13 +3,13 @@ import Giscus from "@giscus/react";
 
 export default function Comments() {
   const [isMounted, setIsMounted] = useState(false);
-  const [theme, setTheme] = useState("dark_high_contrast");
+  const [theme, setTheme] = useState("transparent_dark");
 
   useEffect(() => {
     if (localStorage.getItem("colorMode") === "dark") {
-      setTheme("dark_high_contrast");
+      setTheme("transparent_dark");
     } else {
-      setTheme("light_high_contrast");
+      setTheme("noborder_light");
     }
     setIsMounted(true);
   }, []);

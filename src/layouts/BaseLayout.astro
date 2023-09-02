@@ -88,14 +88,14 @@ const { pageTitle, pageSlug, category } = Astro.props;
           if (giscusTheme === "dark") {
             sendMessage({
               setConfig: {
-                theme: "dark_high_contrast",
+                theme: "transparent_dark",
               },
             });
             location.reload();
           } else {
             sendMessage({
               setConfig: {
-                theme: "light_high_contrast",
+                theme: "noborder_light",
               },
             });
             location.reload();
