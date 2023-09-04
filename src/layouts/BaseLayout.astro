@@ -4,13 +4,12 @@ import "@fontsource/atkinson-hyperlegible/400.css";
 import "@fontsource/atkinson-hyperlegible/700.css";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
-import { ColorMode } from "astro-color-mode";
 import { ViewTransitions } from "astro:transitions";
 
 const { pageTitle, pageSlug, category } = Astro.props;
 ---
 
-<html id="html" lang="en" prefix="og: http://ogp.me/ns#" transition:persist>
+<html id="html" lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -19,7 +18,6 @@ const { pageTitle, pageSlug, category } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content="/og.jpg" />
-    <ColorMode />
     <ViewTransitions />
     <meta
       name="description"
@@ -46,72 +44,6 @@ const { pageTitle, pageSlug, category } = Astro.props;
       <Footer />
     </div>
 
-    <script is:inline>
-      function initializeTheme() {
-        if (!document.documentElement.getAttribute("data-color-mode")) {
-          const colorMode = localStorage.getItem("colorMode");
-          if (colorMode) {
-            document.documentElement.setAttribute("data-color-mode", colorMode);
-            console.log(colorMode);
-          } else {
-            document.documentElement.setAttribute("data-color-mode", "dark");
-          }
-        }
-      }
-
-      function setTheme() {
-        function sendMessage(message) {
-          const iframe = document.querySelector("iframe.giscus-frame");
-          if (!iframe) return;
-          iframe.contentWindow.postMessage(message, "https://giscus.app");
-        }
-
-        if (!document.documentElement.getAttribute("data-color-mode")) {
-          const colorMode = localStorage.getItem("colorMode");
-          if (colorMode) {
-            document.documentElement.setAttribute("data-color-mode", colorMode);
-          } else {
-            document.documentElement.setAttribute("data-color-mode", "dark");
-          }
-        }
-
-        const currentUrl = window.location.href;
-
-        // Check if the current URL matches the pattern for /posts/*
-        if (
-          currentUrl.match(/\/posts\//) &&
-          currentUrl !== "http://localhost:1999/posts/" &&
-          currentUrl !== "https://trevortylerlee.com/posts/"
-        ) {
-          const giscusTheme =
-            document.documentElement.getAttribute("data-color-mode");
-          if (giscusTheme === "dark") {
-            sendMessage({
-              setConfig: {
-                theme: "transparent_dark",
-              },
-            });
-            location.reload();
-          } else {
-            sendMessage({
-              setConfig: {
-                theme: "noborder_light",
-              },
-            });
-            location.reload();
-          }
-        }
-      }
-
-      themeToggle?.addEventListener("click", setTheme);
-      document.addEventListener("astro:after-swap", setTheme);
-      document.addEventListener(
-        "astro:page-load",
-        () => {
-          initializeTheme();
-        },
-        { once: true },
-      );
-    </script>
+    <script is:inline></script>
   </body>
 </html>

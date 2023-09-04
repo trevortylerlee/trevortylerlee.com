@@ -6,9 +6,9 @@ export default function Comments() {
   const [theme, setTheme] = useState("transparent_dark");
 
   useEffect(() => {
-    if (localStorage.getItem("colorMode") === "dark") {
-      setTheme("transparent_dark");
-    } else {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+    console.log(prefersDark);
+    if (!prefersDark.matches) {
       setTheme("noborder_light");
     }
     setIsMounted(true);

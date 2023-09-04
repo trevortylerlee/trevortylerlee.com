@@ -12,47 +12,6 @@ const { category, pageSlug, pageTitle } = Astro.props;
       pageSlug={pageSlug}
       pageTitle={pageTitle}
     />
-    <button
-      data-color-mode-switch
-      class="themeToggle group rounded-full p-3 hover:bg-content/20"
-      id="themeToggle"
-      aria-label="Toggle theme"
-      title="Toggle theme"
-      transition:persist
-    >
-      <span class="themeIcon dark opacity-75" aria-hidden="true">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="transition-transform duration-200 ease-in-out group-hover:scale-110"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M17.07 2.93V7.07L20 10L17.07 12.93V17.07H12.93L10 20L7.07 17.07H2.93V12.93L0 10L2.93 7.07V2.93H7.07L10 0L12.93 2.93H17.07ZM4 10C4 13.3137 6.68629 16 10 16C13.3137 16 16 13.3137 16 10C16 6.68629 13.3137 4 10 4C6.68629 4 4 6.68629 4 10ZM10 14.5C12.4853 14.5 14.5 12.4853 14.5 10C14.5 7.51472 12.4853 5.5 10 5.5C7.51472 5.5 5.5 7.51472 5.5 10C5.5 12.4853 7.51472 14.5 10 14.5Z"
-            fill="#FFCC00"></path>
-        </svg>
-      </span>
-      <span class="themeIcon light" aria-hidden="true">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="transition-transform duration-200 ease-in-out group-hover:scale-110"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M17.5587 15.711C13.4217 17.466 8.65971 15.46 6.90471 11.323C5.14971 7.18804 7.15571 2.42404 11.2907 0.669041C11.5417 0.544041 11.9177 0.419041 12.1687 0.293041C10.1627 -0.207959 8.15871 -0.082959 6.15271 0.795041C1.13871 2.92604 -1.36829 8.81604 0.762714 13.831C2.89371 18.97 8.78471 21.352 13.9237 19.221C16.0547 18.343 17.6847 16.839 18.6867 14.959C18.3107 15.335 17.9347 15.46 17.5587 15.711Z"
-            fill="#570ec4"></path>
-        </svg>
-      </span>
-    </button>
   </div>
 </nav>
 

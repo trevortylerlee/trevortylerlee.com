@@ -35,40 +35,6 @@
         --brown: 172 142 104;
     }
 
-    [data-color-mode='light'] :root {
-        --red: 255 59 48;
-        --orange: 255 149 0;
-        --yellow: 255 204 0;
-        --green: 40 205 65;
-        --mint: 0 199 190;
-        --teal: 89 173 196;
-        --cyan: 85 190 240;
-        --blue: 0 122 255;
-        --indigo: 88 86 214;
-        --purple: 175 82 222;
-        --pink: 255 45 85;
-        --brown: 162 132 94;
-    }
-
-    [data-color-mode='light'] {
-        --background: var(--gray-1);
-        --content: var(--gray-11);
-        --primary: 51 102 204;
-        --visited: 175 82 222;
-    }
-
-    [data-color-mode='light'] .overlay {
-        background-image: none;
-    }
-
-    [data-color-mode='dark'] #content {
-        @apply prose-invert
-    }
-
-    [data-color-mode='dark'] pre {
-        background: rgb(10 10 20) !important;
-    }
-
     strong {
         color: inherit;
     }
@@ -111,26 +77,6 @@
 
     .hr-bg {
         background-color: rgb(var(--gray-10));
-    }
-
-    [data-color-mode='light'] .hr-bg {
-        background-color: rgb(var(--gray-2));
-    }
-
-    [data-color-mode="dark"] .light {
-        display: none;
-    }
-
-    [data-color-mode="light"] .light {
-        display: block;
-    }
-
-    [data-color-mode="light"] .dark {
-        display: none;
-    }
-
-    [data-color-mode="dark"] .dark {
-        display: block;
     }
 }
 
@@ -199,4 +145,55 @@ button {
 
 .c-breadcrumbs__link:active {
     color: rgb(var(--red)) !important;
+}
+
+@media (prefers-color-scheme:light) {
+    :root {
+        --red: 255 59 48;
+        --orange: 255 149 0;
+        --yellow: 255 204 0;
+        --green: 40 205 65;
+        --mint: 0 199 190;
+        --teal: 89 173 196;
+        --cyan: 85 190 240;
+        --blue: 0 122 255;
+        --indigo: 88 86 214;
+        --purple: 175 82 222;
+        --pink: 255 45 85;
+        --brown: 162 132 94;
+    }
+}
+
+@media (prefers-color-scheme:light) {
+    :root {
+
+        --background: var(--gray-1);
+        --content: var(--gray-11);
+        --primary: 51 102 204;
+        --visited: 175 82 222;
+    }
+}
+
+@media (prefers-color-scheme:light) {
+    .overlay {
+        background-image: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #content {
+        @apply prose-invert;
+    }
+}
+
+@media (prefers-color-scheme:dark) {
+    pre {
+        background: rgb(10 10 20) !important;
+    }
+}
+
+@media (prefers-color-scheme:light) {
+    .hr-bg {
+        background-color: rgb(var(--gray-2));
+    }
 }
