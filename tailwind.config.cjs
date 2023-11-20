@@ -3,14 +3,7 @@ module.exports = {
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
 		extend: {
-			animation: {
-				'spin-slow': 'spin 6s linear infinite',
-			},
-			transitionDelay: {
-				'3000': '3000ms',
-			},
 			fontFamily: {
-				'atkinson': ['Atkinson Hyperlegible', 'sans-serif'],
 				'mono': ['JetBrains Mono', 'monospace'],
 				'sans': [
 					'-apple-system',

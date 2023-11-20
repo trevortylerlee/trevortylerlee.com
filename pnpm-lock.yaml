@@ -23,9 +23,6 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^5.0.2
     version: 5.0.2(astro@3.3.2)
-  '@fontsource/atkinson-hyperlegible':
-    specifier: ^5.0.17
-    version: 5.0.17
   '@giscus/react':
     specifier: ^2.3.0
     version: 2.3.0(react-dom@18.2.0)(react@18.2.0)
@@ -880,10 +877,6 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
-
-  /@fontsource/atkinson-hyperlegible@5.0.17:
-    resolution: {integrity: sha512-Evhr7GER/hFVxYj93msIC/BxEDpIMU27C42alWeILCyWsQEu3AWKLxQY/IVZyLrpgVT1ktWAXnH52WS1NarPPg==}
-    dev: false
 
   /@giscus/react@2.3.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-tj79B+NNBfidhPdXJqWoqRm5Jhoc6CBhXMYwBR9nwTwsrdaB/spcQXmHpKcUuOdXZtlYSwMfCFcBogMNbD+gKQ==}
