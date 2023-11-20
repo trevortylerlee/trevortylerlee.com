@@ -19,7 +19,6 @@
         --background: var(--gray-11);
         --content: var(--gray-1);
         --primary: 59 143 242;
-        --visited: 191 90 242;
 
         --red: 255 69 58;
         --orange: 255 159 10;
@@ -47,22 +46,9 @@
         color: rgb(var(--primary));
     }
 
-    /* a[href]:visited {
-        color: rgb(var(--visited));
-    } */
-
-    a[href]:active {
-        color: rgb(var(--red));
-    }
-
     a[href]:hover,
     a[href]:focus {
         text-decoration: rgb(var(--primary)) underline;
-    }
-
-    a[href]:active,
-    a[href]:active h2 {
-        text-decoration: rgb(var(--red)) underline;
     }
 
     a,
