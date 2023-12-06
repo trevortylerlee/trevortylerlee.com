@@ -16,7 +16,7 @@ const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <span class="mt-12 flex text-xl font-semibold">Projects</span>
+  <span class="mt-12 flex font-sans text-xl font-semibold">Projects</span>
   <span class="flex border-b border-gray-5 py-2 font-mono dark:border-gray-9">
     <span class="w-[120px] opacity-70">date</span><span class="opacity-70"
       >title</span
@@ -39,22 +39,22 @@ const pageTitle = "Trevor Lee | Homepage";
       title="swiftie.red"
     />
   </ul>
-  <span class="mt-8 flex text-xl font-semibold">Posts</span>
+  <span class="mt-8 flex font-sans text-xl font-semibold">Posts</span>
   <span class="flex border-b border-gray-5 py-2 font-mono dark:border-gray-9">
     <span class="w-[120px] opacity-70">date</span><span class="opacity-70"
       >title</span
     >
   </span>
   <ul>
-  {
-    formattedPosts.map((post) => (
-      <Post
-        date={post.data.date}
-        href={post.slug}
-        title={post.data.title}
-        description={post.data.description}
-      />
-    ))
-  }
+    {
+      formattedPosts.map((post) => (
+        <Post
+          date={post.data.date}
+          href={post.slug}
+          title={post.data.title}
+          description={post.data.description}
+        />
+      ))
+    }
   </ul>
 </BaseLayout>

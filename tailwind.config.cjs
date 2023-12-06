@@ -6,6 +6,7 @@ module.exports = {
 			fontFamily: {
 				'mono': ['monospace'],
 				'sans': [
+					'Atkinson Hyperlegible',
 					'-apple-system',
 					'BlinkMacSystemFont',
 					'Segoe UI',
