@@ -3,7 +3,7 @@ import { formatDate, isWithinLastFortnite } from "../lib/utils";
 const { date, href, title, description, last } = Astro.props;
 ---
 
-<li class="list-none font-mono">
+<li class="list-none font-mono hover:bg-gray-2 dark:hover:bg-gray-10">
   <a href={`/posts/${href}`}>
     <span
       class="flex items-center border-b border-gray-5 py-3 text-content dark:border-gray-9"
