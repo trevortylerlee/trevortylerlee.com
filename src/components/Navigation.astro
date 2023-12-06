@@ -1,29 +1,19 @@
 ---
 import Breadcrumbs from "./Breadcrumbs.astro";
+import { Image } from "astro:assets";
+
+import profilePicture from "@assets/me-with-roxy.webp";
+
 const { category, pageSlug, pageTitle } = Astro.props;
 ---
 
-<nav>
-  <div
-    class="mx-auto flex max-w-screen-md items-center justify-between px-2 py-4"
-  >
-    <Breadcrumbs
-      category={category}
-      pageSlug={pageSlug}
-      pageTitle={pageTitle}
-    />
-  </div>
+<nav class="py-3 text-center">
+  <span>
+    <a href="/" class="text-[26px] font-semibold">TREVOR LEE</a>
+  </span>
+  <span class="flex justify-center gap-3 font-mono">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </span>
 </nav>
-
-<style>
-  .dark,
-  .light {
-    pointer-events: none;
-  }
-
-  #themeToggle {
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-perspective: 1;
-  }
-</style>

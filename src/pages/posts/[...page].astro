@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import MorePost from "../../components/MorePost.astro";
+import Post from "../../components/Post.astro";
 import Pagination from "../../components/Pagination.astro";
 
 import { formatBlogPost } from "../../lib/utils";
@@ -22,10 +22,17 @@ const { page } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle} category="posts">
-  <div class="mx-auto grid max-w-screen-md py-8">
+  <div>
+    <span
+      class="mt-12 flex border-b border-gray-5 py-2 font-mono dark:border-gray-9"
+    >
+      <span class="w-28 opacity-70">date</span><span class="opacity-80"
+        >title</span
+      >
+    </span>
     {
       page.data.map((post) => (
-        <MorePost
+        <Post
           date={post.data.date}
           href={post.slug}
           title={post.data.title}

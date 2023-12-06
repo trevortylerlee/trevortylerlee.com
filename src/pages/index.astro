@@ -2,15 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-import MorePost from "../components/MorePost.astro";
-import Projects from "@components/Projects.astro";
+import Post from "../components/Post.astro";
+import Project from "@components/Project.astro";
 
 import { formatBlogPost } from "../lib/utils";
-import profilePicture from "@assets/me-with-roxy.webp";
-import phishedLogo from "@assets/logos/phished-logo.jpg";
-import t2aLogo from "@assets/logos/t2a-logo.jpg";
-import redLogo from "@assets/logos/red.jpg";
-import { Image } from "astro:assets";
 
 const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {
@@ -21,55 +16,41 @@ const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="mx-auto grid max-w-screen-md pb-16">
-    <div class="flex flex-col py-16 text-center">
-      <a href="/about" class="mx-auto max-w-[128px] rounded-full">
-        <Image
-          src={profilePicture}
-          format="avif"
-          quality={"med"}
-          alt="A picture of young me with my dog Roxy."
-          class="mx-auto cursor-help rounded-full transition-transform duration-200 ease-in-out hover:scale-105"
-          transition:name="profilePicture"
-          loading={"eager"}
-        />
-      </a>
-      <h1 class="mt-4 text-4xl font-bold leading-normal" transition:name="name">
-        Trevor Lee
-      </h1>
-      <p class="text-xl" transition:name="bio">
-        I'm a web developer based in Vancouver.
-      </p>
-    </div>
-    <h2 class="font-sans text-xl opacity-70">Projects</h2>
-    <Projects
-      description="Send, monitor, and track phishing emails"
-      href="https://github.com/phished-co/phished_web_app"
-      image={phishedLogo}
-      title="Phished"
-    />
-    <Projects
-      description="Tired of writing arrays? Me too..."
-      href="https://text2array.vercel.app/"
-      image={t2aLogo}
-      title="text 2 array"
-    />
-    <Projects
-      description="Swifties only!"
-      href="https://www.swiftie.red/"
-      image={redLogo}
-      title="swiftie.red"
-    />
-    <h2 class="mt-12 font-sans text-xl opacity-70">Posts</h2>
-    {
-      formattedPosts.map((post) => (
-        <MorePost
-          date={post.data.date}
-          href={post.slug}
-          title={post.data.title}
-          description={post.data.description}
-        />
-      ))
-    }
-  </div>
+  <span class="mt-12 flex text-xl font-semibold">Projects</span>
+  <span class="flex border-b border-gray-5 py-2 font-mono dark:border-gray-9">
+    <span class="w-[120px] opacity-70">date</span><span class="opacity-70"
+      >title</span
+    >
+  </span>
+  <Project
+    description="Send, monitor, and track phishing emails"
+    href="https://github.com/phished-co/phished_web_app"
+    title="Phished"
+  />
+  <Project
+    description="Tired of writing arrays? Me too..."
+    href="https://text2array.vercel.app/"
+    title="text 2 array"
+  />
+  <Project
+    description="Swifties only!"
+    href="https://www.swiftie.red/"
+    title="swiftie.red"
+  />
+  <span class="mt-8 flex text-xl font-semibold">Posts</span>
+  <span class="flex border-b border-gray-5 py-2 font-mono dark:border-gray-9">
+    <span class="w-[120px] opacity-70">date</span><span class="opacity-70"
+      >title</span
+    >
+  </span>
+  {
+    formattedPosts.map((post) => (
+      <Post
+        date={post.data.date}
+        href={post.slug}
+        title={post.data.title}
+        description={post.data.description}
+      />
+    ))
+  }
 </BaseLayout>

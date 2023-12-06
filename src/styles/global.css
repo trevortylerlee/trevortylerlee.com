@@ -38,27 +38,18 @@
         color: inherit;
     }
 
-    html {
-        color-scheme: dark;
-    }
-
-    a[href] {
+    /* a[href] {
         color: rgb(var(--primary));
     }
 
     a[href]:hover,
     a[href]:focus {
         text-decoration: rgb(var(--primary)) underline;
-    }
+    } */
 
     a,
     button {
         touch-action: manipulation;
-    }
-
-    #logo {
-        color: rgb(var(--content));
-        text-decoration: none;
     }
 
     .hr-bg {
@@ -75,56 +66,12 @@
     height: 100dvh;
 }
 
-.overlay {
-    position: absolute;
-    inset: 0;
-    height: 100%;
-    width: 100%;
-    background-image: url('/noise.png');
-    opacity: 0.02;
-    pointer-events: none;
-}
-
 #bio {
     text-wrap: balance;
 }
 
-
-
-#pagination *:visited {
-    color: rgb(var(--primary));
-}
-
 button {
     font-family: sans-serif;
-}
-
-/* astro-breadcrumbs */
-
-.c-breadcrumbs {
-    display: flex;
-}
-
-.c-breadcrumbs>* {
-    display: flex;
-}
-
-.c-breadcrumbs__crumb {
-    display: flex;
-    align-items: center;
-}
-
-.c-breadcrumbs__link {
-    color: rgb(var(--content)) !important;
-    transition: color 0.1s;
-}
-
-.c-breadcrumbs__link:hover {
-    color: rgb(var(--primary)) !important;
-}
-
-.c-breadcrumbs__link:active {
-    color: rgb(var(--red)) !important;
 }
 
 @media (prefers-color-scheme:light) {
@@ -151,12 +98,6 @@ button {
         --content: var(--gray-11);
         --primary: 51 102 204;
         --visited: 175 82 222;
-    }
-}
-
-@media (prefers-color-scheme:light) {
-    .overlay {
-        background-image: none;
     }
 }
 

@@ -7,23 +7,12 @@ import profilePicture from "@assets/me-with-roxy.webp";
 
 <BaseLayout pageTitle="About" pageSlug="/about">
   <div class="mx-auto max-w-screen-md py-16 text-center">
-    <a href="/" class="rounded-full mx-auto">
-      <Image
-        src={profilePicture}
-        format="avif"
-        quality={"med"}
-        alt="A picture of young me with my dog Roxy."
-        class="rounded-full mx-auto max-w-xs hover:scale-105 cursor-help transition-transform duration-200 ease-in-out"
-        transition:name="profilePicture"
-      />
-    </a>
-    <h1 class="text-4xl mt-8 font-bold leading-normal" transition:name="name">
-      Trevor <span class="text-accent-pink">Tyler</span> Lee
-    </h1>
-    <p class="text-xl" transition:name="bio">
-      I'm a web developer based in Vancouver. My middle name is <span
-        class="text-accent-pink">Tyler.</span
-      >
-    </p>
+    <Image
+      src={profilePicture}
+      format="avif"
+      quality={"med"}
+      alt="A picture of young me with my dog Roxy."
+      class="mx-auto max-w-xs"
+    />
   </div>
 </BaseLayout>

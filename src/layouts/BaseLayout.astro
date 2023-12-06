@@ -1,8 +1,6 @@
 ---
 import "../styles/global.css";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
-import { ViewTransitions } from "astro:transitions";
 
 const { pageTitle, pageSlug, category } = Astro.props;
 ---
@@ -16,30 +14,19 @@ const { pageTitle, pageSlug, category } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content="/og.jpg" />
-    <ViewTransitions />
-    <meta
-      name="description"
-      content="Trevor Lee | Software Developer and Designer from Vancouver, Canada | TypeScript, React, Next.js, Node.js"
-    />
+    <meta name="description" content="Trevor Tyler Lee | Vancouver, Canada" />
     <title>{pageTitle}</title>
   </head>
-  <body
-    class="overflow-x-hidden bg-background font-sans text-content underline-offset-2"
-    id="body"
-  >
-    <div class="overlay z-0"></div>
-    <div class="z-10 mx-auto">
+  <body class="bg-background text-content" id="body">
+    <div class="">
       <Navigation
-        pageTitle={pageTitle}
-        pageSlug={pageSlug}
         category={category}
+        pageSlug={pageSlug}
+        pageTitle={pageTitle}
       />
-      <hr class="hr-bg h-0.5 border-none" />
-      <main class="px-2">
+      <main class="m-auto max-w-[640px] px-6">
         <slot />
       </main>
-      <hr class="hr-bg h-0.5 border-none" />
-      <Footer />
     </div>
   </body>
 </html>

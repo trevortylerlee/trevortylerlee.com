@@ -1,0 +1,15 @@
+---
+import { formatDate, isWithinLastFortnite } from "../lib/utils";
+const { href, title, description } = Astro.props;
+---
+
+<li class="list-none font-mono">
+  <a href={href}>
+    <span
+      class="flex items-center border-b border-gray-5 py-3 text-content dark:border-gray-9"
+    >
+      <span class="w-[120px] shrink-0">{title}</span>
+      <span>{description}</span>
+    </span>
+  </a>
+</li>

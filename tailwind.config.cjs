@@ -4,7 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				'mono': ['JetBrains Mono', 'monospace'],
+				'mono': ['monospace'],
 				'sans': [
 					'-apple-system',
 					'BlinkMacSystemFont',

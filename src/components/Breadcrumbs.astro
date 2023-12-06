@@ -2,15 +2,8 @@
 const { category, pageSlug, pageTitle } = Astro.props;
 ---
 
-<ul class="font-sans">
-  <li>~ /</li>
-  <li>&nbsp;<a href="/">Home</a></li>
+<ul class="flex">
+  <li><a href="/">~</a></li>
   {category === 'posts' && <li>&nbsp;/&nbsp;<a href=`/${category}`>Posts</a></li>}
   {pageSlug && <li>&nbsp;/&nbsp;{pageTitle}</li>}
 </ul>
-
-<style>
-    ul li {
-        display: inline;
-    }
-    </style>
