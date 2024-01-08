@@ -11,7 +11,7 @@ const { prevUrl, nextUrl } = Astro.props;
     prevUrl && (
       <span class="flex">
         <a
-          class="group mb-8 mt-8 flex items-center rounded-sm border border-[#767676] bg-[#EFEFEF] px-[6px] py-[1px] font-sans text-sm !text-black !no-underline hover:bg-[#e1e1e1] active:bg-[#d9d9d9]"
+          class="group mb-8 mt-8 flex cursor-default items-center rounded-sm border border-[#767676] bg-[#EFEFEF] px-[6px] py-[1px] font-sans text-sm !text-black !no-underline hover:bg-[#e1e1e1] active:bg-[#d9d9d9]"
           href={prevUrl}
           aria-label="Previous posts"
         >
@@ -24,7 +24,7 @@ const { prevUrl, nextUrl } = Astro.props;
     nextUrl && (
       <span class="flex justify-end">
         <a
-          class="group mb-8 mt-8 flex items-center rounded-sm border border-[#767676] bg-[#EFEFEF] px-[6px] py-[1px] font-sans text-sm !text-black !no-underline hover:bg-[#e1e1e1] active:bg-[#d9d9d9]"
+          class="group mb-8 mt-8 flex cursor-default items-center rounded-sm border border-[#767676] bg-[#EFEFEF] px-[6px] py-[1px] font-sans text-sm !text-black !no-underline hover:bg-[#e1e1e1] active:bg-[#d9d9d9]"
           href={nextUrl}
           aria-label="Next posts"
         >
