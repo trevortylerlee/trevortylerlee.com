@@ -1,11 +1,9 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
-
-import Post from "../components/Post.astro";
+import Post from "@components/Post.astro";
 import Project from "@components/Project.astro";
-
-import { formatBlogPost } from "../lib/utils";
 
 const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {

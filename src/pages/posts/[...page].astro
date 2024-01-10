@@ -1,16 +1,15 @@
 ---
+import BaseLayout from "src/layouts/BaseLayout.astro";
+import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
-
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Post from "../../components/Post.astro";
-import Pagination from "../../components/Pagination.astro";
-
-import { formatBlogPost } from "../../lib/utils";
+import Post from "@components/Post.astro";
+import Pagination from "@components/Pagination.astro";
 
 export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection("posts");
   const formattedPosts = formatBlogPost(allPosts);
 
+  console.log(paginate(formattedPosts, { pageSize: 4 }));
   return paginate(formattedPosts, {
     pageSize: 4,
   });
@@ -18,7 +17,7 @@ export async function getStaticPaths({ paginate }) {
 
 const pageTitle = "Trevor Lee | All Posts";
 
-const { page } = Astro.props;
+const { page } = Astro.props as any;
 ---
 
 <BaseLayout pageTitle={pageTitle} category="posts">
@@ -31,16 +30,16 @@ const { page } = Astro.props;
       >
     </span>
     <ul>
-    {
-      page.data.map((post) => (
-        <Post
-          date={post.data.date}
-          href={post.slug}
-          title={post.data.title}
-          description={post.data.description}
-        />
-      ))
-    }
+      {
+        page.data.map((post) => (
+          <Post
+            date={post.data.date}
+            href={post.slug}
+            title={post.data.title}
+            description={post.data.description}
+          />
+        ))
+      }
     </ul>
   </div>
   <div>
