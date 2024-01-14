@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Howl, Howler } from "howler";
 
 export default function DrawingGarden() {
+  Howler.volume(0.25);
+
   const [isMuted, setIsMuted] = useState(true);
   const [category, setCategory] = useState("fruit");
 
@@ -127,7 +129,7 @@ function Cell({ key, isMuted, category }) {
   ];
 
   const sound = new Howl({
-    src: ["/boop.mp3"],
+    src: [`/sounds/${category}-${getNumberFromZeroToX(3) + 1}.mp3`],
   });
 
   function getNumberFromZeroToX(number) {
