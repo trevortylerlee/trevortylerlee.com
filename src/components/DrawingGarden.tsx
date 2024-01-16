@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Howl, Howler } from "howler";
 
 export default function DrawingGarden() {
@@ -33,6 +33,7 @@ export default function DrawingGarden() {
               checked={category === "fruit"}
               onChange={optionChange}
               className="mr-1"
+              autoComplete="off"
             />
             Fruits
           </label>
@@ -44,6 +45,7 @@ export default function DrawingGarden() {
               checked={category === "animal"}
               onChange={optionChange}
               className="mr-1"
+              autoComplete="off"
             />
             Animals
           </label>
@@ -55,6 +57,7 @@ export default function DrawingGarden() {
               checked={category === "space"}
               onChange={optionChange}
               className="mr-1"
+              autoComplete="off"
             />
             Space
           </label>
@@ -69,7 +72,7 @@ export default function DrawingGarden() {
   );
 }
 
-function Cell({ key, isMuted, category }) {
+function Cell({ isMuted, category }) {
   const fruits = [
     "🍇",
     "🍈",
