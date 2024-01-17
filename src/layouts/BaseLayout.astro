@@ -5,7 +5,7 @@ import "@fontsource/atkinson-hyperlegible/700.css";
 
 import Navigation from "../components/Navigation.astro";
 
-const { pageTitle, pageSlug, category } = Astro.props;
+const { pageTitle, pageSlug, category, fullWidth } = Astro.props;
 ---
 
 <html id="html" lang="en" prefix="og: http://ogp.me/ns#">
@@ -27,7 +27,7 @@ const { pageTitle, pageSlug, category } = Astro.props;
         pageSlug={pageSlug}
         pageTitle={pageTitle}
       />
-      <main class="m-auto max-w-[640px] px-6">
+      <main class=`m-auto ${fullWidth ? "" : " px-6"} max-w-[640px]`>
         <slot />
       </main>
     </div>

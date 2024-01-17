@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import github from "@assets/logos/github.webp";
+
+const { name, href, lowercase } = Astro.props;
+---
+
+<a
+  href={href}
+  class="align-center group flex flex-col items-center justify-center rounded-xl"
+  title={name}
+>
+  <span
+    class="flex flex-col justify-center text-center filter transition-all hover:brightness-90"
+  >
+    <img
+      src={`/logos/${name}.webp`}
+      alt={name}
+      class="h-14 w-14 rounded-xl group-hover:brightness-75"
+    />
+    <span
+      class=`py-2 text-center font-[sans-serif] text-xs ${lowercase ? "" : "capitalize"}`
+    >
+      {name}
+    </span>
+  </span>
+</a>
