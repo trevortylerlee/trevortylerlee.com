@@ -4,55 +4,9 @@ import Logo from "@components/Logo.astro";
 ---
 
 <BaseLayout pageTitle="Contact" pageSlug="/contact" fullWidth>
-  <span class="mx-auto mt-12 grid grid-cols-4 justify-evenly gap-y-4">
-    <span class="mx-auto">
-      <Logo name="email" href="mailto: t@trevortylerlee.com" />
-    </span>
-    <span class="mx-auto">
-      <Logo name="phone" href="tel: 7782353815" />
-    </span>
-    <span class="mx-auto">
-      <Logo name="github" href="https://github.com/trevortylerlee" />
-    </span>
-    <span class="mx-auto">
-      <Logo
-        name="linkedin"
-        href="https://www.linkedin.com/in/trevortylerlee/"
-      />
-    </span>
-    <span class="mx-auto">
-      <Logo name="COMC" href="https://www.comc.com/Users/bub,sr" />
-    </span>
-    <span class="mx-auto">
-      <Logo
-        name="eBay"
-        href="https://www.ebay.ca/usr/boogerbuttcheeks"
-        lowercase
-      />
-    </span>
-    <span class="mx-auto">
-      <Logo
-        name="instagram"
-        href="https://www.instagram.com/trevortylerlee?igsh=MTBlaWV0cHRvNGY4bg%3D%3D&utm_source=qr"
-      />
-    </span>
-    <span class="mx-auto">
-      <Logo name="reddit" href="https://www.reddit.com/user/boogerbuttcheek" />
-    </span>
-    <span class="mx-auto">
-      <Logo
-        name="spotify"
-        href="https://open.spotify.com/user/trevortylerlee?si=4a90dc81236040e4"
-      />
-    </span>
-    <span class="mx-auto">
-      <Logo name="x" href="https://twitter.com/boogerbuttcheek" />
-    </span>
-    <span class="mx-auto">
-      <Logo
-        name="youTube"
-        href="https://www.youtube.com/channel/UCNHiDTuUDdJATXFwqh17X2g"
-      />
-    </span>
+  <span class="mt-12 flex flex-col">
+    <a href="mailto: trevortylerlee@gmail.com">Email</a>
+    <a href="https://github.com/trevortylerlee" class="">Github</a>
+    <a href="https://www.linkedin.com/in/trevortylerlee/" class="">LinkedIn</a>
   </span>
 </BaseLayout>
