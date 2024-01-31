@@ -20,6 +20,7 @@ export default Toastify(function Button({ message }) {
         className="rounded-sm border border-[#767676] bg-[#EFEFEF] px-[6px] py-[1px] font-sans text-sm text-black hover:bg-[#e1e1e1] active:bg-[#d9d9d9]"
         onClick={notify}
         style={{}}
+        data-sparks
       >
         {message}
       </button>
