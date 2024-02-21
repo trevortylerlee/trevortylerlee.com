@@ -1,21 +1,24 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const { prevUrl, nextUrl } = Astro.props;
 ---
 
 <nav
   aria-label="Posts Navigation"
-  class="mx-auto max-w-screen-md"
+  class="mx-auto max-w-screen-md mt-8"
   id="pagination"
 >
   {
     prevUrl && (
       <span class="flex">
         <a
-          class="group mb-8 mt-8 flex cursor-default items-center rounded-sm border border-[#767676] bg-[#EFEFEF] px-[6px] py-[1px] font-sans text-sm !text-black !no-underline hover:bg-[#e1e1e1] active:bg-[#d9d9d9]"
+        class="group flex items-center gap-1 py-1 font-mono text-gray-6 no-underline hover:text-foreground focus:text-foreground"
           href={prevUrl}
-          aria-label="Previous posts"
+          aria-label="newer posts"
         >
-          Previous
+        <Icon name="arrow-left" />
+          newer posts
         </a>
       </span>
     )
@@ -24,11 +27,11 @@ const { prevUrl, nextUrl } = Astro.props;
     nextUrl && (
       <span class="flex justify-end">
         <a
-          class="group mb-8 mt-8 flex cursor-default items-center rounded-sm border border-[#767676] bg-[#EFEFEF] px-[6px] py-[1px] font-sans text-sm !text-black !no-underline hover:bg-[#e1e1e1] active:bg-[#d9d9d9]"
+        class="group flex items-center gap-1 py-1 font-mono text-gray-6 no-underline hover:text-foreground focus:text-foreground"
           href={nextUrl}
-          aria-label="Next posts"
-        >
-          Next
+          aria-label="newer posts">
+          older posts
+          <Icon name="arrow-right" />
         </a>
       </span>
     )

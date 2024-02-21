@@ -19,10 +19,6 @@ export default function Tags() {
       href: "",
     },
     {
-      content: "🎓 BCIT",
-      href: "",
-    },
-    {
       content: "🙌 Fast hands (167wpm)",
       href: "https://monkeytype.com/profile/boogerbuttcheeks",
     },
@@ -42,11 +38,15 @@ export default function Tags() {
       content: "🤿 Can't scuba",
       href: "",
     },
+    {
+      content: "🐦 X (formerly Twitter)",
+      href: "https://twitter.com/boogerbuttcheek",
+    },
   ];
 
   const additionalTags = [
     {
-      content: "🎵 Likes Taylor Swift, Kanye West",
+      content: "🎸 Likes Taylor Swift, Kanye West",
       href: "https://open.spotify.com/user/trevortylerlee?si=6ca50e2df1b540a1",
     },
     {
@@ -57,15 +57,41 @@ export default function Tags() {
       content: "👓 Poor vision",
       href: "",
     },
+    {
+      content: "🐍 Slytherin",
+      href: "",
+    },
+    {
+      content: "👾 Discord",
+      href: "discordapp.com/users/537056251704508426",
+    },
+    {
+      content: "📷 Instagram",
+      href: "https://www.instagram.com/trevortylerlee/",
+    },
+    {
+      content: "🎮 Steam",
+      href: "https://steamcommunity.com/profiles/76561198080019632/",
+    },
+    {
+      content: "🧵 Threads",
+      href: "https://www.threads.net/@trevortylerlee",
+    },
+    {
+      content: "🎵 TikTok",
+      href: "https://www.tiktok.com/@boogerbuttcheeks",
+    },
+    {
+      content: "📹 YouTube",
+      href: "https://www.youtube.com/channel/UCNHiDTuUDdJATXFwqh17X2g",
+    },
   ];
 
   const [tags, setTags] = useState(initialTags);
   const [isOpen, setIsOpen] = useState(false);
 
   const allTags = tags.map(({ content, href }, index) => (
-    <>
       <Tag content={content} href={href} key={index} />
-    </>
   ));
 
   function showContent() {
