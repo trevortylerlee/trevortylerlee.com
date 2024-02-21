@@ -44,15 +44,15 @@ const { Content } = await post.render();
       </h1>
       {
         post.data.date && (
-          <span class="font-mono opacity-70">
-            Posted {formatDate(post.data.date, "long")}
+          <span class="font-mono text-xs text-gray-6 lowercase">
+            posted {formatDate(post.data.date, "long")}
           </span>
         )
       }
     </div>
     <div
       id="content"
-      class="prose mx-auto mb-12 mt-8 prose-strong:text-inherit"
+      class="prose text-foreground mx-auto mb-12 mt-8"
     >
       <Content />
     </div>
@@ -65,5 +65,12 @@ const { Content } = await post.render();
 <style>
   #postTitle {
     text-wrap: balance;
+  }
+
+  #content {
+    --tw-prose-links: rgb(var(--primary));
+    --tw-prose-headings: rgb(var(--foreground));
+    --tw-prose-code: rgb(var(--primary));
+
   }
 </style>

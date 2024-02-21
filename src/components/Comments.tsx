@@ -6,16 +6,16 @@ export default function Comments() {
   const [theme, setTheme] = useState("transparent_dark");
 
   useEffect(() => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+    const prefersDark = document.documentElement.classList.contains("dark")
     console.log(prefersDark);
-    if (!prefersDark.matches) {
+    if (!prefersDark) {
       setTheme("noborder_light");
     }
     setIsMounted(true);
   }, []);
 
   return (
-    <div className="pb-8">
+    <div>
       {isMounted ? (
         <Giscus
           repo="trevortylerlee/trevortylerlee.com"
