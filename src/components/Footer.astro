@@ -2,10 +2,13 @@
 import CopyButton from "../components/CopyButton";
 ---
 
-<footer
-  class="mx-auto flex max-w-screen-md flex-col gap-2 px-2 py-8 font-sans sm:flex-row sm:gap-4"
->
-  <a href="https://github.com/trevortylerlee" class="">Github</a>
-  <a href="https://www.linkedin.com/in/trevortylerlee/" class="">LinkedIn</a>
-  <span aria-label="email address">t@trevortylerlee.com</span>
+<footer class="py-16">
+    <details class="ring-2 ring-foreground/10 py-2 rounded-xl px-2 cursor-default hover:bg-gray-2 dark:hover:bg-gray-10">
+      <summary>Contact (click for details)</summary>
+      <span class="flex flex-col py-2">
+        <span class="cursor-text">trevortylerlee@gmail.com</span>
+    <a href="https://github.com/trevortylerlee" class="">Github</a>
+    <a href="https://www.linkedin.com/in/trevortylerlee/" class="">LinkedIn</a>
+  </span>
+    </details>
 </footer>

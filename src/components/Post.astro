@@ -3,13 +3,53 @@ import { formatDate, isWithinLastFortnite } from "../lib/utils";
 const { date, href, title, description, last } = Astro.props;
 ---
 
-<li class="list-none font-mono hover:bg-gray-2 dark:hover:bg-gray-10">
-  <a href={`/posts/${href}`}>
+<li class="-mx-3">
+  <a
+    class="dark:hover:bg-gray-10 hover:bg-gray-2 dark:focus:bg-gray-10 focus:bg-gray-2 text-accent ring-foreground/10 group flex items-center justify-between gap-2 rounded-2xl p-3 no-underline ring-inset hover:ring-1 sm:gap-3"
+    href={`/posts/${href}`}
+  >
+    <span>{title}</span>
+    <span class="dashed-line"></span>
     <span
-      class="flex items-center border-b border-gray-5 py-3 text-content dark:border-gray-9"
+      class="text-gray-6 group-hover:text-foreground group-focus:text-foreground ring-foreground/10 rounded-sm bg-background p-1 font-mono text-xs ring-1 dark:bg-black"
+      >{formatDate(date, "short")}</span
     >
-      <span class="w-[120px] shrink-0">{formatDate(date, "short")}</span>
-      <span>{title}</span>
-    </span>
   </a>
 </li>
+
+<style>
+  .dashed-line {
+    flex: 1 1 0;
+    min-height: 6px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent 4px,
+      rgb(var(--foreground)) 6px,
+      rgb(var(--foreground)) 6px
+    );
+    background-repeat: repeat-x;
+    background-size: 6px 1px;
+    background-position: 0 48%;
+    opacity: 0.4;
+  }
+
+  a:hover .dashed-line,
+  a:focus .dashed-line {
+    background: linear-gradient(
+      90deg,
+      transparent 4px,
+      rgb(var(--highlight)) 6px,
+      rgb(var(--highlight)) 6px
+    );
+    background-repeat: repeat-x;
+    background-size: 6px 1px;
+    background-position: 0 48%;
+    opacity: 1;
+  }
+
+  a:focus {
+    outline: auto;
+  }
+</style>

@@ -6,10 +6,9 @@ module.exports = {
 			fontFamily: {
 				'mono': ['monospace'],
 				'sans': [
-					'Atkinson Hyperlegible',
-					'-apple-system',
-					'BlinkMacSystemFont',
+					'system-ui',
 					'Segoe UI',
+					'Roboto',
 					'Helvetica',
 					'Arial',
 					'sans-serif',
@@ -47,10 +46,16 @@ module.exports = {
 					brown: "rgb(var(--brown) / <alpha-value>)",
 				},
 				background: "rgb(var(--background) / <alpha-value>)",
-				content: "rgb(var(--content) / <alpha-value>)",
+				foreground: "rgb(var(--foreground) / <alpha-value>)",
+				highlight: "rgb(var(--highlight) / <alpha-value>)",
 				primary: "rgb(var(--primary) / <alpha-value>)",
+				secondary: "rgb(var(--secondary) / <alpha-value>)",
 			}
 		},
 	},
 	plugins: [require("@tailwindcss/typography")],
+	corePlugins: {
+		preflight: false,
+	},
+	darkMode: "class",
 };
