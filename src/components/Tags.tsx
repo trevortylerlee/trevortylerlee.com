@@ -19,12 +19,12 @@ export default function Tags() {
       href: "",
     },
     {
-      content: "🙌 Fast hands (167wpm)",
-      href: "https://monkeytype.com/profile/boogerbuttcheeks",
-    },
-    {
       content: "♋ Cancer 🦀",
       href: "",
+    },
+    {
+      content: "🙌 Fast hands (167wpm)",
+      href: "https://monkeytype.com/profile/boogerbuttcheeks",
     },
     {
       content: "🧠 INTJ",
@@ -50,15 +50,15 @@ export default function Tags() {
       href: "https://open.spotify.com/user/trevortylerlee?si=6ca50e2df1b540a1",
     },
     {
+      content: "🐍 Slytherin",
+      href: "",
+    },
+    {
       content: "👍 Likes Star Wars, LOTR",
       href: "",
     },
     {
       content: "👓 Poor vision",
-      href: "",
-    },
-    {
-      content: "🐍 Slytherin",
       href: "",
     },
     {
