@@ -10,5 +10,6 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"]
     }
-  }
+  },
+  "noEmit": true,
 }
