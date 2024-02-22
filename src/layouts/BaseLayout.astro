@@ -107,47 +107,41 @@ if (pageTitle === "Trevor Lee | Homepage") {
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
-    // Ensure you have an element like this in your HTML:
-    // <div id="build-time" data-time="2024-02-21T00:00:00Z"></div>
     const buildTimeString = document.getElementById('build-time').dataset.time;
     const buildTime = new Date(buildTimeString);
     
-    // Validate the date object to ensure it's not invalid
     if (!isNaN(buildTime.getTime())) {
       const now = new Date();
       const timeAgoText = timeAgo(buildTime, now);
       document.getElementById('last-updated').textContent = `Last updated: ${timeAgoText}`;
     } else {
       console.error('Invalid build time:', buildTimeString);
-      // Handle the error appropriately
     }
   });
 
   function timeAgo(datePast, dateNow) {
     const seconds = Math.floor((dateNow - datePast) / 1000);
-    let interval = seconds / 31536000;
+    let interval = Math.floor(seconds / 31536000);
 
-    if (interval > 1) {
-      return Math.floor(interval) + " years ago";
+    if (interval >= 1) {
+      return interval + " year" + (interval === 1 ? "" : "s") + " ago";
     }
-    interval = seconds / 2592000;
-    if (interval > 1) {
-      return Math.floor(interval) + " months ago";
+    interval = Math.floor(seconds / 2592000);
+    if (interval >= 1) {
+      return interval + " month" + (interval === 1 ? "" : "s") + " ago";
     }
-    interval = seconds / 86400;
-    if (interval > 1) {
-      return Math.floor(interval) + " days ago";
+    interval = Math.floor(seconds / 86400);
+    if (interval >= 1) {
+      return interval + " day" + (interval === 1 ? "" : "s") + " ago";
     }
-    interval = seconds / 3600;
-    if (interval > 1) {
-      return Math.floor(interval) + " hours ago";
+    interval = Math.floor(seconds / 3600);
+    if (interval >= 1) {
+      return interval + " hour" + (interval === 1 ? "" : "s") + " ago";
     }
-    interval = seconds / 60;
-    if (interval > 1) {
-      return Math.floor(interval) + " minutes ago";
+    interval = Math.floor(seconds / 60);
+    if (interval >= 1) {
+      return interval + " minute" + (interval === 1 ? "" : "s") + " ago";
     }
-    return Math.floor(seconds) + " seconds ago";
+    return Math.floor(seconds) + " second" + (seconds === 1 ? "" : "s") + " ago";
   }
 </script>
-
-
