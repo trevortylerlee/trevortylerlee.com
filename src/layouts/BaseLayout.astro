@@ -7,16 +7,11 @@ import Navigation from "../components/Navigation.astro";
 import Contact from "../components/Contact.tsx";
 import Footer from "@components/Footer.astro";
 
-import TimeAgo from 'javascript-time-ago'
-import en from 'javascript-time-ago/locale/en';
-
-TimeAgo.addDefaultLocale(en);
-const timeAgo = new TimeAgo('en-US');
-const buildTime = new Date();
-const buildTimeAgo = timeAgo.format(buildTime);
+const buildTime = new Date().toISOString();
 
 const { pageTitle, pageSlug, category, fullWidth } = Astro.props;
 
+// Displays "go home" link if not at index
 let onIndex = false;
 if (pageTitle === "Trevor Lee | Homepage") {
   onIndex = true;
@@ -104,8 +99,55 @@ if (pageTitle === "Trevor Lee | Homepage") {
       <Contact client:load />
     </div> -->
     <Footer />
-    <div class="font-mono text-xs text-gray-6 text-right pt-2 pb-4">
-      last updated {buildTimeAgo}
+    <div id="build-time" data-time={buildTime}>
+      <div id="last-updated" class="font-mono text-xs text-gray-6 text-right pt-2 pb-4">Last updated: </div>
     </div>
   </body>
 </html>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Ensure you have an element like this in your HTML:
+    // <div id="build-time" data-time="2024-02-21T00:00:00Z"></div>
+    const buildTimeString = document.getElementById('build-time').dataset.time;
+    const buildTime = new Date(buildTimeString);
+    
+    // Validate the date object to ensure it's not invalid
+    if (!isNaN(buildTime.getTime())) {
+      const now = new Date();
+      const timeAgoText = timeAgo(buildTime, now);
+      document.getElementById('last-updated').textContent = `Last updated: ${timeAgoText}`;
+    } else {
+      console.error('Invalid build time:', buildTimeString);
+      // Handle the error appropriately
+    }
+  });
+
+  function timeAgo(datePast, dateNow) {
+    const seconds = Math.floor((dateNow - datePast) / 1000);
+    let interval = seconds / 31536000;
+
+    if (interval > 1) {
+      return Math.floor(interval) + " years ago";
+    }
+    interval = seconds / 2592000;
+    if (interval > 1) {
+      return Math.floor(interval) + " months ago";
+    }
+    interval = seconds / 86400;
+    if (interval > 1) {
+      return Math.floor(interval) + " days ago";
+    }
+    interval = seconds / 3600;
+    if (interval > 1) {
+      return Math.floor(interval) + " hours ago";
+    }
+    interval = seconds / 60;
+    if (interval > 1) {
+      return Math.floor(interval) + " minutes ago";
+    }
+    return Math.floor(seconds) + " seconds ago";
+  }
+</script>
+
+
