@@ -7,20 +7,15 @@ const posts = formatBlogPost(postImportResult);
 
 export function GET(context) {
   return rss({
-    // `<title>` field in output xml
     title: "Trevor Tyler Lee's Website",
-    // `<description>` field in output xml
     description: "Digital Designer and Developer in Vancouver, Canada",
-    // Pull in your project "site" from the endpoint context
-    // https://docs.astro.build/en/reference/api-reference/#contextsite
     site: context.site,
-    // Array of `<item>`s in output xml
-    // See "Generating items" section for examples using content collections and glob imports
     items: posts.map((post) => ({
       link: `/posts/${post.slug}`,
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.date,
     })),
+    stylesheet: "/pretty-feed-v3.xsl",
   });
 }
