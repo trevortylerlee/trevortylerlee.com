@@ -3,6 +3,7 @@ import "../styles/global.css";
 import "../styles/preflight.css";
 
 import { Icon } from "astro-icon/components";
+
 import Navigation from "../components/Navigation.astro";
 import Contact from "../components/Contact.tsx";
 import Footer from "@components/Footer.astro";
@@ -67,44 +68,46 @@ if (pageTitle === "Trevor Lee | Homepage") {
     <meta name="description" content="Trevor Tyler Lee | Vancouver, Canada" />
     <title>{pageTitle}</title>
   </head>
-  <body
-    class=`bg-background text-gray-11 dark:bg-black dark:text-gray-1 m-auto ${fullWidth ? "" : "px-4"} m-auto max-w-[640px]`
-  >
-    <nav class="w-full py-4">
-      <div class="flex items-center justify-between">
-        <div>
-          {
-            !onIndex && (
-              <>
-                <a
-                  class="text-gray-6 hover:text-foreground focus:text-foreground flex items-center gap-1 py-1 font-mono no-underline"
-                  href="/"
-                >
-                  <Icon name="arrow-left" /> back home
-                </a>
-              </>
-            )
-          }
+  <body>
+    <div
+      class=`bg-background text-gray-11 dark:bg-black dark:text-gray-1 m-auto ${fullWidth ? "" : "px-4"} m-auto max-w-[640px]`
+    >
+      <nav class="w-full py-4">
+        <div class="flex items-center justify-between">
+          <div>
+            {
+              !onIndex && (
+                <>
+                  <a
+                    class="text-gray-6 hover:text-foreground focus:text-foreground flex items-center gap-1 py-1 font-mono no-underline"
+                    href="/"
+                  >
+                    <Icon name="arrow-left" /> back home
+                  </a>
+                </>
+              )
+            }
+          </div>
+          <div class="group flex items-center gap-1.5 py-1">
+            <input name="theme-toggle" id="theme-toggle" type="checkbox" />
+            <label
+              class="text-gray-6 hover:text-foreground focus:text-foreground group-hover:text-foreground group-focus:text-foreground font-mono"
+              for="theme-toggle">dark mode</label
+            >
+          </div>
         </div>
-        <div class="group flex items-center gap-1.5 py-1">
-          <input name="theme-toggle" id="theme-toggle" type="checkbox" />
-          <label
-            class="text-gray-6 hover:text-foreground focus:text-foreground group-hover:text-foreground group-focus:text-foreground font-mono"
-            for="theme-toggle">dark mode</label
-          >
+      </nav>
+      <main>
+        <slot />
+      </main>
+      <Footer />
+      <div id="build-time" data-time={buildTime}>
+        <div
+          id="last-updated"
+          class="text-gray-6 pb-4 pt-2 text-right font-mono text-xs"
+        >
+          updated
         </div>
-      </div>
-    </nav>
-    <main>
-      <slot />
-    </main>
-    <Footer />
-    <div id="build-time" data-time={buildTime}>
-      <div
-        id="last-updated"
-        class="text-gray-6 pb-4 pt-2 text-right font-mono text-xs"
-      >
-        updated
       </div>
     </div>
   </body>
@@ -153,3 +156,20 @@ if (pageTitle === "Trevor Lee | Homepage") {
     );
   }
 </script>
+
+<style>
+  body {
+    background: rgb(var(--background));
+    background-repeat: repeat;
+  }
+
+  .dark body {
+    background: black;
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .dark body {
+      background-image: url("/star.gif");
+    }
+  }
+</style>
