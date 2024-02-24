@@ -3,7 +3,7 @@ const buildTime = new Date().toISOString();
 ---
 
 <footer
-  class="flex flex-col items-center justify-between gap-3 pb-4 pt-16 sm:flex-row"
+  class="flex flex-col items-center justify-between gap-3 sm:gap-20 pb-4 pt-16 sm:flex-row"
 >
   <details
     class="ring-foreground/10 w-full cursor-default rounded-xl px-2 py-2 ring-2"
@@ -17,12 +17,13 @@ const buildTime = new Date().toISOString();
     </span>
   </details>
   <div id="build-time" data-time={buildTime} class="min-w-[160px] flex-grow-0">
-    <div
+    <a
+      href="https://github.com/trevortylerlee/trevortylerlee.com"
       id="last-updated"
-      class="text-gray-6 pb-4 pt-2 text-right font-mono text-xs"
+      class="text-gray-6 pb-4 pt-2 text-right font-mono text-xs no-underline hover:text-foreground focus:text-foreground"
     >
       updated
-    </div>
+  </a>
   </div>
 </footer>
 

@@ -21,14 +21,7 @@ const { page } = Astro.props as any;
 ---
 
 <BaseLayout pageTitle={pageTitle} category="posts">
-  <div>
-    <span
-      class="mt-12 flex border-b border-gray-5 py-2 font-mono dark:border-gray-9"
-    >
-      <span class="w-28 opacity-70">date</span><span class="opacity-80"
-        >title</span
-      >
-    </span>
+  <div class="pt-8">
     <ul>
       {
         page.data.map((post) => (
