@@ -8,8 +8,6 @@ import Navigation from "../components/Navigation.astro";
 import Contact from "../components/Contact.tsx";
 import Footer from "@components/Footer.astro";
 
-const buildTime = new Date().toISOString();
-
 const { pageTitle, pageSlug, category, fullWidth } = Astro.props;
 
 // Displays "go home" link if not at index
@@ -107,61 +105,9 @@ if (pageTitle === "Trevor Lee | Homepage") {
         <slot />
       </main>
       <Footer />
-      <div id="build-time" data-time={buildTime}>
-        <div
-          id="last-updated"
-          class="text-gray-6 pb-4 pt-2 text-right font-mono text-xs"
-        >
-          updated
-        </div>
-      </div>
     </div>
   </body>
 </html>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
-    const buildTimeString = document.getElementById("build-time").dataset.time;
-    const buildTime = new Date(buildTimeString);
-
-    if (!isNaN(buildTime.getTime())) {
-      const now = new Date();
-      const timeAgoText = timeAgo(buildTime, now);
-      document.getElementById("last-updated").textContent =
-        `updated ${timeAgoText}`;
-    } else {
-      console.error("Invalid build time:", buildTimeString);
-    }
-  });
-
-  function timeAgo(datePast, dateNow) {
-    const seconds = Math.floor((dateNow - datePast) / 1000);
-    let interval = Math.floor(seconds / 31536000);
-
-    if (interval >= 1) {
-      return interval + " year" + (interval === 1 ? "" : "s") + " ago";
-    }
-    interval = Math.floor(seconds / 2592000);
-    if (interval >= 1) {
-      return interval + " month" + (interval === 1 ? "" : "s") + " ago";
-    }
-    interval = Math.floor(seconds / 86400);
-    if (interval >= 1) {
-      return interval + " day" + (interval === 1 ? "" : "s") + " ago";
-    }
-    interval = Math.floor(seconds / 3600);
-    if (interval >= 1) {
-      return interval + " hour" + (interval === 1 ? "" : "s") + " ago";
-    }
-    interval = Math.floor(seconds / 60);
-    if (interval >= 1) {
-      return interval + " minute" + (interval === 1 ? "" : "s") + " ago";
-    }
-    return (
-      Math.floor(seconds) + " second" + (seconds === 1 ? "" : "s") + " ago"
-    );
-  }
-</script>
 
 <style>
   body {
