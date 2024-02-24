@@ -6,8 +6,8 @@
 - [TailwindCSS](https://tailwindcss.com/)
 - [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)
 - [giscus](https://giscus.app/)
-- [react-hot-toast](https://react-hot-toast.com/)
-- [Fontsource](https://fontsource.org/)
+- [howler.js](https://howlerjs.com/)
+- [Astro Icon](https://www.astroicon.dev/)
 
 ## Setup Instructions
 
@@ -19,8 +19,8 @@ git clone https://github.com/trevortylerlee/trevortylerlee.com.git foo
 cd foo
 
 # Install dependencies
-pnpm install
+npm install
 
 # Run on localhost:1999
-pnpm dev
+npm run dev
 ```
