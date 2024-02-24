@@ -37,9 +37,6 @@
     "tailwindcss": "^3.4.1"
   },
   "module": "index.ts",
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
   "peerDependencies": {
     "typescript": "^5.0.0"
   }
