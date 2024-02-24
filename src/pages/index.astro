@@ -2,9 +2,9 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import profilePicture from "@assets/me-with-roxy.webp";
-import classlessCSS from "@assets/posts/classlesscss.png"
-import t2a from "@assets/posts/t2a.jpg"
-import phished from "@assets/posts/phished.png"
+import classlessCSS from "@assets/posts/classlesscss.png";
+import t2a from "@assets/posts/t2a.jpg";
+import phished from "@assets/posts/phished.png";
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
@@ -30,10 +30,11 @@ const pageTitle = "Trevor Lee | Homepage";
         quality={"med"}
         alt="Young me with my dog Roxy."
         class="h-[52px] w-[52px]"
+        loading="eager"
       />
       <h1 class="text-3xl font-semibold">
         TREVOR TYLER LEE
-        <div class="font-mono text-sm font-normal text-gray-6">
+        <div class="text-gray-6 font-mono text-sm font-normal">
           @boogerbuttcheeks
         </div>
       </h1>
@@ -43,11 +44,11 @@ const pageTitle = "Trevor Lee | Homepage";
     </div>
   </div>
   <section>
-    <span class="flex justify-between py-2 font-mono text-gray-6">
+    <span class="text-gray-6 flex justify-between py-2 font-mono">
       <h2 class="">latest posts</h2>
       <a
         href="/rss.xml"
-        class="group flex items-center gap-1 py-1 text-gray-6 no-underline hover:text-foreground focus:text-foreground"
+        class="text-gray-6 hover:text-foreground focus:text-foreground group flex items-center gap-1 py-1 no-underline"
         ><Icon
           name="radio"
           class="group-hover:text-primary group-focus:text-primary"
@@ -66,38 +67,38 @@ const pageTitle = "Trevor Lee | Homepage";
         ))
       }
     </ul>
-    <div class="flex justify-end pt-2 pb-8">
+    <div class="flex justify-end pb-8 pt-2">
       <a
         href="/posts"
-        class="group flex items-center gap-1 py-1 font-mono text-gray-6 no-underline hover:text-foreground focus:text-foreground"
+        class="text-gray-6 hover:text-foreground focus:text-foreground group flex items-center gap-1 py-1 font-mono no-underline"
         >view older posts <Icon name="arrow-right" /></a
       >
     </div>
   </section>
   <section>
-    <h2 class="pt-2 pb-5 font-mono text-gray-6">projects</h2>
-    <ul class="grid sm:grid-cols-2 gap-2 sm:gap-6">
-    <Project
-      description="Site to instantly preview drop-in CSS themes."
-      href="https://classlesscss.com"
-      title="classlesscss.com"
-      src={classlessCSS}
-      online
-    />
-    <Project
-      description="Tired of typing out arrays? Me too..."
-      href="https://text2array.vercel.com"
-      title="text 2 array"
-      src={t2a}
-      online
-    />
-    <Project
-      description="Protect your friends and family from phishing attacks by phishing them yourself."
-      href="https://github.com/phished-co/phished_web_app"
-      title="Phished"
-      src={phished}
-    />
-  </ul>
+    <h2 class="text-gray-6 pb-5 pt-2 font-mono">projects</h2>
+    <ul class="grid gap-2 sm:grid-cols-2 sm:gap-6">
+      <Project
+        description="Site to instantly preview drop-in CSS themes."
+        href="https://classlesscss.com"
+        title="classlesscss.com"
+        src={classlessCSS}
+        online
+      />
+      <Project
+        description="Tired of typing out arrays? Me too..."
+        href="https://text2array.vercel.com"
+        title="text 2 array"
+        src={t2a}
+        online
+      />
+      <Project
+        description="Protect your friends and family from phishing attacks by phishing them yourself."
+        href="https://github.com/phished-co/phished_web_app"
+        title="Phished"
+        src={phished}
+      />
+    </ul>
   </section>
 </BaseLayout>
 

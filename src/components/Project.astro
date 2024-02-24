@@ -5,52 +5,35 @@ import { Icon } from "astro-icon/components";
 const { href, title, description, src, online } = Astro.props;
 ---
 
-<!-- <li class="sm:-mx-3">
-  <a
-    class="block rounded-2xl text-foreground no-underline ring-2 ring-foreground/10"
-    href={href}
-  >
-    <div class="px-1 py-1">
-      <Image
-        class="mx-auto rounded-t-2xl object-cover"
-        src={src}
-        alt={description}
-      />
-    </div>
-    <div class="flex flex-col gap-3 px-3 pb-4">
-      <h3 class="mt-2">{title}</h3>
-      <p>{description}</p>
-    </div>
-  </a>
-</li> -->
 <li class="relative">
   <a
-    class="block h-full group w-full overflow-hidden rounded-2xl ring-2 ring-foreground/10 hover:bg-gray-2 dark:hover:bg-gray-10 focus:bg-gray-2 dark:focus:bg-gray-10"
+    class="ring-foreground/10 hover:bg-gray-2 dark:hover:bg-gray-10 focus:bg-gray-2 dark:focus:bg-gray-10 group block h-full w-full overflow-hidden rounded-2xl ring-2"
     href={href}
     ><span class="-mb-3 block h-[12em] w-full overflow-hidden rounded-t-xl p-2"
       ><Image
         alt="ENS Data"
         width="640"
         height="480"
-        class="h-full rounded-lg rounded-t-2xl object-cover ring-2 ring-foreground/10 transition-transform"
+        class="ring-foreground/10 h-full rounded-lg rounded-t-2xl object-cover ring-2 transition-transform"
         src={src}
+        loading="eager"
       /></span
     ><h3 class="block px-3.5 pt-4 font-bold uppercase">{title}</h3><p
-      class="mt-1 block text-gray-6 border-b-transparent px-3.5 pb-5 pr-4 group-hover:text-foreground group-focus:text-foreground"
+      class="text-gray-6 group-hover:text-foreground group-focus:text-foreground mt-1 block border-b-transparent px-3.5 pb-5 pr-4"
     >
       {description}
     </p><span class="block pb-4">
       {
         online ? (
           <div class="absolute bottom-3 right-5 flex items-center gap-1">
-            <div class="h-[8px] w-[8px] bg-green-500 rounded-full"></div>
-            <span class="font-mono text-xs text-gray-6">online</span>
+            <div class="h-[8px] w-[8px] rounded-full bg-green-500" />
+            <span class="text-gray-6 font-mono text-xs">online</span>
           </div>
         ) : (
-        <div class="absolute bottom-3 right-5 flex items-center gap-1 text-red-500 ">
-          <div class="h-[8px] w-[8px] bg-red-500 rounded-full"></div>
-          <span class="font-mono text-xs text-gray-6">offline</span>
-        </div>
+          <div class="absolute bottom-3 right-5 flex items-center gap-1 text-red-500 ">
+            <div class="h-[8px] w-[8px] rounded-full bg-red-500" />
+            <span class="text-gray-6 font-mono text-xs">offline</span>
+          </div>
         )
       }
     </span></a
