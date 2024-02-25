@@ -10,7 +10,6 @@ import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
 import Post from "@components/Post.astro";
 import Project from "@components/Project.astro";
-import CopyButton from "@components/CopyButton";
 import Tags from "@components/Tags";
 
 const allPosts = await getCollection("posts");
@@ -25,9 +24,9 @@ const pageTitle = "Trevor Lee | Homepage";
   <div class="flex flex-col gap-6 py-16 sm:py-24">
     <div class="flex gap-2">
       <Image
-        src={profilePicture}
         format="avif"
-        quality={"med"}
+        src={profilePicture}
+        quality={"low"}
         alt="Young me with my dog Roxy."
         class="h-[52px] w-[52px]"
         loading="eager"

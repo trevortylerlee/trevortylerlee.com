@@ -17,6 +17,8 @@ const { href, title, description, src, online } = Astro.props;
         class="ring-foreground/10 h-full rounded-lg rounded-t-2xl object-cover ring-2 transition-transform"
         src={src}
         loading="eager"
+        quality={"low"}
+        format="avif"
       /></span
     ><h3 class="block px-3.5 pt-4 font-bold uppercase">{title}</h3><p
       class="text-gray-6 group-hover:text-foreground group-focus:text-foreground mt-1 block border-b-transparent px-3.5 pb-5 pr-4"
