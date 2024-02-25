@@ -20,38 +20,44 @@ if (pageTitle === "Trevor Lee | Homepage") {
 <html id="html" lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <script is:inline>
-      const theme = (() => {
-        if (
-          typeof localStorage !== "undefined" &&
-          localStorage.getItem("theme")
-        ) {
-          return localStorage.getItem("theme");
+      const applyTheme = (theme) => {
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
         }
+      };
+    
+      const getPreferredTheme = () => {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
           return "dark";
+        } else {
+          return "light";
         }
-        return "light";
-      })();
-
-      if (theme === "light") {
-        document.documentElement.classList.remove("dark");
-      } else {
-        document.documentElement.classList.add("dark");
-      }
-
+      };
+    
+      const savedTheme = localStorage.getItem("theme");
+      const theme = savedTheme ? savedTheme : getPreferredTheme();
+      applyTheme(theme);
+    
       window.addEventListener("DOMContentLoaded", () => {
-        const checkbox = document.querySelector("#theme-toggle");
-        checkbox.checked = document.documentElement.classList.contains("dark");
-
+        const select = document.querySelector("#theme-toggle");
+        select.value = savedTheme ? savedTheme : "auto";
+    
         const toggleTheme = () => {
-          const isDark = document.documentElement.classList.toggle("dark");
-          localStorage.setItem("theme", isDark ? "dark" : "light");
-          checkbox.checked = isDark;
+          const selectedTheme = select.value;
+          if (selectedTheme === "auto") {
+            localStorage.removeItem("theme");
+            applyTheme(getPreferredTheme());
+          } else {
+            localStorage.setItem("theme", selectedTheme);
+            applyTheme(selectedTheme);
+          }
         };
-
-        checkbox.addEventListener("change", toggleTheme);
+    
+        select.addEventListener("change", toggleTheme);
       });
-    </script>
+    </script>     
     <script
       defer
       src="https://analytics.us.umami.is/script.js"
@@ -83,7 +89,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
               !onIndex && (
                 <>
                   <a
-                    class="text-gray-6 hover:text-foreground focus:text-foreground flex items-center gap-1 py-1 font-mono no-underline"
+                    class="flex items-center gap-1 py-1 font-mono text-gray-6 no-underline hover:text-foreground focus:text-foreground"
                     href="/"
                   >
                     <Icon name="arrow-left" /> back home
@@ -92,12 +98,13 @@ if (pageTitle === "Trevor Lee | Homepage") {
               )
             }
           </div>
-          <div class="group flex items-center gap-1.5 py-1">
-            <input name="theme-toggle" id="theme-toggle" type="checkbox" />
-            <label
-              class="text-gray-6 hover:text-foreground focus:text-foreground group-hover:text-foreground group-focus:text-foreground font-mono"
-              for="theme-toggle">dark mode</label
-            >
+          <div class="group flex items-center gap-1.5 py-1 font-mono text-[0.8rem] opacity-70 hover:opacity-100 focus-within:opacity-100">
+            <label for="theme-toggle">theme:</label>
+            <select class="text-gray-11 px-1 font-sans" name="theme-toggle" id="theme-toggle">
+              <option value="auto">auto</option>
+              <option value="dark">dark</option>
+              <option value="light">light</option>
+            </select>
           </div>
         </div>
       </nav>
@@ -120,6 +127,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
   }
 
   @media screen and (prefers-reduced-motion: no-preference) {
+    /* https://maya.land/ */
     .dark body {
       background-image: url("/star.gif");
     }
