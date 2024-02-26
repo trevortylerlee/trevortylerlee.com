@@ -2,39 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-    :root {
-        --gray-1: 242 242 247;
-        --gray-2: 229 229 234;
-        --gray-3: 209 209 214;
-        --gray-4: 199 199 204;
-        --gray-5: 174 174 178;
-        --gray-6: 142 142 147;
-        --gray-7: 99 99 102;
-        --gray-8: 72 72 74;
-        --gray-9: 58 58 60;
-        --gray-10: 44 44 46;
-        --gray-11: 28 28 30;
+  :root {
+    --gray-1: 242 242 247;
+    --gray-2: 229 229 234;
+    --gray-3: 209 209 214;
+    --gray-4: 199 199 204;
+    --gray-5: 174 174 178;
+    --gray-6: 142 142 147;
+    --gray-7: 99 99 102;
+    --gray-8: 72 72 74;
+    --gray-9: 58 58 60;
+    --gray-10: 44 44 46;
+    --gray-11: 28 28 30;
 
-        --primary: 66 97 209;
-        --secondary: 152 0 255;
-        --highlight: 0 0 255;
-        --background: var(--gray-1);
-        --foreground: var(--gray-11)
-    }
+    --primary: 66 97 209;
+    --secondary: 152 0 255;
+    --highlight: 0 0 255;
+    --background: var(--gray-1);
+    --foreground: var(--gray-11);
 
-    .dark {
-        --primary: 188 145 62;
-        --secondary: 237 208 84;
-        --highlight: 188 145 62;
-        --background: var(--gray-11);
-        --foreground: var(--gray-1)
-    }
+    /* shiki config */
+    --astro-code-color-text: #313131;
+--astro-code-color-background: #ffffff;
+--astro-code-token-constant: #FF7E00;
+--astro-code-token-string: #0BA463;
+--astro-code-token-comment: #A8A8A8;
+--astro-code-token-keyword: #E1239A;
+--astro-code-token-parameter: #0488DB;
+--astro-code-token-function: #FF7E00;
+--astro-code-token-string-expression: #0BA463;
+--astro-code-token-punctuation: #5D5D5D;
+--astro-code-token-link: #E1239A;
+  }
+
+  .dark {
+    --primary: 188 145 62;
+    --secondary: 237 208 84;
+    --highlight: 188 145 62;
+    --background: var(--gray-11);
+    --foreground: var(--gray-1);
+
+    /* shiki config */
+    --astro-code-color-text: #E0E0E0;
+--astro-code-color-background: #100F0F;
+--astro-code-token-constant: #43AAF9;
+--astro-code-token-string: #5BD1B9;
+--astro-code-token-comment: #888888;
+--astro-code-token-keyword: #F4457D;
+--astro-code-token-parameter: #E0E0E0;
+--astro-code-token-function: #F9C35A;
+--astro-code-token-string-expression: #5BD1B9; 
+--astro-code-token-punctuation: #EFEFEF;
+--astro-code-token-link: #F4457D;
+  }
 }
 
 @layer utilities {
-    a {
-        color: rgb(var(--primary))
-    }
+  a {
+    color: rgb(var(--primary));
+  }
 }

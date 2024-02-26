@@ -14,19 +14,17 @@ import icon from "astro-icon";
 export default defineConfig({
   site: "https://www.trevortylerlee.com",
   server: {
-    port: 1999
+    port: 1999,
   },
   markdown: {
     drafts: true,
     shikiConfig: {
-      theme: "dark-plus"
-    }
+      theme: "css-variables",
+    },
   },
-  integrations: [react(), mdx({
-    drafts: true
-  }), robotsTxt(), sitemap(), tailwind(), icon()],
+  integrations: [react(), mdx(), robotsTxt(), sitemap(), tailwind(), icon()],
   output: "static",
   adapter: vercel({
-    analytics: true
-  })
+    analytics: true,
+  }),
 });
