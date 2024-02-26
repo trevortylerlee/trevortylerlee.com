@@ -27,7 +27,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
           document.documentElement.classList.remove("dark");
         }
       };
-    
+
       const getPreferredTheme = () => {
         if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
           return "dark";
@@ -35,15 +35,15 @@ if (pageTitle === "Trevor Lee | Homepage") {
           return "light";
         }
       };
-    
+
       const savedTheme = localStorage.getItem("theme");
       const theme = savedTheme ? savedTheme : getPreferredTheme();
       applyTheme(theme);
-    
+
       window.addEventListener("DOMContentLoaded", () => {
         const select = document.querySelector("#theme-toggle");
         select.value = savedTheme ? savedTheme : "auto";
-    
+
         const toggleTheme = () => {
           const selectedTheme = select.value;
           if (selectedTheme === "auto") {
@@ -54,10 +54,10 @@ if (pageTitle === "Trevor Lee | Homepage") {
             applyTheme(selectedTheme);
           }
         };
-    
+
         select.addEventListener("change", toggleTheme);
       });
-    </script>     
+    </script>
     <script
       defer
       src="https://analytics.us.umami.is/script.js"
@@ -72,7 +72,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
       title="Trevor Tyler Lee"
       href="https://trevortylerlee.com/feed.xml"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content="/og.jpg" />
     <meta name="description" content="Trevor Tyler Lee | @boogerbuttcheeks " />
@@ -89,7 +89,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
               !onIndex && (
                 <>
                   <a
-                    class="flex items-center gap-1 py-1 font-mono text-gray-6 no-underline hover:text-foreground focus:text-foreground"
+                    class="text-gray-6 hover:text-foreground focus:text-foreground flex items-center gap-1 py-1 font-mono no-underline"
                     href="/"
                   >
                     <Icon name="arrow-left" /> back home
@@ -98,9 +98,15 @@ if (pageTitle === "Trevor Lee | Homepage") {
               )
             }
           </div>
-          <div class="group flex items-center gap-1.5 py-1 font-mono text-[0.8rem] opacity-70 hover:opacity-100 focus-within:opacity-100">
+          <div
+            class="group flex items-center gap-1.5 py-1 font-mono text-[0.8rem] opacity-70 focus-within:opacity-100 hover:opacity-100"
+          >
             <label for="theme-toggle">theme:</label>
-            <select class="text-gray-11 px-1 font-sans" name="theme-toggle" id="theme-toggle">
+            <select
+              class="text-gray-11 px-1 font-sans"
+              name="theme-toggle"
+              id="theme-toggle"
+            >
               <option value="auto">auto</option>
               <option value="dark">dark</option>
               <option value="light">light</option>
