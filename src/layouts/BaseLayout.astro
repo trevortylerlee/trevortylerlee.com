@@ -2,6 +2,15 @@
 import "../styles/global.css";
 import "../styles/preflight.css";
 
+import "@fontsource/geist-sans/400.css";
+import "@fontsource/geist-sans/500.css";
+import "@fontsource/geist-sans/600.css";
+import "@fontsource/geist-sans/700.css";
+import "@fontsource/geist-sans/800.css";
+import "@fontsource/geist-sans/900.css";
+import "@fontsource/geist-mono/400.css";
+import "@fontsource/geist-mono/700.css";
+
 import { Icon } from "astro-icon/components";
 
 import Navigation from "../components/Navigation.astro";
@@ -89,7 +98,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
               !onIndex && (
                 <>
                   <a
-                    class="flex items-center gap-1 py-1 font-mono text-gray-6 no-underline hover:text-foreground focus:text-foreground"
+                    class="flex items-center gap-1 py-1 font-mono text-sm text-gray-6 no-underline hover:text-foreground focus:text-foreground"
                     href="/"
                   >
                     <Icon name="arrow-left" /> back home
@@ -99,7 +108,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
             }
           </div>
           <div
-            class="group flex items-center gap-1.5 py-1 font-mono text-[0.8rem] opacity-70 focus-within:opacity-100 hover:opacity-100"
+            class="group flex items-center gap-1 py-1 font-mono text-sm opacity-70 focus-within:opacity-100 hover:opacity-100"
           >
             <label for="theme-toggle">theme:</label>
             <select

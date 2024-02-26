@@ -20,11 +20,7 @@ const { post } = Astro.props as any;
 const { Content } = await post.render();
 ---
 
-<BaseLayout
-  pageTitle={post.data.title}
-  pageSlug={post.slug}
-  category="posts"
->
+<BaseLayout pageTitle={post.data.title} pageSlug={post.slug} category="posts">
   <div class="-z-10">
     {
       post.data.imageSrc ? (
@@ -42,16 +38,13 @@ const { Content } = await post.render();
       </h1>
       {
         post.data.date && (
-          <span class="font-mono text-xs text-gray-6 lowercase">
+          <span class="font-mono text-sm lowercase text-gray-6">
             posted {formatDate(post.data.date, "long")}
           </span>
         )
       }
     </div>
-    <div
-      id="content"
-      class="prose text-foreground mx-auto mb-12 mt-8"
-    >
+    <div id="content" class="prose mx-auto mb-12 mt-8 text-foreground">
       <Content />
     </div>
     <div class="pb-4">

@@ -31,9 +31,11 @@ const pageTitle = "Trevor Lee | Homepage";
         class="h-[52px] w-[52px]"
         loading="eager"
       />
-      <h1 class="text-3xl font-semibold">
+      <h1
+        class="text-3xl font-bold tracking-tighter sm:text-3xl sm:tracking-tight"
+      >
         TREVOR TYLER LEE
-        <div class="text-gray-6 font-mono text-sm font-normal">
+        <div class="font-mono text-sm font-normal tracking-normal text-gray-6">
           @boogerbuttcheeks
         </div>
       </h1>
@@ -43,11 +45,11 @@ const pageTitle = "Trevor Lee | Homepage";
     </div>
   </div>
   <section>
-    <span class="text-gray-6 flex justify-between py-2 font-mono">
+    <span class="flex justify-between py-2 font-mono text-sm text-gray-6">
       <h2 class="">latest posts</h2>
       <a
         href="/rss.xml"
-        class="text-gray-6 hover:text-foreground focus:text-foreground group flex items-center gap-1 py-1 no-underline"
+        class="group flex items-center gap-1 py-1 text-sm text-gray-6 no-underline hover:text-foreground focus:text-foreground"
         ><Icon
           name="radio"
           class="group-hover:text-primary group-focus:text-primary"
@@ -69,14 +71,14 @@ const pageTitle = "Trevor Lee | Homepage";
     <div class="flex justify-end pb-8 pt-2">
       <a
         href="/posts"
-        class="text-gray-6 hover:text-foreground focus:text-foreground group flex items-center gap-1 py-1 font-mono no-underline"
+        class="group flex items-center gap-1 py-1 font-mono text-sm text-gray-6 no-underline hover:text-foreground focus:text-foreground"
         >view older posts <Icon name="arrow-right" /></a
       >
     </div>
   </section>
   <section>
-    <h2 class="text-gray-6 pb-5 pt-2 font-mono">projects</h2>
-    <ul class="grid gap-2 sm:grid-cols-2 sm:gap-6">
+    <h2 class="pb-5 pt-2 font-mono text-sm text-gray-6">projects</h2>
+    <ul class="grid gap-3 sm:grid-cols-2 sm:gap-6">
       <Project
         description="Site to instantly preview drop-in CSS themes."
         href="https://classlesscss.com"

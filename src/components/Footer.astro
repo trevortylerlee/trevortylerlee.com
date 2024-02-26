@@ -6,7 +6,7 @@ const buildTime = new Date().toISOString();
   class="flex flex-col items-baseline justify-between gap-3 pb-4 pt-16 sm:flex-row sm:gap-20"
 >
   <details
-    class="ring-foreground/10 w-full cursor-default rounded-xl px-2 py-2 ring-2"
+    class="w-full cursor-default rounded-xl px-2 py-2 ring-2 ring-foreground/10"
   >
     <summary class="cursor-pointer">Contact (click for details)</summary>
     <span class="flex flex-col py-2">
@@ -16,11 +16,11 @@ const buildTime = new Date().toISOString();
       >
     </span>
   </details>
-  <div id="build-time" data-time={buildTime} class="min-w-[160px] flex-grow-0">
+  <div id="build-time" data-time={buildTime} class="min-w-[180px] flex-grow-0">
     <a
       href="https://github.com/trevortylerlee/trevortylerlee.com/commits/main"
       id="last-updated"
-      class="text-gray-6 hover:text-foreground focus:text-foreground pb-4 pt-2 text-right font-mono text-xs no-underline"
+      class="pb-4 pt-2 text-right font-mono text-sm text-gray-6 no-underline hover:text-foreground focus:text-foreground"
     >
       updated
     </a>

@@ -46,12 +46,12 @@ export default function Tags() {
 
   const additionalTags = [
     {
-      content: "🎸 Likes Taylor Swift, Kanye West",
-      href: "https://open.spotify.com/user/trevortylerlee?si=6ca50e2df1b540a1",
-    },
-    {
       content: "🐍 Slytherin",
       href: "",
+    },
+    {
+      content: "🎸 Likes Taylor Swift, Kanye West",
+      href: "https://open.spotify.com/user/trevortylerlee?si=6ca50e2df1b540a1",
     },
     {
       content: "👍 Likes Star Wars, LOTR",
@@ -91,7 +91,7 @@ export default function Tags() {
   const [isOpen, setIsOpen] = useState(false);
 
   const allTags = tags.map(({ content, href }, index) => (
-      <Tag content={content} href={href} key={index} />
+    <Tag content={content} href={href} key={index} />
   ));
 
   function showContent() {
@@ -110,14 +110,14 @@ export default function Tags() {
       {isOpen ? (
         <button
           onClick={hideContent}
-          className="font-base cursor-pointer border-none bg-background font-mono text-gray-6 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black"
+          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-6 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black"
         >
           see less -
         </button>
       ) : (
         <button
           onClick={showContent}
-          className="font-base cursor-pointer border-none bg-background font-mono text-gray-6 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black"
+          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-6 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black"
         >
           see more +
         </button>

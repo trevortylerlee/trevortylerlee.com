@@ -1,14 +1,5 @@
 # trevortylerlee.com
 
-## Technologies Used
-
-- [Astro](https://astro.build/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/)
-- [giscus](https://giscus.app/)
-- [howler.js](https://howlerjs.com/)
-- [Astro Icon](https://www.astroicon.dev/)
-
 ## Setup Instructions
 
 ```zsh
