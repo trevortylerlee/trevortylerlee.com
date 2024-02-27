@@ -121,14 +121,14 @@ export default function Tags() {
       {isOpen ? (
         <button
           onClick={hideContent}
-          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-6 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black"
+          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-7 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black dark:text-gray-6 dark:hover:text-foreground dark:focus-visible:text-foreground"
         >
           see less -
         </button>
       ) : (
         <button
           onClick={showContent}
-          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-6 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black"
+          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-7 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black dark:text-gray-6 dark:hover:text-foreground dark:focus-visible:text-foreground"
         >
           see more +
         </button>

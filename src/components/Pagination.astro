@@ -13,7 +13,7 @@ const { prevUrl, nextUrl } = Astro.props;
     prevUrl && (
       <span class="flex">
         <a
-          class="group flex items-center gap-1 py-1 font-mono text-sm text-gray-6 no-underline hover:text-foreground focus:text-foreground"
+          class="group flex items-center gap-1 py-1 font-mono text-sm text-gray-7 no-underline hover:text-foreground focus:text-foreground dark:text-gray-6 dark:hover:text-foreground dark:focus:text-foreground"
           href={prevUrl}
           aria-label="newer posts"
         >
@@ -27,7 +27,7 @@ const { prevUrl, nextUrl } = Astro.props;
     nextUrl && (
       <span class="flex justify-end">
         <a
-          class="group flex items-center gap-1 py-1 font-mono text-sm text-gray-6 no-underline hover:text-foreground focus:text-foreground"
+          class="group flex items-center gap-1 py-1 font-mono text-sm text-gray-7 no-underline hover:text-foreground focus:text-foreground dark:text-gray-6 dark:hover:text-foreground dark:focus:text-foreground"
           href={nextUrl}
           aria-label="newer posts"
         >

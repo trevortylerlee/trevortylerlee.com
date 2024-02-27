@@ -7,21 +7,21 @@ const { href, title, description, src, online } = Astro.props;
 
 <li class="relative">
   <a
-    class="ring-foreground/10 hover:bg-gray-2 dark:hover:bg-gray-10 focus:bg-gray-2 dark:focus:bg-gray-10 group block h-full w-full overflow-hidden rounded-2xl ring-2"
+    class="group block h-full w-full overflow-hidden rounded-2xl ring-2 ring-foreground/10 hover:bg-gray-2 focus:bg-gray-2 dark:hover:bg-gray-10 dark:focus:bg-gray-10"
     href={href}
     ><span class="-mb-3 block h-[12em] w-full overflow-hidden rounded-t-xl p-2"
       ><Image
         alt="ENS Data"
         width="640"
         height="480"
-        class="ring-foreground/10 h-full rounded-lg rounded-t-2xl object-cover ring-2 transition-transform"
+        class="h-full rounded-lg rounded-t-2xl object-cover ring-2 ring-foreground/10 transition-transform"
         src={src}
         loading="eager"
         quality={"low"}
         format="avif"
       /></span
     ><h3 class="block px-3.5 pt-4 font-bold uppercase">{title}</h3><p
-      class="text-gray-6 group-hover:text-foreground group-focus:text-foreground mt-1 block border-b-transparent px-3.5 pb-5 pr-4"
+      class="mt-1 block border-b-transparent px-3.5 pb-5 pr-4 text-gray-7 group-hover:text-foreground group-focus:text-foreground dark:text-gray-6"
     >
       {description}
     </p><span class="block pb-4">
@@ -29,12 +29,16 @@ const { href, title, description, src, online } = Astro.props;
         online ? (
           <div class="absolute bottom-3 right-5 flex items-center gap-1">
             <div class="h-[8px] w-[8px] rounded-full bg-green-500" />
-            <span class="text-gray-6 font-mono text-xs">online</span>
+            <span class="font-mono text-xs text-gray-7 group-hover:text-foreground group-focus:text-foreground dark:text-gray-6">
+              online
+            </span>
           </div>
         ) : (
           <div class="absolute bottom-3 right-5 flex items-center gap-1 text-red-500 ">
             <div class="h-[8px] w-[8px] rounded-full bg-red-500" />
-            <span class="text-gray-6 font-mono text-xs">offline</span>
+            <span class="font-mono text-xs text-gray-7 group-hover:text-foreground group-focus:text-foreground dark:text-gray-6">
+              offline
+            </span>
           </div>
         )
       }
