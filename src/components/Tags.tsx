@@ -5,41 +5,50 @@ export default function Tags() {
     {
       content: "💻 Web Developer",
       href: "",
+      title: "waiting for popover to be stable...",
     },
     {
       content: "💼 Working @ COMC",
       href: "https://comc.com",
+      title: "since January 2021",
     },
     {
       content: "🎓 BCIT",
       href: "",
+      title: "Diploma in Digital Design and Development",
     },
     {
       content: "🇨🇦 Canadian",
       href: "",
+      title: "British Columbian",
     },
     {
       content: "♋ Cancer 🦀",
       href: "",
+      title: "also year of the rabbit 🐇",
     },
     {
       content: "🙌 Fast hands (167wpm)",
       href: "https://monkeytype.com/profile/boogerbuttcheeks",
+      title: "not in my prime anymore tho",
     },
     {
       content: "🧠 INTJ",
       href: "https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator",
+      title: "includes: gandalf, katniss, michelle obama",
     },
     {
       content: "🏊 Can swim",
       href: "",
+      title: "stuck on level 9",
     },
     {
       content: "🤿 Can't scuba",
       href: "",
+      title: "collapsed lung. can't skydive either",
     },
     {
-      content: "🐦 X (formerly Twitter)",
+      content: "🐦 X (Twitter)",
       href: "https://twitter.com/boogerbuttcheek",
     },
   ];
@@ -48,6 +57,7 @@ export default function Tags() {
     {
       content: "🐍 Slytherin",
       href: "",
+      title: "patronus is a chow chow dog",
     },
     {
       content: "🎸 Likes Taylor Swift, Kanye West",
@@ -60,6 +70,7 @@ export default function Tags() {
     {
       content: "👓 Poor vision",
       href: "",
+      title: "nearly -10 in both with astigmatism",
     },
     {
       content: "👾 Discord",
@@ -90,8 +101,8 @@ export default function Tags() {
   const [tags, setTags] = useState(initialTags);
   const [isOpen, setIsOpen] = useState(false);
 
-  const allTags = tags.map(({ content, href }, index) => (
-    <Tag content={content} href={href} key={index} />
+  const allTags = tags.map(({ content, href, title }, index) => (
+    <Tag content={content} href={href} key={index} title={title} />
   ));
 
   function showContent() {
@@ -126,16 +137,20 @@ export default function Tags() {
   );
 }
 
-function Tag({ content, href }) {
+function Tag({ content, href, title }) {
   return href ? (
     <a
       className="transition-scale inline-flex select-none px-2 py-0.5 text-foreground no-underline ring-1 ring-foreground/10 hover:bg-foreground/5 active:bg-foreground/5"
       href={href}
+      title={title ? title : null}
     >
       {content}
     </a>
   ) : (
-    <div className="transition-scale inline-flex cursor-default select-none px-2 py-0.5 ring-1 ring-foreground/10">
+    <div
+      className="transition-scale inline-flex cursor-default select-none px-2 py-0.5 ring-1 ring-foreground/10"
+      title={title ? title : null}
+    >
       {content}
     </div>
   );
