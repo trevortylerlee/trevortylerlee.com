@@ -60,6 +60,11 @@ export default function Tags() {
       title: "patronus is a chow chow dog",
     },
     {
+      content: "🫲 Left-handed 👈",
+      href: "https://en.wikipedia.org/wiki/Bias_against_left-handed_people",
+      title: "right-footed",
+    },
+    {
       content: "🎸 Likes Taylor Swift, Kanye West",
       href: "https://open.spotify.com/user/trevortylerlee?si=6ca50e2df1b540a1",
     },
@@ -71,10 +76,6 @@ export default function Tags() {
       content: "👓 Poor vision",
       href: "",
       title: "nearly -10 in both with astigmatism",
-    },
-    {
-      content: "👾 Discord",
-      href: "discordapp.com/users/537056251704508426",
     },
     {
       content: "📷 Instagram",
