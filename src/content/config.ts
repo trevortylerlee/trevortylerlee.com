@@ -2,7 +2,7 @@ import { z, defineCollection } from "astro:content";
 
 const posts = defineCollection({
   schema: ({image}) => z.object({
-    title: z.string(),
+    title: z.string().max(50, "Title must be 50 or fewer characters long."),
     date: z.date(),
     description: z
       .string()
