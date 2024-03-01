@@ -65,17 +65,17 @@ export default function Tags() {
       title: "right-footed",
     },
     {
+      content: "👓 Poor vision",
+      href: "",
+      title: "nearly -10 in both with astigmatism",
+    },
+    {
       content: "🎸 Likes Taylor Swift, Kanye West",
       href: "https://open.spotify.com/user/trevortylerlee?si=6ca50e2df1b540a1",
     },
     {
       content: "👍 Likes Star Wars, LOTR",
       href: "",
-    },
-    {
-      content: "👓 Poor vision",
-      href: "",
-      title: "nearly -10 in both with astigmatism",
     },
     {
       content: "📷 Instagram",
