@@ -1,0 +1,79 @@
+---
+title: "Replicating Obsidian's Daily Notes Feature"
+date: 2024-02-29
+description: "Use Shortcuts and a text editor to replicate Obsidian's Daily Notes feature"
+draft: false
+---
+
+import Note from "../../components/Note.astro";
+
+I don't use Obsidian but I loved their Daily notes feature.
+
+> Daily notes opens a note based on today's date, or creates it if it doesn't exist. Use daily notes to create journals, to-do lists, or daily logs for things you discovered during the day.
+
+Here’s my workflow for doing these daily notes using Shortcuts and a text editor.
+
+1. Create a directory where you want your daily notes to live. I put mine at the root of my iCloud drive in a folder called “daily”.
+
+2. Open the Shortcuts app and select the plus button in the top right to create a new shortcut.
+
+3. In the search bar on the right, type “shell” and double-click or drag the “Run Shell Script” action over to the shortcut.
+
+<figure>
+  ![When enabled, the actions "Run AppleScript", "Run Shell Script", "Run
+  JavaScript for Mac Automation", "Run JavaScript on Web Page" and "Run Script
+  Over SSH" can be run.](../../assets/posts/daily-note-1.jpg)
+  <figcaption>
+    You may have to enable “Allow Running Scripts” in the advanced settings of
+    Shortcuts.
+  </figcaption>
+</figure>
+
+<br />
+
+4. Ignoring the textbox that says <code>echo “Hello World”</code>, set the shell to “zsh” and the pass input option to “as arguments”.
+
+5. For the input option select “Current Date”. This input will determine what the title of your .txt file is. By default, the current date will show up as <code>February 29, 2024 at 9:00 AM</code>. I want this to show up as <code>240229</code>; to do this, select the Current Date input and change the “Date Format” to “Custom”. Then you can replace the “Custom Format” textbox with <code>yyMMdd</code>.
+
+<Note type="secondary" emoji="⚠️">
+  If you want the full year in the title you can write <code>yyyyMMdd</code>.
+</Note>
+
+<br />
+
+6. Finally, replace the <code>echo “Hello World”</code> with the following zsh script:
+
+```zsh
+currentDate=$1
+
+filePath=“PATH_TO_FILE/${currentDate}.txt"
+
+if [ ! -f "$filePath" ]; then
+    touch "$filePath"
+fi
+
+open -a “TEXT_EDITOR” "$filePath"
+```
+
+You will need to adjust the PATH_TO_FILE and TEXT_EDITOR . I (ChatGPT) also edited the script to add the current date to the first line of my .txt file. Here’s the final script I use:
+
+```zsh
+# The first argument passed from the shortcut will be the current date in format "yyMMdd"
+currentDate=$1
+
+# Define the file path using the currentDate variable
+filePath="$HOME/Library/Mobile Documents/com~apple~CloudDocs/daily/${currentDate}.txt"
+
+# Check if the file exists
+if [ ! -f "$filePath" ]; then
+    echo "$currentDate" > "$filePath"
+else
+    if ! grep -q "^$currentDate$" "$filePath"; then
+        sed -i '' "1i\\
+$currentDate
+" "$filePath"
+    fi
+fi
+
+open -a "CotEditor" "$filePath"
+```
