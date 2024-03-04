@@ -1,0 +1,51 @@
+---
+const { type = "button", variant, ...rest } = Astro.props;
+---
+
+<button class=`${variant}` {type}>
+  <slot />
+</button>
+
+<style define:vars={{ variant }}>
+  button {
+    border-radius: 0.125rem;
+    border: 1px solid #767676;
+    background-color: #efefef;
+    padding: 1px 6px 1px 6px;
+    color: black;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+  }
+
+  button:hover {
+    background-color: #e1e1e1;
+  }
+
+  button:active {
+    background-color: #d9d9d9;
+  }
+
+  .destructive {
+    background: #dc2626;
+    color: white;
+    border: 1px solid #dc2626;
+  }
+
+  .destructive:hover {
+    background: #ba2020;
+  }
+
+  .success {
+    background: #22c55e;
+    border: 1px solid #22c55e;
+    color: black;
+  }
+
+  .success:hover {
+    background: #1ca04c;
+  }
+
+  .dark-success {
+    background: blue;
+  }
+</style>
