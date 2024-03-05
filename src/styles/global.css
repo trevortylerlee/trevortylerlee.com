@@ -29,7 +29,7 @@
     --pink: 255 45 85;
     --brown: 162 132 94;
 
-    --primary: 248 79 57;
+    --primary: 50 100 205;
     --secondary: 152 0 255;
     --highlight: 0 0 255;
     --background: var(--gray-1);
@@ -63,7 +63,7 @@
     --pink: 255 55 95;
     --brown: 172 142 104;
 
-    --primary: 225 100 80;
+    --primary: 60 110 210;
     --secondary: 237 208 84;
     --highlight: 188 145 62;
     --background: var(--gray-11);

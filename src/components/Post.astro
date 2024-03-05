@@ -35,20 +35,6 @@ const { date, href, title, description, last } = Astro.props;
     opacity: 0.4;
   }
 
-  a:hover .dashed-line,
-  a:focus .dashed-line {
-    background: linear-gradient(
-      90deg,
-      transparent 4px,
-      rgb(var(--highlight)) 6px,
-      rgb(var(--highlight)) 6px
-    );
-    background-repeat: repeat-x;
-    background-size: 6px 1px;
-    background-position: 0 48%;
-    opacity: 1;
-  }
-
   a:focus {
     outline: auto;
   }
