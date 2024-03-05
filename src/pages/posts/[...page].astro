@@ -9,9 +9,8 @@ export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection("posts");
   const formattedPosts = formatBlogPost(allPosts);
 
-  console.log(paginate(formattedPosts, { pageSize: 4 }));
   return paginate(formattedPosts, {
-    pageSize: 5,
+    pageSize: 10,
   });
 }
 
