@@ -221,7 +221,7 @@ function Tag({ content, href, title, color }) {
 
   return href ? (
     <a
-      className={`transition-scale inline-flex cursor-pointer select-none px-2 py-0.5 text-foreground no-underline ring-2 ring-foreground/10 dark:ring-1 ${ringColorClass}`}
+      className={`transition-scale inline-flex cursor-pointer select-none px-2 py-0.5 text-gray-7 no-underline ring-2 ring-foreground/10 hover:text-foreground focus-visible:text-foreground dark:text-gray-6 dark:ring-1 dark:hover:text-foreground dark:focus-visible:text-foreground ${ringColorClass}`}
       href={href}
       title={title ? title : null}
     >
@@ -229,7 +229,7 @@ function Tag({ content, href, title, color }) {
     </a>
   ) : (
     <div
-      className={`transition-scale inline-flex cursor-default select-none px-2 py-0.5 ring-2 ring-foreground/10 dark:ring-1 ${ringColorClass}`}
+      className={`transition-scale inline-flex cursor-default select-none px-2 py-0.5 text-gray-7 ring-2 ring-foreground/10 hover:text-foreground focus-visible:text-foreground dark:text-gray-6 dark:ring-1 dark:hover:text-foreground dark:focus-visible:text-foreground ${ringColorClass}`}
       title={title ? title : null}
     >
       {content}
