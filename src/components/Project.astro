@@ -10,16 +10,18 @@ const { href, title, description, src, online } = Astro.props;
     class="group block h-full w-full overflow-hidden rounded-2xl text-foreground ring-2 ring-foreground/10 hover:bg-gray-2 hover:ring-foreground/30 focus-visible:bg-gray-2 focus-visible:ring-foreground/50 dark:hover:bg-gray-10 dark:focus-visible:bg-gray-10"
     href={href}
     ><span class="-mb-3 block h-[12em] w-full overflow-hidden rounded-t-xl p-2"
-      ><Image
-        alt="ENS Data"
-        width="640"
-        height="480"
-        class="h-full rounded-lg rounded-t-2xl object-cover ring-2 ring-foreground/10 transition-transform"
-        src={src}
-        loading="eager"
-        quality={"low"}
-        format="avif"
-      /></span
+      ><div class="overflow-hidden rounded-2xl">
+        <Image
+          alt={title}
+          width="640"
+          height="480"
+          class="h-full rounded-lg rounded-t-2xl object-cover ring-2 ring-foreground/10 transition-transform delay-75 duration-500 ease-in-out group-hover:scale-105 group-focus-visible:scale-105"
+          src={src}
+          loading="eager"
+          quality={"low"}
+          format="avif"
+        />
+      </div></span
     ><h3 class="block px-3.5 pt-4 text-lg font-bold">
       {title}
     </h3><p
