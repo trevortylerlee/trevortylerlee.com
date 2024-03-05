@@ -197,24 +197,24 @@ export default function Tags() {
 function Tag({ content, href, title, color }) {
   // TailwindCSS doesn't evaluate dynamic class names at runtime
   const colorClasses = {
-    red: "hover:ring-accent-red hover:bg-accent-red/10 dark:hover:bg-accent-red/20",
+    red: "hover:ring-accent-red hover:bg-accent-red/10 dark:hover:bg-accent-red/20 focus-visible:bg-accent-red/10 dark:focus-visible:bg-accent-red/20",
     orange:
-      "hover:ring-accent-orange hover:bg-accent-orange/10 dark:hover:bg-accent-orange/20",
+      "hover:ring-accent-orange hover:bg-accent-orange/10 dark:hover:bg-accent-orange/20 focus-visible:bg-accent-orange/10 dark:focus-visible:bg-accent-orange/20",
     yellow:
-      "hover:ring-accent-yellow hover:bg-accent-yellow/10 dark:hover:bg-accent-yellow/20",
+      "hover:ring-accent-yellow hover:bg-accent-yellow/10 dark:hover:bg-accent-yellow/20 focus-visible:bg-accent-yellow/10 dark:focus-visible:bg-accent-yellow/20",
     green:
-      "hover:ring-accent-green hover:bg-accent-green/10 dark:hover:bg-accent-green/20",
-    mint: "hover:ring-accent-mint hover:bg-accent-mint/10 dark:hover:bg-accent-mint/20",
-    teal: "hover:ring-accent-teal hover:bg-accent-teal/10 dark:hover:bg-accent-teal/20",
-    cyan: "hover:ring-accent-cyan hover:bg-accent-cyan/10 dark:hover:bg-accent-cyan/20",
-    blue: "hover:ring-accent-blue hover:bg-accent-blue/10 dark:hover:bg-accent-blue/20",
+      "hover:ring-accent-green hover:bg-accent-green/10 dark:hover:bg-accent-green/20 focus-visible:bg-accent-green/10 dark:focus-visible:bg-accent-green/20",
+    mint: "hover:ring-accent-mint hover:bg-accent-mint/10 dark:hover:bg-accent-mint/20 focus-visible:bg-accent-mint/10 dark:focus-visible:bg-accent-mint/20",
+    teal: "hover:ring-accent-teal hover:bg-accent-teal/10 dark:hover:bg-accent-teal/20 focus-visible:bg-accent-teal/10 dark:focus-visible:bg-accent-teal/20",
+    cyan: "hover:ring-accent-cyan hover:bg-accent-cyan/10 dark:hover:bg-accent-cyan/20 focus-visible:bg-accent-cyan/10 dark:focus-visible:bg-accent-cyan/20",
+    blue: "hover:ring-accent-blue hover:bg-accent-blue/10 dark:hover:bg-accent-blue/20 focus-visible:bg-accent-blue/10 dark:focus-visible:bg-accent-blue/20",
     indigo:
-      "hover:ring-accent-indigo hover:bg-accent-indigo/10 dark:hover:bg-accent-indigo/20",
+      "hover:ring-accent-indigo hover:bg-accent-indigo/10 dark:hover:bg-accent-indigo/20 focus-visible:bg-accent-indigo/10 dark:focus-visible:bg-accent-indigo/20",
     purple:
-      "hover:ring-accent-purple hover:bg-accent-purple/10 dark:hover:bg-accent-purple/20",
-    pink: "hover:ring-accent-pink hover:bg-accent-pink/10 dark:hover:bg-accent-pink/20",
+      "hover:ring-accent-purple hover:bg-accent-purple/10 dark:hover:bg-accent-purple/20 focus-visible:bg-accent-purple/10 dark:focus-visible:bg-accent-purple/20",
+    pink: "hover:ring-accent-pink hover:bg-accent-pink/10 dark:hover:bg-accent-pink/20 focus-visible:bg-accent-pink/10 dark:focus-visible:bg-accent-pink/20",
     brown:
-      "hover:ring-accent-brown hover:bg-accent-brown/10 dark:hover:bg-accent-brown/20",
+      "hover:ring-accent-brown hover:bg-accent-brown/10 dark:hover:bg-accent-brown/20 focus-visible:bg-accent-brown/10 dark:focus-visible:bg-accent-brown/20",
   };
 
   const ringColorClass = colorClasses[color] || "";
