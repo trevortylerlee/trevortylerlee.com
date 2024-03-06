@@ -57,6 +57,11 @@ export default function Tags() {
       color: "cyan",
     },
     {
+      content: "✉️ Email",
+      color: "green",
+      href: "mailto:trevortylerlee@gmail.com",
+    },
+    {
       content: "📷 Instagram",
       href: "https://www.instagram.com/trevortylerlee/",
       color: "pink",
