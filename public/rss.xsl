@@ -62,7 +62,7 @@ This modified stylesheet is based on pretty-feed-v3 by aboutfeeds.com:
         }
 
         .disclaimer {
-          background: #fcd34d;
+          background: hsl(38, 89%, 62%);
           color: black;
           padding: 1rem;
         }
@@ -78,7 +78,7 @@ This modified stylesheet is based on pretty-feed-v3 by aboutfeeds.com:
         }
 
         a {
-          color: rgb(188 145 62);
+          color: hsl(208, 100%, 66%);
           text-decoration: none;
         }
 

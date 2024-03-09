@@ -6,25 +6,35 @@ const buildTime = new Date().toISOString();
   class="flex flex-col items-baseline justify-between gap-3 pb-4 pt-16 sm:flex-row sm:gap-20"
 >
   <details
-    class="w-full cursor-default rounded-xl px-2 py-2 ring-2 ring-foreground/10"
+    class="relative w-full cursor-default rounded-xl px-2 py-2 ring-2 ring-gray-10/10"
   >
     <summary class="cursor-pointer"
-      >Contact <span class="font-mono text-sm text-gray-7 dark:text-gray-6"
+      >Contact <span class="font-mono text-sm text-gray-9"
         >(click for details)</span
       ></summary
     >
     <span class="flex flex-col py-2">
       <span class="cursor-text">trevortylerlee@gmail.com</span>
       <a href="https://github.com/trevortylerlee" class="">Github</a>
-      <a href="https://www.linkedin.com/in/trevortylerlee/" class="">LinkedIn</a
+      <a href="https://www.linkedin.com/in/trevortylerlee/" class="pb-6"
+        >LinkedIn</a
       >
+      <div class="absolute bottom-3 right-3 flex gap-0.5">
+        <div class="bg-blue-5 h-2 w-2"></div>
+        <div class="bg-red-5 h-2 w-2"></div>
+        <div class="bg-yellow-5 h-2 w-2"></div>
+        <div class="bg-green-5 h-2 w-2"></div>
+        <div class="bg-cyan-5 h-2 w-2"></div>
+        <div class="bg-purple-5 h-2 w-2"></div>
+        <div class="bg-pink-5 h-2 w-2"></div>
+      </div>
     </span>
   </details>
   <div id="build-time" data-time={buildTime} class="min-w-[180px] flex-grow-0">
     <a
       href="https://github.com/trevortylerlee/trevortylerlee.com/commits/main"
       id="last-updated"
-      class="pb-4 pt-2 text-right font-mono text-sm text-gray-7 no-underline hover:text-foreground focus:text-foreground dark:text-gray-6 dark:hover:text-foreground dark:focus:text-foreground"
+      class="pb-4 pt-2 text-right font-mono text-sm text-gray-9 no-underline hover:text-gray-10 focus:text-gray-10"
     >
       updated
     </a>

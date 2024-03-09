@@ -6,7 +6,7 @@ export default function Tags() {
       content: "💻 Web Developer",
       href: "",
       title: "waiting for popover to be stable...",
-      color: "teal",
+      color: "cyan",
     },
     {
       content: "💼 Working @ COMC",
@@ -18,99 +18,124 @@ export default function Tags() {
       content: "🎓 BCIT",
       href: "",
       title: "Diploma in Digital Design and Development",
-      color: "blue",
-    },
-    {
-      content: "📄 HTML",
-      color: "orange",
-    },
-    {
-      content: "{} CSS",
-      color: "pink",
-    },
-    {
-      content: "🔄 Git",
-      color: "brown",
-    },
-    {
-      content: "🟨 JavaScript",
       color: "yellow",
     },
     {
-      content: "⚛️ React",
-      color: "purple",
-    },
-    {
-      content: "▲ Next.js",
-      color: "blue",
-    },
-    {
-      content: "🚀 Astro",
-      color: "orange",
-    },
-    {
-      content: "🎨 Figma",
-      color: "purple",
-    },
-    {
-      content: "🖌️ Photoshop, Illustrator, AE",
-      color: "cyan",
-    },
-    {
       content: "✉️ Email",
-      color: "green",
+      color: "blue",
       href: "mailto:trevortylerlee@gmail.com",
-    },
-    {
-      content: "📷 Instagram",
-      href: "https://www.instagram.com/trevortylerlee/",
-      color: "pink",
-    },
-    {
-      content: "🎮 Steam",
-      href: "https://steamcommunity.com/profiles/76561198080019632/",
-      color: "mint",
-    },
-    {
-      content: "🧵 Threads",
-      href: "https://www.threads.net/@trevortylerlee",
-      color: "indigo",
-    },
-    {
-      content: "🎵 TikTok",
-      href: "https://www.tiktok.com/@boogerbuttcheeks",
-      color: "pink",
-    },
-    {
-      content: "🐦 X (Twitter)",
-      href: "https://twitter.com/boogerbuttcheek",
-      color: "teal",
-    },
-    {
-      content: "📹 YouTube",
-      href: "https://www.youtube.com/channel/UCNHiDTuUDdJATXFwqh17X2g",
-      color: "red",
+      title: "",
     },
   ];
 
   const additionalTags = [
     {
+      content: "📄 HTML",
+      color: "yellow",
+      href: "",
+      title: "",
+    },
+    {
+      content: "{} CSS",
+      color: "pink",
+      href: "",
+      title: "",
+    },
+    {
+      content: "🔄 Git",
+      color: "purple",
+      href: "",
+      title: "",
+    },
+    {
+      content: "🟨 JavaScript",
+      color: "yellow",
+      href: "",
+      title: "",
+    },
+    {
+      content: "⚛️ React",
+      color: "purple",
+      href: "",
+      title: "",
+    },
+    {
+      content: "▲ Next.js",
+      color: "blue",
+      href: "",
+      title: "",
+    },
+    {
+      content: "🚀 Astro",
+      color: "red",
+      href: "",
+      title: "",
+    },
+    {
+      content: "🎨 Figma",
+      color: "blue",
+      href: "",
+      title: "",
+    },
+    {
+      content: "🖌️ Photoshop, Illustrator, AE",
+      color: "cyan",
+      href: "",
+      title: "",
+    },
+    {
+      content: "📷 Instagram",
+      href: "https://www.instagram.com/trevortylerlee/",
+      color: "pink",
+      title: "",
+    },
+    {
+      content: "🎮 Steam",
+      href: "https://steamcommunity.com/profiles/76561198080019632/",
+      color: "cyan",
+      title: "",
+    },
+    {
+      content: "🧵 Threads",
+      href: "https://www.threads.net/@trevortylerlee",
+      color: "purple",
+      title: "",
+    },
+    {
+      content: "🎵 TikTok",
+      href: "https://www.tiktok.com/@boogerbuttcheeks",
+      color: "red",
+      title: "",
+    },
+    {
+      content: "🐦 X (Twitter)",
+      href: "https://twitter.com/boogerbuttcheek",
+      color: "cyan",
+      title: "",
+    },
+    {
+      content: "📹 YouTube",
+      href: "https://www.youtube.com/channel/UCNHiDTuUDdJATXFwqh17X2g",
+      color: "red",
+      title: "",
+    },
+    {
       content: "♋ Cancer 🦀",
       href: "",
       title: "also year of the rabbit 🐇",
-      color: "teal",
+      color: "cyan",
     },
     {
       content: "🧠 INTJ",
       href: "https://en.wikipedia.org/wiki/Myers%E2%80%93Briggs_Type_Indicator",
       title: "includes: gandalf, katniss, michelle obama",
-      color: "orange",
+      color: "yellow",
     },
     {
       content: "🙌 Fast hands (167wpm)",
       href: "https://monkeytype.com/profile/boogerbuttcheeks",
       title: "not in my prime anymore tho",
-      color: "yellow",
+      color: "red",
     },
     {
       content: "🐍 Slytherin",
@@ -122,13 +147,13 @@ export default function Tags() {
       content: "🫲 Left-handed 👈",
       href: "https://en.wikipedia.org/wiki/Bias_against_left-handed_people",
       title: "right-footed",
-      color: "mint",
+      color: "cyan",
     },
     {
       content: "👓 Poor vision",
       href: "",
       title: "nearly -10 in both with astigmatism",
-      color: "brown",
+      color: "purple",
     },
     {
       content: "🏊 Can swim",
@@ -145,12 +170,14 @@ export default function Tags() {
     {
       content: "🎸 Likes Taylor Swift, Kanye West",
       href: "https://open.spotify.com/user/trevortylerlee?si=6ca50e2df1b540a1",
-      color: "indigo",
+      color: "pink",
+      title: "",
     },
     {
       content: "👍 Likes Star Wars, LOTR",
       href: "",
-      color: "orange",
+      color: "green",
+      title: "",
     },
   ];
 
@@ -183,14 +210,14 @@ export default function Tags() {
       {isOpen ? (
         <button
           onClick={hideContent}
-          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-7 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black dark:text-gray-6 dark:hover:text-foreground dark:focus-visible:text-foreground"
+          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-9 outline-none hover:text-gray-10 focus-visible:text-gray-10"
         >
           see less -
         </button>
       ) : (
         <button
           onClick={showContent}
-          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-7 outline-none hover:text-foreground focus-visible:text-foreground dark:bg-black dark:text-gray-6 dark:hover:text-foreground dark:focus-visible:text-foreground"
+          className="font-base cursor-pointer border-none bg-background font-mono text-sm text-gray-9 outline-none hover:text-gray-10 focus-visible:text-gray-10"
         >
           see more +
         </button>
@@ -202,31 +229,23 @@ export default function Tags() {
 function Tag({ content, href, title, color }) {
   // TailwindCSS doesn't evaluate dynamic class names at runtime
   const colorClasses = {
-    red: "hover:ring-accent-red hover:bg-accent-red/10 dark:hover:bg-accent-red/20 focus-visible:bg-accent-red/10 dark:focus-visible:bg-accent-red/20",
-    orange:
-      "hover:ring-accent-orange hover:bg-accent-orange/10 dark:hover:bg-accent-orange/20 focus-visible:bg-accent-orange/10 dark:focus-visible:bg-accent-orange/20",
+    red: "dark:bg-black dark:ring-red-3 hover:ring-red-6 dark:hover:ring-red-4 dark:hover:bg-red-2 dark:hover:bg-red-1 bg-red-1",
+    blue: "dark:bg-black dark:ring-blue-3 hover:ring-blue-6 dark:hover:ring-blue-4 dark:hover:bg-blue-2 dark:hover:bg-blue-1 bg-blue-1",
     yellow:
-      "hover:ring-accent-yellow hover:bg-accent-yellow/10 dark:hover:bg-accent-yellow/20 focus-visible:bg-accent-yellow/10 dark:focus-visible:bg-accent-yellow/20",
+      "dark:bg-black dark:ring-yellow-3 hover:ring-yellow-6 dark:hover:ring-yellow-4 dark:hover:bg-yellow-2 dark:hover:bg-yellow-1 bg-yellow-1",
     green:
-      "hover:ring-accent-green hover:bg-accent-green/10 dark:hover:bg-accent-green/20 focus-visible:bg-accent-green/10 dark:focus-visible:bg-accent-green/20",
-    mint: "hover:ring-accent-mint hover:bg-accent-mint/10 dark:hover:bg-accent-mint/20 focus-visible:bg-accent-mint/10 dark:focus-visible:bg-accent-mint/20",
-    teal: "hover:ring-accent-teal hover:bg-accent-teal/10 dark:hover:bg-accent-teal/20 focus-visible:bg-accent-teal/10 dark:focus-visible:bg-accent-teal/20",
-    cyan: "hover:ring-accent-cyan hover:bg-accent-cyan/10 dark:hover:bg-accent-cyan/20 focus-visible:bg-accent-cyan/10 dark:focus-visible:bg-accent-cyan/20",
-    blue: "hover:ring-accent-blue hover:bg-accent-blue/10 dark:hover:bg-accent-blue/20 focus-visible:bg-accent-blue/10 dark:focus-visible:bg-accent-blue/20",
-    indigo:
-      "hover:ring-accent-indigo hover:bg-accent-indigo/10 dark:hover:bg-accent-indigo/20 focus-visible:bg-accent-indigo/10 dark:focus-visible:bg-accent-indigo/20",
+      "dark:bg-black dark:ring-green-3 hover:ring-green-6 dark:hover:ring-green-4 dark:hover:bg-green-2 dark:hover:bg-green-1 bg-green-1",
+    cyan: "dark:bg-black dark:ring-cyan-3 hover:ring-cyan-6 dark:hover:ring-cyan-4 dark:hover:bg-cyan-2 dark:hover:bg-cyan-1 bg-cyan-1",
     purple:
-      "hover:ring-accent-purple hover:bg-accent-purple/10 dark:hover:bg-accent-purple/20 focus-visible:bg-accent-purple/10 dark:focus-visible:bg-accent-purple/20",
-    pink: "hover:ring-accent-pink hover:bg-accent-pink/10 dark:hover:bg-accent-pink/20 focus-visible:bg-accent-pink/10 dark:focus-visible:bg-accent-pink/20",
-    brown:
-      "hover:ring-accent-brown hover:bg-accent-brown/10 dark:hover:bg-accent-brown/20 focus-visible:bg-accent-brown/10 dark:focus-visible:bg-accent-brown/20",
+      "dark:bg-black dark:ring-purple-3 hover:ring-purple-6 dark:hover:ring-purple-4  dark:hover:bg-purple-2 dark:hover:bg-purple-1 bg-purple-1",
+    pink: "dark:bg-black dark:ring-pink-3 hover:ring-pink-6 dark:hover:ring-pink-4  dark:hover:bg-pink-2 dark:hover:bg-pink-1 bg-pink-1",
   };
 
   const ringColorClass = colorClasses[color] || "";
 
   return href ? (
     <a
-      className={`transition-scale inline-flex cursor-pointer select-none px-2 py-0.5 text-gray-7 no-underline ring-2 ring-foreground/10 hover:text-foreground focus-visible:text-foreground dark:text-gray-6 dark:ring-1 dark:hover:text-foreground dark:focus-visible:text-foreground ${ringColorClass}`}
+      className={`inline-flex cursor-pointer select-none rounded-full px-2 py-0.5 text-xs text-gray-9 no-underline ring-2 ring-gray-10/10 hover:text-gray-10 focus-visible:text-gray-10 dark:ring-2 ${ringColorClass}`}
       href={href}
       title={title ? title : null}
     >
@@ -234,7 +253,7 @@ function Tag({ content, href, title, color }) {
     </a>
   ) : (
     <div
-      className={`transition-scale inline-flex cursor-default select-none px-2 py-0.5 text-gray-7 ring-2 ring-foreground/10 hover:text-foreground focus-visible:text-foreground dark:text-gray-6 dark:ring-1 dark:hover:text-foreground dark:focus-visible:text-foreground ${ringColorClass}`}
+      className={`inline-flex cursor-default select-none rounded-full px-2 py-0.5 text-xs text-gray-9 ring-2 ring-gray-10/10 hover:text-gray-10 focus-visible:text-gray-10 dark:ring-2 ${ringColorClass}`}
       title={title ? title : null}
     >
       {content}

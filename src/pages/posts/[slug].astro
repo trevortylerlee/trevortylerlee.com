@@ -38,7 +38,7 @@ const { Content } = await post.render();
       </h1>
       {
         post.data.date && (
-          <span class="font-mono text-sm lowercase text-gray-6">
+          <span class="font-mono text-sm lowercase text-gray-8">
             posted {formatDate(post.data.date, "long")}
           </span>
         )
@@ -59,10 +59,10 @@ const { Content } = await post.render();
   }
 
   #content {
-    --tw-prose-links: rgb(var(--primary));
-    --tw-prose-code: rgb(var(--primary));
-    --tw-prose-headings: rgb(var(--foreground));
-    --tw-prose-quotes: rgb(var(--foreground));
-    --tw-prose-bold: rgb(var(--foreground));
+    --tw-prose-links: hsl(var(--blue-7));
+    --tw-prose-code: hsl(var(--green-7));
+    --tw-prose-headings: hsl(var(--gray-10));
+    --tw-prose-quotes: hsl(var(--gray-10));
+    --tw-prose-bold: hsl(var(--gray-10));
   }
 </style>
