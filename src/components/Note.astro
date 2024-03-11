@@ -1,40 +1,59 @@
 ---
-const { emoji, type } = Astro.props;
+import { Icon } from "astro-icon/components";
+
+interface Note {
+  type: "info" | "question" | "device-alternate" | "warning" | "stop";
+}
+
+const { type = "info" } = Astro.props;
 ---
 
-<div class={`px-4 py-0 flex ${type} note`}>
-  <div>
-    <p class="emoji">{emoji}</p>
+<div class={`p-4 flex ${type} note`}>
+  <div class="icon">
+    <div><Icon name={type} /></div>
   </div>
-  <div>
+  <div class="slot-content">
     <slot />
   </div>
 </div>
 
 <style>
   .note {
-    border-radius: 4px;
+    border-radius: 1px;
+    background: rgb(var(--background));
+    outline: 1.5px solid hsl(var(--gray-4));
   }
 
-  .secondary {
-    color: #a3a3a3;
-    background: #121212;
+  .dark .note {
+    background: black;
   }
 
-  .technology {
-    color: #68a6f8;
-    background: #0d1523;
+  .question {
+    color: hsl(var(--gray-10));
+    background: hsl(var(--gray-2));
+  }
+
+  .device-alternate {
+    color: hsl(var(--blue-9));
+    background: hsl(var(--blue-2));
+    outline: 1.5px solid hsl(var(--blue-4));
   }
 
   .warning {
-    color: #f19e3a;
-    background: #1f1300;
+    color: hsl(var(--yellow-9));
+    background: hsl(var(--yellow-2));
+    outline: 1.5px solid hsl(var(--yellow-4));
   }
 
-  .emoji {
-    position: relative;
-    vertical-align: text-top;
-    left: 0.25em;
+  .stop {
+    color: hsl(var(--red-9));
+    background: hsl(var(--red-2));
+    outline: 1.5px solid hsl(var(--red-4));
+  }
+
+  .icon {
+    display: grid;
+    place-content: center;
     margin-right: 1em;
   }
 </style>
