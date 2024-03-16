@@ -9,12 +9,6 @@ export default function Tags() {
       color: "cyan",
     },
     {
-      content: "💼 Working @ COMC",
-      href: "https://comc.com",
-      title: "since January 2021",
-      color: "red",
-    },
-    {
       content: "🎓 BCIT",
       href: "",
       title: "Diploma in Digital Design and Development",
@@ -22,8 +16,14 @@ export default function Tags() {
     },
     {
       content: "✉️ Email",
-      color: "blue",
       href: "mailto:trevortylerlee@gmail.com",
+      color: "red",
+      title: "",
+    },
+    {
+      content: "🦋 Bluesky",
+      href: "https://bsky.app/profile/trevortylerlee.com",
+      color: "blue",
       title: "",
     },
   ];
@@ -83,12 +83,7 @@ export default function Tags() {
       href: "",
       title: "",
     },
-    {
-      content: "🦋 Bluesky",
-      href: "https://bsky.app/profile/trevortylerlee.com",
-      color: "blue",
-      title: "",
-    },
+
     {
       content: "📷 Instagram",
       href: "https://www.instagram.com/trevortylerlee/",
