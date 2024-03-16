@@ -84,6 +84,12 @@ export default function Tags() {
       title: "",
     },
     {
+      content: "🦋 Bluesky",
+      href: "https://bsky.app/profile/trevortylerlee.com",
+      color: "blue",
+      title: "",
+    },
+    {
       content: "📷 Instagram",
       href: "https://www.instagram.com/trevortylerlee/",
       color: "pink",
