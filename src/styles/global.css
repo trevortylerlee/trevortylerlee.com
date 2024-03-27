@@ -92,9 +92,14 @@
     --pink-9: 335.32deg 64.983% 44.893%;
     --pink-10: 334.53deg 70.181% 15.445%;
 
-    --primary: 50 100 205;
-    --secondary: 152 0 255;
-    --highlight: 0 0 255;
+    --background: 360deg 100% 100%;
+    --background-variant: var(--gray-1);
+    --text: var(--gray-10);
+    --text-variant: var(--gray-9);
+    --primary: var(--blue-7);
+    --primary-variant: var(--blue-7);
+    --secondary: var(--yellow-6);
+    --secondary-variant: var(--yellow-7);
 
     /* shiki config */
     --astro-code-color-text: hsl(var(--gray-10));
@@ -199,9 +204,14 @@
     --pink-2: 333.88deg 42.559% 15.888%;
     --pink-1: 332.58deg 29.836% 12.16%;
 
-    --primary: 60 110 210;
-    --secondary: 237 208 84;
-    --highlight: 188 145 62;
+    --background: 0deg 0% 0%;
+    --background-variant: var(--gray-1);
+    --text: var(--gray-10);
+    --text-variant: var(--gray-9);
+    --primary: var(--blue-7);
+    --primary-variant: var(--red-7);
+    --secondary: var(--yellow-6);
+    --secondary-variant: var(--yellow-7);
 
     /* shiki config */
     --astro-code-color-text: #e0e0e0;
@@ -218,8 +228,11 @@
   }
 }
 
-@layer utilities {
-  a {
-    color: hsl(var(--blue-6));
-  }
+.link {
+  color: hsl(var(--blue-7));
+}
+
+.link:hover,
+.link:focus-visible {
+  color: hsl(var(--primary));
 }
