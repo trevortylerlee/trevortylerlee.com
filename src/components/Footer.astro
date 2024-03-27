@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components";
+
 const buildTime = new Date().toISOString();
 ---
 
@@ -9,33 +11,66 @@ const buildTime = new Date().toISOString();
     class="relative w-full cursor-default rounded-xl px-2 py-2 ring-2 ring-gray-10/10"
   >
     <summary class="cursor-pointer"
-      >Contact <span class="font-mono text-sm text-gray-9"
+      >Contact <span class="text-textVariant font-mono text-sm"
         >(click for details)</span
       ></summary
     >
     <span class="flex flex-col py-2">
-      <!-- SAVE THIS FILE WITHOUT FORMATTING OR PRETTIER FUCKS UP LINKS -->
-      <span>Email: <a href="mailto:trevortylerlee@gmail.com">trevortylerlee@gmail.com</a></span>
-      <span>Github: <a href="https://github.com/trevortylerlee" class="">@trevortylerlee</a></span>
-      <span>LinkedIn: <a href="https://www.linkedin.com/in/trevortylerlee/" class="pb-6">@trevortylerlee</a></span>
-      <div class="absolute bottom-3 right-3 flex gap-0.5">
-        <div class="h-2 w-2 bg-blue-5"></div>
-        <div class="h-2 w-2 bg-red-5"></div>
-        <div class="h-2 w-2 bg-yellow-5"></div>
-        <div class="h-2 w-2 bg-green-5"></div>
-        <div class="h-2 w-2 bg-cyan-5"></div>
-        <div class="h-2 w-2 bg-purple-5"></div>
-        <div class="h-2 w-2 bg-pink-5"></div>
-      </div>
+      <span class="flex"
+        >Email:&nbsp;<a
+          href="mailto:trevortylerlee@gmail.com"
+          class="link group flex items-center gap-1"
+          >trevortylerlee@gmail.com
+          <Icon
+            class="text-text group-hover:text-primary group-focus-visible:text-primary"
+            name="external"
+          /></a
+        ></span
+      >
+      <span class="flex"
+        >Github:&nbsp;<a
+          href="https://github.com/trevortylerlee"
+          class="link group flex items-center gap-1"
+          target="_blank"
+          rel="noopener noreferrer"
+          >@trevortylerlee
+          <Icon
+            class="text-text group-hover:text-primary group-focus-visible:text-primary"
+            name="external"
+          /></a
+        ></span
+      >
+      <span class="flex"
+        >LinkedIn:&nbsp;<a
+          href="https://www.linkedin.com/in/trevortylerlee/"
+          class="link group flex items-center gap-1 pb-6"
+          target="_blank"
+          rel="noopener noreferrer"
+          >@trevortylerlee
+          <Icon
+            class="text-text group-hover:text-primary group-focus-visible:text-primary"
+            name="external"
+          /></a
+        ></span
+      >
     </span>
   </details>
-  <div id="build-time" data-time={buildTime} class="min-w-[180px] flex-grow-0">
+  <div
+    id="build-time"
+    data-time={buildTime}
+    class="flex min-w-[200px] flex-grow-0 flex-row-reverse items-center"
+  >
     <a
       href="https://github.com/trevortylerlee/trevortylerlee.com/commits/main"
-      id="last-updated"
-      class="pb-4 pt-2 text-right font-mono text-sm text-gray-9 no-underline hover:text-gray-10 focus:text-gray-10"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="link group flex items-center gap-1 pb-4 pt-2 text-right"
     >
-      updated
+      <span id="last-updated" class="link"> updated</span>
+      <Icon
+        class="text-text group-hover:text-primary group-focus-visible:text-primary"
+        name="external"
+      />
     </a>
   </div>
 </footer>

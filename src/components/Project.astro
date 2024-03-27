@@ -7,7 +7,7 @@ const { href, title, description, src, online } = Astro.props;
 
 <li class="relative">
   <a
-    class="group block h-full w-full overflow-hidden rounded-2xl text-gray-10 ring-2 ring-gray-10/10 hover:bg-gray-1 hover:ring-gray-10/30 focus-visible:bg-gray-1 focus-visible:ring-gray-10/50"
+    class="text-text ring-backgroundVariant hover:bg-backgroundVariant/80 focus-visible:bg-backgroundVariant/80 group block h-full w-full overflow-hidden rounded-2xl ring-2 hover:ring-primary focus-visible:ring-primary"
     href={href}
     ><span class="-mb-3 block h-[12em] w-full overflow-hidden rounded-t-xl p-2"
       ><div class="overflow-hidden rounded-t-2xl">
@@ -15,7 +15,7 @@ const { href, title, description, src, online } = Astro.props;
           alt={title}
           width="640"
           height="480"
-          class="h-full rounded-lg rounded-t-2xl object-cover ring-2 ring-foreground/10 transition-transform delay-75 duration-500 ease-in-out group-hover:scale-105 group-focus-visible:scale-105"
+          class="ring-backgroundVariant h-full rounded-lg rounded-t-2xl object-cover ring-2 transition-transform delay-75 duration-500 ease-in-out group-hover:scale-105 group-focus-visible:scale-105"
           src={src}
           loading="eager"
           quality={"low"}
@@ -32,12 +32,12 @@ const { href, title, description, src, online } = Astro.props;
       {
         online ? (
           <div class="absolute bottom-3 right-5 flex items-center gap-1">
-            <div class="bg-green-7 h-[8px] w-[8px] rounded-full" />
+            <div class="h-[8px] w-[8px] rounded-full bg-green-7" />
             <span class="font-mono text-xs text-gray-9">online</span>
           </div>
         ) : (
           <div class="absolute bottom-3 right-5 flex items-center gap-1">
-            <div class="bg-red-7 h-[8px] w-[8px] rounded-full" />
+            <div class="h-[8px] w-[8px] rounded-full bg-red-7" />
             <span class="font-mono text-xs text-gray-9">offline</span>
           </div>
         )

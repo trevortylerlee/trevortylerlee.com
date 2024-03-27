@@ -5,36 +5,18 @@ const { date, href, title, description, last } = Astro.props;
 
 <li class="-mx-3">
   <a
-    class="group flex items-center justify-between gap-2 rounded-2xl p-3 text-gray-10 no-underline ring-inset ring-gray-10/10 hover:bg-gray-1 hover:ring-1 focus:bg-gray-1 sm:gap-3"
+    class="text-text hover:bg-backgroundVariant/80 focus:bg-backgroundVariant/80 group flex items-center justify-between gap-2 rounded-2xl p-3 no-underline ring-inset ring-primary hover:ring-1 sm:gap-3"
     href={`/posts/${href}`}
   >
     <span>{title}</span>
-    <span class="dashed-line"></span>
     <span
-      class="date no-wrap flex rounded-sm bg-gray-1 p-1 font-mono text-xs text-gray-9 ring-1 ring-gray-10/10 group-hover:text-gray-10 group-focus:text-gray-10 dark:bg-black"
+      class="date no-wrap text-textVariant group-hover:text-text group-focus:text-text bg-backdrop flex rounded-sm p-1 font-mono text-xs ring-1 ring-gray-10/10"
       >{formatDate(date, "short")}</span
     >
   </a>
 </li>
 
 <style>
-  .dashed-line {
-    flex: 1 1 0;
-    min-height: 6px;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent 4px,
-      rgb(var(--foreground)) 6px,
-      rgb(var(--foreground)) 6px
-    );
-    background-repeat: repeat-x;
-    background-size: 6px 1px;
-    background-position: 0 48%;
-    opacity: 0.4;
-  }
-
   a:focus {
     outline: auto;
   }

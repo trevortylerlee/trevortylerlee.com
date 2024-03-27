@@ -92,8 +92,9 @@
     --pink-9: 335.32deg 64.983% 44.893%;
     --pink-10: 334.53deg 70.181% 15.445%;
 
-    --background: 360deg 100% 100%;
-    --background-variant: var(--gray-1);
+    --backdrop: 360deg 100% 100%;
+    --background: var(--gray-1);
+    --background-variant: var(--gray-2);
     --text: var(--gray-10);
     --text-variant: var(--gray-9);
     --primary: var(--blue-7);
@@ -204,8 +205,9 @@
     --pink-2: 333.88deg 42.559% 15.888%;
     --pink-1: 332.58deg 29.836% 12.16%;
 
-    --background: 0deg 0% 0%;
-    --background-variant: var(--gray-1);
+    --backdrop: 0deg 0% 0%;
+    --background: var(--gray-1);
+    --background-variant: var(--gray-2);
     --text: var(--gray-10);
     --text-variant: var(--gray-9);
     --primary: var(--blue-7);

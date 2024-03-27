@@ -89,7 +89,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
   </head>
   <body>
     <div
-      class=`bg-background text-text ${fullWidth ? "" : "px-4"} m-auto max-w-[640px]`
+      class=`bg-backdrop text-text ${fullWidth ? "" : "px-4"} m-auto max-w-[640px]`
     >
       <nav class="w-full py-4">
         <div class="flex items-center justify-between">
@@ -98,17 +98,21 @@ if (pageTitle === "Trevor Lee | Homepage") {
               !onIndex && (
                 <>
                   <a
-                    class="link flex items-center gap-1 py-1 font-mono text-sm no-underline"
+                    class="link group flex items-center gap-1 py-1 font-mono text-sm"
                     href="/"
                   >
-                    <Icon name="arrow-left" /> back home
+                    <Icon
+                      class="text-text group-hover:text-primary group-focus-visible:text-primary"
+                      name="arrow-left"
+                    />{" "}
+                    back home
                   </a>
                 </>
               )
             }
           </div>
           <div class="group flex items-center gap-1 py-1 font-mono text-sm">
-            <label class="text-gray-9" for="theme-toggle">theme:</label>
+            <label class="text-text/80" for="theme-toggle">theme:</label>
             <select
               class="px-1 font-sans text-black"
               name="theme-toggle"

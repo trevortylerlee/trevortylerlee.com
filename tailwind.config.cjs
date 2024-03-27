@@ -115,6 +115,7 @@ module.exports = {
           9: "hsl(var(--pink-9) / <alpha-value>)",
           10: "hsl(var(--pink-10) / <alpha-value>)",
         },
+        backdrop: "hsl(var(--backdrop) / <alpha-value>)",
         background: "hsl(var(--background) / <alpha-value>)",
         backgroundVariant: "hsl(var(--background-variant) / <alpha-value>)",
         text: "hsl(var(--text) / <alpha-value>)",
