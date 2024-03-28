@@ -15,11 +15,11 @@ import { Icon } from "astro-icon/components";
 
 import Navigation from "../components/Navigation.astro";
 import Contact from "../components/Contact.tsx";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
 
 const { pageTitle, pageSlug, category, fullWidth } = Astro.props;
 
-// Displays "go home" link if not at index
 let onIndex = false;
 if (pageTitle === "Trevor Lee | Homepage") {
   onIndex = true;
@@ -104,18 +104,11 @@ if (pageTitle === "Trevor Lee | Homepage") {
           <div>
             {
               !onIndex && (
-                <>
-                  <a
-                    class="link group flex items-center gap-1 py-1 font-mono text-sm"
-                    href="/"
-                  >
-                    <Icon
-                      class="text-text group-hover:text-primary group-focus-visible:text-primary"
-                      name="arrow-left"
-                    />{" "}
-                    back home
-                  </a>
-                </>
+                <Breadcrumbs
+                  pageTitle={pageTitle}
+                  category={category}
+                  pageSlug={pageSlug}
+                />
               )
             }
           </div>

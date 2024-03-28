@@ -41,18 +41,54 @@ const pageTitle = "Trevor Lee | Homepage";
         </div>
       </h1>
     </div>
+    <div class="grid max-w-[360px] grid-cols-2 gap-2">
+      <a
+        href="https://bsky.app/profile/trevortylerlee.com"
+        class="link group flex items-center gap-1 text-lg"
+      >
+        🦋 Bluesky <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+      <a
+        href="mailto:trevortylerlee@gmail.com"
+        class="link group flex items-center gap-1 text-lg"
+      >
+        ✉️ Email <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+      <a
+        href="https://github.com/trevortylerlee"
+        class="link group flex items-center gap-1 text-lg"
+      >
+        💻 Github <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+      <a href="/rss.xml" class="link group flex items-center gap-1 text-lg">
+        🔖 RSS <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+      <a
+        href="tel:7782353815"
+        class="link group flex items-center gap-1 text-lg"
+      >
+        ☎️ Telephone <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+    </div>
   </div>
   <section>
-    <span class="flex justify-between py-2 font-mono text-sm text-textVariant">
+    <span class="py-2 font-mono text-sm text-textVariant">
       <h2 class="">latest posts</h2>
-      <a
-        href="/rss.xml"
-        class="group flex items-center gap-1 py-1 text-sm text-textVariant no-underline hover:text-text focus-visible:text-text"
-        ><Icon
-          name="radio"
-          class="group-hover:text-blue-7 group-focus:text-blue-7"
-        /> rss</a
-      >
     </span>
     <ul>
       {
@@ -76,7 +112,7 @@ const pageTitle = "Trevor Lee | Homepage";
     </div>
   </section>
   <section>
-    <h2 class="pb-5 pt-2 font-mono text-sm text-textVariant">projects</h2>
+    <h2 class="pb-4 pt-16 font-mono text-sm text-textVariant">projects</h2>
     <ul class="grid gap-3 sm:grid-cols-2 sm:gap-6">
       <Project
         description="Site to instantly preview drop-in CSS themes."
