@@ -10,7 +10,6 @@ import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
 import Post from "@components/Post.astro";
 import Project from "@components/Project.astro";
-import Tags from "@components/Tags";
 
 const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {
@@ -36,22 +35,19 @@ const pageTitle = "Trevor Lee | Homepage";
       >
         Trevor Tyler Lee
         <div
-          class="font-mono text-sm font-normal lowercase tracking-normal text-gray-9"
+          class="font-mono text-sm font-normal lowercase tracking-normal text-textVariant"
         >
           @trevortylerlee
         </div>
       </h1>
     </div>
-    <div class="flex flex-wrap gap-3">
-      <Tags client:load />
-    </div>
   </div>
   <section>
-    <span class="flex justify-between py-2 font-mono text-sm text-gray-9">
+    <span class="flex justify-between py-2 font-mono text-sm text-textVariant">
       <h2 class="">latest posts</h2>
       <a
         href="/rss.xml"
-        class="group flex items-center gap-1 py-1 text-sm text-gray-9 no-underline hover:text-gray-10 focus-visible:text-gray-10"
+        class="group flex items-center gap-1 py-1 text-sm text-textVariant no-underline hover:text-text focus-visible:text-text"
         ><Icon
           name="radio"
           class="group-hover:text-blue-7 group-focus:text-blue-7"
@@ -73,14 +69,14 @@ const pageTitle = "Trevor Lee | Homepage";
     <div class="flex justify-end pb-8 pt-2">
       <a href="/posts" class="link group flex items-center gap-1 py-1"
         >view older posts <Icon
-          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          class="group-hover:animate-horizontal-bounce group-focus:animate-horizontal-bounce text-text group-hover:text-primary group-focus-visible:text-primary"
           name="arrow-right"
         /></a
       >
     </div>
   </section>
   <section>
-    <h2 class="pb-5 pt-2 font-mono text-sm text-gray-9">projects</h2>
+    <h2 class="pb-5 pt-2 font-mono text-sm text-textVariant">projects</h2>
     <ul class="grid gap-3 sm:grid-cols-2 sm:gap-6">
       <Project
         description="Site to instantly preview drop-in CSS themes."

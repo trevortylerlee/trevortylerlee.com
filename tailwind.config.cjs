@@ -3,6 +3,19 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      animation: {
+        "horizontal-bounce": "horizontal-bounce 0.8s ease-in-out infinite",
+      },
+      keyframes: {
+        "horizontal-bounce": {
+          "0%, 100%": {
+            transform: "translateX(0)",
+          },
+          "50%": {
+            transform: "translateX(2px)",
+          },
+        },
+      },
       fontFamily: {
         mono: ["Geist Mono", "monospace"],
         sans: [

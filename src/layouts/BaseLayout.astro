@@ -29,12 +29,20 @@ if (pageTitle === "Trevor Lee | Homepage") {
 <html id="html" lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <script is:inline>
-      const applyTheme = (theme) => {
-        if (theme === "dark") {
+      const themes = {
+        dark: () => {
           document.documentElement.classList.add("dark");
-        } else {
+          document.documentElement.classList.remove("ube");
+        },
+        light: () => document.documentElement.classList.remove("dark", "ube"),
+        ube: () => {
+          document.documentElement.classList.add("ube");
           document.documentElement.classList.remove("dark");
-        }
+        },
+      };
+
+      const applyTheme = (theme) => {
+        themes[theme] ? themes[theme]() : themes["light"]();
       };
 
       const getPreferredTheme = () => {
@@ -84,7 +92,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:image" content="/og.jpg" />
-    <meta name="description" content="Trevor Tyler Lee | @boogerbuttcheeks " />
+    <meta name="description" content="Trevor Tyler Lee | @trevortylerlee " />
     <title>{pageTitle}</title>
   </head>
   <body>
@@ -112,7 +120,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
             }
           </div>
           <div class="group flex items-center gap-1 py-1 font-mono text-sm">
-            <label class="text-text/80" for="theme-toggle">theme:</label>
+            <label class="text-textVariant" for="theme-toggle">theme:</label>
             <select
               class="px-1 font-sans text-black"
               name="theme-toggle"
@@ -121,6 +129,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
               <option value="auto">auto</option>
               <option value="dark">dark</option>
               <option value="light">light</option>
+              <option value="ube">ube</option>
             </select>
           </div>
         </div>
