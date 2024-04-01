@@ -4,6 +4,6 @@ const { category, pageSlug, pageTitle } = Astro.props;
 
 <ul class="link flex">
   <li><a href="/" class="no-underline text-blue-7 hover:text-primary focus-visible:text-primary">Home</a></li>
-  {category === 'posts' && <li>&nbsp;/&nbsp;<a href=`/${category}` class="no-underline text-blue-7 hover:text-primary focus-visible:text-primary">Posts</a></li>}
-  {pageSlug && <li>&nbsp;/&nbsp;{pageTitle}</li>}
+  {category === 'posts' && <li class="text-blue-7">&nbsp;/&nbsp;<a href=`/${category}` class="no-underline text-blue-7 hover:text-primary focus-visible:text-primary">Posts</a></li>}
+  {pageSlug && <li class="text-blue-7">&nbsp;/&nbsp;{pageTitle}</li>}
 </ul>

@@ -31,13 +31,16 @@ if (pageTitle === "Trevor Lee | Homepage") {
     <script is:inline>
       const themes = {
         dark: () => {
+          document.documentElement.classList.remove("light", "ube");
           document.documentElement.classList.add("dark");
-          document.documentElement.classList.remove("ube");
         },
-        light: () => document.documentElement.classList.remove("dark", "ube"),
+        light: () => {
+          document.documentElement.classList.remove("dark", "ube");
+          document.documentElement.classList.add("light");
+        },
         ube: () => {
+          document.documentElement.classList.remove("dark", "light");
           document.documentElement.classList.add("ube");
-          document.documentElement.classList.remove("dark");
         },
       };
 
@@ -95,7 +98,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
     <meta name="description" content="Trevor Tyler Lee | @trevortylerlee " />
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class="bg-backdrop">
     <div
       class=`bg-backdrop text-text ${fullWidth ? "" : "px-4"} m-auto max-w-[640px]`
     >
@@ -115,7 +118,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
           <div class="group flex items-center gap-1 py-1 font-mono text-sm">
             <label class="text-textVariant" for="theme-toggle">theme:</label>
             <select
-              class="px-1 font-sans text-black"
+              class="px-1 font-sans text-black dark:text-white"
               name="theme-toggle"
               id="theme-toggle"
             >
@@ -152,3 +155,20 @@ if (pageTitle === "Trevor Lee | Homepage") {
     }
   }
 </style>
+
+<script>
+  // @ts-ignore
+  const select: HTMLSelectElement = document.querySelector("#theme-toggle");
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  mediaQuery.addEventListener("change", (e) => {
+    if (select.value === "auto") {
+      if (e.matches) {
+        document.documentElement.classList.remove("light", "ube");
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark", "ube");
+        document.documentElement.classList.add("light");
+      }
+    }
+  });
+</script>

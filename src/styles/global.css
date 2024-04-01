@@ -91,7 +91,9 @@
     --pink-8: 335.46deg 74.637% 51.008%;
     --pink-9: 335.32deg 64.983% 44.893%;
     --pink-10: 334.53deg 70.181% 15.445%;
+  }
 
+  .light {
     --backdrop: 360deg 100% 100%;
     --background: var(--gray-1);
     --background-variant: var(--gray-2);
@@ -117,6 +119,8 @@
   }
 
   .dark {
+    color-scheme: dark;
+
     --backdrop: 0deg 0% 0%;
     --background: var(--gray-10);
     --background-variant: var(--gray-10);
@@ -141,16 +145,18 @@
     --astro-code-token-link: #f4457d;
   }
 
-  .ube {
-    --backdrop: var(--purple-1);
-    --background: var(--gray-1);
-    --background-variant: var(--gray-2);
-    --text: var(--gray-10);
-    --text-variant: var(--gray-9);
-    --primary: var(--blue-7);
-    --primary-variant: var(--red-7);
-    --secondary: var(--yellow-6);
-    --secondary-variant: var(--yellow-7);
+  @media (prefers-color-scheme: light) {
+    .ube {
+      --backdrop: var(--purple-1);
+      --background: var(--gray-1);
+      --background-variant: var(--purple-3);
+      --text: var(--gray-10);
+      --text-variant: var(--gray-9);
+      --primary: var(--purple-8);
+      --primary-variant: var(--red-7);
+      --secondary: var(--yellow-6);
+      --secondary-variant: var(--yellow-7);
+    }
   }
 
   @media (prefers-color-scheme: dark) {
@@ -158,9 +164,9 @@
       --backdrop: var(--purple-10);
       --background: var(--purple-6);
       --background-variant: var(--gray-2);
-      --text: var(--gray-10);
-      --text-variant: var(--gray-9);
-      --primary: var(--blue-7);
+      --text: var(--gray-1);
+      --text-variant: var(--gray-2);
+      --primary: var(--purple-3);
       --primary-variant: var(--red-7);
       --secondary: var(--yellow-6);
       --secondary-variant: var(--yellow-7);
