@@ -6,10 +6,20 @@ export default function Comments() {
   const [theme, setTheme] = useState("transparent_dark");
 
   useEffect(() => {
-    const prefersDark = document.documentElement.classList.contains("dark")
-    console.log(prefersDark);
-    if (!prefersDark) {
+    const prefersDark = document.documentElement.classList.contains("dark");
+    const prefersLight = document.documentElement.classList.contains("light");
+    const prefersUbe = document.documentElement.classList.contains("ube");
+    if (prefersLight) {
       setTheme("noborder_light");
+    } else if (prefersDark) {
+      setTheme("transparent_dark");
+    } else if (prefersUbe) {
+      setTheme("purple_dark");
+    } else {
+      const systemTheme = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      setTheme(systemTheme ? "dark" : "light");
     }
     setIsMounted(true);
   }, []);
