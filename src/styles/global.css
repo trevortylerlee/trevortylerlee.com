@@ -225,6 +225,17 @@
       --secondary: var(--yellow-6);
       --secondary-variant: var(--yellow-7);
     }
+    .mango {
+      --backdrop: var(--orange-1);
+      --background: var(--gray-4);
+      --background-variant: var(--orange-2);
+      --text: var(--gray-11);
+      --text-variant: var(--gray-10);
+      --primary: var(--orange-7);
+      --primary-variant: var(--red-7);
+      --secondary: var(--yellow-6);
+      --secondary-variant: var(--yellow-7);
+    }
   }
 
   @media (prefers-color-scheme: dark) {
@@ -235,6 +246,17 @@
       --text: var(--gray-1);
       --text-variant: var(--gray-2);
       --primary: var(--purple-6);
+      --primary-variant: var(--red-7);
+      --secondary: var(--yellow-6);
+      --secondary-variant: var(--yellow-7);
+    }
+    .mango {
+      --backdrop: 20 10 0;
+      --background: var(--gray-10);
+      --background-variant: var(--orange-11);
+      --text: var(--gray-1);
+      --text-variant: var(--gray-2);
+      --primary: var(--orange-5);
       --primary-variant: var(--red-7);
       --secondary: var(--yellow-6);
       --secondary-variant: var(--yellow-7);

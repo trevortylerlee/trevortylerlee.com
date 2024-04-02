@@ -31,15 +31,19 @@ if (pageTitle === "Trevor Lee | Homepage") {
     <script is:inline>
       const themes = {
         dark: () => {
-          document.documentElement.classList.remove("light", "ube");
+          document.documentElement.classList.remove("light", "mango", "ube");
           document.documentElement.classList.add("dark");
         },
         light: () => {
-          document.documentElement.classList.remove("dark", "ube");
+          document.documentElement.classList.remove("dark", "mango", "ube");
           document.documentElement.classList.add("light");
         },
+        mango: () => {
+          document.documentElement.classList.remove("dark", "light", "ube");
+          document.documentElement.classList.add("mango");
+        },
         ube: () => {
-          document.documentElement.classList.remove("dark", "light");
+          document.documentElement.classList.remove("dark", "light", "mango");
           document.documentElement.classList.add("ube");
         },
       };
@@ -125,6 +129,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
               <option value="auto">auto</option>
               <option value="dark">dark</option>
               <option value="light">light</option>
+              <option value="mango">mango</option>
               <option value="ube">ube</option>
             </select>
           </div>
@@ -163,10 +168,10 @@ if (pageTitle === "Trevor Lee | Homepage") {
   mediaQuery.addEventListener("change", (e) => {
     if (select.value === "auto") {
       if (e.matches) {
-        document.documentElement.classList.remove("light", "ube");
+        document.documentElement.classList.remove("light", "mango", "ube");
         document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove("dark", "ube");
+        document.documentElement.classList.remove("dark", "mango", "ube");
         document.documentElement.classList.add("light");
       }
     }
