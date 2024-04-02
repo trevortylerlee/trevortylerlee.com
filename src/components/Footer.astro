@@ -36,6 +36,7 @@ const buildTime = new Date().toISOString();
           <Icon
             class="text-text group-hover:text-primary group-focus-visible:text-primary"
             name="external"
+            aria-label="External link icon"
           /></a
         ></span
       >
@@ -64,7 +65,12 @@ const buildTime = new Date().toISOString();
       rel="noopener noreferrer"
       class="link group flex items-center gap-1 pb-4 pt-2 text-right"
     >
-      <span id="last-updated" class="link"> updated</span>
+      <span
+        id="last-updated"
+        class="link group-hover:text-primary group-focus-visible:text-primary"
+      >
+        updated</span
+      >
       <Icon
         class="text-text group-hover:text-primary group-focus-visible:text-primary"
         name="external"

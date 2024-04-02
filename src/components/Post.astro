@@ -5,12 +5,12 @@ const { date, href, title, description, last } = Astro.props;
 
 <li class="-mx-3">
   <a
-    class="text-text hover:bg-backgroundVariant/80 focus:bg-backgroundVariant/80 group flex items-center justify-between gap-2 rounded-2xl p-3 no-underline ring-inset ring-primary hover:ring-1 sm:gap-3"
+    class="group flex items-center justify-between gap-2 rounded-2xl p-3 text-text no-underline ring-inset ring-primary hover:bg-backgroundVariant/40 hover:ring-1 focus:bg-backgroundVariant/40 sm:gap-3"
     href={`/posts/${href}`}
   >
     <span>{title}</span>
     <span
-      class="date no-wrap text-textVariant group-hover:text-text group-focus:text-text bg-backdrop flex rounded-sm p-1 font-mono text-xs ring-1 ring-gray-10/10"
+      class="date no-wrap flex rounded-sm bg-backdrop p-1 font-mono text-xs text-textVariant ring-1 ring-gray-10/10 group-hover:text-text group-focus:text-text"
       >{formatDate(date, "short")}</span
     >
   </a>
