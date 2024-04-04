@@ -1,0 +1,168 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import profilePicture from "@assets/me-with-roxy.jpg";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  images: ImageMetadata[];
+  featureImage: ImageMetadata;
+}
+
+const { images, featureImage } = Astro.props;
+---
+
+<image-box
+  data-images={JSON.stringify(images)}
+  data-featureImage={featureImage}
+  id="image-box"
+  class="flex gap-2 sm:gap-6"
+>
+  <Image
+    id="feature-image"
+    format="avif"
+    src={profilePicture}
+    quality={"med"}
+    alt="Me and my friend Roxy."
+    class="h-[56px] w-[56px] cursor-e-resize sm:h-[240px] sm:w-[240px]"
+    loading="eager"
+  />
+  <div class="">
+    <h1
+      class="text-3xl font-bold uppercase tracking-tighter sm:text-3xl sm:tracking-tight"
+    >
+      Trevor Tyler Lee
+      <div
+        class="font-mono text-sm font-normal lowercase tracking-normal text-textVariant"
+      >
+        @trevortylerlee
+      </div>
+    </h1>
+    <div class="hidden max-w-[300px] grid-cols-2 gap-2 pt-8 sm:grid">
+      <a
+        href="https://bsky.app/profile/trevortylerlee.com"
+        class="link group flex items-center gap-1 text-lg"
+      >
+        🦋 Bluesky <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+      <a
+        href="mailto:trevortylerlee@gmail.com"
+        class="link group flex items-center gap-1 text-lg"
+      >
+        ✉️ Email <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+      <a
+        href="https://github.com/trevortylerlee"
+        class="link group flex items-center gap-1 text-lg"
+      >
+        💻 Github <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+      <a href="/rss.xml" class="link group flex items-center gap-1 text-lg">
+        🔖 RSS <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+      <a
+        href="tel:7782353815"
+        class="link group flex items-center gap-1 text-lg"
+      >
+        ☎️ Telephone <Icon
+          class="text-text group-hover:text-primary group-focus-visible:text-primary"
+          name="external"
+        />
+      </a>
+    </div>
+  </div>
+</image-box>
+<div class="grid max-w-[300px] grid-cols-2 gap-2 sm:hidden">
+  <a
+    href="https://bsky.app/profile/trevortylerlee.com"
+    class="link group flex items-center gap-1 text-lg"
+  >
+    🦋 Bluesky <Icon
+      class="text-text group-hover:text-primary group-focus-visible:text-primary"
+      name="external"
+    />
+  </a>
+  <a
+    href="mailto:trevortylerlee@gmail.com"
+    class="link group flex items-center gap-1 text-lg"
+  >
+    ✉️ Email <Icon
+      class="text-text group-hover:text-primary group-focus-visible:text-primary"
+      name="external"
+    />
+  </a>
+  <a
+    href="https://github.com/trevortylerlee"
+    class="link group flex items-center gap-1 text-lg"
+  >
+    💻 Github <Icon
+      class="text-text group-hover:text-primary group-focus-visible:text-primary"
+      name="external"
+    />
+  </a>
+  <a href="/rss.xml" class="link group flex items-center gap-1 text-lg">
+    🔖 RSS <Icon
+      class="text-text group-hover:text-primary group-focus-visible:text-primary"
+      name="external"
+    />
+  </a>
+  <a href="tel:7782353815" class="link group flex items-center gap-1 text-lg">
+    ☎️ Telephone <Icon
+      class="text-text group-hover:text-primary group-focus-visible:text-primary"
+      name="external"
+    />
+  </a>
+</div>
+
+<script>
+  class ImageBox extends HTMLElement {
+    constructor() {
+      super();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const imageBox = document.querySelector("#image-box");
+
+    const featureImage = document.querySelector(
+      "#feature-image",
+    ) as HTMLImageElement;
+    const original = featureImage.src;
+
+    let count = 0;
+
+    if (imageBox) {
+      const imageString = imageBox.getAttribute("data-images");
+      const orderedImages = imageString ? JSON.parse(imageString) : null;
+      const images = [...orderedImages].sort(() => Math.random() - 0.5);
+
+      if (images) {
+        if (featureImage) {
+          imageBox.addEventListener("click", () => {
+            if (count === images.length) {
+              count = 0;
+              featureImage.src = original;
+            } else {
+              featureImage.src = images[count].src;
+              count += 1;
+            }
+          });
+        }
+      }
+    }
+  });
+
+  customElements.define("image-box", ImageBox);
+</script>

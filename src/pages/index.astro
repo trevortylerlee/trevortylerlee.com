@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import profilePicture from "@assets/me-with-roxy.webp";
+import profilePicture from "@assets/me-with-roxy.jpg";
 import classlessCSS from "@assets/posts/classlesscss.png";
 import t2a from "@assets/posts/t2a.jpg";
 import phished from "@assets/posts/phished.png";
@@ -10,6 +10,53 @@ import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
 import Post from "@components/Post.astro";
 import Project from "@components/Project.astro";
+import ProfileCard from "@components/ProfileCard.astro";
+
+import roxy1 from "@assets/roxy/roxy-1.jpg";
+import roxy2 from "@assets/roxy/roxy-2.jpg";
+import roxy3 from "@assets/roxy/roxy-3.jpg";
+import roxy4 from "@assets/roxy/roxy-4.jpg";
+import roxy5 from "@assets/roxy/roxy-5.jpg";
+import roxy6 from "@assets/roxy/roxy-6.jpg";
+import roxy7 from "@assets/roxy/roxy-7.jpg";
+import roxy8 from "@assets/roxy/roxy-8.jpg";
+import roxy9 from "@assets/roxy/roxy-9.jpg";
+import roxy10 from "@assets/roxy/roxy-10.jpg";
+import roxy11 from "@assets/roxy/roxy-11.jpg";
+import roxy12 from "@assets/roxy/roxy-12.jpg";
+import roxy13 from "@assets/roxy/roxy-13.jpg";
+import roxy14 from "@assets/roxy/roxy-14.jpg";
+import roxy15 from "@assets/roxy/roxy-15.jpg";
+import roxy16 from "@assets/roxy/roxy-16.jpg";
+import roxy17 from "@assets/roxy/roxy-17.jpg";
+import roxy18 from "@assets/roxy/roxy-18.jpg";
+import roxy19 from "@assets/roxy/roxy-19.jpg";
+import roxy20 from "@assets/roxy/roxy-20.jpg";
+import roxy21 from "@assets/roxy/roxy-21.jpg";
+
+const images = [
+  roxy1,
+  roxy2,
+  roxy3,
+  roxy4,
+  roxy5,
+  roxy6,
+  roxy7,
+  roxy8,
+  roxy9,
+  roxy10,
+  roxy11,
+  roxy12,
+  roxy13,
+  roxy14,
+  roxy15,
+  roxy16,
+  roxy17,
+  roxy18,
+  roxy19,
+  roxy20,
+  roxy21,
+];
 
 const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {
@@ -21,70 +68,7 @@ const pageTitle = "Trevor Lee | Homepage";
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="flex flex-col gap-6 py-16 sm:py-24">
-    <div class="flex gap-2">
-      <Image
-        format="avif"
-        src={profilePicture}
-        quality={"low"}
-        alt="Young me with my dog Roxy."
-        class="h-[52px] w-[52px]"
-        loading="eager"
-      />
-      <h1
-        class="text-3xl font-bold uppercase tracking-tighter sm:text-3xl sm:tracking-tight"
-      >
-        Trevor Tyler Lee
-        <div
-          class="font-mono text-sm font-normal lowercase tracking-normal text-textVariant"
-        >
-          @trevortylerlee
-        </div>
-      </h1>
-    </div>
-    <div class="grid max-w-[360px] grid-cols-2 gap-2">
-      <a
-        href="https://bsky.app/profile/trevortylerlee.com"
-        class="link group flex items-center gap-1 text-lg"
-      >
-        🦋 Bluesky <Icon
-          class="text-text group-hover:text-primary group-focus-visible:text-primary"
-          name="external"
-        />
-      </a>
-      <a
-        href="mailto:trevortylerlee@gmail.com"
-        class="link group flex items-center gap-1 text-lg"
-      >
-        ✉️ Email <Icon
-          class="text-text group-hover:text-primary group-focus-visible:text-primary"
-          name="external"
-        />
-      </a>
-      <a
-        href="https://github.com/trevortylerlee"
-        class="link group flex items-center gap-1 text-lg"
-      >
-        💻 Github <Icon
-          class="text-text group-hover:text-primary group-focus-visible:text-primary"
-          name="external"
-        />
-      </a>
-      <a href="/rss.xml" class="link group flex items-center gap-1 text-lg">
-        🔖 RSS <Icon
-          class="text-text group-hover:text-primary group-focus-visible:text-primary"
-          name="external"
-        />
-      </a>
-      <a
-        href="tel:7782353815"
-        class="link group flex items-center gap-1 text-lg"
-      >
-        ☎️ Telephone <Icon
-          class="text-text group-hover:text-primary group-focus-visible:text-primary"
-          name="external"
-        />
-      </a>
-    </div>
+    <ProfileCard images={images} featureImage={profilePicture} />
   </div>
   <section>
     <span class="py-2 font-mono text-sm text-textVariant">
@@ -138,4 +122,9 @@ const pageTitle = "Trevor Lee | Homepage";
   </section>
 </BaseLayout>
 
-<script></script>
+<script>
+  const trigger = document.documentElement.querySelector("#trigger-container");
+  trigger?.addEventListener("click", (event) => {
+    console.log("triggered");
+  });
+</script>
