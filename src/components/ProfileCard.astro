@@ -15,31 +15,38 @@ const { images, featureImage } = Astro.props;
 <image-box
   data-images={JSON.stringify(images)}
   data-featureImage={featureImage}
+  data-sparks
   id="image-box"
   class="group/{imageBox} flex gap-3 sm:gap-6"
 >
   <Image
+    data-sparks
     id="feature-image"
     format="avif"
     src={profilePicture}
     quality={"med"}
     alt="Me and my friend Roxy."
-    class="h-[56px] w-[56px] cursor-e-resize transition-transform group-hover/{imageBox}:scale-105 group-active/{imageBox}:scale-95 sm:h-[240px] sm:w-[240px]"
+    class="h-[56px] w-[56px] cursor-pointer transition-transform group-hover/{imageBox}:scale-105 group-active/{imageBox}:scale-95 sm:h-[240px] sm:w-[240px]"
     loading="eager"
     draggable="false"
   />
-  <div class="">
+  <div data-sparks class="">
     <h1
+      data-sparks
       class="cursor-default text-3xl font-bold tracking-tighter transition-transform sm:text-3xl sm:tracking-tight"
     >
       Trevor Tyler Lee
       <div
+        data-sparks
         class="font-mono text-sm font-normal lowercase tracking-normal text-textVariant"
       >
         @trevortylerlee
       </div>
     </h1>
-    <div class="hidden max-w-[300px] grid-cols-2 gap-2 pt-8 sm:grid">
+    <div
+      data-sparks
+      class="hidden max-w-[300px] grid-cols-2 gap-2 pt-8 sm:grid"
+    >
       <a
         href="https://bsky.app/profile/trevortylerlee.com"
         class="link group flex items-center gap-1 text-lg"
