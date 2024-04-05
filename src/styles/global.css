@@ -178,6 +178,7 @@
     --backdrop: 250 250 250;
     --background: var(--gray-4);
     --background-variant: var(--blue-3);
+    --center-background: 250 250 250;
     --text: var(--gray-11);
     --text-variant: var(--gray-9);
     --primary: var(--blue-7);
@@ -205,6 +206,7 @@
     --backdrop: 0 0 0;
     --background: var(--gray-11);
     --background-variant: var(--blue-11);
+    --center-background: 0 0 0;
     --text: var(--gray-1);
     --text-variant: var(--gray-6);
     --primary: var(--blue-7);
@@ -226,11 +228,26 @@
     --astro-code-token-link: #f4457d;
   }
 
+  .hacker {
+    color-scheme: light;
+    --backdrop: 255 255 255;
+    --background: 130 130 130;
+    --background-variant: var(--orange-3);
+    --center-background: 246 246 239;
+    --text: var(--gray-11);
+    --text-variant: var(--gray-9);
+    --primary: 255 102 0;
+    --primary-variant: 255 102 0;
+    --secondary: var(--yellow-6);
+    --secondary-variant: var(--yellow-7);
+  }
+
   .red-dragon {
     color-scheme: dark;
     --backdrop: 26 11 12;
     --background: var(--gray-10);
     --background-variant: var(--red-11);
+    --center-background: 26 11 12;
     --text: var(--gray-1);
     --text-variant: var(--gray-5);
     --primary: 226 165 40;
@@ -241,9 +258,10 @@
 
   .ube {
     color-scheme: light;
-    --backdrop: var(--purple-1);
+    --backdrop: 255 255 255;
     --background: var(--gray-4);
     --background-variant: var(--purple-3);
+    --center-background: 255 255 255;
     --text: var(--gray-11);
     --text-variant: var(--gray-9);
     --primary: var(--purple-8);
@@ -257,6 +275,7 @@
     --backdrop: 24 24 26;
     --background: var(--gray-10);
     --background-variant: var(--pink-11);
+    --center-background: 24 24 26;
     --text: var(--gray-1);
     --text-variant: var(--gray-5);
     --primary: 71 186 192;

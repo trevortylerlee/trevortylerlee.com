@@ -202,6 +202,7 @@ module.exports = {
           11: "rgb(var(--gray-11) / <alpha-value>)",
         },
         backdrop: "rgb(var(--backdrop) / <alpha-value>)",
+        centerBackground: "rgb(var(--center-background) / <alpha-value>)",
         background: "rgb(var(--background) / <alpha-value>)",
         backgroundVariant: "rgb(var(--background-variant) / <alpha-value>)",
         text: "rgb(var(--text) / <alpha-value>)",
