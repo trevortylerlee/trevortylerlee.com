@@ -4,8 +4,8 @@ import { Icon } from "astro-icon/components";
 const { category, pageSlug, pageTitle } = Astro.props;
 ---
 
-<ul class="link flex">
-  <li><a href="/" class="no-underline link hover:text-primary focus-visible:text-primary">Home&nbsp;/&nbsp;</a></li>
-  {category === 'posts' && <li class=""><a href=`/${category}` class="no-underline link hover:text-primary focus-visible:text-primary">Posts&nbsp;/&nbsp;</a></li>}
+<ul class="flex items-center">
+  <li class="flex items-center"><a href="/" class="no-underline link hover:text-primary focus-visible:text-primary">Home&nbsp;/&nbsp;</a></li>
+  {category === 'posts' && <li class="flex items-center"><a href=`/${category}` class="no-underline link hover:text-primary focus-visible:text-primary">Posts&nbsp;/&nbsp;</a></li>}
   {pageSlug && <li class="text-text hidden sm:flex">{pageTitle}</li>}
 </ul>
