@@ -141,13 +141,27 @@ const pageTitle = "Trevor Lee | Homepage";
     connectedCallback() {
       this.setupSpark();
 
-      this.root.addEventListener("click", (e) => {
+      const clickHandler = (e) => {
         if (this.activeEls && !e.target.matches(this.activeEls)) return;
 
-        console.log("clicked");
         this.setSparkPosition(e);
         this.animateSpark();
-      });
+      };
+
+      const touchHandler = (e) => {
+        if (this.activeEls && !e.target.matches(this.activeEls)) return;
+
+        const touch = e.touches[0];
+        const simulatedMouseEvent = new MouseEvent("click", {
+          clientX: touch.clientX,
+          clientY: touch.clientY,
+        });
+        this.setSparkPosition(simulatedMouseEvent);
+        this.animateSpark();
+      };
+
+      this.root.addEventListener("click", clickHandler);
+      this.root.addEventListener("touchstart", touchHandler);
     }
 
     animateSpark() {
