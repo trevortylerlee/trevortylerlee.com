@@ -8,12 +8,16 @@ export default function Comments() {
   useEffect(() => {
     const prefersDark = document.documentElement.classList.contains("dark");
     const prefersLight = document.documentElement.classList.contains("light");
+    const prefersRedDragon =
+      document.documentElement.classList.contains("red-dragon");
     const prefersUbe = document.documentElement.classList.contains("ube");
     const prefersViceCity =
       document.documentElement.classList.contains("vice-city");
     if (prefersLight) {
       setTheme("noborder_light");
     } else if (prefersDark) {
+      setTheme("transparent_dark");
+    } else if (prefersRedDragon) {
       setTheme("transparent_dark");
     } else if (prefersUbe) {
       setTheme("noborder_light");

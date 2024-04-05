@@ -226,6 +226,19 @@
     --astro-code-token-link: #f4457d;
   }
 
+  .red-dragon {
+    color-scheme: dark;
+    --backdrop: 26 11 12;
+    --background: var(--gray-10);
+    --background-variant: var(--red-11);
+    --text: var(--gray-1);
+    --text-variant: var(--gray-5);
+    --primary: 226 165 40;
+    --primary-variant: 255 58 50;
+    --secondary: var(--yellow-6);
+    --secondary-variant: var(--yellow-7);
+  }
+
   .ube {
     color-scheme: light;
     --backdrop: var(--purple-1);
