@@ -9,12 +9,16 @@ export default function Comments() {
     const prefersDark = document.documentElement.classList.contains("dark");
     const prefersLight = document.documentElement.classList.contains("light");
     const prefersUbe = document.documentElement.classList.contains("ube");
+    const prefersViceCity =
+      document.documentElement.classList.contains("vice-city");
     if (prefersLight) {
       setTheme("noborder_light");
     } else if (prefersDark) {
       setTheme("transparent_dark");
     } else if (prefersUbe) {
-      setTheme("purple_dark");
+      setTheme("noborder_light");
+    } else if (prefersViceCity) {
+      setTheme("transparent_dark");
     } else {
       const systemTheme = window.matchMedia(
         "(prefers-color-scheme: dark)",

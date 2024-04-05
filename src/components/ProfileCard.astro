@@ -16,7 +16,7 @@ const { images, featureImage } = Astro.props;
   data-images={JSON.stringify(images)}
   data-featureImage={featureImage}
   id="image-box"
-  class="flex gap-2 sm:gap-6"
+  class="group/{imageBox} flex gap-3 sm:gap-6"
 >
   <Image
     id="feature-image"
@@ -24,12 +24,13 @@ const { images, featureImage } = Astro.props;
     src={profilePicture}
     quality={"med"}
     alt="Me and my friend Roxy."
-    class="h-[56px] w-[56px] cursor-e-resize sm:h-[240px] sm:w-[240px]"
+    class="h-[56px] w-[56px] cursor-e-resize transition-transform group-hover/{imageBox}:scale-105 group-active/{imageBox}:scale-95 sm:h-[240px] sm:w-[240px]"
     loading="eager"
+    draggable="false"
   />
   <div class="">
     <h1
-      class="text-3xl font-bold uppercase tracking-tighter sm:text-3xl sm:tracking-tight"
+      class="cursor-default text-3xl font-bold tracking-tighter transition-transform sm:text-3xl sm:tracking-tight"
     >
       Trevor Tyler Lee
       <div

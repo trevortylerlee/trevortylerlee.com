@@ -213,39 +213,35 @@
     --astro-code-token-link: #f4457d;
   }
 
-  @media (prefers-color-scheme: light) {
-    .ube {
-      color-scheme: light;
-      --backdrop: var(--purple-1);
-      --background: var(--gray-4);
-      --background-variant: var(--purple-3);
-      --text: var(--gray-11);
-      --text-variant: var(--gray-10);
-      --primary: var(--purple-8);
-      --primary-variant: var(--red-7);
-      --secondary: var(--yellow-6);
-      --secondary-variant: var(--yellow-7);
-    }
+  .ube {
+    color-scheme: light;
+    --backdrop: var(--purple-1);
+    --background: var(--gray-4);
+    --background-variant: var(--purple-3);
+    --text: var(--gray-11);
+    --text-variant: var(--gray-9);
+    --primary: var(--purple-8);
+    --primary-variant: var(--purple-6);
+    --secondary: var(--yellow-6);
+    --secondary-variant: var(--yellow-7);
   }
 
-  @media (prefers-color-scheme: dark) {
-    .ube {
-      color-scheme: dark;
-      --backdrop: 20 5 30;
-      --background: var(--gray-10);
-      --background-variant: var(--purple-11);
-      --text: var(--gray-1);
-      --text-variant: var(--gray-2);
-      --primary: var(--purple-6);
-      --primary-variant: var(--red-7);
-      --secondary: var(--yellow-6);
-      --secondary-variant: var(--yellow-7);
-    }
+  .vice-city {
+    color-scheme: dark;
+    --backdrop: 24 24 26;
+    --background: var(--gray-10);
+    --background-variant: var(--pink-11);
+    --text: var(--gray-1);
+    --text-variant: var(--gray-5);
+    --primary: 71 186 192;
+    --primary-variant: 228 96 155;
+    --secondary: var(--yellow-6);
+    --secondary-variant: var(--yellow-7);
   }
 }
 
 .link {
-  color: rgb(var(--blue-7));
+  color: rgb(var(--primary-variant));
 }
 
 .link:hover,
