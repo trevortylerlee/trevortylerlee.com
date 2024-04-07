@@ -10,6 +10,7 @@ export default function Comments() {
     const prefersLight = document.documentElement.classList.contains("light");
     const prefersRedDragon =
       document.documentElement.classList.contains("red-dragon");
+    const prefersSNES = document.documentElement.classList.contains("snes");
     const prefersUbe = document.documentElement.classList.contains("ube");
     const prefersViceCity =
       document.documentElement.classList.contains("vice-city");
@@ -19,6 +20,8 @@ export default function Comments() {
       setTheme("transparent_dark");
     } else if (prefersRedDragon) {
       setTheme("transparent_dark");
+    } else if (prefersSNES) {
+      setTheme("noborder_light");
     } else if (prefersUbe) {
       setTheme("noborder_light");
     } else if (prefersViceCity) {

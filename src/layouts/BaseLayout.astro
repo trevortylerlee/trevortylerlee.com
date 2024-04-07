@@ -34,6 +34,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
         "light",
         "hacker",
         "red-dragon",
+        "snes",
         "ube",
         "vice-city",
       ];
@@ -126,6 +127,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
               <hr />
               <option value="hacker">hacker</option>
               <option value="red-dragon">red dragon</option>
+              <option value="snes">snes</option>
               <option value="ube">ube</option>
               <option value="vice-city">vice city</option>
             </select>
@@ -162,10 +164,24 @@ if (pageTitle === "Trevor Lee | Homepage") {
     mediaQuery.addEventListener("change", (e) => {
       if (select.value === "auto") {
         if (e.matches) {
-          document.documentElement.classList.remove("light", "sith", "ube");
+          document.documentElement.classList.remove(
+            "light",
+            "hacker",
+            "red-dragon",
+            "ube",
+            "snes",
+            "vice-city",
+          );
           document.documentElement.classList.add("dark");
         } else {
-          document.documentElement.classList.remove("dark", "sith", "ube");
+          document.documentElement.classList.remove(
+            "dark",
+            "hacker",
+            "red-dragon",
+            "ube",
+            "snes",
+            "vice-city",
+          );
           document.documentElement.classList.add("light");
         }
       }

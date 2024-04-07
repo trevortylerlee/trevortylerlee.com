@@ -256,6 +256,20 @@
     --secondary-variant: var(--yellow-7);
   }
 
+  .snes {
+    color-scheme: light;
+    --backdrop: 191 190 194;
+    --background: var(--gray-4);
+    --background-variant: var(--purple-3);
+    --center-background: 191 190 194;
+    --text: 46 46 46;
+    --text-variant: var(--gray-10);
+    --primary: 85 61 158;
+    --primary-variant: 85 61 158;
+    --secondary: var(--yellow-6);
+    --secondary-variant: var(--yellow-7);
+  }
+
   .ube {
     color-scheme: light;
     --backdrop: 255 255 255;
