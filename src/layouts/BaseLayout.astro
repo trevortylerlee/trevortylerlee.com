@@ -12,6 +12,7 @@ import "@fontsource/geist-mono/400.css";
 import "@fontsource/geist-mono/700.css";
 
 import { Icon } from "astro-icon/components";
+import ViewTransitions from "astro/components/ViewTransitions.astro";
 
 import Navigation from "../components/Navigation.astro";
 import Contact from "../components/Contact.tsx";
@@ -95,6 +96,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
     <meta property="og:image" content="/og.jpg" />
     <meta name="description" content="Trevor Tyler Lee | @trevortylerlee " />
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
   <body class="bg-backdrop">
     <div
@@ -137,40 +139,38 @@ if (pageTitle === "Trevor Lee | Homepage") {
       </main>
       <Footer />
     </div>
-  </body>
-</html>
-
-<style>
-  body {
-    background: rgb(var(--background));
-    background-repeat: repeat;
-  }
-
-  .dark body {
-    background: black;
-  }
-
-  @media screen and (prefers-reduced-motion: no-preference) {
-    /* https://maya.land/ */
-    .dark body {
-      background-image: url("/star.gif");
+  </body><style>
+    body {
+      background: rgb(var(--background));
+      background-repeat: repeat;
     }
-  }
-</style>
 
-<script>
-  // @ts-ignore
-  const select: HTMLSelectElement = document.querySelector("#theme-toggle");
-  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  mediaQuery.addEventListener("change", (e) => {
-    if (select.value === "auto") {
-      if (e.matches) {
-        document.documentElement.classList.remove("light", "sith", "ube");
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark", "sith", "ube");
-        document.documentElement.classList.add("light");
+    .dark body {
+      background: black;
+    }
+
+    @media screen and (prefers-reduced-motion: no-preference) {
+      /* https://maya.land/ */
+      .dark body {
+        background-image: url("/star.gif");
       }
     }
-  });
-</script>
+  </style>
+
+  <script>
+    // @ts-ignore
+    const select: HTMLSelectElement = document.querySelector("#theme-toggle");
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    mediaQuery.addEventListener("change", (e) => {
+      if (select.value === "auto") {
+        if (e.matches) {
+          document.documentElement.classList.remove("light", "sith", "ube");
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark", "sith", "ube");
+          document.documentElement.classList.add("light");
+        }
+      }
+    });
+  </script>
+</html>
