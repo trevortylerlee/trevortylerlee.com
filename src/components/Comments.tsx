@@ -6,26 +6,19 @@ export default function Comments() {
   const [theme, setTheme] = useState("transparent_dark");
 
   useEffect(() => {
-    const prefersDark = document.documentElement.classList.contains("dark");
-    const prefersLight = document.documentElement.classList.contains("light");
-    const prefersRedDragon =
-      document.documentElement.classList.contains("red-dragon");
-    const prefersSNES = document.documentElement.classList.contains("snes");
-    const prefersUbe = document.documentElement.classList.contains("ube");
-    const prefersViceCity =
-      document.documentElement.classList.contains("vice-city");
-    if (prefersLight) {
-      setTheme("noborder_light");
-    } else if (prefersDark) {
+    const classList = document.documentElement.classList;
+    const prefersDark = classList.contains("dark");
+    const prefersLight = classList.contains("light");
+    const prefersHacker = classList.contains("hacker");
+    const prefersRedDragon = classList.contains("red-dragon");
+    const prefersSNES = classList.contains("snes");
+    const prefersUbe = classList.contains("ube");
+    const prefersViceCity = classList.contains("vice-city");
+
+    if (prefersDark || prefersRedDragon || prefersViceCity) {
       setTheme("transparent_dark");
-    } else if (prefersRedDragon) {
-      setTheme("transparent_dark");
-    } else if (prefersSNES) {
+    } else if (prefersHacker || prefersSNES || prefersUbe || prefersLight) {
       setTheme("noborder_light");
-    } else if (prefersUbe) {
-      setTheme("noborder_light");
-    } else if (prefersViceCity) {
-      setTheme("transparent_dark");
     } else {
       const systemTheme = window.matchMedia(
         "(prefers-color-scheme: dark)",
