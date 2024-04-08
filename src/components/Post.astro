@@ -10,7 +10,7 @@ const { date, href, title, description, last } = Astro.props;
   >
     <span>{title}</span>
     <span
-      class="date no-wrap flex rounded-sm bg-backdrop p-1 font-mono text-xs text-textVariant ring-1 ring-gray-10/10 group-hover:text-text group-focus:text-text"
+      class="date no-wrap flex rounded-sm bg-backdrop p-1 font-mono text-xs text-textVariant ring-1 ring-background group-hover:text-text group-focus:text-text"
       >{formatDate(date, "short")}</span
     >
   </a>
