@@ -17,7 +17,7 @@ const { images, featureImage } = Astro.props;
   data-featureImage={featureImage}
   data-sparks
   id="image-box"
-  class="group/{imageBox} flex gap-3 sm:gap-6"
+  class="group/{imageBox} flex cursor-pointer gap-3 sm:gap-6"
 >
   <Image
     data-sparks
@@ -33,7 +33,7 @@ const { images, featureImage } = Astro.props;
   <div data-sparks class="">
     <h1
       data-sparks
-      class="cursor-default text-3xl font-bold tracking-tighter transition-transform sm:text-3xl sm:tracking-tight"
+      class="cursor-pointer text-3xl font-bold tracking-tighter transition-transform sm:text-3xl sm:tracking-tight"
     >
       Trevor Tyler Lee
       <div
@@ -138,6 +138,13 @@ const { images, featureImage } = Astro.props;
 </div>
 
 <script>
+  import { Howl } from "howler";
+
+  const sound = new Howl({
+    src: ["/sounds/switch.mp3"],
+  });
+  sound.volume(0.5);
+
   class ImageBox extends HTMLElement {
     constructor() {
       super();
@@ -162,6 +169,7 @@ const { images, featureImage } = Astro.props;
       if (images) {
         if (featureImage) {
           imageBox.addEventListener("click", () => {
+            sound.play();
             if (count === images.length) {
               count = 0;
               featureImage.src = original;
