@@ -8,7 +8,7 @@ const buildTime = new Date().toISOString();
   class="flex flex-col items-baseline justify-between gap-3 pb-4 pt-24 sm:flex-row sm:gap-20"
 >
   <details
-    class="relative w-full cursor-default rounded-xl px-2 py-2 ring-2 ring-background"
+    class="relative w-full cursor-default rounded-xl px-2 py-2 ring-2 ring-background hover:ring-primary focus-visible:ring-primary"
   >
     <summary class="cursor-pointer"
       >Contact <span class="font-mono text-sm text-textVariant"
@@ -79,7 +79,7 @@ const buildTime = new Date().toISOString();
   <div
     id="build-time"
     data-time={buildTime}
-    class="flex min-w-[200px] flex-grow-0 flex-row items-center sm:flex-row-reverse"
+    class="flex min-w-[240px] flex-grow-0 flex-row items-center sm:flex-row-reverse"
   >
     <a
       href="https://github.com/trevortylerlee/trevortylerlee.com/commits/main"

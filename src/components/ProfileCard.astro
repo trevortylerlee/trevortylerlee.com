@@ -169,7 +169,7 @@ const { images, featureImage } = Astro.props;
       if (images) {
         if (featureImage) {
           imageBox.addEventListener("click", () => {
-            sound.play();
+            // sound.play();
             if (count === images.length) {
               count = 0;
               featureImage.src = original;
