@@ -181,8 +181,8 @@
     --center-background: 250 250 250;
     --text: var(--gray-11);
     --text-variant: var(--gray-9);
-    --primary: var(--blue-7);
-    --primary-variant: var(--blue-7);
+    --primary: 7 113 227;
+    --primary-variant: 7 113 227;
     --secondary: var(--yellow-6);
     --secondary-variant: var(--yellow-7);
 
