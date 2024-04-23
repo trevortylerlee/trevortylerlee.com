@@ -24,7 +24,8 @@ export default defineConfig({
   },
   integrations: [react(), mdx(), robotsTxt(), sitemap(), tailwind(), icon()],
   output: "static",
-  adapter: vercel({
-    analytics: true,
-  }),
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "viewport",
+  },
 });
