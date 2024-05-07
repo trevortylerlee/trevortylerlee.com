@@ -6,6 +6,8 @@ import classlessCSS from "@assets/posts/classlesscss.png";
 import t2a from "@assets/posts/t2a.jpg";
 import phished from "@assets/posts/phished.png";
 import animatedPhished from "/phished-animated.mp4";
+import swiftiedotred from "@assets/posts/swiftiedotred.jpg";
+import thirtysixquestions from "@assets/posts/thirtysixquestions.jpg";
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
@@ -100,6 +102,20 @@ const pageTitle = "Trevor Lee | Homepage";
   <section>
     <h2 class="pb-4 pt-16 font-mono text-sm text-textVariant">projects</h2>
     <ul class="grid gap-3 sm:grid-cols-2 sm:gap-6">
+      <Project
+        description="These thirty six questions foster closeness through mutual vulnerability."
+        href="https://thirtysixquestions.org"
+        title="thirtysixquestions.org"
+        src={thirtysixquestions}
+        online
+      />
+      <Project
+        description="The best website for Swifties."
+        href="https://swiftie.red"
+        title="swiftie.red"
+        src={swiftiedotred}
+        online
+      />
       <Project
         description="Site to instantly preview drop-in CSS themes."
         href="https://classlesscss.com"
