@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+const { href, title, description, imageSrc, videoSrc, online } = Astro.props;
+---
+
+<li class="relative">
+  <a
+    id="link"
+    class="group block h-full w-full overflow-hidden rounded-2xl text-text ring-2 ring-background hover:bg-backgroundVariant hover:ring-primary focus-visible:bg-backgroundVariant focus-visible:ring-primary"
+    href={href}
+    ><span class="-mb-3 block h-[12em] w-full overflow-hidden rounded-t-xl p-2"
+      ><div class="overflow-hidden rounded-t-2xl">
+        <Image
+          alt={title}
+          width="640"
+          height="480"
+          class="h-full rounded-lg rounded-t-2xl object-cover opacity-100 ring-2 ring-backgroundVariant delay-75 duration-500 ease-in-out group-hover:opacity-0 group-focus-visible:opacity-0"
+          src={imageSrc}
+          loading="eager"
+          quality={"low"}
+          format="avif"
+        />
+        <video
+          id="video"
+          class="relative -top-52 rounded-lg object-fill opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100"
+          muted
+          src={videoSrc}
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      </div></span
+    ><h3 class="block px-3.5 pt-5 text-lg font-medium">
+      {title}
+    </h3><p
+      class="mt-1 block border-b-transparent px-3.5 pb-5 pr-4 text-textVariant"
+    >
+      {description}
+    </p><span class="block pb-4">
+      {
+        online ? (
+          <div class="absolute bottom-3 right-5 flex items-center gap-1">
+            <div class="h-[8px] w-[8px] rounded-full bg-green-7" />
+            <span class="font-mono text-xs text-textVariant">online</span>
+          </div>
+        ) : (
+          <div class="absolute bottom-3 right-5 flex items-center gap-1">
+            <div class="h-[8px] w-[8px] rounded-full bg-red-7" />
+            <span class="font-mono text-xs text-textVariant">offline</span>
+          </div>
+        )
+      }
+    </span></a
+  >
+</li>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+</style>
+
+<script>
+  const video = document.getElementById("video");
+  const link = document.getElementById("link");
+
+  link?.addEventListener("pointerenter", () => {
+    if (video instanceof HTMLVideoElement) {
+      video.currentTime = 0;
+      video?.play();
+    }
+  });
+
+  link?.addEventListener("focusin", () => {
+    if (video instanceof HTMLVideoElement) {
+      video.currentTime = 0;
+      video?.play();
+    }
+  });
+
+  link?.addEventListener("pointerleave", () => {
+    if (video instanceof HTMLVideoElement) {
+      video.pause();
+    }
+  });
+</script>

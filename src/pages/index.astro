@@ -5,11 +5,13 @@ import profilePicture from "@assets/me-with-roxy.jpg";
 import classlessCSS from "@assets/posts/classlesscss.png";
 import t2a from "@assets/posts/t2a.jpg";
 import phished from "@assets/posts/phished.png";
+import animatedPhished from "/phished-animated.mp4";
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
 import Post from "@components/Post.astro";
 import Project from "@components/Project.astro";
+import PhishedProject from "@components/PhishedProject.astro";
 import ProfileCard from "@components/ProfileCard.astro";
 
 import roxy1 from "@assets/roxy/roxy-1.jpg";
@@ -112,11 +114,12 @@ const pageTitle = "Trevor Lee | Homepage";
         src={t2a}
         online
       />
-      <Project
+      <PhishedProject
         description="Protect your friends and family from phishing attacks by phishing them yourself."
         href="https://github.com/phished-co/phished_web_app"
         title="Phished"
-        src={phished}
+        imageSrc={phished}
+        videoSrc={animatedPhished}
       />
     </ul>
   </section>
@@ -225,7 +228,7 @@ const pageTitle = "Trevor Lee | Homepage";
       <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
         ${Array.from(
           { length: 8 },
-          (_) => `<line x1="50" y1="30" x2="50" y2="4"/>`,
+          (_) => `<line x1="50" y1="30" x2="50" y2="4"/>`
         ).join("")}
       </svg>
     `;
