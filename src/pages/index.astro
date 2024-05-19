@@ -142,9 +142,8 @@ const pageTitle = "Trevor Lee | Homepage";
   <click-spark active-on="[data-sparks]"></click-spark>
 </BaseLayout>
 
-<script is:inline>
+<script>
   // https://ryanmulligan.dev/
-
   class ClickSpark extends HTMLElement {
     constructor() {
       super();
@@ -256,6 +255,8 @@ const pageTitle = "Trevor Lee | Homepage";
 
   customElements.define("click-spark", ClickSpark);
 
-  const spark = document.querySelector("click-spark");
-  spark.style.setProperty("--click-spark-color", `rgb(var(--primary))`);
+  document.addEventListener("astro:page-load", () => {
+    const spark = document.querySelector("click-spark");
+    spark?.style.setProperty("--click-spark-color", `rgb(var(--primary))`);
+  });
 </script>

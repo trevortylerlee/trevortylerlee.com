@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import "../styles/preflight.css";
 
+import { ViewTransitions } from "astro:transitions";
+
 import "@fontsource/geist-sans/400.css";
 import "@fontsource/geist-sans/500.css";
 import "@fontsource/geist-sans/600.css";
@@ -28,38 +30,68 @@ if (pageTitle === "Trevor Lee | Homepage") {
 
 <html id="html" lang="en" prefix="og: http://ogp.me/ns#">
   <head>
-    <script is:inline>
-      const themes = [
-        "dark",
-        "light",
-        "hacker",
-        "red-dragon",
-        "snes",
-        "ube",
-        "vice-city",
-      ];
+    <script is:inline data-astro-rerun>
+      function init() {
+        const themes = [
+          "dark",
+          "light",
+          "hacker",
+          "red-dragon",
+          "snes",
+          "ube",
+          "vice-city",
+        ];
 
-      const applyTheme = (theme) => {
-        const themesToRemove = themes.filter((t) => t !== theme);
-        themesToRemove.forEach((t) => {
-          document.documentElement.classList.remove(t);
-        });
-        document.documentElement.classList.add(theme);
-      };
+        const applyTheme = (theme) => {
+          const themesToRemove = themes.filter((t) => t !== theme);
+          themesToRemove.forEach((t) => {
+            document.documentElement.classList.remove(t);
+          });
+          document.documentElement.classList.add(theme);
+        };
 
-      const getPreferredTheme = () => {
-        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
-        } else {
-          return "light";
-        }
-      };
+        const getPreferredTheme = () => {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+          } else {
+            return "light";
+          }
+        };
 
-      const savedTheme = localStorage.getItem("theme");
-      const theme = savedTheme ? savedTheme : getPreferredTheme();
-      applyTheme(theme);
+        const savedTheme = localStorage.getItem("theme");
+        const theme = savedTheme ? savedTheme : getPreferredTheme();
+        applyTheme(theme);
+      }
 
-      window.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("astro:page-load", () => {
+        const themes = [
+          "dark",
+          "light",
+          "hacker",
+          "red-dragon",
+          "snes",
+          "ube",
+          "vice-city",
+        ];
+
+        const applyTheme = (theme) => {
+          const themesToRemove = themes.filter((t) => t !== theme);
+          themesToRemove.forEach((t) => {
+            document.documentElement.classList.remove(t);
+          });
+          document.documentElement.classList.add(theme);
+        };
+
+        const getPreferredTheme = () => {
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
+          } else {
+            return "light";
+          }
+        };
+
+        init();
+        const savedTheme = localStorage.getItem("theme");
         const select = document.querySelector("#theme-toggle");
         select.value = savedTheme ? savedTheme : "auto";
 
@@ -76,6 +108,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
 
         select.addEventListener("change", toggleTheme);
       });
+      init();
     </script>
     <script
       defer
@@ -96,6 +129,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
     <meta property="og:image" content="/og.jpg" />
     <meta name="description" content="Trevor Tyler Lee | @trevortylerlee " />
     <title>{pageTitle}</title>
+    <ViewTransitions />
   </head>
   <body class="bg-backdrop">
     <div
@@ -139,52 +173,53 @@ if (pageTitle === "Trevor Lee | Homepage") {
       </main>
       <Footer />
     </div>
-  </body><style>
-    body {
-      background: rgb(var(--background));
-      background-repeat: repeat;
-    }
-
-    .dark body {
-      background: black;
-    }
-
-    @media screen and (prefers-reduced-motion: no-preference) {
-      /* https://maya.land/ */
-      .dark body {
-        background-image: url("/star.gif");
+    <style>
+      body {
+        background: rgb(var(--background));
+        background-repeat: repeat;
       }
-    }
-  </style>
 
-  <script>
-    // @ts-ignore
-    const select: HTMLSelectElement = document.querySelector("#theme-toggle");
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    mediaQuery.addEventListener("change", (e) => {
-      if (select.value === "auto") {
-        if (e.matches) {
-          document.documentElement.classList.remove(
-            "light",
-            "hacker",
-            "red-dragon",
-            "ube",
-            "snes",
-            "vice-city",
-          );
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove(
-            "dark",
-            "hacker",
-            "red-dragon",
-            "ube",
-            "snes",
-            "vice-city",
-          );
-          document.documentElement.classList.add("light");
+      .dark body {
+        background: black;
+      }
+
+      @media screen and (prefers-reduced-motion: no-preference) {
+        /* https://maya.land/ */
+        .dark body {
+          background-image: url("/star.gif");
         }
       }
-    });
-  </script>
+    </style>
+
+    <script>
+      // @ts-ignore
+      const select: HTMLSelectElement = document.querySelector("#theme-toggle");
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      mediaQuery.addEventListener("change", (e) => {
+        if (select.value === "auto") {
+          if (e.matches) {
+            document.documentElement.classList.remove(
+              "light",
+              "hacker",
+              "red-dragon",
+              "ube",
+              "snes",
+              "vice-city",
+            );
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove(
+              "dark",
+              "hacker",
+              "red-dragon",
+              "ube",
+              "snes",
+              "vice-city",
+            );
+            document.documentElement.classList.add("light");
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
