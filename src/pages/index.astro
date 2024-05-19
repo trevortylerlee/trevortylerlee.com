@@ -130,12 +130,12 @@ const pageTitle = "Trevor Lee | Homepage";
         src={t2a}
         online
       />
-      <PhishedProject
+      <Project
         description="Protect your friends and family from phishing attacks by phishing them yourself."
         href="https://github.com/phished-co/phished_web_app"
         title="Phished"
-        imageSrc={phished}
-        videoSrc={animatedPhished}
+        src={phished}
+        offline
       />
     </ul>
   </section>
@@ -244,7 +244,7 @@ const pageTitle = "Trevor Lee | Homepage";
       <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
         ${Array.from(
           { length: 8 },
-          (_) => `<line x1="50" y1="30" x2="50" y2="4"/>`
+          (_) => `<line x1="50" y1="30" x2="50" y2="4"/>`,
         ).join("")}
       </svg>
     `;
