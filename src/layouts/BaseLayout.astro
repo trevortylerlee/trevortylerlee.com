@@ -97,12 +97,26 @@ if (pageTitle === "Trevor Lee | Homepage") {
 
         const toggleTheme = () => {
           const selectedTheme = select.value;
+          const giscus = document.querySelector("#giscus");
+
           if (selectedTheme === "auto") {
             localStorage.removeItem("theme");
-            applyTheme(getPreferredTheme());
+            const newTheme = getPreferredTheme();
+            applyTheme(newTheme);
+            giscus?.setAttribute("theme", newTheme);
           } else {
             localStorage.setItem("theme", selectedTheme);
             applyTheme(selectedTheme);
+
+            if (
+              (selectedTheme === "dark") |
+              (selectedTheme === "red-dragon") |
+              (selectedTheme === "vice-city")
+            ) {
+              giscus?.setAttribute("theme", "dark");
+            } else {
+              giscus?.setAttribute("theme", "light");
+            }
           }
         };
 
