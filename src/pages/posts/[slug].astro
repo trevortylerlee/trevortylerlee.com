@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "src/layouts/BaseLayout.astro";
-import Comments from "@components/Comments";
 import { formatDate } from "src/lib/utils";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
@@ -47,9 +46,7 @@ const { Content } = await post.render();
     <div id="content" class="prose mx-auto mb-12 mt-8 text-text">
       <Content />
     </div>
-    <div class="pb-4">
-      <Comments client:idle />
-    </div>
+    <div class="giscus pb-4"></div>
   </div>
 </BaseLayout>
 
@@ -66,3 +63,21 @@ const { Content } = await post.render();
     --tw-prose-bold: rgb(var(--text));
   }
 </style>
+
+<script
+  is:inline
+  src="https://giscus.app/client.js"
+  data-repo="trevortylerlee/trevortylerlee.com"
+  data-repo-id="R_kgDOIetyNw"
+  data-category="Announcements"
+  data-category-id="DIC_kwDOIetyN84CYUKP"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="bottom"
+  data-theme="preferred_color_scheme"
+  data-lang="en"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async></script>

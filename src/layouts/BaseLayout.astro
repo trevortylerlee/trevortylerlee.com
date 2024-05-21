@@ -58,9 +58,29 @@ if (pageTitle === "Trevor Lee | Homepage") {
           }
         };
 
+        const setGiscusTheme = (theme) => {
+          const giscus = document.querySelector(".giscus-frame");
+
+          if (giscus) {
+            const url = new URL(giscus.src);
+            url.searchParams.set("theme", theme);
+            giscus.src = url.toString();
+          }
+        };
+
         const savedTheme = localStorage.getItem("theme");
         const theme = savedTheme ? savedTheme : getPreferredTheme();
         applyTheme(theme);
+
+        if (
+          theme === "dark" ||
+          theme === "red-dragon" ||
+          theme === "vice-city"
+        ) {
+          setGiscusTheme("dark");
+        } else {
+          setGiscusTheme("light");
+        }
       }
 
       document.addEventListener("astro:page-load", () => {
@@ -90,36 +110,44 @@ if (pageTitle === "Trevor Lee | Homepage") {
           }
         };
 
-        init();
-        const savedTheme = localStorage.getItem("theme");
-        const select = document.querySelector("#theme-toggle");
-        select.value = savedTheme ? savedTheme : "auto";
-
         const toggleTheme = () => {
           const selectedTheme = select.value;
-          const giscus = document.querySelector("#giscus");
 
           if (selectedTheme === "auto") {
             localStorage.removeItem("theme");
             const newTheme = getPreferredTheme();
             applyTheme(newTheme);
-            giscus?.setAttribute("theme", newTheme);
+            setGiscusTheme(newTheme);
           } else {
             localStorage.setItem("theme", selectedTheme);
             applyTheme(selectedTheme);
 
             if (
-              (selectedTheme === "dark") |
-              (selectedTheme === "red-dragon") |
-              (selectedTheme === "vice-city")
+              selectedTheme === "dark" ||
+              selectedTheme === "red-dragon" ||
+              selectedTheme === "vice-city"
             ) {
-              giscus?.setAttribute("theme", "dark");
+              setGiscusTheme("dark");
             } else {
-              giscus?.setAttribute("theme", "light");
+              setGiscusTheme("light");
             }
           }
         };
 
+        const setGiscusTheme = (theme) => {
+          const giscus = document.querySelector(".giscus-frame");
+
+          if (giscus) {
+            const url = new URL(giscus.src);
+            url.searchParams.set("theme", theme);
+            giscus.src = url.toString();
+          }
+        };
+
+        init();
+        const savedTheme = localStorage.getItem("theme");
+        const select = document.querySelector("#theme-toggle");
+        select.value = savedTheme ? savedTheme : "auto";
         select.addEventListener("change", toggleTheme);
       });
       init();
