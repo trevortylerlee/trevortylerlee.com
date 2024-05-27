@@ -190,23 +190,46 @@ if (pageTitle === "Trevor Lee | Homepage") {
               )
             }
           </div>
-          <div class="group flex items-center gap-1 py-1 font-mono text-sm">
-            <label class="text-textVariant" for="theme-toggle">theme:</label>
-            <select
-              class="px-1 font-sans text-text"
-              name="theme-toggle"
-              id="theme-toggle"
+          <div>
+            <div
+              class="group flex items-center justify-end gap-1 py-1 font-mono text-sm"
             >
-              <option value="auto">auto</option>
-              <option value="dark">dark</option>
-              <option value="light">light</option>
-              <hr />
-              <option value="hacker">hacker</option>
-              <option value="red-dragon">red dragon</option>
-              <option value="snes">snes</option>
-              <option value="ube">ube</option>
-              <option value="vice-city">vice city</option>
-            </select>
+              <label class="text-textVariant" for="theme-toggle">theme:</label>
+              <select
+                class="px-1 font-sans text-text"
+                name="theme-toggle"
+                id="theme-toggle"
+              >
+                <option value="auto">auto</option>
+                <option value="dark">dark</option>
+                <option value="light">light</option>
+                <hr />
+                <option value="hacker">hacker</option>
+                <option value="red-dragon">red dragon</option>
+                <option value="snes">snes</option>
+                <option value="ube">ube</option>
+                <option value="vice-city">vice city</option>
+              </select>
+            </div>
+            <div class="group flex items-center gap-1 py-1 font-mono text-sm">
+              <label class="text-textVariant" for="cursor-effect"
+                >cursor effect:
+              </label>
+              <select
+                class="px-1 font-sans text-text"
+                name="cursor-effect"
+                id="cursor-effect"
+              >
+                <option selected value="none">none</option>
+                <hr />
+                <option value="rainbow">rainbow</option>
+                <option value="ghost">ghost</option>
+                <option value="trailing">trailing</option>
+                <option value="bubbles">bubbles</option>
+                <option value="snowflakes">snowflakes</option>
+                <option value="fairy dust">fairy dust</option>
+              </select>
+            </div>
           </div>
         </div>
       </nav>
@@ -261,6 +284,89 @@ if (pageTitle === "Trevor Lee | Homepage") {
             document.documentElement.classList.add("light");
           }
         }
+      });
+    </script>
+
+    <script is:inline type="module" data-astro-rerun>
+      import * as cursors from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+
+      function init() {
+        const cursorEffects = document.querySelector("#cursor-effect");
+        let currentCursorEffect = null;
+        const enableCursorEffects = localStorage.getItem("cursor-effects");
+
+        if (enableCursorEffects === null) {
+          localStorage.setItem("cursor-effects", "none");
+        } else {
+          cursorEffects.value = enableCursorEffects;
+          switch (enableCursorEffects) {
+            case "rainbow":
+              currentCursorEffect = new cursors.rainbowCursor();
+              break;
+            case "ghost":
+              currentCursorEffect = new cursors.ghostCursor();
+              break;
+            case "trailing":
+              currentCursorEffect = new cursors.trailingCursor();
+              break;
+            case "bubbles":
+              currentCursorEffect = new cursors.bubbleCursor();
+              break;
+            case "snowflakes":
+              currentCursorEffect = new cursors.snowflakeCursor();
+              break;
+            case "fairy dust":
+              currentCursorEffect = new cursors.fairyDustCursor();
+              break;
+            case "none":
+              if (currentCursorEffect) {
+                currentCursorEffect.destroy();
+                currentCursorEffect = null;
+              }
+              break;
+          }
+        }
+
+        cursorEffects?.addEventListener("change", (e) => {
+          if (currentCursorEffect) {
+            currentCursorEffect.destroy();
+            currentCursorEffect = null;
+          }
+
+          switch (e.target.value) {
+            case "rainbow":
+              currentCursorEffect = new cursors.rainbowCursor();
+              break;
+            case "ghost":
+              currentCursorEffect = new cursors.ghostCursor();
+              break;
+            case "trailing":
+              currentCursorEffect = new cursors.trailingCursor();
+              break;
+            case "bubbles":
+              currentCursorEffect = new cursors.bubbleCursor();
+              break;
+            case "snowflakes":
+              currentCursorEffect = new cursors.snowflakeCursor();
+              break;
+            case "fairy dust":
+              currentCursorEffect = new cursors.fairyDustCursor();
+              break;
+            case "none":
+              if (currentCursorEffect) {
+                currentCursorEffect.destroy();
+              }
+              break;
+          }
+
+          localStorage.setItem("cursor-effects", e.target.value);
+        });
+      }
+
+      init();
+
+      document.addEventListener("astro:after-swap", () => {
+        init();
       });
     </script>
   </body>
