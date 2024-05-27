@@ -307,15 +307,3 @@
 .link:focus-visible {
   color: rgb(var(--primary));
 }
-
-/* hide cursor effects on touchscreens */
-@media (hover: none) and (pointer: coarse) {
-  canvas {
-    display: none;
-  }
-}
-@media (hover: hover) and (pointer: coarse) {
-  canvas {
-    display: none;
-  }
-}

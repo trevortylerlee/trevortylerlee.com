@@ -192,7 +192,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
           </div>
           <div>
             <div
-              class="group flex items-center justify-end gap-1 py-1 font-mono text-sm"
+              class="group flex items-center justify-end gap-1 py-1 font-mono text-xs sm:text-sm"
             >
               <label class="text-textVariant" for="theme-toggle">theme:</label>
               <select
@@ -211,7 +211,10 @@ if (pageTitle === "Trevor Lee | Homepage") {
                 <option value="vice-city">vice city</option>
               </select>
             </div>
-            <div class="group flex items-center gap-1 py-1 font-mono text-sm">
+            <div
+              id="cursor-effect-container"
+              class="group flex items-center gap-1 py-1 font-mono text-xs sm:text-sm"
+            >
               <label class="text-textVariant" for="cursor-effect"
                 >cursor effect:
               </label>
@@ -295,7 +298,13 @@ if (pageTitle === "Trevor Lee | Homepage") {
         let currentCursorEffect = null;
         const enableCursorEffects = localStorage.getItem("cursor-effects");
 
-        if (enableCursorEffects === null) {
+        if (window.visualViewport.width < 640) {
+          const cursorEffectContainer = document.querySelector(
+            "#cursor-effect-container",
+          );
+          cursorEffectContainer.style.display = "none";
+          return;
+        } else if (enableCursorEffects === null) {
           localStorage.setItem("cursor-effects", "none");
         } else {
           cursorEffects.value = enableCursorEffects;
