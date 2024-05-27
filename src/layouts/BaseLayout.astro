@@ -178,8 +178,8 @@ if (pageTitle === "Trevor Lee | Homepage") {
       class=`bg-centerBackground text-text ${fullWidth ? "" : "px-4"} m-auto max-w-[640px]`
     >
       <nav class="w-full py-4">
-        <div class="flex items-center justify-between">
-          <div>
+        <div class="items-top flex justify-between">
+          <div class="">
             {
               !onIndex && (
                 <Breadcrumbs
@@ -192,7 +192,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
           </div>
           <div>
             <div
-              class="group flex items-center justify-end gap-1 py-1 font-mono text-xs sm:text-sm"
+              class="group flex items-center justify-end gap-1 py-1 font-mono text-xs"
             >
               <label class="text-textVariant" for="theme-toggle">theme:</label>
               <select
@@ -212,8 +212,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
               </select>
             </div>
             <div
-              id="cursor-effect-container"
-              class="group flex items-center gap-1 py-1 font-mono text-xs sm:text-sm"
+              class="group hidden items-center gap-1 py-1 font-mono text-xs sm:flex"
             >
               <label class="text-textVariant" for="cursor-effect"
                 >cursor effect:
@@ -298,11 +297,13 @@ if (pageTitle === "Trevor Lee | Homepage") {
         let currentCursorEffect = null;
         const enableCursorEffects = localStorage.getItem("cursor-effects");
 
-        if (window.visualViewport.width < 640) {
-          const cursorEffectContainer = document.querySelector(
-            "#cursor-effect-container",
-          );
-          cursorEffectContainer.style.display = "none";
+        if (window.innerWidth < 640) {
+          console.log(window.innerWidth);
+          if (currentCursorEffect) {
+            console.log("destroy");
+            currentCursorEffect.destroy();
+            currentCursorEffect = null;
+          }
           return;
         } else if (enableCursorEffects === null) {
           localStorage.setItem("cursor-effects", "none");
@@ -377,6 +378,11 @@ if (pageTitle === "Trevor Lee | Homepage") {
       document.addEventListener("astro:after-swap", () => {
         init();
       });
+
+      window.onresize = () => {
+        console.log("resized");
+        init();
+      };
     </script>
   </body>
 </html>
