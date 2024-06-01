@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Howl, Howler } from "howler";
 
 export default function DrawingGarden() {
@@ -11,7 +11,7 @@ export default function DrawingGarden() {
     setIsMuted(!isMuted);
   }
 
-  function optionChange(e) {
+  function optionChange(e: React.ChangeEvent<HTMLInputElement>) {
     setCategory(e.target.value);
   }
 
@@ -135,7 +135,7 @@ function Cell({ isMuted, category }) {
     src: [`/sounds/${category}-${getNumberFromZeroToX(3) + 1}.mp3`],
   });
 
-  function getNumberFromZeroToX(number) {
+  function getNumberFromZeroToX(number: number) {
     return Math.floor(Math.random() * number);
   }
 
@@ -158,22 +158,6 @@ function Cell({ isMuted, category }) {
           sound.play();
         }
       }}
-      // onTouchMove={(e) => {
-      //   let target = e.target as HTMLSpanElement;
-      //   if (category === "fruit") {
-      //     target.textContent = fruits[getNumberFromZeroToX(fruits.length)];
-      //   } else if (category === "animal") {
-      //     target.textContent = animals[getNumberFromZeroToX(animals.length)];
-      //   } else if (category === "space") {
-      //     target.textContent = space[getNumberFromZeroToX(space.length)];
-      //   } else {
-      //     target.textContent = fruits[getNumberFromZeroToX(fruits.length)];
-      //   }
-
-      //   if (!isMuted) {
-      //     sound.play();
-      //   }
-      // }}
     >
       ~
     </span>

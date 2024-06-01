@@ -1,10 +1,17 @@
 import Toastify from "./Toastify";
 import toast from "react-hot-toast";
-import { useState } from "react";
-import { Howl, Howler } from "howler";
+import { Howl } from "howler";
 
-export default Toastify(function Button({ copyText, label, children }) {
-  const copyToClipboard = async (copyText) => {
+export default Toastify(function Button({
+  copyText,
+  label,
+  children,
+}: {
+  copyText: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  const copyToClipboard = async (copyText: string) => {
     try {
       await navigator.clipboard.writeText(copyText);
       toast.success("Email copied!");
