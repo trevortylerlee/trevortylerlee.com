@@ -28,6 +28,8 @@ if (pageTitle === "Trevor Lee | Homepage") {
   <head>
     <script is:inline data-astro-rerun>
       function init() {
+        animate();
+
         const themes = ["dark", "light"];
 
         const applyTheme = (theme) => {
@@ -55,6 +57,23 @@ if (pageTitle === "Trevor Lee | Homepage") {
             giscus.src = url.toString();
           }
         };
+
+        function animate() {
+          const animateUpElements = document.querySelectorAll(".animate-up");
+          animateUpElements.forEach((element, index) => {
+            setTimeout(() => {
+              element.classList.add("show");
+            }, index * 50);
+          });
+
+          const animateDownElements =
+            document.querySelectorAll(".animate-down");
+          animateDownElements.forEach((element, index) => {
+            setTimeout(() => {
+              element.classList.add("show");
+            }, index * 50);
+          });
+        }
 
         const savedTheme = localStorage.getItem("theme");
         const theme = savedTheme ? savedTheme : getPreferredTheme();
@@ -168,7 +187,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
             >
               <label class="text-textVariant" for="theme-toggle">theme:</label>
               <select
-                class="px-1 font-sans text-text"
+                class="text-text px-1 font-sans"
                 name="theme-toggle"
                 id="theme-toggle"
               >

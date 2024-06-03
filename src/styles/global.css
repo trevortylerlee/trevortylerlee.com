@@ -224,3 +224,18 @@
 .link:focus-visible {
   color: rgb(var(--primary));
 }
+
+.animate-up {
+  @apply translate-y-6 opacity-0 blur-[3px];
+  @apply transition-all duration-500 ease-out;
+}
+
+.animate-down {
+  @apply -translate-y-6 opacity-0 blur-[3px];
+  @apply transition-all duration-500 ease-out;
+}
+
+.animate-up.show,
+.animate-down.show {
+  @apply translate-y-0 opacity-100 filter-none;
+}
