@@ -16,6 +16,8 @@ import "@fontsource/geist-mono/700.css";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
 
+import ThemeToggle from "@components/ThemeToggle.tsx";
+
 const { pageTitle, pageSlug, category, fullWidth } = Astro.props;
 
 let onIndex = false;
@@ -169,7 +171,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
       class=`bg-centerBackground text-text ${fullWidth ? "" : "px-4"} m-auto max-w-[640px]`
     >
       <nav class="w-full py-4">
-        <div class="items-top flex justify-between">
+        <div class="flex items-center justify-between">
           <div class="">
             {
               !onIndex && (
@@ -181,22 +183,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
               )
             }
           </div>
-          <div>
-            <div
-              class="group flex items-center justify-end gap-1 py-1 font-mono text-sm"
-            >
-              <label class="text-textVariant" for="theme-toggle">theme:</label>
-              <select
-                class="text-text px-1 font-sans"
-                name="theme-toggle"
-                id="theme-toggle"
-              >
-                <option value="auto">auto</option>
-                <option value="dark">dark</option>
-                <option value="light">light</option>
-              </select>
-            </div>
-          </div>
+          <ThemeToggle client:load />
         </div>
       </nav>
       <main>
@@ -238,5 +225,14 @@ if (pageTitle === "Trevor Lee | Homepage") {
         }
       });
     </script>
-  </body>
+  </body><noscript>
+    <style>
+      .animate-up,
+      .animate-down {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        filter: none !important;
+      }
+    </style>
+  </noscript>
 </html>

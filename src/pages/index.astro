@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import profilePicture from "@assets/me-with-roxy.jpg";
 import classlessCSS from "@assets/posts/classlesscss.png";
@@ -11,7 +12,6 @@ import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
 import Post from "@components/Post.astro";
 import Project from "@components/Project.astro";
-import ProfileCard from "@components/ProfileCard.astro";
 
 import roxy1 from "@assets/roxy/roxy-1.jpg";
 import roxy2 from "@assets/roxy/roxy-2.jpg";
@@ -68,8 +68,26 @@ const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="flex flex-col gap-6 py-16 sm:py-24">
-    <ProfileCard images={images} featureImage={profilePicture} />
+  <div class="flex gap-6 py-16 sm:py-24">
+    <Image
+      src={profilePicture}
+      alt="Me and my dog Roxy"
+      width={200}
+      height={200}
+      class="rounded-full"
+    />
+    <div class="flex flex-col gap-1">
+      <h1
+        class="cursor-pointer text-3xl font-semibold tracking-tighter transition-transform sm:text-3xl sm:tracking-tight"
+      >
+        Trevor Tyler Lee
+        <div
+          class="font-mono text-sm font-normal lowercase tracking-normal text-textVariant"
+        >
+          @trevortylerlee
+        </div>
+      </h1>
+    </div>
   </div>
   <section class="animate-down">
     <span class="py-2 font-mono text-sm text-textVariant">
