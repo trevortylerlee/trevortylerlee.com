@@ -3,6 +3,7 @@ import "../styles/global.css";
 import "../styles/preflight.css";
 
 import { ViewTransitions } from "astro:transitions";
+import { Image } from "astro:assets";
 
 import "@fontsource/geist-sans/400.css";
 import "@fontsource/geist-sans/500.css";
@@ -15,8 +16,9 @@ import "@fontsource/geist-mono/700.css";
 
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
-
 import ThemeToggle from "@components/ThemeToggle.tsx";
+
+import profilePicture from "@assets/me-with-roxy.jpg";
 
 const { pageTitle, pageSlug, category, fullWidth } = Astro.props;
 
@@ -172,7 +174,29 @@ if (pageTitle === "Trevor Lee | Homepage") {
     >
       <nav class="w-full py-4">
         <div class="flex items-center justify-between">
-          <div class="">
+          <a href="/" class="group flex items-center rounded-xl">
+            <div
+              class="avatar relative inline-flex h-12 w-12 items-center justify-center overflow-hidden"
+            >
+              <Image
+                src={profilePicture}
+                alt="Me and my dog Roxy"
+                width={64}
+                height={64}
+                format="avif"
+                quality="high"
+                loading="eager"
+                class=""
+              />
+              <span class="sr-only">Home page</span>
+              <div
+                class="avatar absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-500 group-hover:[transform:skew(-12deg)_translateX(100%)]"
+              >
+                <div class="relative h-full w-8 bg-white/20"></div>
+              </div>
+            </div>
+          </a>
+          <!-- <div class="">
             {
               !onIndex && (
                 <Breadcrumbs
@@ -182,7 +206,7 @@ if (pageTitle === "Trevor Lee | Homepage") {
                 />
               )
             }
-          </div>
+          </div> -->
           <ThemeToggle client:load />
         </div>
       </nav>
@@ -225,14 +249,21 @@ if (pageTitle === "Trevor Lee | Homepage") {
         }
       });
     </script>
-  </body><noscript>
+    <noscript>
+      <style>
+        .animate-up,
+        .animate-down {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+          filter: none !important;
+        }
+      </style>
+    </noscript>
     <style>
-      .animate-up,
-      .animate-down {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        filter: none !important;
+      .avatar {
+        mask-image: url("/mask.svg");
+        -webkit-mask-image: url("/mask.svg");
       }
     </style>
-  </noscript>
+  </body>
 </html>
