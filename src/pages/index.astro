@@ -10,52 +10,7 @@ import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
 import Post from "@components/Post.astro";
 import Project from "@components/Project.astro";
-
-import roxy1 from "@assets/roxy/roxy-1.jpg";
-import roxy2 from "@assets/roxy/roxy-2.jpg";
-import roxy3 from "@assets/roxy/roxy-3.jpg";
-import roxy4 from "@assets/roxy/roxy-4.jpg";
-import roxy5 from "@assets/roxy/roxy-5.jpg";
-import roxy6 from "@assets/roxy/roxy-6.jpg";
-import roxy7 from "@assets/roxy/roxy-7.jpg";
-import roxy8 from "@assets/roxy/roxy-8.jpg";
-import roxy9 from "@assets/roxy/roxy-9.jpg";
-import roxy10 from "@assets/roxy/roxy-10.jpg";
-import roxy11 from "@assets/roxy/roxy-11.jpg";
-import roxy12 from "@assets/roxy/roxy-12.jpg";
-import roxy13 from "@assets/roxy/roxy-13.jpg";
-import roxy14 from "@assets/roxy/roxy-14.jpg";
-import roxy15 from "@assets/roxy/roxy-15.jpg";
-import roxy16 from "@assets/roxy/roxy-16.jpg";
-import roxy17 from "@assets/roxy/roxy-17.jpg";
-import roxy18 from "@assets/roxy/roxy-18.jpg";
-import roxy19 from "@assets/roxy/roxy-19.jpg";
-import roxy20 from "@assets/roxy/roxy-20.jpg";
-import roxy21 from "@assets/roxy/roxy-21.jpg";
-
-const images = [
-  roxy1,
-  roxy2,
-  roxy3,
-  roxy4,
-  roxy5,
-  roxy6,
-  roxy7,
-  roxy8,
-  roxy9,
-  roxy10,
-  roxy11,
-  roxy12,
-  roxy13,
-  roxy14,
-  roxy15,
-  roxy16,
-  roxy17,
-  roxy18,
-  roxy19,
-  roxy20,
-  roxy21,
-];
+import ContactLinks from "@components/ContactLinks.astro";
 
 const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {
@@ -66,7 +21,18 @@ const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class="flex gap-6 py-16 sm:py-24"></div>
+  <section class="py-24 text-center sm:py-32">
+    <p class="text-sm italic text-textVariant">~ Hello and welcome ~</p>
+    <div class="text-xl">
+      <h1 class="inline-flex">
+        I'm&nbsp;<a href="/about" class="link">Trevor</a>!
+      </h1>
+      <p class="inline-flex">I'm a software developer.</p>
+    </div>
+    <div class="pt-12">
+      <ContactLinks />
+    </div>
+  </section>
   <section class="animate-down">
     <span class="py-2 font-mono text-sm text-textVariant">
       <h2 class="py-2">latest posts</h2>
