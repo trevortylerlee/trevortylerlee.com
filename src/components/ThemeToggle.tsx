@@ -4,9 +4,9 @@ export default function ThemeToggle() {
   return (
     <div>
       <Select name="theme-toggle" id="theme-toggle">
-        <option value="auto">auto</option>
-        <option value="dark">dark</option>
-        <option value="light">light</option>
+        <option value="auto">Auto</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
       </Select>
     </div>
   );

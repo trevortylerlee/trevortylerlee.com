@@ -5,7 +5,7 @@ const contactLinks = [
   {
     href: "mailto:trevortylerlee@gmail.com",
     title: "Email",
-    icon: "paper-plane",
+    icon: "send",
   },
   {
     href: "https://github.com/trevortylerlee",
@@ -18,9 +18,9 @@ const contactLinks = [
     icon: "linkedin",
   },
   {
-    href: "https://twitter.com/trevortylerlee",
-    title: "X (Twitter)",
-    icon: "twitter",
+    href: "https://www.threads.net/@trevortylerlee",
+    title: "Threads",
+    icon: "threads",
   },
 ];
 ---
@@ -30,7 +30,7 @@ const contactLinks = [
     contactLinks.map((link) => {
       return (
         <div class="flex items-center gap-2">
-          <Icon name={link.icon} class=`text-text ${link.icon === "paper-plane" ? "-rotate-45" : ""}` />
+          <Icon name={link.icon} class="text-text" />
           <a href={link.href} class="link">
             {link.title}
           </a>

@@ -162,10 +162,10 @@
   }
 
   .light {
-    --backdrop: 250 250 250;
+    --backdrop: inherit;
     --background: var(--gray-4);
     --background-variant: var(--blue-3);
-    --center-background: 250 250 250;
+    --center-background: transparent;
     --text: var(--gray-11);
     --text-variant: var(--gray-9);
     --primary: 7 113 227;
