@@ -5,77 +5,14 @@ const buildTime = new Date().toISOString();
 ---
 
 <footer
-  class="flex flex-col items-baseline justify-between gap-3 pb-4 pt-24 sm:flex-row sm:gap-20"
+  class="flex flex-col items-baseline justify-between pb-1 pt-16 text-xs sm:flex-row sm:pt-24"
 >
-  <details
-    class="relative w-full cursor-default rounded-xl px-2 py-2 ring-2 ring-background hover:ring-primary focus-visible:ring-primary"
-  >
-    <summary class="cursor-pointer"
-      >Contact <span class="font-mono text-sm text-textVariant"
-        >(click for details)</span
-      ></summary
+  <div class="text-textVariant">
+    © Copyright {new Date().getFullYear()}, Trevor Lee. <a
+      href="/rss.xml"
+      class="link">RSS Feed</a
     >
-    <span class="flex flex-col py-2">
-      <span class="flex"
-        >Bluesky:&nbsp;<a
-          href="https://bsky.app/profile/trevortylerlee.com"
-          class="link group flex items-center gap-1"
-          >@trevortylerlee.com
-          <Icon
-            class="text-text group-hover:text-primary group-focus-visible:text-primary"
-            name="external"
-            aria-label="External link icon"
-          /></a
-        ></span
-      >
-      <span class="flex"
-        >Email:&nbsp;<a
-          href="mailto:trevortylerlee@gmail.com"
-          class="link group flex items-center gap-1"
-          >trevortylerlee@gmail.com
-          <Icon
-            class="text-text group-hover:text-primary group-focus-visible:text-primary"
-            name="external"
-            aria-label="External link icon"
-          /></a
-        ></span
-      >
-      <span class="flex"
-        >Github:&nbsp;<a
-          href="https://github.com/trevortylerlee"
-          class="link group flex items-center gap-1"
-          >@trevortylerlee
-          <Icon
-            class="text-text group-hover:text-primary group-focus-visible:text-primary"
-            name="external"
-            aria-label="External link icon"
-          /></a
-        ></span
-      >
-      <span class="flex"
-        ><a href="/rss.xml" class="link group flex items-center gap-1"
-          >RSS
-          <Icon
-            class="text-text group-hover:text-primary group-focus-visible:text-primary"
-            name="external"
-            aria-label="External link icon"
-          /></a
-        ></span
-      >
-      <span class="flex"
-        ><a
-          href="/trevor-lee-resume.pdf"
-          class="link group flex items-center gap-1 pb-1.5"
-          >Resume
-          <Icon
-            class="text-text group-hover:text-primary group-focus-visible:text-primary"
-            name="download"
-            aria-label="Download link icon"
-          /></a
-        ></span
-      >
-    </span>
-  </details>
+  </div>
   <div
     id="build-time"
     data-time={buildTime}
@@ -89,7 +26,7 @@ const buildTime = new Date().toISOString();
         id="last-updated"
         class="link group-hover:text-primary group-focus-visible:text-primary"
       >
-        updated</span
+        Updated</span
       >
       <Icon
         class="text-text group-hover:text-primary group-focus-visible:text-primary"
@@ -109,7 +46,7 @@ const buildTime = new Date().toISOString();
       const now = new Date();
       const timeAgoText = timeAgo(buildTime, now);
       document.getElementById("last-updated").textContent =
-        `updated ${timeAgoText}`;
+        `Updated ${timeAgoText}`;
     } else {
       console.error("Invalid build time:", buildTimeString);
     }
