@@ -32,7 +32,7 @@ const { Content } = await post.render();
       ) : null
     }
     <div transition:name={`${post.slug}-container`}>
-      <h1 class="text-4xl font-semibold" id="postTitle">
+      <h1 class="text-pretty text-2xl font-semibold" id="postTitle">
         {post.data.title}
       </h1>
       {
@@ -43,7 +43,10 @@ const { Content } = await post.render();
         )
       }
     </div>
-    <div id="content" class="prose mx-auto mb-12 mt-8 text-text">
+    <div
+      id="content"
+      class="prose prose-sm prose-neutral mx-auto mb-12 mt-8 sm:prose-base"
+    >
       <Content />
     </div>
     <div class="giscus pb-4"></div>
@@ -56,7 +59,8 @@ const { Content } = await post.render();
   }
 
   #content {
-    --tw-prose-links: rgb(var(--primary-variant));
+    --tw-prose-body: rgb(var(--text-variant));
+    --tw-prose-links: rgb(var(--primary));
     --tw-prose-code: rgb(var(--green-7));
     --tw-prose-headings: rgb(var(--text));
     --tw-prose-quotes: rgb(var(--text));

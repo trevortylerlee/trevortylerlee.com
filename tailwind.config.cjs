@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       animation: {
         "horizontal-bounce": "horizontal-bounce 0.8s ease-in-out infinite",
+        "horizontal-bounce-left":
+          "horizontal-bounce-left 0.8s ease-in-out infinite",
       },
       keyframes: {
         "horizontal-bounce": {
@@ -13,6 +15,14 @@ module.exports = {
           },
           "50%": {
             transform: "translateX(2px)",
+          },
+        },
+        "horizontal-bounce-left": {
+          "0%, 100%": {
+            transform: "translateX(0)",
+          },
+          "50%": {
+            transform: "translateX(-2px)",
           },
         },
       },

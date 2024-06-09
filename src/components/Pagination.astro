@@ -13,12 +13,14 @@ const { prevUrl, nextUrl } = Astro.props;
     prevUrl && (
       <span class="flex">
         <a
-          class="group flex items-center gap-1 py-1 font-mono text-sm text-gray-10 no-underline hover:text-gray-10 focus-visible:text-gray-10"
           href={prevUrl}
-          aria-label="newer posts"
+          class="link group -mr-1 flex items-center gap-1 px-1 py-2 text-sm"
         >
-          <Icon name="arrow-left" />
-          newer posts
+          <Icon
+            class="group-hover:animate-horizontal-bounce-left group-focus:animate-horizontal-bounce-left text-text"
+            name="arrow-left"
+          />
+          Newer posts{" "}
         </a>
       </span>
     )
@@ -27,12 +29,14 @@ const { prevUrl, nextUrl } = Astro.props;
     nextUrl && (
       <span class="flex justify-end">
         <a
-          class="group flex items-center gap-1 py-1 font-mono text-sm text-gray-10 no-underline hover:text-gray-10 focus-visible:text-gray-10"
           href={nextUrl}
-          aria-label="newer posts"
+          class="link group -ml-1 flex items-center gap-1 px-1 py-2 text-sm"
         >
-          older posts
-          <Icon name="arrow-right" />
+          Older posts{" "}
+          <Icon
+            class="text-text group-hover:animate-horizontal-bounce group-focus:animate-horizontal-bounce"
+            name="arrow-right"
+          />
         </a>
       </span>
     )
