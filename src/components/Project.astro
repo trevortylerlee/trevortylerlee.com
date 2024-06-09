@@ -10,10 +10,10 @@ const { href, title, description } = Astro.props;
   >
     <p class="link underline">{title}</p>
     <span class="flex items-center gap-1">
-      <p class="text-sm text-textVariant">{description}</p><Icon
-        name="external"
-        class="text-text"
-      />
+      <p class="text-sm text-textVariant">
+        {description}
+        <Icon name="external" class="inline-flex text-text" />
+      </p>
     </span>
   </li>
 </a>
