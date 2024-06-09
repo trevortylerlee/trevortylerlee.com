@@ -27,12 +27,12 @@ const { Content } = await post.render();
           src={post.data.imageSrc}
           alt={post.data.imageAlt}
           quality={"low"}
-          class="mt-6"
+          class="mb-12"
         />
       ) : null
     }
     <div transition:name={`${post.slug}-container`}>
-      <h1 class="mt-12 text-4xl font-semibold" id="postTitle">
+      <h1 class="text-4xl font-semibold" id="postTitle">
         {post.data.title}
       </h1>
       {

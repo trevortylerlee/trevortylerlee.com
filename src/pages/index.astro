@@ -1,16 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
-import classlessCSS from "@assets/posts/classlesscss.png";
-import t2a from "@assets/posts/t2a.jpg";
-import phished from "@assets/posts/phished.png";
-import swiftiedotred from "@assets/posts/swiftiedotred.jpg";
-import thirtysixquestions from "@assets/posts/thirtysixquestions.jpg";
 import BaseLayout from "src/layouts/BaseLayout.astro";
 import { formatBlogPost } from "src/lib/utils";
 import { getCollection } from "astro:content";
 import Post from "@components/Post.astro";
 import Project from "@components/Project.astro";
-import ContactLinks from "@components/ContactLinks.astro";
+import Hero from "@components/Hero.astro";
 
 const allPosts = await getCollection("posts");
 const formattedPosts = formatBlogPost(allPosts, {
@@ -21,23 +16,33 @@ const pageTitle = "Trevor Lee | Homepage";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="py-24 sm:py-32 sm:text-center">
-    <p class="text-sm italic text-textVariant">~ Hello and welcome ~</p>
-    <div class="text-xl">
-      <h1 class="inline-flex">
-        I'm&nbsp;<a href="/about" class="link">Trevor</a>!
-      </h1>
-      <p class="inline-flex">I'm a software developer.</p>
-    </div>
-    <div class="pt-12">
-      <ContactLinks />
-    </div>
+  <section>
+    <Hero />
+  </section>
+
+  <section class="animate-down">
+    <h2 class="pb-4 pt-12 text-sm text-textVariant">Projects</h2>
+    <ul class="">
+      <Project
+        description="Blog theme for Astro with search, comments, and zero frameworks."
+        href="https://astro-micro.vercel.app/"
+        title="Astro Micro 🔬"
+      />
+      <Project
+        description="Foster closeness through mutual vulnerability."
+        href="https://thirtysixquestions.org"
+        title="Thirty Six Questions 💕"
+      />
+      <Project
+        description="Instantly preview drop-in CSS themes."
+        href="https://classlesscss.com"
+        title="Classless CSS 🚫"
+      />
+    </ul>
   </section>
   <section class="animate-down">
-    <span class="py-2 text-sm text-textVariant">
-      <h2 class="py-2">Latest posts</h2>
-    </span>
-    <ul>
+    <h2 class="pb-4 pt-12 text-sm text-textVariant">Posts</h2>
+    <ul class="">
       {
         formattedPosts.map((post) => (
           <Post
@@ -49,53 +54,15 @@ const pageTitle = "Trevor Lee | Homepage";
         ))
       }
     </ul>
-    <div class="flex justify-end pb-8">
-      <a href="/posts" class="link group flex items-center gap-1 py-2"
+    <div class="flex justify-end">
+      <a
+        href="/posts"
+        class="link group -ml-1 flex items-center gap-1 px-1 py-2 text-sm"
         >View older posts <Icon
-          class="text-text group-hover:animate-horizontal-bounce group-hover:text-primary group-focus:animate-horizontal-bounce group-focus-visible:text-primary"
+          class="text-text group-hover:animate-horizontal-bounce group-focus:animate-horizontal-bounce"
           name="arrow-right"
         />
       </a>
     </div>
-  </section>
-  <section class="animate-down">
-    <h2 class="pb-4 pt-16 text-sm text-textVariant">Projects</h2>
-    <ul class="grid gap-3 sm:grid-cols-2 sm:gap-6">
-      <Project
-        description="These thirty six questions foster closeness through mutual vulnerability."
-        href="https://thirtysixquestions.org"
-        title="thirtysixquestions.org"
-        src={thirtysixquestions}
-        online
-      />
-      <Project
-        description="The best website for Swifties."
-        href="https://swiftie.red"
-        title="swiftie.red"
-        src={swiftiedotred}
-        online
-      />
-      <Project
-        description="Site to instantly preview drop-in CSS themes."
-        href="https://classlesscss.com"
-        title="classlesscss.com"
-        src={classlessCSS}
-        online
-      />
-      <Project
-        description="Tired of typing out arrays? Me too..."
-        href="https://text2array.vercel.app/"
-        title="Text 2 Array"
-        src={t2a}
-        online
-      />
-      <Project
-        description="Protect your friends and family from phishing attacks by phishing them yourself."
-        href="https://github.com/phished-co/phished_web_app"
-        title="Phished"
-        src={phished}
-        offline
-      />
-    </ul>
   </section>
 </BaseLayout>

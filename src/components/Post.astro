@@ -3,25 +3,11 @@ import { formatDate } from "../lib/utils";
 const { date, href, title } = Astro.props;
 ---
 
-<li class="-mx-3 animate-down">
-  <a
-    class="group flex items-center justify-between gap-2 rounded-2xl p-3 text-text no-underline ring-inset ring-primary hover:bg-backgroundVariant hover:ring-1 focus:bg-backgroundVariant sm:gap-3"
-    href={`/posts/${href}`}
+<a href={`/posts/${href}`} class="group py-3 no-underline">
+  <li
+    class="-ml-3 rounded p-3 group-hover:bg-neutral-200 dark:group-hover:bg-neutral-900"
   >
-    <span>{title}</span>
-    <span
-      class="date no-wrap flex rounded-sm bg-backdrop p-1 font-mono text-xs text-textVariant ring-1 ring-background group-hover:text-text group-focus:text-text"
-      >{formatDate(date, "short")}</span
-    >
-  </a>
-</li>
-
-<style>
-  a:focus {
-    outline: auto;
-  }
-
-  .date {
-    white-space: nowrap !important;
-  }
-</style>
+    <p class="text-sm text-textVariant">{formatDate(date, "long")}</p>
+    <p class="link underline">{title}</p>
+  </li>
+</a>

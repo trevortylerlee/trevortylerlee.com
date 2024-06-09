@@ -20,7 +20,7 @@ const { page } = Astro.props as any;
 ---
 
 <BaseLayout pageTitle={pageTitle} category="posts">
-  <div class="pt-8">
+  <div>
     <ul>
       {
         page.data.map((post) => (
