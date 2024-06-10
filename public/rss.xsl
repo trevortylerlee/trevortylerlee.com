@@ -81,7 +81,7 @@ This modified stylesheet is based on pretty-feed-v3 by aboutfeeds.com:
         }
 
         a {
-          color: lightblue;
+          color: rgb(40 163 255);
         }
 
         .posts-container {
@@ -89,6 +89,7 @@ This modified stylesheet is based on pretty-feed-v3 by aboutfeeds.com:
           flex-direction: column;
           text-align: left;
           gap: 1.5rem;
+          padding-bottom: 4rem;
         }
 
         .post-container {
