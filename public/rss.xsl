@@ -54,7 +54,7 @@ This modified stylesheet is based on pretty-feed-v3 by aboutfeeds.com:
           margin: 0 auto;
           max-width: 640px;
           background: black;
-          color: rgb(242 242 247);
+          color: blue;
           font-family: sans-serif;
           padding-left: 1.5rem;
           padding-right: 1.5rem;
@@ -73,61 +73,54 @@ This modified stylesheet is based on pretty-feed-v3 by aboutfeeds.com:
         }
 
         .name {
-          text-transform: uppercase;
-          margin-bottom: -0.5rem;
-        }
-
-        a {
-          color: hsl(208, 100%, 66%);
-          text-decoration: none;
-        }
-
-        .post-container {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .post {
-            padding: 1rem;
-            border-radius: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1.5rem;
-            margin-left: -1rem;
-        }
-
-        .post:hover,
-        .post:focus {
-          	box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.1);
-            background: rgb(44 44 46);
-        }
-
-        .date {
-          text-decoration-line: none;
-          color: rgb(242 242 247);
-          font-family: monospace;
-          font-size: 0.75rem;
-          flex-shrink: 0;
-          word-wrap: nowrap;
+          color: white;
         }
 
         .username {
-          font-family: monospace;
-          margin-bottom: 1rem;
+          margin-bottom: 3rem;
         }
 
-        .latest-posts {
-          font-family: monospace;
+        a {
+          color: lightblue;
+        }
+
+        .posts-container {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          gap: 1.5rem;
+        }
+
+        .post-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .date {
+          color: rgb(200 200 200);
+          font-size: 0.75rem;
+          flex-shrink: 0;
+          word-wrap: nowrap;
+          display: inline-block;
+          text-decoration: none;
+        }
+
+        .gray {
+          color: rgb(200 200 200);
+        }
+
+        .wikipedia {
+          color: blue;
         }
       </style>
       <body class="">
         <div class="">
           <header class="">
-            <p class="disclaimer"><strong>This is a web feed</strong>, also known as an <strong>RSS feed</strong>. Subscribe by copying the URL from the address bar into your newsreader. </p>
+            <p class="disclaimer"><strong>This is a web feed</strong>, also known as an <strong><a class="wikipedia" href="https://en.wikipedia.org/wiki/RSS">RSS feed</a></strong>. Subscribe by copying the URL from the address bar into your newsreader. </p>
             <div class="name-container">
             <h1 class="name"><xsl:value-of select="/rss/channel/title"/></h1>
-            <p class="username">@boogerbuttcheeks</p>
+            <p class="username gray">@trevortylerlee</p>
             <a class="head_link" target="_blank">
               <xsl:attribute name="href">
                 <xsl:value-of select="/rss/channel/link"/>
@@ -137,18 +130,19 @@ This modified stylesheet is based on pretty-feed-v3 by aboutfeeds.com:
             </div>
             <!-- <p><xsl:value-of select="/rss/channel/description"/></p> -->
           </header>
-          <span class="latest-posts">latest posts</span>
-          <div class="post-container">
+          <div class="posts-container">
             <xsl:for-each select="/rss/channel/item">
-                  <a target="_blank" class="post">
+          <div class="post-container">
+                    <small class="date">
+                      <xsl:value-of select="substring-before(substring-after(pubDate, ', '), ' 00:00:00 GMT')"/>
+                    </small>
+                  <a class="post">
                     <xsl:attribute name="href">
                       <xsl:value-of select="link"/>
                     </xsl:attribute>
                     <xsl:value-of select="title"/>
-                    <small class="date">
-                      <xsl:value-of select="substring-before(substring-after(pubDate, ', '), ' 00:00:00 GMT')"/>
-                    </small>
                   </a>
+            </div>
             </xsl:for-each>
           </div>
         </div>

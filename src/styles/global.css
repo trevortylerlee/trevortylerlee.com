@@ -168,7 +168,7 @@
     --center-background: transparent;
     --text: var(--gray-11);
     --text-variant: var(--gray-9);
-    --primary: 7 113 227;
+    --primary: 0 0 0;
     --primary-variant: 7 113 227;
     --secondary: var(--yellow-6);
     --secondary-variant: var(--yellow-7);
@@ -196,7 +196,7 @@
     --center-background: 0 0 0;
     --text: var(--gray-1);
     --text-variant: var(--gray-6);
-    --primary: var(--blue-7);
+    --primary: 255 255 255;
     --primary-variant: var(--blue-7);
     --secondary: var(--yellow-6);
     --secondary-variant: var(--yellow-7);
@@ -217,7 +217,7 @@
 }
 
 .link {
-  color: rgb(var(--primary-variant));
+  color: rgb(var(--primary));
 }
 
 .link:hover,
