@@ -218,6 +218,7 @@
 
 .link {
   color: rgb(var(--primary));
+  text-underline-offset: 3px;
 }
 
 .link:hover,
