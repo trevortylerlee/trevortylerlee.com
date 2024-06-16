@@ -1,0 +1,25 @@
+---
+const { team } = Astro.props;
+---
+
+<!-- https://www.npmjs.com/package/img-comparison-slider -->
+<img-comparison-slider>
+  <img
+    slot="first"
+    id=`${team}-before`
+    src=`/sports-logos/${team}-before.jpg`
+  />
+  <img slot="second" id=`${team}-after` src=`/sports-logos/${team}-after.jpg` />
+</img-comparison-slider>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+/>
+
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+></script>
+
+<style></style>
