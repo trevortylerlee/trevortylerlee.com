@@ -1,0 +1,53 @@
+---
+import TierListItem from "./TierListItem.tsx";
+
+const { tierlist, color } = Astro.props;
+
+const determineTier = (color: string) => {
+  switch (color) {
+    case "red":
+      return "S";
+    case "yellow":
+      return "A";
+    case "green":
+      return "B";
+    case "cyan":
+      return "C";
+    case "blue":
+      return "D";
+    default:
+      return "F";
+  }
+};
+
+const determineColor = (color: string) => {
+  return `bg-${color}-700`;
+};
+
+const colors = [
+  `bg-red-700 bg-yellow-700 bg-green-700 bg-cyan-700 bg-blue-700 bg-violet-700`,
+];
+---
+
+<span class="hidden">{colors}</span>
+
+<div class=`flex min-h-16 items-center ${determineColor(color)} sm:min-h-24`>
+  <div
+    class="mr-[10px] grid min-w-8 place-content-center pl-[9px] font-medium text-white"
+  >
+    {determineTier(color)}
+  </div>
+  <div
+    class="flex min-h-16 w-full flex-wrap gap-1 overflow-hidden bg-neutral-50 py-1 pl-2 dark:bg-black sm:min-h-24 sm:gap-4"
+  >
+    {
+      tierlist.length === 0 ? (
+        <div class="flex h-12 w-screen flex-wrap bg-neutral-50 pl-2 dark:bg-black sm:h-16 sm:gap-4" />
+      ) : (
+        tierlist.map((item) => {
+          return <TierListItem data={item} client:load />;
+        })
+      )
+    }
+  </div>
+</div>

@@ -1,0 +1,44 @@
+---
+import TierRow from "./TierRow.astro";
+
+const { tierlist } = Astro.props;
+
+export type TierListItemType = {
+  name: string;
+  tier: string;
+  image: string;
+};
+
+let s: TierListItemType[] = [];
+let a: TierListItemType[] = [];
+let b: TierListItemType[] = [];
+let c: TierListItemType[] = [];
+let d: TierListItemType[] = [];
+let f: TierListItemType[] = [];
+
+for (const item of tierlist) {
+  // console.log(item.name, item.tier);
+  if (item.tier === "s") {
+    s.push(item);
+  } else if (item.tier === "a") {
+    a.push(item);
+  } else if (item.tier === "b") {
+    b.push(item);
+  } else if (item.tier === "c") {
+    c.push(item);
+  } else if (item.tier === "d") {
+    d.push(item);
+  } else if (item.tier === "f") {
+    f.push(item);
+  }
+}
+---
+
+<div class="">
+  <TierRow tierlist={s} color="red" />
+  <TierRow tierlist={a} color="yellow" />
+  <TierRow tierlist={b} color="green" />
+  <TierRow tierlist={c} color="cyan" />
+  <TierRow tierlist={d} color="blue" />
+  <TierRow tierlist={f} color="violet" />
+</div>
