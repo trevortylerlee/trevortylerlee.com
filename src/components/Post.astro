@@ -5,7 +5,7 @@ const { date, href, title } = Astro.props;
 
 <a href={`/posts/${href}`} class="animate-down group py-3 no-underline">
   <li
-    class="-ml-3 rounded p-3 group-hover:bg-neutral-200 dark:group-hover:bg-neutral-900"
+    class="-ml-3 rounded p-3 transition-colors group-hover:bg-neutral-200 dark:group-hover:bg-neutral-900"
   >
     <p class="text-sm text-textVariant">{formatDate(date, "long")}</p>
     <p class="link underline">{title}</p>
