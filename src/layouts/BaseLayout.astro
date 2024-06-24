@@ -3,7 +3,6 @@ import "../styles/global.css";
 import "../styles/preflight.css";
 
 import { ViewTransitions } from "astro:transitions";
-import { Image } from "astro:assets";
 
 import "@fontsource/geist-sans/400.css";
 import "@fontsource/geist-sans/500.css";
@@ -14,11 +13,11 @@ import "@fontsource/geist-sans/900.css";
 import "@fontsource/geist-mono/400.css";
 import "@fontsource/geist-mono/700.css";
 
+import { Icon } from "astro-icon/components";
+
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
 import ThemeToggle from "@components/ThemeToggle.tsx";
-
-import profilePicture from "@assets/me-with-roxy.jpg";
 
 const { pageTitle, pageSlug, category, fullWidth } = Astro.props;
 
@@ -178,30 +177,14 @@ if (pageTitle === "Trevor Lee | Homepage") {
     >
       <nav class="mb-16 w-full py-4">
         <div class="flex items-center justify-between">
-          <a href="/" class="group flex items-center rounded-xl">
-            <div
-              class="avatar relative inline-flex h-12 w-12 items-center justify-center overflow-hidden"
-            >
-              <Image
-                src={profilePicture}
-                alt="Me and my dog Roxy"
-                width={64}
-                height={64}
-                format="avif"
-                quality="high"
-                loading="eager"
-                draggable="false"
+          <div class="">
+            <a href="/">
+              <Icon
+                name="home"
+                class="size-[40px] text-textVariant transition-colors hover:text-text focus-visible:text-text sm:size-[32px]"
               />
-              <span class="sr-only">Home page</span>
-              <div
-                class="avatar absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-500 group-hover:[transform:skew(-12deg)_translateX(100%)]"
-              >
-                <div class="relative h-full w-8 bg-white/20"></div>
-              </div>
-            </div>
-          </a>
-          <!-- <div class="">
-            {
+            </a>
+            <!-- {
               !onIndex && (
                 <Breadcrumbs
                   pageTitle={pageTitle}
@@ -209,8 +192,8 @@ if (pageTitle === "Trevor Lee | Homepage") {
                   pageSlug={pageSlug}
                 />
               )
-            }
-          </div> -->
+            } -->
+          </div>
           <ThemeToggle client:load />
         </div>
       </nav>

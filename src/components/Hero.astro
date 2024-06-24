@@ -4,14 +4,42 @@ import {
   DescriptionList,
   DescriptionTerm,
 } from "@components/ui/description-list";
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import profilePicture from "@assets/me-with-roxy.jpg";
 ---
 
 <section>
-  <h1 class="text-2xl font-semibold">Trevor Lee</h1>
-  <span class="text-sm text-textVariant"
-    >Front-End Developer · Vancouver, Canada</span
-  >
+  <div class="flex">
+    <div class="group mr-3 flex items-center sm:mr-6">
+      <div
+        class="avatar relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl"
+      >
+        <Image
+          src={profilePicture}
+          alt="Me and my dog Roxy"
+          width={64}
+          height={64}
+          format="avif"
+          quality="high"
+          loading="eager"
+          draggable="false"
+        />
+        <span class="sr-only">Home page</span>
+        <div
+          class="avatar absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-500 group-hover:[transform:skew(-12deg)_translateX(100%)]"
+        >
+          <div class="relative h-full w-8 bg-white/20"></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid">
+      <h1 class="text-2xl font-semibold">Trevor Lee</h1>
+      <span class="text-sm text-textVariant"
+        >Front-end Developer · Vancouver, Canada</span
+      >
+    </div>
+  </div>
   <span class="mt-4 block text-textVariant"
     >Building websites with React and Node.js since 2020. Passionate about
     interface design and crafting detailed, accessible experiences on the web.
