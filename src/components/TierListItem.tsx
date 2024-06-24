@@ -22,7 +22,7 @@ export default function TierListItem({ data }: { data: TierListItemType }) {
       >
         <PopoverPanel
           anchor="top start"
-          className="rounded-xl border-solid bg-white text-sm/6 [--anchor-gap:4px] dark:border-2 dark:border-neutral-700 dark:bg-neutral-900 sm:[--anchor-gap:6px]"
+          className="dark:border-1.5 rounded-xl border-solid border-neutral-950/20 bg-white text-sm/6 shadow-md [--anchor-gap:4px] dark:border-white/10 dark:bg-neutral-900 dark:shadow-sm sm:[--anchor-gap:6px]"
         >
           <div className="rounded p-3">
             <p>{data.name}</p>
