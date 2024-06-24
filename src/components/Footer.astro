@@ -34,7 +34,7 @@ const buildTime = new Date().toISOString();
 </footer>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("astro:page-load", () => {
     const buildTimeString = document.getElementById("build-time").dataset.time;
     const buildTime = new Date(buildTimeString);
 
