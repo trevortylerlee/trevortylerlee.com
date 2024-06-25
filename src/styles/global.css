@@ -226,6 +226,10 @@
   color: rgb(var(--primary));
 }
 
+::selection {
+  @apply bg-neutral-950 text-neutral-50 opacity-100 dark:bg-neutral-50 dark:text-neutral-950;
+}
+
 .animate-up {
   @apply translate-y-6 opacity-0 blur-[3px];
   @apply transition-all duration-500 ease-out;
