@@ -18,9 +18,11 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-#astro
 .astro
+.vercel
 
 # Draft post for testing
 src/content/posts/draft.mdx
-.vercel
+
+# Todos
+TODO.txt
