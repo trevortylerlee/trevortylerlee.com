@@ -2,24 +2,22 @@
 const { category, pageSlug, pageTitle } = Astro.props;
 ---
 
-<ul class="flex items-center">
+<ul class="flex items-center text-xs">
+  { category === "404" ? <></> : 
   <li class="flex items-center">
-    <a href="/" class="link hover:text-primary focus-visible:text-primary"
-      >Home</a
-    >&nbsp;/&nbsp;
+    <a href="/" class="link no-underline">Home</a>
+    <span class="text-textVariant"> &nbsp;/&nbsp; </span>
   </li>
+  }
   {
     category === "posts" && (
       <li class="flex items-center">
-        <a
-          href={`/${category}`}
-          class="link hover:text-primary focus-visible:text-primary"
-        >
+        <a href={`/${category}`} class="link no-underline">
           Posts
         </a>
-        &nbsp;/&nbsp;
+        <span class="text-textVariant">&nbsp;/&nbsp;</span>
       </li>
     )
   }
-  {pageSlug && <li class="hidden text-text sm:flex">{pageTitle}</li>}
+  {pageSlug && <li class="text-textVariant">{pageTitle}</li>}
 </ul>

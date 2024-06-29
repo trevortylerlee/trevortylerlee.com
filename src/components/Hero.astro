@@ -1,12 +1,51 @@
 ---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import {
   DescriptionDetails,
   DescriptionList,
   DescriptionTerm,
 } from "@components/ui/description-list";
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import profilePicture from "@assets/me-with-roxy.jpg";
+
+const socials = [
+  {
+    label: "Email",
+    details: "trevortylerlee@gmail.com",
+    href: "mailto:trevortylerlee@gmail.com",
+    icon: "mail",
+  },
+  {
+    label: "Phone",
+    details: "+1 778 235 3815",
+    href: "tel:+17782353815",
+    icon: "phone",
+  },
+  {
+    label: "GitHub",
+    details: "@trevortylerlee",
+    href: "https://github.com/trevortylerlee",
+    icon: "github",
+  },
+  {
+    label: "LinkedIn",
+    details: "@trevortylerlee",
+    href: "https://www.linkedin.com/in/trevortylerlee/",
+    icon: "linkedin",
+  },
+  {
+    label: "Instagram",
+    details: "@trevortylerlee",
+    href: "https://www.instagram.com/trevortylerlee",
+    icon: "instagram",
+  },
+  {
+    label: "Twitter",
+    details: "@boogerbuttcheek",
+    href: "https://twitter.com/boogerbuttcheek",
+    icon: "twitter",
+  },
+];
 ---
 
 <section>
@@ -47,46 +86,30 @@ import profilePicture from "@assets/me-with-roxy.jpg";
 </section>
 <section class="mt-12">
   <DescriptionList>
-    <DescriptionTerm>Email</DescriptionTerm>
-    <DescriptionDetails className="flex items-center gap-1"
-      ><a href="mailto:trevortylerlee@gmail.com" class="link"
-        >trevortylerlee@gmail.com</a
-      ><Icon name="external" /></DescriptionDetails
-    >
+    {
+      socials.map(({ label, details, href, icon }) => (
+        <>
+          <DescriptionTerm className="flex items-center gap-1 sm:gap-2">
+            <Icon name={icon} />
+            {label}
+          </DescriptionTerm>
+          <DescriptionDetails className="flex items-center gap-1">
+            <div class="flex items-center gap-1">
+              <a href={href} class="link">
+                {details}
+              </a>
+              <Icon name="external" />
+            </div>
+          </DescriptionDetails>
+        </>
+      ))
+    }
 
-    <DescriptionTerm>Phone</DescriptionTerm>
-    <DescriptionDetails className="flex items-center gap-1"
-      ><a href="tel:+17782353815" class="link">+1 778 235 3815</a><Icon
-        name="external"
-      /></DescriptionDetails
-    >
-
-    <DescriptionTerm>GitHub</DescriptionTerm>
-    <DescriptionDetails className="flex items-center gap-1"
-      ><a href="https://github.com/trevortylerlee" class="link"
-        >@trevortylerlee</a
-      ><Icon name="external" /></DescriptionDetails
-    >
-
-    <DescriptionTerm>LinkedIn</DescriptionTerm>
-    <DescriptionDetails className="flex items-center gap-1"
-      ><a href="https://www.linkedin.com/in/trevortylerlee/" class="link"
-        >@trevortylerlee</a
-      ><Icon name="external" /></DescriptionDetails
-    >
-
-    <DescriptionTerm>Resume</DescriptionTerm>
+    <!-- <DescriptionTerm>Resume</DescriptionTerm>
     <DescriptionDetails className="flex items-center gap-1"
       ><a href="/trevor-lee-resume.pdf" class="link">Download</a><Icon
         name="download"
       /></DescriptionDetails
-    >
-
-    <DescriptionTerm>Threads</DescriptionTerm>
-    <DescriptionDetails className="flex items-center gap-1"
-      ><a href="https://www.threads.net/@trevortylerlee" class="link"
-        >@trevortylerlee</a
-      ><Icon name="external" /></DescriptionDetails
-    >
+    > -->
   </DescriptionList>
 </section>
