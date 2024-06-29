@@ -227,7 +227,7 @@
 }
 
 ::selection {
-  @apply bg-neutral-950 text-neutral-50 opacity-100 dark:bg-neutral-50 dark:text-neutral-950;
+  @apply bg-blue-400 bg-opacity-40 text-text;
 }
 
 .animate-up {
