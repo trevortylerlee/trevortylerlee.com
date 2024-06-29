@@ -1,16 +1,17 @@
 ---
-import BaseLayout from "src/layouts/BaseLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 
-const pageTitle = "uh oh";
+const category = "404";
+const pageTitle = "404: Page Not Found";
 ---
 
-<BaseLayout pageTitle={pageTitle} category="404">
-  <div class="my-36 grid h-24 justify-center text-center">
+<BaseLayout category={category} pageTitle={pageTitle}>
+  <div class="my-44 h-44 justify-center text-center">
     <img
       class="mx-auto mb-4"
       src="/togepi.gif"
       alt="Togepi apologizing profusely."
     />
-    <p>This page isn't available. Sorry.</p>
+    <p class="font-mono text-textVariant">404: Page Not Found</p>
   </div>
 </BaseLayout>
