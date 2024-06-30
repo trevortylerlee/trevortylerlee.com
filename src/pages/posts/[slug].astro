@@ -1,8 +1,10 @@
 ---
-import BaseLayout from "src/layouts/BaseLayout.astro";
-import { formatDate } from "src/lib/utils";
-import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+import BaseLayout from "src/layouts/BaseLayout.astro";
+
+import { formatDate } from "src/lib/utils";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
