@@ -21,4 +21,4 @@ Astro Micro is a new blog template for Astro. It's a fork of [Mark Horn's](https
 
 It's great to see people forking and starring Astro Nano! The repo is [here](https://github.com/trevortylerlee/astro-micro) and setup instructions are [here](https://astro-micro.vercel.app/blog/01-getting-started).
 
-If you encounter any bugs please open an issue on the repo. Lastly, big thank you to [Bo Lopker](https://github.com/blopker) for their help!
+If you encounter any bugs please open an issue on the repo. Big thank you to [all contributers](https://astro-micro.vercel.app/blog/00-micro-changelog#issues-%EF%B8%8F) for their help!
