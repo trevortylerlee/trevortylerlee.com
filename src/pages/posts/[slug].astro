@@ -44,6 +44,13 @@ const { Content } = await post.render();
           </span>
         )
       }
+      {
+        post.data.lastModified && (
+          <span class="text-sm text-textVariant">
+            • Last modified {formatDate(post.data.lastModified, "long")}
+          </span>
+        )
+      }
     </div>
     <div
       id="content"

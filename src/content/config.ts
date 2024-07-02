@@ -5,6 +5,7 @@ const posts = defineCollection({
     z.object({
       title: z.string().max(40, "Title must be 40 or fewer characters long."),
       date: z.date(),
+      lastModified: z.date().optional(),
       description: z
         .string()
         .max(

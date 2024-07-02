@@ -1,6 +1,7 @@
 ---
 title: "Introducing Astro Micro"
 date: 2024-06-09
+lastModified: 2024-07-01
 description: "A micro-framework for Astro."
 draft: false
 imageSrc: "../../assets/posts/astro-micro.jpg"
