@@ -7,7 +7,9 @@ import Pagination from "@components/Pagination.astro";
 
 export async function getStaticPaths({ paginate }) {
   const allPosts = await getCollection("posts");
-  const formattedPosts = formatBlogPost(allPosts);
+  const formattedPosts = formatBlogPost(allPosts, { limit: 0 });
+
+  console.log(formattedPosts);
 
   return paginate(formattedPosts, {
     pageSize: 20,
