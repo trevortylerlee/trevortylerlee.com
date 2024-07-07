@@ -3,11 +3,12 @@ import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
-
 import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
 import icon from "astro-icon";
+
+// https://astro.build/config
+import expressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,11 +18,22 @@ export default defineConfig({
   },
   markdown: {
     drafts: true,
-    shikiConfig: {
-      theme: "css-variables",
-    },
   },
-  integrations: [react(), mdx(), robotsTxt(), sitemap(), tailwind(), icon()],
+  integrations: [
+    react(),
+    expressiveCode({
+      themes: ["dark-plus", "light-plus"],
+      useDarkModeMediaQuery: false,
+      themeCssSelector: (theme) =>
+        `.${theme.name === "dark-plus" ? "dark" : "light"}`,
+      useThemedSelectionColors: true,
+    }),
+    mdx(),
+    robotsTxt(),
+    sitemap(),
+    tailwind(),
+    icon(),
+  ],
   output: "static",
   prefetch: {
     prefetchAll: true,

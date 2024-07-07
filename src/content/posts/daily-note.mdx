@@ -40,7 +40,7 @@ Here’s my workflow for doing these daily notes using Shortcuts and a text edit
 
 6. Finally, replace the <code>echo “Hello World”</code> with the following zsh script:
 
-```zsh
+```sh
 currentDate=$1
 
 filePath=“PATH_TO_FILE/${currentDate}.txt"
@@ -54,7 +54,7 @@ open -a “TEXT_EDITOR” "$filePath"
 
 You will need to adjust the PATH_TO_FILE and TEXT_EDITOR . I (ChatGPT) also edited the script to add the current date to the first line of my .txt file. Here’s the final script I use:
 
-```zsh
+```sh
 # The first argument passed from the shortcut will be the current date in format "yyMMdd"
 currentDate=$1
 

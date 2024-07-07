@@ -12,7 +12,7 @@ this out.
 
 ### 1. Install [react-hot-toast](https://react-hot-toast.com/docs)
 
-```
+```sh
 npm install react-hot-toast
 ```
 
@@ -22,6 +22,8 @@ The `Toastify` component takes another component as its argument and
 returns it with a `Toaster` component imported from `react-hot-toast`.
 
 ```tsx
+// Toastify.tsx
+
 import { Toaster } from "react-hot-toast";
 
 export default (Component) => {
@@ -37,6 +39,8 @@ export default (Component) => {
 ### 3. Create a component called Button.tsx
 
 ```tsx
+// Button.tsx
+
 export default function Button(message) {
   return <button>{message}</button>;
 }
@@ -47,6 +51,8 @@ export default function Button(message) {
 Export the `Toastify` component with the `Button` as its argument.
 
 ```tsx
+// Button.tsx
+
 import Toastify from "./Toastify";
 import toast from "react-hot-toast";
 
@@ -58,6 +64,8 @@ export default function Toastify(function Button({message})) {
 ### 5. Create a function to trigger the toast
 
 ```tsx
+// Button.tsx
+
 const notify = () => toast("Toast!");
 ```
 
