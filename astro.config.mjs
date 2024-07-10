@@ -6,7 +6,6 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import expressiveCode from "astro-expressive-code";
-import { shield } from "@kindspells/astro-shield";
 
 // https://astro.build/config
 export default defineConfig({
@@ -31,7 +30,6 @@ export default defineConfig({
     sitemap(),
     tailwind(),
     icon(),
-    shield({}),
   ],
   output: "static",
   prefetch: {
