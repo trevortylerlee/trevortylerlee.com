@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 const { href, title, description } = Astro.props;
 ---
 
-<a href={href} class="animate-down group py-3 no-underline">
+<!-- <a href={href} class="animate-down group py-3 no-underline">
   <li
     class="-ml-3 rounded px-3 py-3 transition-colors group-hover:bg-neutral-200/50 dark:group-hover:bg-neutral-900"
   >
@@ -16,4 +16,13 @@ const { href, title, description } = Astro.props;
       </p>
     </span>
   </li>
-</a>
+</a> -->
+<li class="animate-down group py-3">
+  <a href={href} class="link">
+    {title}
+  </a>
+  <Icon name="external" class="inline-flex text-text" />
+  <p class="text-sm text-textVariant">
+    {description}
+  </p>
+</li>
