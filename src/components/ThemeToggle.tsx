@@ -3,7 +3,7 @@ import { Select } from "./ui/select";
 export default function ThemeToggle() {
   return (
     <div>
-      <Select name="theme-toggle" id="theme-toggle">
+      <Select name="theme-toggle" id="theme-toggle" aria-label="Theme toggle">
         <option value="auto">Auto</option>
         <option value="dark">Dark</option>
         <option value="light">Light</option>
