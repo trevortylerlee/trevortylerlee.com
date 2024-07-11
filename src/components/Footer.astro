@@ -1,10 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
+import ExternalLink from "@components/ExternalLink.astro";
 
 const buildTime = new Date().toISOString();
 ---
 
-<footer
+<!-- <footer
   class="flex flex-col items-baseline justify-between pb-1 pt-16 text-xs sm:flex-row sm:pt-24"
 >
   <div class="text-textVariant">
@@ -30,6 +31,23 @@ const buildTime = new Date().toISOString();
       >
       <Icon class="text-text" name="external" aria-label="External link icon" />
     </a>
+  </div>
+</footer> -->
+<footer
+  class="flex flex-col items-baseline justify-between pb-1 pt-16 text-xs sm:flex-row sm:pt-24"
+>
+  <div class="text-textVariant">
+    © Copyright {new Date().getFullYear()}, Trevor Lee. <a
+      href="/rss.xml"
+      class="link">RSS Feed</a
+    >
+  </div>
+  <div id="build-time" data-time={buildTime} class="pt-1 sm:pt-0">
+    <ExternalLink
+      href="https://github.com/trevortylerlee/trevortylerlee.com/commits/main"
+    >
+      <span id="last-updated">Updated</span>
+    </ExternalLink>
   </div>
 </footer>
 

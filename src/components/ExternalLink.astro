@@ -1,0 +1,12 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { href } = Astro.props;
+---
+
+<span class="inline-flex items-center">
+  <a href={href} class="link">
+    <slot />
+  </a>&nbsp;
+  <Icon name="external" />
+</span>

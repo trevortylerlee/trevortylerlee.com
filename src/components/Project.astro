@@ -1,27 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
+import ExternalLink from "./ExternalLink.astro";
 
 const { href, title, description } = Astro.props;
 ---
 
-<!-- <a href={href} class="animate-down group py-3 no-underline">
-  <li
-    class="-ml-3 rounded px-3 py-3 transition-colors group-hover:bg-neutral-200/50 dark:group-hover:bg-neutral-900"
-  >
-    <p class="link underline">{title}</p>
-    <span class="flex items-center gap-1">
-      <p class="text-sm text-textVariant">
-        {description}
-        <Icon name="external" class="inline-flex text-text" />
-      </p>
-    </span>
-  </li>
-</a> -->
 <li class="animate-down group py-3">
-  <a href={href} class="link">
+  <ExternalLink href={href}>
     {title}
-  </a>
-  <Icon name="external" class="inline-flex text-text" />
+  </ExternalLink>
   <p class="text-sm text-textVariant">
     {description}
   </p>
