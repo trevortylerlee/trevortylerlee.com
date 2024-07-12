@@ -38,6 +38,12 @@
 </div>
 
 <style>
+  /* Prevent Safari from styling number inputs */
+  input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield; /* For Firefox */
+  }
+
   .marquee {
     position: relative;
     width: 100vw;
