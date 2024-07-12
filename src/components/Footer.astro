@@ -1,40 +1,11 @@
 ---
-import { Icon } from "astro-icon/components";
 import ExternalLink from "@components/ExternalLink.astro";
 
 const buildTime = new Date().toISOString();
 ---
 
-<!-- <footer
-  class="flex flex-col items-baseline justify-between pb-1 pt-16 text-xs sm:flex-row sm:pt-24"
->
-  <div class="text-textVariant">
-    © Copyright {new Date().getFullYear()}, Trevor Lee. <a
-      href="/rss.xml"
-      class="link">RSS Feed</a
-    >
-  </div>
-  <div
-    id="build-time"
-    data-time={buildTime}
-    class="flex min-w-[240px] flex-grow-0 flex-row items-center sm:flex-row-reverse"
-  >
-    <a
-      href="https://github.com/trevortylerlee/trevortylerlee.com/commits/main"
-      class="link group flex items-center gap-1 pb-4 pt-2 text-right"
-    >
-      <span
-        id="last-updated"
-        class="link group-hover:text-primary group-focus-visible:text-primary"
-      >
-        Updated</span
-      >
-      <Icon class="text-text" name="external" aria-label="External link icon" />
-    </a>
-  </div>
-</footer> -->
 <footer
-  class="flex flex-col items-baseline justify-between pb-1 pt-16 text-xs sm:flex-row sm:pt-24"
+  class="flex flex-col items-baseline justify-between pb-4 pt-16 text-xs sm:flex-row sm:pt-24"
 >
   <div class="text-textVariant">
     © Copyright {new Date().getFullYear()}, Trevor Lee. <a
@@ -61,8 +32,6 @@ const buildTime = new Date().toISOString();
       const timeAgoText = timeAgo(buildTime, now);
       document.getElementById("last-updated").textContent =
         `Updated ${timeAgoText}`;
-    } else {
-      console.error("Invalid build time:", buildTimeString);
     }
   });
 
