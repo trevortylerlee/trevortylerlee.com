@@ -16,7 +16,10 @@ const { prevUrl, nextUrl } = Astro.props;
           href={prevUrl}
           class="flex h-[40px] cursor-default items-center gap-1 rounded-lg bg-white px-3 py-2 text-base/6 text-text no-underline shadow-sm ring-1 ring-inset ring-neutral-950/15 hover:ring-neutral-950/25 focus-visible:ring-neutral-950/25 dark:bg-white/5 dark:ring-white/15 dark:hover:ring-white/25 dark:focus-visible:ring-white/25 sm:h-[32px] sm:py-1"
         >
-          <Icon class="text-textVariant" name="arrow-left" />
+          <Icon
+            name="arrow-left"
+            class="text-textVariant transition-colors group-hover:text-text group-focus-visible:text-text"
+          />
           Newer posts{" "}
         </a>
       </span>
@@ -31,7 +34,11 @@ const { prevUrl, nextUrl } = Astro.props;
           href={nextUrl}
           class="flex h-[40px] cursor-default items-center gap-1 rounded-lg bg-white px-3 py-2 text-base/6 text-text no-underline shadow-sm ring-1 ring-inset ring-neutral-950/15 hover:ring-neutral-950/25 focus-visible:ring-neutral-950/25 dark:bg-white/5 dark:ring-white/15 dark:hover:ring-white/25 dark:focus-visible:ring-white/25 sm:h-[32px] sm:py-1"
         >
-          Older posts <Icon class="text-textVariant" name="arrow-right" />
+          Older posts{" "}
+          <Icon
+            name="arrow-right"
+            class="text-textVariant transition-colors group-hover:text-text group-focus-visible:text-text"
+          />
         </a>
       </span>
     )
