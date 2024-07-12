@@ -41,7 +41,15 @@ const pageTitle = "Trevor Tyler Lee";
     </ul>
   </section>
   <section class="animate-down">
-    <h2 class="pb-4 pt-12 text-lg font-medium">Recent Posts</h2>
+    <div class="flex items-baseline justify-between">
+      <h2 class="pb-4 pt-12 text-lg font-medium">Recent Posts</h2>
+      <a
+        href="/posts"
+        class="flex h-[40px] cursor-default items-center gap-1 rounded-lg bg-white px-3 py-2 text-base/6 text-text no-underline shadow-sm ring-1 ring-inset ring-neutral-950/15 hover:ring-neutral-950/25 focus-visible:ring-neutral-950/25 dark:bg-white/5 dark:ring-white/15 dark:hover:ring-white/25 dark:focus-visible:ring-white/25 sm:h-[32px] sm:py-1"
+        >More posts
+        <Icon name="arrow-right" class="text-textVariant" />
+      </a>
+    </div>
     <ul class="">
       {
         formattedPosts.map((post) => (
@@ -54,15 +62,5 @@ const pageTitle = "Trevor Tyler Lee";
         ))
       }
     </ul>
-    <div class="flex justify-end">
-      <a
-        href="/posts"
-        class="link group -ml-1 flex items-center gap-1 px-1 py-2 text-sm"
-        >More posts<Icon
-          class="text-text group-hover:animate-horizontal-bounce group-focus:animate-horizontal-bounce"
-          name="arrow-right"
-        />
-      </a>
-    </div>
   </section>
 </BaseLayout>

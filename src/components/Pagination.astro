@@ -5,24 +5,23 @@ const { prevUrl, nextUrl } = Astro.props;
 ---
 
 <nav
-  aria-label="Posts Navigation"
-  class="mx-auto mt-8 max-w-screen-md"
   id="pagination"
+  aria-label="Posts Navigation"
+  class="mx-auto mt-8 flex justify-between"
 >
   {
-    prevUrl && (
+    prevUrl ? (
       <span class="flex">
         <a
           href={prevUrl}
-          class="link group -mr-1 flex items-center gap-1 px-1 py-2 text-sm"
+          class="flex h-[40px] cursor-default items-center gap-1 rounded-lg bg-white px-3 py-2 text-base/6 text-text no-underline shadow-sm ring-1 ring-inset ring-neutral-950/15 hover:ring-neutral-950/25 focus-visible:ring-neutral-950/25 dark:bg-white/5 dark:ring-white/15 dark:hover:ring-white/25 dark:focus-visible:ring-white/25 sm:h-[32px] sm:py-1"
         >
-          <Icon
-            class="group-hover:animate-horizontal-bounce-left group-focus:animate-horizontal-bounce-left text-text"
-            name="arrow-left"
-          />
+          <Icon class="text-textVariant" name="arrow-left" />
           Newer posts{" "}
         </a>
       </span>
+    ) : (
+      <div />
     )
   }
   {
@@ -30,13 +29,9 @@ const { prevUrl, nextUrl } = Astro.props;
       <span class="flex justify-end">
         <a
           href={nextUrl}
-          class="link group -ml-1 flex items-center gap-1 px-1 py-2 text-sm"
+          class="flex h-[40px] cursor-default items-center gap-1 rounded-lg bg-white px-3 py-2 text-base/6 text-text no-underline shadow-sm ring-1 ring-inset ring-neutral-950/15 hover:ring-neutral-950/25 focus-visible:ring-neutral-950/25 dark:bg-white/5 dark:ring-white/15 dark:hover:ring-white/25 dark:focus-visible:ring-white/25 sm:h-[32px] sm:py-1"
         >
-          Older posts{" "}
-          <Icon
-            class="text-text group-hover:animate-horizontal-bounce group-focus:animate-horizontal-bounce"
-            name="arrow-right"
-          />
+          Older posts <Icon class="text-textVariant" name="arrow-right" />
         </a>
       </span>
     )
