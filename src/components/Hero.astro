@@ -7,6 +7,7 @@ import {
   DescriptionTerm,
 } from "@components/ui/description-list";
 import profilePicture from "@assets/me-and-roxy.png";
+import instagramLogo from "@assets/instagram.png";
 
 const socials = [
   {
@@ -34,12 +35,6 @@ const socials = [
     icon: "linkedin",
   },
   {
-    label: "Instagram",
-    details: "@trevortylerlee",
-    href: "https://www.instagram.com/trevortylerlee",
-    icon: "instagram",
-  },
-  {
     label: "Twitter",
     details: "@boogerbuttcheek",
     href: "https://twitter.com/boogerbuttcheek",
@@ -47,12 +42,19 @@ const socials = [
   },
 ];
 
+const instagram = {
+  label: "Instagram",
+  details: "@trevortylerlee",
+  href: "https://www.instagram.com/trevortylerlee",
+  icon: instagramLogo,
+};
+
 const colorVariants = {
   mail: "text-orange-6",
   phone: "text-green-5",
   github: "text-text",
   linkedin: "",
-  instagram: "text-[#F07]",
+  instagram: "",
   twitter: "text-sky-500",
 };
 ---
@@ -108,12 +110,23 @@ const colorVariants = {
         </>
       ))
     }
-
-    <!-- <DescriptionTerm>Resume</DescriptionTerm>
-    <DescriptionDetails className="flex items-center gap-1"
-      ><a href="/trevor-lee-resume.pdf" class="link">Download</a><Icon
-        name="download"
-      /></DescriptionDetails
-    > -->
+    <DescriptionTerm className="flex items-center gap-1 sm:gap-2">
+      <Image
+        src={instagram.icon}
+        width={24}
+        height={24}
+        alt="Instagram"
+        class="size-3"
+      />
+      {instagram.label}
+    </DescriptionTerm>
+    <DescriptionDetails className="flex items-center gap-1">
+      <div class="flex items-center gap-1">
+        <a href={instagram.href} class="link">
+          {instagram.details}
+        </a>
+        <Icon name="external" />
+      </div>
+    </DescriptionDetails>
   </DescriptionList>
 </section>
