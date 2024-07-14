@@ -9,7 +9,7 @@ import expressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://trevortylerlee.com",
+  site: "https://www.trevortylerlee.com",
   server: {
     port: 1999,
   },
