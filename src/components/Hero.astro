@@ -35,7 +35,7 @@ const socials = [
     icon: "linkedin",
   },
   {
-    label: "Twitter",
+    label: "X (Twitter)",
     details: "@boogerbuttcheek",
     href: "https://twitter.com/boogerbuttcheek",
     icon: "twitter",
@@ -50,12 +50,12 @@ const instagram = {
 };
 
 const colorVariants = {
-  mail: "text-orange-6",
-  phone: "text-green-5",
+  mail: "text-orange-7 dark:text-orange-6",
+  phone: "text-green-7 dark:text-green-3",
   github: "text-text",
   linkedin: "",
   instagram: "",
-  twitter: "text-sky-500",
+  twitter: "",
 };
 ---
 
@@ -96,7 +96,7 @@ const colorVariants = {
       socials.map(({ label, details, href, icon }) => (
         <>
           <DescriptionTerm className="flex items-center gap-1 sm:gap-2">
-            <Icon name={icon} class={colorVariants[icon]} />
+            <Icon name={icon} class={`${colorVariants[icon]} size-3`} />
             {label}
           </DescriptionTerm>
           <DescriptionDetails className="flex items-center gap-1">
