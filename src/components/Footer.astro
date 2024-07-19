@@ -4,23 +4,31 @@ import ExternalLink from "@components/ExternalLink.astro";
 const buildTime = new Date().toISOString();
 ---
 
-<footer
-  class="mx-auto flex max-w-screen-sm flex-col items-baseline justify-between bg-transparent px-3 pb-4 pt-24 text-sm dark:bg-black sm:flex-row sm:px-0"
+<div
+  class="inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:invisible"
 >
-  <div class="text-textVariant">
-    © Copyright {new Date().getFullYear()}, Trevor Lee. <a
-      href="/rss.xml"
-      class="link">RSS Feed</a
+  <div
+    class=`dark:visible bg-centerBackground dark:bg-centerBackground/90 m-auto max-w-screen-sm`
+  >
+    <footer
+      class="mx-auto flex max-w-screen-sm flex-col items-baseline justify-between bg-transparent px-3 pb-4 pt-24 text-sm dark:bg-black sm:flex-row sm:px-0"
     >
+      <div class="text-textVariant">
+        © Copyright {new Date().getFullYear()}, Trevor Lee. <a
+          href="/rss.xml"
+          class="link">RSS Feed</a
+        >
+      </div>
+      <div id="build-time" data-time={buildTime} class="pt-1 sm:pt-0">
+        <ExternalLink
+          href="https://github.com/trevortylerlee/trevortylerlee.com/commits/main"
+        >
+          <span id="last-updated">Updated</span>
+        </ExternalLink>
+      </div>
+    </footer>
   </div>
-  <div id="build-time" data-time={buildTime} class="pt-1 sm:pt-0">
-    <ExternalLink
-      href="https://github.com/trevortylerlee/trevortylerlee.com/commits/main"
-    >
-      <span id="last-updated">Updated</span>
-    </ExternalLink>
-  </div>
-</footer>
+</div>
 
 <script is:inline>
   document.addEventListener("astro:page-load", () => {
