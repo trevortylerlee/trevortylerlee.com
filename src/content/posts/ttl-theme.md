@@ -9,6 +9,10 @@ draft: false
 
 [GitHub](https://github.com/trevortylerlee/ttl-theme)
 
+[zoefiri's base16-sc](https://github.com/zoefiri/base16-sc)
+
+[csalmeida's summercamp-vscode-theme](https://github.com/csalmeida/summercamp-vscode-theme)
+
 ---
 
-It's a tweaked version of Summercamp from the Zed editor. The UI is left unchanged from the VS Code default theme.
+It's a tweaked version of Summercamp. The background is a more neutral shade of gray, and the main UI accent color is a bright green.
