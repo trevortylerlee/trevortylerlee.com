@@ -189,18 +189,7 @@ if (pageTitle === "Trevor Tyler Lee") {
                 </a>
               )
             }
-            <!-- {onIndex && <div />} -->
-            {
-              onIndex && (
-                <a
-                  href="https://treelink.app"
-                  class="flex items-center gap-3 rounded-full bg-backgroundVariant px-5 py-1 text-xs text-textVariant no-underline ring-1 transition-all hover:-translate-y-0.5 hover:text-text focus:-translate-y-0.5 focus:text-text active:translate-y-0.5"
-                >
-                  <div class="size-1.5 animate-pulse rounded-full bg-red-500" />
-                  Try Treelink! →
-                </a>
-              )
-            }
+            {onIndex && <div />}
             <ThemeToggle client:load />
           </div>
           {
